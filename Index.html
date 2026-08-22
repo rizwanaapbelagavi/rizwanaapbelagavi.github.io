@@ -3,29 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>AAP Belagavi Premium Poster Maker</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#eaf2fb;font-family:Arial,Helvetica,sans-serif;color:#173f78}
-.wrap{max-width:900px;margin:auto;padding:20px}
-.card{background:#fff;border-radius:24px;padding:22px;box-shadow:0 10px 35px rgba(0,40,90,.12)}
-h1{text-align:center;margin:0 0 6px;font-size:32px}
-.sub{text-align:center;color:#666;margin:0 0 22px}
-label{display:block;font-weight:700;font-size:19px;margin:15px 0 7px}
-input{width:100%;padding:14px;border:2px solid #c8d8ea;border-radius:12px;font-size:17px;background:#fff}
-button{width:100%;border:0;border-radius:14px;padding:17px;margin-top:18px;font-size:20px;font-weight:800;cursor:pointer}
-#generate{background:#214d87;color:#fff}
-#download{background:#ffc400;color:#173f78}
-#status{text-align:center;font-weight:700;margin-top:12px;color:#214d87}
-.preview{margin-top:24px;text-align:center}
-canvas{width:100%;max-width:540px;height:auto;border-radius:14px;box-shadow:0 8px 25px rgba(0,0,0,.18)}
-.note{text-align:center;color:#666;font-size:14px;margin-top:12px}
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  background:#eaf2fb;
+  font-family:Arial,Helvetica,sans-serif;
+  color:#173f78;
+}
+
+.wrap{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:#fff;
+  border-radius:24px;
+  padding:22px;
+  box-shadow:0 10px 35px rgba(0,40,90,.12);
+}
+
+h1{
+  text-align:center;
+  margin:0 0 6px;
+  font-size:32px;
+}
+
+.sub{
+  text-align:center;
+  color:#666;
+  margin:0 0 22px;
+}
+
+label{
+  display:block;
+  font-weight:700;
+  font-size:19px;
+  margin:15px 0 7px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:2px solid #c8d8ea;
+  border-radius:12px;
+  font-size:17px;
+  background:#fff;
+}
+
+button{
+  width:100%;
+  border:0;
+  border-radius:14px;
+  padding:17px;
+  margin-top:18px;
+  font-size:20px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+#generate{
+  background:#214d87;
+  color:#fff;
+}
+
+#download{
+  background:#ffc400;
+  color:#173f78;
+}
+
+#status{
+  text-align:center;
+  font-weight:700;
+  margin-top:12px;
+  color:#214d87;
+}
+
+.preview{
+  margin-top:24px;
+  text-align:center;
+}
+
+canvas{
+  width:100%;
+  max-width:540px;
+  height:auto;
+  border-radius:14px;
+  box-shadow:0 8px 25px rgba(0,0,0,.18);
+}
+
+.note{
+  text-align:center;
+  color:#666;
+  font-size:14px;
+  margin-top:12px;
+}
 </style>
 </head>
+
 <body>
-<div class="wrap"><div class="card">
+
+<div class="wrap">
+<div class="card">
+
 <h1>AAP Belagavi Premium Poster Maker</h1>
-<p class="sub">1080 × 1350 • Together for a Better Belagavi</p>
+
+<p class="sub">
+1080 × 1350 • Together for a Better Belagavi
+</p>
 
 <label>Member 2 Name</label>
 <input id="m2name" type="text" value="ASLAM TASHILDAR">
@@ -34,268 +127,1062 @@ canvas{width:100%;max-width:540px;height:auto;border-radius:14px;box-shadow:0 8p
 <input id="m2desig" type="text" value="MINORITY PRESIDENT">
 
 <label>Member 2 Photo</label>
-<input id="m2photo" type="file" accept="image/jpeg,image/png,image/webp">
+<input id="m2photo" type="file"
+accept="image/jpeg,image/png,image/webp">
 
-<button id="generate">Generate Poster</button>
-<button id="download">Download Poster PNG</button>
-<div id="status">Loading poster assets…</div>
-<div class="preview"><canvas id="poster" width="1080" height="1350"></canvas></div>
-<p class="note">Vijay L. Patil and Rizwanahmed K. Makandar are fixed. Member 2 name, designation and photo are editable.</p>
-</div></div>
+<button id="generate">
+Generate Poster
+</button>
+
+<button id="download">
+Download Poster PNG
+</button>
+
+<div id="status">
+Loading poster assets…
+</div>
+
+<div class="preview">
+<canvas id="poster" width="1080" height="1350"></canvas>
+</div>
+
+<p class="note">
+Vijay L. Patil and Rizwanahmed K. Makandar are fixed.
+Only Member 2 name, designation and photo are editable.
+</p>
+
+</div>
+</div>
 
 <script>
-const W=1080,H=1350;
-const canvas=document.getElementById("poster");
-const ctx=canvas.getContext("2d");
 
-let bgImage=null,vijayImage=null,rizwanImage=null,m2Image=null;
+const W = 1080;
+const H = 1350;
+
+const canvas = document.getElementById("poster");
+const ctx = canvas.getContext("2d");
+
+let bgImage = null;
+let vijayImage = null;
+let rizwanImage = null;
+let m2Image = null;
+
+
+/* ---------------- IMAGE LOADER ---------------- */
 
 function loadImage(src){
- return new Promise((resolve,reject)=>{
-  const im=new Image();
-  im.onload=()=>resolve(im);
-  im.onerror=()=>reject();
-  im.src=src;
- });
+
+  return new Promise((resolve,reject)=>{
+
+    const im = new Image();
+
+    im.onload = () => resolve(im);
+
+    im.onerror = () => reject();
+
+    im.src = src;
+
+  });
+
 }
+
 
 async function loadFirst(list){
- for(const src of list){
-  try{return await loadImage(src)}catch(e){}
- }
- return null;
+
+  for(const src of list){
+
+    try{
+      return await loadImage(src);
+    }
+
+    catch(e){}
+
+  }
+
+  return null;
+
 }
+
+
+/* ---------------- ROUNDED BOX ---------------- */
 
 function roundedPath(x,y,w,h,r){
- r=Math.min(r,w/2,h/2);
- ctx.beginPath();
- ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);
- ctx.quadraticCurveTo(x+w,y,x+w,y+r);
- ctx.lineTo(x+w,y+h-r);
- ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
- ctx.lineTo(x+r,y+h);
- ctx.quadraticCurveTo(x,y+h,x,y+h-r);
- ctx.lineTo(x,y+r);
- ctx.quadraticCurveTo(x,y,x+r,y);
- ctx.closePath();
+
+  r = Math.min(r,w/2,h/2);
+
+  ctx.beginPath();
+
+  ctx.moveTo(x+r,y);
+
+  ctx.lineTo(x+w-r,y);
+
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+
+  ctx.lineTo(x+w,y+h-r);
+
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+
+  ctx.lineTo(x+r,y+h);
+
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+
+  ctx.lineTo(x,y+r);
+
+  ctx.quadraticCurveTo(x,y,x+r,y);
+
+  ctx.closePath();
+
 }
+
 
 function box(x,y,w,h,r,fill,stroke=null,lw=1){
- roundedPath(x,y,w,h,r);
- if(fill){ctx.fillStyle=fill;ctx.fill()}
- if(stroke){ctx.lineWidth=lw;ctx.strokeStyle=stroke;ctx.stroke()}
+
+  roundedPath(x,y,w,h,r);
+
+  if(fill){
+
+    ctx.fillStyle=fill;
+    ctx.fill();
+
+  }
+
+  if(stroke){
+
+    ctx.lineWidth=lw;
+    ctx.strokeStyle=stroke;
+    ctx.stroke();
+
+  }
+
 }
 
-function text(t,x,y,size,weight="700",color="#fff"){
- ctx.font=`${weight} ${size}px Arial`;
- ctx.fillStyle=color;
- ctx.textAlign="center";
- ctx.textBaseline="middle";
- ctx.fillText(t,x,y);
+
+/* ---------------- TEXT ---------------- */
+
+function text(
+  t,
+  x,
+  y,
+  size,
+  weight="700",
+  color="#fff"
+){
+
+  ctx.font = `${weight} ${size}px Arial`;
+
+  ctx.fillStyle = color;
+
+  ctx.textAlign = "center";
+
+  ctx.textBaseline = "middle";
+
+  ctx.fillText(t,x,y);
+
 }
+
+
+/* ---------------- IMAGE COVER ---------------- */
 
 function cover(im,x,y,w,h){
- if(!im)return;
- const iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height;
- const r=Math.max(w/iw,h/ih);
- const sw=iw*r,sh=ih*r;
- ctx.drawImage(im,x+(w-sw)/2,y+(h-sh)/2,sw,sh);
+
+  if(!im) return;
+
+  const iw = im.naturalWidth || im.width;
+  const ih = im.naturalHeight || im.height;
+
+  const r = Math.max(w/iw,h/ih);
+
+  const sw = iw*r;
+  const sh = ih*r;
+
+  ctx.drawImage(
+    im,
+    x+(w-sw)/2,
+    y+(h-sh)/2,
+    sw,
+    sh
+  );
+
 }
+
+
+/* ---------------- PERSON PHOTO ---------------- */
+
+/*
+  IMPORTANT:
+  PNG photos with transparent background
+  will appear as clean cut-outs.
+
+  JPG photos will keep their own background.
+*/
 
 function person(im,x,y,w,h){
- box(x,y,w,h,28,"#fff");
- if(!im)return;
- ctx.save();
- roundedPath(x,y,w,h,28);
- ctx.clip();
- cover(im,x,y,w,h);
- ctx.restore();
+
+  if(!im) return;
+
+  ctx.save();
+
+  /*
+    Slight rounded clipping.
+    No white card/frame.
+  */
+
+  roundedPath(x,y,w,h,30);
+
+  ctx.clip();
+
+  cover(im,x,y,w,h);
+
+  ctx.restore();
+
 }
+
+
+/* ---------------- LOAD ASSETS ---------------- */
 
 async function init(){
- /*
-  * Cache-buster is intentional. When vidhansoudha.jpg is replaced
-  * in GitHub, ?v=3 forces the browser to fetch the new image.
-  */
- bgImage=await loadFirst([
-   "./vidhansoudha.jpg?v=3",
-   "./vidhansoudha.jpg"
- ]);
 
- // PNG first = transparent/cut-out fixed portraits.
- vijayImage=await loadFirst(["./vijay.png?v=3","./vijay.jpg?v=3","./vijay.png","./vijay.jpg"]);
- rizwanImage=await loadFirst(["./rizwan.png?v=3","./rizwan.jpg?v=3","./rizwan.png","./rizwan.jpg"]);
+  bgImage = await loadFirst([
+    "./vidhansoudha.jpg"
+  ]);
 
- draw();
+  vijayImage = await loadFirst([
+    "./vijay.png",
+    "./vijay.jpg"
+  ]);
 
- document.getElementById("status").textContent=
-  (bgImage&&vijayImage&&rizwanImage)
-  ?"Poster ready ✓"
-  :"Please check the GitHub image files.";
+  rizwanImage = await loadFirst([
+    "./rizwan.png",
+    "./rizwan.jpg"
+  ]);
+
+  draw();
+
+  if(bgImage && vijayImage && rizwanImage){
+
+    document.getElementById("status").textContent =
+      "Poster ready ✓";
+
+  }
+
+  else{
+
+    document.getElementById("status").textContent =
+      "Please check the GitHub image files.";
+
+  }
+
 }
+
+
+/* ---------------- MAIN DRAW ---------------- */
 
 function draw(){
- ctx.clearRect(0,0,W,H);
 
- /* Vidhana Soudha background */
- if(bgImage){
-  ctx.save();
-  ctx.filter="blur(5px)";
+  ctx.clearRect(0,0,W,H);
 
-  const iw=bgImage.naturalWidth||bgImage.width;
-  const ih=bgImage.naturalHeight||bgImage.height;
 
-  // Cover the full poster without leaving blank edges.
-  const r=Math.max(W/iw,H/ih);
-  const sw=iw*r,sh=ih*r;
+  /* =========================================
+     BACKGROUND – VIDHANA SOUDHA
+  ========================================= */
 
-  ctx.drawImage(bgImage,(W-sw)/2,-25,sw,sh);
-  ctx.restore();
- }else{
-  ctx.fillStyle="#dceafb";
+  if(bgImage){
+
+    ctx.save();
+
+    ctx.filter = "blur(1.5px)";
+
+    const iw =
+      bgImage.naturalWidth || bgImage.width;
+
+    const ih =
+      bgImage.naturalHeight || bgImage.height;
+
+    const r =
+      Math.max(W/iw,H/ih);
+
+    const sw = iw*r;
+    const sh = ih*r;
+
+    ctx.drawImage(
+      bgImage,
+      (W-sw)/2,
+      -35,
+      sw,
+      sh
+    );
+
+    ctx.restore();
+
+  }
+
+  else{
+
+    ctx.fillStyle = "#dceafb";
+
+    ctx.fillRect(0,0,W,H);
+
+  }
+
+
+  /* LIGHT OVERLAY */
+
+  const g =
+    ctx.createLinearGradient(0,0,0,H);
+
+  g.addColorStop(
+    0,
+    "rgba(240,248,255,.70)"
+  );
+
+  g.addColorStop(
+    .38,
+    "rgba(240,248,255,.20)"
+  );
+
+  g.addColorStop(
+    .70,
+    "rgba(240,248,255,.12)"
+  );
+
+  g.addColorStop(
+    1,
+    "rgba(240,248,255,.55)"
+  );
+
+  ctx.fillStyle = g;
+
   ctx.fillRect(0,0,W,H);
- }
 
- /* Light overlay keeps the background visible and text readable. */
- const g=ctx.createLinearGradient(0,0,0,H);
- g.addColorStop(0,"rgba(240,248,255,.64)");
- g.addColorStop(.36,"rgba(240,248,255,.18)");
- g.addColorStop(.70,"rgba(240,248,255,.12)");
- g.addColorStop(1,"rgba(240,248,255,.56)");
- ctx.fillStyle=g;
- ctx.fillRect(0,0,W,H);
 
- /* Header */
- text("aap",112,68,76,"700","#173f78");
- box(40,98,165,58,0,"#173f78");
- text("AAM AADMI",122,118,20,"700");
- text("PARTY",122,142,20,"700");
+  /* =========================================
+     HEADER
+  ========================================= */
 
- text("TOGETHER FOR A",540,45,39,"700","#173f78");
- text("BETTER",540,92,65,"800","#173f78");
- text("BELAGAVI!",540,155,65,"800","#173f78");
+  text(
+    "aap",
+    112,
+    68,
+    76,
+    "700",
+    "#173f78"
+  );
 
- box(285,205,510,58,8,"#ffc400");
- text("Honest Politics • Real Change",540,234,27,"800","#111");
+  box(
+    40,
+    98,
+    165,
+    58,
+    0,
+    "#173f78"
+  );
 
- box(824,22,215,188,28,"#173f78","#ffc400",3);
- text("Let’s build",931,52,22);
- text("a clean,",931,88,24,"800","#ffc400");
- text("honest &",931,124,24);
- text("progressive",931,160,22);
- text("Belagavi!",931,194,24);
+  text(
+    "AAM AADMI",
+    122,
+    118,
+    20,
+    "700"
+  );
 
- /* Members */
- const px=[24,365,706],pw=341,py=300,ph=470;
- person(vijayImage,px[0],py,pw,ph);
+  text(
+    "PARTY",
+    122,
+    142,
+    20,
+    "700"
+  );
 
- if(m2Image) person(m2Image,px[1],py,pw,ph);
- else{
-  box(px[1],py,pw,ph,28,"rgba(255,255,255,.92)");
-  text("UPLOAD",535,505,30,"800","#8aa0bb");
-  text("MEMBER 2 PHOTO",535,545,22,"700","#8aa0bb");
- }
 
- person(rizwanImage,px[2],py,pw,ph);
+  text(
+    "TOGETHER FOR A",
+    540,
+    45,
+    39,
+    "700",
+    "#173f78"
+  );
 
- const names=[
-  ["VIJAY L. PATIL","DISTRICT PRESIDENT","BELGAUM"],
-  [
-   document.getElementById("m2name").value.trim()||"MEMBER 2",
-   document.getElementById("m2desig").value.trim()||"DESIGNATION",
-   "BELAGAVI"
-  ],
-  ["RIZWANAHMED K. MAKANDAR","CITY PRESIDENT","BELAGAVI"]
- ];
+  text(
+    "BETTER",
+    540,
+    92,
+    65,
+    "800",
+    "#173f78"
+  );
 
- for(let i=0;i<3;i++){
-  const bx=px[i];
-  ctx.fillStyle="#173f78";
-  ctx.fillRect(bx,704,pw,108);
-  text(names[i][0],bx+pw/2,733,22,"800","#ffc400");
-  text(names[i][1],bx+pw/2,764,19,"800");
-  text(names[i][2],bx+pw/2,793,18,"700");
- }
+  text(
+    "BELAGAVI!",
+    540,
+    155,
+    65,
+    "800",
+    "#173f78"
+  );
 
- /* Beliefs */
- ctx.fillStyle="#173f78";
- ctx.fillRect(0,812,W,265);
- text("WE BELIEVE IN",540,848,40,"800");
 
- const beliefs=[
-  ["GOOD GOVERNANCE","Transparent, accountable and","people-first governance."],
-  ["CORRUPTION-FREE GOVERNANCE","Zero tolerance towards corruption.","Clean politics for a stronger Belagavi."],
-  ["PEOPLE-CENTRIC GOVERNANCE","Inclusive development with honesty,","equality and justice for all."]
- ];
- const centers=[180,540,900];
+  box(
+    285,
+    205,
+    510,
+    58,
+    8,
+    "#ffc400"
+  );
 
- for(let i=0;i<3;i++){
-  ctx.beginPath();
-  ctx.arc(centers[i],914,42,0,Math.PI*2);
-  ctx.fillStyle="#fff";ctx.fill();
-  text("✓",centers[i],916,40,"800","#173f78");
-  text(beliefs[i][0],centers[i],975,17,"800");
-  text(beliefs[i][1],centers[i],1004,15,"400");
-  text(beliefs[i][2],centers[i],1027,15,"400");
- }
+  text(
+    "Honest Politics • Real Change",
+    540,
+    234,
+    27,
+    "800",
+    "#111"
+  );
 
- /* Instagram */
- box(54,1095,972,94,26,"#173f78","#ffc400",3);
- text("Join AAP Belagavi –",385,1125,31,"800");
- text("be a part of the change!",385,1160,28,"800","#ffc400");
- text("Follow on Instagram",815,1122,20);
- text("bit.ly/aaprizwanmakandar",815,1156,18,"800","#ffc400");
 
- /* Footer */
- const vals=[
-  ["✓","HONESTY","in every decision"],
-  ["✓","SERVICE","to every citizen"],
-  ["✓","UNITY","for a stronger Belagavi"],
-  ["✓","PROGRESS","for a better tomorrow"]
- ];
- const vc=[135,405,675,945];
+  /* TOP RIGHT BOX */
 
- for(let i=0;i<4;i++){
-  ctx.beginPath();
-  ctx.arc(vc[i],1230,30,0,Math.PI*2);
-  ctx.fillStyle="#173f78";ctx.fill();
-  text(vals[i][0],vc[i],1231,25,"800");
-  text(vals[i][1],vc[i],1270,17,"800","#173f78");
-  text(vals[i][2],vc[i],1297,13,"400","#173f78");
- }
+  box(
+    824,
+    22,
+    215,
+    188,
+    28,
+    "#173f78",
+    "#ffc400",
+    3
+  );
+
+  text("Let’s build",931,52,22);
+
+  text(
+    "a clean,",
+    931,
+    88,
+    24,
+    "800",
+    "#ffc400"
+  );
+
+  text(
+    "honest &",
+    931,
+    124,
+    24
+  );
+
+  text(
+    "progressive",
+    931,
+    160,
+    22
+  );
+
+  text(
+    "Belagavi!",
+    931,
+    194,
+    24
+  );
+
+
+  /* =========================================
+     PHOTO SECTION
+  ========================================= */
+
+  const px = [24,365,706];
+
+  const pw = 341;
+
+  const photoY = 295;
+
+  const photoH = 395;
+
+
+  /*
+    NO WHITE PHOTO BOX HERE.
+    Photos directly appear over background.
+  */
+
+  person(
+    vijayImage,
+    px[0],
+    photoY,
+    pw,
+    photoH
+  );
+
+
+  if(m2Image){
+
+    person(
+      m2Image,
+      px[1],
+      photoY,
+      pw,
+      photoH
+    );
+
+  }
+
+  else{
+
+    /*
+      Only upload message if photo missing.
+    */
+
+    text(
+      "UPLOAD",
+      540,
+      485,
+      30,
+      "800",
+      "#8aa0bb"
+    );
+
+    text(
+      "MEMBER 2 PHOTO",
+      540,
+      525,
+      22,
+      "700",
+      "#8aa0bb"
+    );
+
+  }
+
+
+  person(
+    rizwanImage,
+    px[2],
+    photoY,
+    pw,
+    photoH
+  );
+
+
+  /* =========================================
+     NAME + DESIGNATION SECTION
+     SEPARATE PANEL
+  ========================================= */
+
+  const nameY = 690;
+  const nameH = 120;
+
+  ctx.fillStyle = "#173f78";
+
+  ctx.fillRect(
+    0,
+    nameY,
+    W,
+    nameH
+  );
+
+
+  /* small separators */
+
+  ctx.fillStyle = "#ffc400";
+
+  ctx.fillRect(
+    360,
+    nameY+15,
+    3,
+    90
+  );
+
+  ctx.fillRect(
+    717,
+    nameY+15,
+    3,
+    90
+  );
+
+
+  const names = [
+
+    [
+      "VIJAY L. PATIL",
+      "DISTRICT PRESIDENT",
+      "BELGAUM"
+    ],
+
+    [
+
+      document
+        .getElementById("m2name")
+        .value
+        .trim()
+        ||
+        "MEMBER 2",
+
+      document
+        .getElementById("m2desig")
+        .value
+        .trim()
+        ||
+        "DESIGNATION",
+
+      "BELAGAVI"
+
+    ],
+
+    [
+      "RIZWANAHMED K. MAKANDAR",
+      "CITY PRESIDENT",
+      "BELAGAVI"
+    ]
+
+  ];
+
+
+  const centers = [
+    180,
+    540,
+    900
+  ];
+
+
+  for(let i=0;i<3;i++){
+
+    text(
+      names[i][0],
+      centers[i],
+      720,
+      22,
+      "800",
+      "#ffc400"
+    );
+
+    text(
+      names[i][1],
+      centers[i],
+      752,
+      18,
+      "800",
+      "#fff"
+    );
+
+    text(
+      names[i][2],
+      centers[i],
+      782,
+      17,
+      "700",
+      "#fff"
+    );
+
+  }
+
+
+  /* =========================================
+     BELIEFS – SEPARATE LIGHT PANEL
+  ========================================= */
+
+  const beliefY = 810;
+  const beliefH = 265;
+
+
+  box(
+    0,
+    beliefY,
+    W,
+    beliefH,
+    0,
+    "rgba(250,252,255,.96)"
+  );
+
+
+  text(
+    "WE BELIEVE IN",
+    540,
+    842,
+    40,
+    "800",
+    "#173f78"
+  );
+
+
+  const beliefs = [
+
+    [
+      "GOOD GOVERNANCE",
+      "Transparent, accountable and",
+      "people-first governance."
+    ],
+
+    [
+      "CORRUPTION-FREE GOVERNANCE",
+      "Zero tolerance towards corruption.",
+      "Clean politics for a stronger Belagavi."
+    ],
+
+    [
+      "PEOPLE-CENTRIC GOVERNANCE",
+      "Inclusive development with honesty,",
+      "equality and justice for all."
+    ]
+
+  ];
+
+
+  const centers2 = [
+    180,
+    540,
+    900
+  ];
+
+
+  for(let i=0;i<3;i++){
+
+    /*
+      Vertical separators
+    */
+
+    if(i>0){
+
+      ctx.fillStyle =
+        "#d3dbea";
+
+      ctx.fillRect(
+        centers2[i]-180,
+        885,
+        2,
+        150
+      );
+
+    }
+
+
+    /* Circle */
+
+    ctx.beginPath();
+
+    ctx.arc(
+      centers2[i],
+      915,
+      42,
+      0,
+      Math.PI*2
+    );
+
+    ctx.fillStyle = "#173f78";
+
+    ctx.fill();
+
+
+    text(
+      "✓",
+      centers2[i],
+      916,
+      40,
+      "800",
+      "#fff"
+    );
+
+
+    text(
+      beliefs[i][0],
+      centers2[i],
+      972,
+      17,
+      "800",
+      "#173f78"
+    );
+
+
+    text(
+      beliefs[i][1],
+      centers2[i],
+      1003,
+      15,
+      "400",
+      "#333"
+    );
+
+
+    text(
+      beliefs[i][2],
+      centers2[i],
+      1027,
+      15,
+      "400",
+      "#333"
+    );
+
+  }
+
+
+  /* =========================================
+     JOIN AAP SECTION
+  ========================================= */
+
+  box(
+    54,
+    1095,
+    972,
+    94,
+    26,
+    "#173f78",
+    "#ffc400",
+    3
+  );
+
+
+  text(
+    "Join AAP Belagavi –",
+    385,
+    1125,
+    31,
+    "800"
+  );
+
+
+  text(
+    "be a part of the change!",
+    385,
+    1160,
+    28,
+    "800",
+    "#ffc400"
+  );
+
+
+  text(
+    "Follow on Instagram",
+    815,
+    1122,
+    20
+  );
+
+
+  text(
+    "bit.ly/aaprizwanmakandar",
+    815,
+    1156,
+    18,
+    "800",
+    "#ffc400"
+  );
+
+
+  /* =========================================
+     FOOTER
+  ========================================= */
+
+  const vals = [
+
+    [
+      "✓",
+      "HONESTY",
+      "in every decision"
+    ],
+
+    [
+      "✓",
+      "SERVICE",
+      "to every citizen"
+    ],
+
+    [
+      "✓",
+      "UNITY",
+      "for a stronger Belagavi"
+    ],
+
+    [
+      "✓",
+      "PROGRESS",
+      "for a better tomorrow"
+    ]
+
+  ];
+
+
+  const vc = [
+    135,
+    405,
+    675,
+    945
+  ];
+
+
+  for(let i=0;i<4;i++){
+
+    ctx.beginPath();
+
+    ctx.arc(
+      vc[i],
+      1230,
+      30,
+      0,
+      Math.PI*2
+    );
+
+    ctx.fillStyle =
+      "#173f78";
+
+    ctx.fill();
+
+
+    text(
+      vals[i][0],
+      vc[i],
+      1231,
+      25,
+      "800"
+    );
+
+
+    text(
+      vals[i][1],
+      vc[i],
+      1270,
+      17,
+      "800",
+      "#173f78"
+    );
+
+
+    text(
+      vals[i][2],
+      vc[i],
+      1297,
+      13,
+      "400",
+      "#173f78"
+    );
+
+  }
+
 }
 
-document.getElementById("m2photo").addEventListener("change",e=>{
- const f=e.target.files[0];
- if(!f)return;
- const reader=new FileReader();
- reader.onload=ev=>{
-  m2Image=new Image();
-  m2Image.onload=draw;
-  m2Image.src=ev.target.result;
- };
- reader.readAsDataURL(f);
-});
 
-document.getElementById("m2name").addEventListener("input",draw);
-document.getElementById("m2desig").addEventListener("input",draw);
+/* =========================================
+   MEMBER 2 PHOTO UPLOAD
+========================================= */
 
-document.getElementById("generate").addEventListener("click",()=>{
- draw();
- document.getElementById("status").textContent="Poster ready ✓";
-});
+document
+.getElementById("m2photo")
+.addEventListener(
+  "change",
+  e => {
 
-document.getElementById("download").addEventListener("click",()=>{
- canvas.toBlob(blob=>{
-  const a=document.createElement("a");
-  a.href=URL.createObjectURL(blob);
-  a.download="AAP-Belagavi-Poster.png";
-  a.click();
-  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
- },"image/png");
-});
+    const f =
+      e.target.files[0];
+
+    if(!f) return;
+
+
+    const reader =
+      new FileReader();
+
+
+    reader.onload =
+      ev => {
+
+        m2Image =
+          new Image();
+
+        m2Image.onload =
+          draw;
+
+        m2Image.src =
+          ev.target.result;
+
+      };
+
+
+    reader.readAsDataURL(f);
+
+  }
+);
+
+
+/* =========================================
+   LIVE NAME UPDATE
+========================================= */
+
+document
+.getElementById("m2name")
+.addEventListener(
+  "input",
+  draw
+);
+
+
+document
+.getElementById("m2desig")
+.addEventListener(
+  "input",
+  draw
+);
+
+
+/* =========================================
+   GENERATE BUTTON
+========================================= */
+
+document
+.getElementById("generate")
+.addEventListener(
+  "click",
+  () => {
+
+    draw();
+
+    document
+      .getElementById("status")
+      .textContent =
+      "Poster ready ✓";
+
+  }
+);
+
+
+/* =========================================
+   DOWNLOAD BUTTON
+========================================= */
+
+document
+.getElementById("download")
+.addEventListener(
+  "click",
+  () => {
+
+    canvas.toBlob(
+      blob => {
+
+        const a =
+          document.createElement("a");
+
+        a.href =
+          URL.createObjectURL(blob);
+
+        a.download =
+          "AAP-Belagavi-Poster.png";
+
+        a.click();
+
+        setTimeout(
+          () =>
+            URL.revokeObjectURL(a.href),
+          1000
+        );
+
+      },
+      "image/png"
+    );
+
+  }
+);
+
+
+/* START */
 
 init();
+
 </script>
+
 </body>
 </html>
