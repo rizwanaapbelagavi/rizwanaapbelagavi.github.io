@@ -15,7 +15,7 @@ h1{text-align:center;margin:4px 0;font-size:30px}
 label{display:block;font-weight:800;font-size:15px;margin:8px 0 6px}
 input{width:100%;padding:12px;border:2px solid #ccd8e6;border-radius:10px;font-size:15px}
 .actions{text-align:center}
-button{padding:14px 20px;border:0;border-radius:11px;font-weight:800;font-size:16px;margin:12px 5px 0;cursor:pointer}
+.fixed-note{text-align:center;background:#eef4fb;border:1px solid #ccd8e6;border-radius:12px;padding:12px;margin:12px 0 18px;color:#173f78;font-weight:700}.member2{max-width:700px;margin:auto}button{padding:14px 20px;border:0;border-radius:11px;font-weight:800;font-size:16px;margin:12px 5px 0;cursor:pointer}
 .go{background:#173f78;color:#fff}.dl{background:#f3c400;color:#173f78}
 .box{background:#dfe7f0;padding:12px;border-radius:16px;overflow:auto}
 canvas{display:block;width:min(100%,540px);height:auto;margin:auto;box-shadow:0 8px 25px #0003}
@@ -27,22 +27,11 @@ canvas{display:block;width:min(100%,540px);height:auto;margin:auto;box-shadow:0 
 <div class="panel">
 <h1>AAP Belagavi Premium Poster Maker</h1>
 <div class="sub">1080 × 1350 • Together for a Better Belagavi</div>
-<div class="grid">
-<div>
-<label>Member 1 Name</label><input id="n1" value="VIJAY L. PATIL">
-<label>Designation</label><input id="d1" value="DISTRICT PRESIDENT">
-<label>Photo</label><input id="p1" type="file" accept="image/*">
-</div>
-<div>
+<div class="fixed-note">Vijay L. Patil and Rizwanahmed K. Makandar details are fixed. Only Member 2 can be changed.</div>
+<div class="member2">
 <label>Member 2 Name</label><input id="n2" value="ASLAM TASHILDAR">
 <label>Designation</label><input id="d2" value="MINORITY PRESIDENT">
 <label>Photo</label><input id="p2" type="file" accept="image/*">
-</div>
-<div>
-<label>Member 3 Name</label><input id="n3" value="RIZWANAHMED K. MAKANDAR">
-<label>Designation</label><input id="d3" value="CITY PRESIDENT">
-<label>Photo</label><input id="p3" type="file" accept="image/*">
-</div>
 </div>
 <div class="actions">
 <button class="go" onclick="draw()">Generate Poster</button>
@@ -79,15 +68,19 @@ function contain(im,a,b,w,h){
   x.drawImage(im,a+(w-nw)/2,b+(h-nh)/2,nw,nh);
 }
 async function get(i){
-  if(imgs[i])return imgs[i];
-  const f=document.getElementById('p'+(i+1)).files[0];
-  if(f){try{return imgs[i]=await fi(f)}catch(e){}}
+  if(i===1){
+    const f=document.getElementById('p2').files[0];
+    if(f){ try{return await fi(f)}catch(e){} }
+    return null;
+  }
+  if(imgs[i]) return imgs[i];
   try{
-    if(i===0)return imgs[i]=await li('vijay.png');
-    if(i===2)return imgs[i]=await li('rizwan.png');
+    if(i===0) return imgs[i]=await li('vijay.png');
+    if(i===2) return imgs[i]=await li('rizwan.png');
   }catch(e){}
   return null;
 }
+
 function fit(t,w,z){
   x.font='900 '+z+'px Arial';
   while(x.measureText(t).width>w&&z>16){z--;x.font='900 '+z+'px Arial'}
@@ -158,10 +151,13 @@ async function draw(){
 
     x.fillStyle='#173f78';x.fillRect(a,705,340,90);
     x.fillStyle='#f3c400';
-    const n=document.getElementById('n'+(i+1)).value.toUpperCase();
+    const fixedNames=['VIJAY L. PATIL','', 'RIZWANAHMED K. MAKANDAR'];
+    const fixedDesignations=['DISTRICT PRESIDENT','', 'CITY PRESIDENT'];
+    const n=i===1 ? document.getElementById('n2').value.toUpperCase() : fixedNames[i];
+    const d=i===1 ? document.getElementById('d2').value.toUpperCase() : fixedDesignations[i];
     x.font='900 '+fit(n,315,27)+'px Arial';x.textAlign='center';x.fillText(n,a+170,742);
     x.fillStyle='#fff';x.font='800 21px Arial';
-    x.fillText(document.getElementById('d'+(i+1)).value.toUpperCase(),a+170,776);
+    x.fillText(d,a+170,776);
   }
 
   /* Beliefs section */
@@ -222,7 +218,7 @@ async function download(){
     setTimeout(()=>URL.revokeObjectURL(url),30000);
   },'image/png');
 }
-['n1','n2','n3','d1','d2','d3','p1','p2','p3'].forEach(id=>{
+['n2','d2','p2'].forEach(id=>{
   document.getElementById(id).addEventListener('change',draw);
 });
 draw();
