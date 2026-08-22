@@ -1,280 +1,549 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ruhani Rehnumai | Dua & Spiritual Guidance</title>
+  <title>Ruhani Rehnumai | Personal Guidance</title>
 
-  <meta name="description" content="Ruhani Rehnumai ke zariye dua, personal guidance aur umeed. Apna personal guidance slot book karein.">
+  <meta name="description" content="Ruhani Rehnumai - Personal dua, guidance and appointment booking.">
 
   <style>
+
     * {
+
       margin: 0;
+
       padding: 0;
+
       box-sizing: border-box;
+
     }
 
     body {
+
       font-family: Arial, sans-serif;
-      background: #f5f8f5;
+
+      background: #f4f8f5;
+
       color: #17351f;
+
       line-height: 1.6;
+
     }
 
     .hero {
-      min-height: 92vh;
+
+      min-height: 90vh;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
+
       text-align: center;
+
       padding: 35px 20px;
-      background:
-        linear-gradient(
-          rgba(5, 45, 25, 0.84),
-          rgba(5, 45, 25, 0.84)
-        ),
-        linear-gradient(135deg, #174d2c, #0b6b3a);
+
+      background: linear-gradient(
+
+        rgba(4, 48, 25, 0.86),
+
+        rgba(4, 48, 25, 0.86)
+
+      );
+
       color: white;
+
     }
 
     .hero-content {
+
       max-width: 680px;
-      width: 100%;
+
     }
 
     .symbol {
-      font-size: 55px;
-      margin-bottom: 10px;
+
+      font-size: 58px;
+
+      margin-bottom: 12px;
+
     }
 
     .hero h1 {
-      font-size: 43px;
+
+      font-size: 44px;
+
       line-height: 1.15;
-      margin-bottom: 15px;
+
+      margin-bottom: 14px;
+
     }
 
     .hero h1 span {
-      color: #b9e7c5;
+
+      color: #bcebc7;
+
     }
 
     .tagline {
+
       font-size: 20px;
-      margin-bottom: 18px;
-      color: #eef8f0;
+
+      margin-bottom: 20px;
+
     }
 
     .intro {
+
+      color: #e0f0e4;
+
       font-size: 16px;
-      color: #dcefe1;
+
       margin-bottom: 30px;
+
     }
 
-    .cta-button {
+    .button {
+
       display: inline-block;
-      background: #ffffff;
-      color: #126331;
-      text-decoration: none;
-      font-size: 17px;
-      font-weight: bold;
+
       padding: 15px 28px;
+
       border-radius: 50px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.22);
+
+      background: white;
+
+      color: #126331;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      font-size: 17px;
+
     }
 
-    .section {
+    section {
+
       padding: 60px 20px;
+
+    }
+
+    .white {
+
+      background: white;
+
       text-align: center;
-      background: #ffffff;
+
     }
 
-    .section h2 {
-      font-size: 29px;
-      margin-bottom: 18px;
+    h2 {
+
       color: #145b2d;
+
+      font-size: 29px;
+
+      margin-bottom: 18px;
+
+      text-align: center;
+
     }
 
-    .section p {
-      max-width: 680px;
+    .container {
+
+      max-width: 700px;
+
       margin: auto;
+
+    }
+
+    .center-text {
+
+      text-align: center;
+
       color: #536359;
-      font-size: 16px;
+
+    }
+
+    .problem-section {
+
+      background: #f1f7f3;
+
     }
 
     .problems {
-      padding: 55px 20px;
-      background: #f3f8f4;
-    }
 
-    .problems h2 {
-      text-align: center;
-      color: #145b2d;
-      margin-bottom: 28px;
-      font-size: 29px;
-    }
-
-    .problem-grid {
-      max-width: 720px;
-      margin: auto;
       display: grid;
+
       grid-template-columns: 1fr;
+
       gap: 12px;
+
+      margin-top: 28px;
+
     }
 
     .problem {
+
       background: white;
-      padding: 17px;
+
+      padding: 16px;
+
       border-radius: 14px;
+
       box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-      font-size: 15px;
+
     }
 
-    .guidance {
-      padding: 65px 20px;
+    .price-section {
+
+      background: white;
+
       text-align: center;
-      background: #ffffff;
+
     }
 
-    .guidance-card {
-      max-width: 620px;
+    .price-card {
+
+      max-width: 600px;
+
       margin: 25px auto 0;
-      padding: 32px 22px;
+
+      padding: 30px 22px;
+
       border-radius: 22px;
+
       background: #eef8f0;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+
+      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+
     }
 
     .price {
-      font-size: 45px;
+
+      font-size: 48px;
+
       font-weight: bold;
+
       color: #145b2d;
-      margin: 10px 0;
+
     }
 
-    .price-text {
-      font-size: 16px;
+    .duration {
+
       color: #536359;
+
       margin-bottom: 22px;
+
     }
 
-    .features {
-      list-style: none;
+    .benefits {
+
       text-align: left;
-      max-width: 390px;
-      margin: 0 auto 25px;
+
+      max-width: 430px;
+
+      margin: auto;
+
+      list-style: none;
+
     }
 
-    .features li {
+    .benefits li {
+
       padding: 9px 0;
-      font-size: 15px;
-    }
 
-    .green-button {
-      display: inline-block;
-      background: #146b35;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 15px 28px;
-      border-radius: 50px;
-      box-shadow: 0 7px 20px rgba(0,0,0,0.16);
     }
 
     .process {
-      padding: 60px 20px;
-      background: #f3f8f4;
-      text-align: center;
-    }
 
-    .process h2 {
-      color: #145b2d;
-      font-size: 29px;
-      margin-bottom: 30px;
-    }
+      background: #f1f7f3;
 
-    .steps {
-      max-width: 650px;
-      margin: auto;
     }
 
     .step {
+
       background: white;
-      margin-bottom: 14px;
+
       padding: 18px;
+
       border-radius: 15px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-      text-align: left;
+
+      margin-bottom: 13px;
+
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+
     }
 
     .step strong {
+
       color: #145b2d;
-    }
 
-    .privacy {
-      padding: 55px 20px;
-      text-align: center;
-      background: white;
-    }
-
-    .privacy-box {
-      max-width: 680px;
-      margin: 20px auto 0;
-      background: #f7faf7;
-      padding: 22px;
-      border-radius: 16px;
-      color: #536359;
-      font-size: 14px;
     }
 
     .booking {
-      padding: 65px 20px;
-      text-align: center;
+
       background: #eaf6ed;
+
     }
 
-    .booking h2 {
-      color: #145b2d;
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
+    .booking-card {
 
-    .booking p {
       max-width: 650px;
-      margin: 0 auto 25px;
+
+      margin: 25px auto 0;
+
+      background: white;
+
+      padding: 28px 20px;
+
+      border-radius: 22px;
+
+      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+
+    }
+
+    label {
+
+      display: block;
+
+      font-weight: bold;
+
+      color: #245536;
+
+      margin: 15px 0 7px;
+
+    }
+
+    input,
+
+    select,
+
+    textarea {
+
+      width: 100%;
+
+      padding: 14px;
+
+      border: 1px solid #cbdccf;
+
+      border-radius: 12px;
+
+      font-size: 16px;
+
+      background: #fbfdfb;
+
+    }
+
+    textarea {
+
+      min-height: 100px;
+
+      resize: vertical;
+
+    }
+
+    .slots {
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px;
+
+      margin-top: 10px;
+
+    }
+
+    .slot {
+
+      border: 1px solid #cbdccf;
+
+      padding: 13px 8px;
+
+      border-radius: 12px;
+
+      text-align: center;
+
+      cursor: pointer;
+
+      background: #fbfdfb;
+
+      color: #245536;
+
+    }
+
+    .slot input {
+
+      display: none;
+
+    }
+
+    .slot:has(input:checked) {
+
+      background: #dff1e4;
+
+      border: 2px solid #176b35;
+
+      font-weight: bold;
+
+    }
+
+    .fee-box {
+
+      margin-top: 22px;
+
+      padding: 18px;
+
+      border-radius: 15px;
+
+      background: #f0f7f1;
+
+      text-align: center;
+
+    }
+
+    .fee {
+
+      font-size: 30px;
+
+      font-weight: bold;
+
+      color: #145b2d;
+
+    }
+
+    .submit-button {
+
+      width: 100%;
+
+      margin-top: 22px;
+
+      padding: 16px;
+
+      border: none;
+
+      border-radius: 50px;
+
+      background: #146b35;
+
+      color: white;
+
+      font-size: 17px;
+
+      font-weight: bold;
+
+      cursor: pointer;
+
+    }
+
+    .privacy-check {
+
+      display: flex;
+
+      gap: 10px;
+
+      align-items: flex-start;
+
+      margin-top: 18px;
+
+      font-size: 13px;
+
       color: #536359;
+
+    }
+
+    .privacy-check input {
+
+      width: auto;
+
+      margin-top: 5px;
+
     }
 
     .note {
-      margin: 25px auto 0;
-      max-width: 650px;
+
+      margin-top: 20px;
+
       font-size: 13px;
-      color: #66736a;
+
+      color: #68746b;
+
+      text-align: center;
+
     }
 
-    .footer {
-      padding: 32px 20px;
+    .privacy {
+
+      background: white;
+
       text-align: center;
+
+    }
+
+    .privacy-box {
+
+      max-width: 680px;
+
+      margin: auto;
+
+      background: #f7faf7;
+
+      padding: 22px;
+
+      border-radius: 16px;
+
+      color: #536359;
+
+      font-size: 14px;
+
+    }
+
+    footer {
+
       background: #103b20;
+
       color: #dcefe1;
+
+      text-align: center;
+
+      padding: 32px 20px;
+
       font-size: 13px;
+
     }
 
     @media (min-width: 600px) {
 
-      .problem-grid {
+      .problems {
+
         grid-template-columns: 1fr 1fr;
+
       }
 
       .hero h1 {
+
         font-size: 54px;
+
       }
+
     }
+
   </style>
+
 </head>
 
 <body>
 
   <!-- HERO -->
+
   <section class="hero">
 
     <div class="hero-content">
@@ -282,247 +551,477 @@
       <div class="symbol">🌿</div>
 
       <h1>
+
         Ruhani <span>Rehnumai</span>
+
       </h1>
 
       <div class="tagline">
+
         Dua • Rehnumai • Umeed
+
       </div>
 
       <p class="intro">
+
         Pareshani ke waqt kisi ko sunna, samajhna,
+
         dua karna aur ruhani rehnumai dena —
+
         Allah ke fazl se hamari koshish.
+
       </p>
 
-      <a href="#booking" class="cta-button">
+      <a href="#booking" class="button">
+
         Apna Slot Book Karein
+
       </a>
 
     </div>
 
   </section>
-
 
   <!-- ABOUT -->
-  <section class="section">
 
-    <h2>🤲 Hum Kya Karte Hain?</h2>
+  <section class="white">
 
-    <p>
-      Zindagi mein kabhi-kabhi aise waqt aate hain jab insaan
-      pareshan, bechain ya confused mehsoos karta hai.
-      Hum aapki baat izzat aur privacy ke saath sunne,
-      samajhne aur dua ke saath ruhani rehnumai dene ki
-      koshish karte hain.
-    </p>
+    <div class="container">
 
-    <br>
+      <h2>🤲 Hum Kya Karte Hain?</h2>
 
-    <p>
-      Hamara maqsad kisi guaranteed result ka wada karna nahi,
-      balki dua, sunwai, umeed aur behtar rehnumai ke zariye
-      aapka hausla badhana hai.
-    </p>
+      <p class="center-text">
+
+        Hum aapki baat privacy aur izzat ke saath sunne,
+
+        samajhne aur dua ke zariye ruhani rehnumai dene
+
+        ki koshish karte hain.
+
+      </p>
+
+      <br>
+
+      <p class="center-text">
+
+        Hamara maqsad umeed, sukoon aur behtar rehnumai
+
+        ki taraf aapka hausla badhana hai.
+
+      </p>
+
+    </div>
 
   </section>
-
 
   <!-- PROBLEMS -->
-  <section class="problems">
 
-    <h2>
-      Aap Kis Pareshani Se Guzar Rahe Hain?
-    </h2>
+  <section class="problem-section">
 
-    <div class="problem-grid">
+    <div class="container">
 
-      <div class="problem">
-        🏠 Ghar mein tanav ya roz ke jhagde
-      </div>
+      <h2>
 
-      <div class="problem">
-        💼 Business ya naukri mein rukawat
-      </div>
+        Aap Kis Pareshani Se Guzar Rahe Hain?
 
-      <div class="problem">
-        💰 Maali pareshani ya karz ka stress
-      </div>
+      </h2>
 
-      <div class="problem">
-        💑 Shauhar-biwi ya family problems
-      </div>
+      <div class="problems">
 
-      <div class="problem">
-        😟 Tension, stress, dar ya bechaini
-      </div>
+        <div class="problem">🏠 Ghar mein tanav ya jhagde</div>
 
-      <div class="problem">
-        🌙 Neend ya bure khwabon ki pareshani
-      </div>
+        <div class="problem">💼 Business ya naukri ki rukawat</div>
 
-      <div class="problem">
-        💔 Rishton ya mohabbat se judi pareshani
-      </div>
+        <div class="problem">💰 Maali pareshani ya karz ka stress</div>
 
-      <div class="problem">
-        🤲 Kaam bante-bante rukne ka ehsaas
-      </div>
+        <div class="problem">💑 Family ya relationship problems</div>
 
-      <div class="problem">
-        😞 Dil ki udaasi aur bechaini
-      </div>
+        <div class="problem">😟 Tension, stress, dar ya bechaini</div>
 
-      <div class="problem">
-        👨‍👩‍👧 Bachchon ko lekar fikr
+        <div class="problem">🌙 Neend ya bure khwab</div>
+
+        <div class="problem">💔 Rishton se judi pareshani</div>
+
+        <div class="problem">🤲 Kaam rukne ka ehsaas</div>
+
+        <div class="problem">😞 Udaasi aur bechaini</div>
+
+        <div class="problem">👨‍👩‍👧 Bachchon ko lekar fikr</div>
+
       </div>
 
     </div>
 
   </section>
 
+  <!-- PRICE -->
 
-  <!-- PERSONAL GUIDANCE -->
-  <section class="guidance">
+  <section class="price-section">
 
-    <h2>🌿 Personal Ruhani Rehnumai</h2>
+    <div class="container">
 
-    <div class="guidance-card">
+      <h2>🌿 Personal Ruhani Rehnumai</h2>
 
-      <div class="price">₹101</div>
+      <div class="price-card">
 
-      <div class="price-text">
-        Personal appointment / service slot
+        <div class="price">₹101</div>
+
+        <div class="duration">
+
+          Personal appointment • 10–20 minutes
+
+        </div>
+
+        <ul class="benefits">
+
+          <li>⏱️ 10–20 minutes personal conversation</li>
+
+          <li>📅 Available date & time select karein</li>
+
+          <li>📲 Confirmation WhatsApp par</li>
+
+          <li>🔒 Privacy aur izzat ke saath baat</li>
+
+          <li>🤲 Dua aur ruhani rehnumai</li>
+
+        </ul>
+
       </div>
 
-      <ul class="features">
+      <p class="note">
 
-        <li>⏱️ 10–20 minutes personal conversation</li>
+        ₹101 personal appointment/service slot ke liye
 
-        <li>📅 Apni available date & time choose karein</li>
+        nominal service charge hai.
 
-        <li>📲 Appointment confirmation WhatsApp par</li>
-
-        <li>🔒 Aapki baat privacy aur izzat ke saath</li>
-
-        <li>🤲 Dua aur ruhani rehnumai</li>
-
-      </ul>
-
-      <a href="#booking" class="green-button">
-        ₹101 Mein Slot Book Karein
-      </a>
+      </p>
 
     </div>
 
-    <p class="note">
-      ₹101 ko personal appointment/service slot ke liye
-      nominal service charge ke roop mein rakha gaya hai.
-      Ruhani rehnumai ko kisi guaranteed result ya medical
-      treatment ke roop mein present nahi kiya jata.
-    </p>
-
   </section>
-
 
   <!-- PROCESS -->
+
   <section class="process">
 
-    <h2>📋 Slot Booking Kaise Hoga?</h2>
+    <div class="container">
 
-    <div class="steps">
+      <h2>📋 Slot Booking Kaise Hoga?</h2>
 
       <div class="step">
-        <strong>1️⃣ Slot Select Karein</strong><br>
-        Apni convenient date aur available time choose karein.
+
+        <strong>1️⃣ Apni details bharein</strong><br>
+
+        Naam, WhatsApp number aur preferred date select karein.
+
       </div>
 
       <div class="step">
-        <strong>2️⃣ ₹101 Service Fee Pay Karein</strong><br>
-        Payment complete hone ke baad aapka slot confirmation
-        process mein jayega.
+
+        <strong>2️⃣ Time slot select karein</strong><br>
+
+        Available time mein se apna convenient slot choose karein.
+
       </div>
 
       <div class="step">
-        <strong>3️⃣ WhatsApp Confirmation</strong><br>
-        Aapko WhatsApp par appointment ki date, time aur
-        zaroori details bheji jayengi.
+
+        <strong>3️⃣ ₹101 service fee pay karein</strong><br>
+
+        Payment successful hone ke baad slot confirmation process hoga.
+
       </div>
 
       <div class="step">
-        <strong>4️⃣ Fixed Time Par Baat Karein</strong><br>
-        Booked time par personal ruhani rehnumai ke liye
-        humse baat karein.
+
+        <strong>4️⃣ WhatsApp confirmation</strong><br>
+
+        Aapko confirmed date, time aur zaroori details WhatsApp par milengi.
+
       </div>
 
     </div>
 
   </section>
 
+  <!-- BOOKING FORM -->
 
-  <!-- PRIVACY -->
-  <section class="privacy">
-
-    <h2>🔒 Privacy & Important Information</h2>
-
-    <div class="privacy-box">
-
-      Aapki personal baat ko privacy aur izzat ke saath
-      handle karne ki poori koshish ki jayegi.
-
-      <br><br>
-
-      Ruhani rehnumai medical, psychiatric, legal ya
-      financial professional advice ka replacement nahi hai.
-      Serious health ya mental-health concerns ke liye
-      qualified professional ki madad lena zaroori hai.
-
-      <br><br>
-
-      Hum kisi bhi result ki guarantee nahi karte.
-      Har shakhs ki situation alag hoti hai.
-
-    </div>
-
-  </section>
-
-
-  <!-- BOOKING -->
   <section class="booking" id="booking">
 
-    <h2>📅 Apna Personal Slot Book Karein</h2>
+    <div class="container">
 
-    <p>
-      Agar aap personal ruhani rehnumai ke liye baat karna
-      chahte hain, to pehle apna slot book karein.
-    </p>
+      <h2>📅 Apna Personal Slot Book Karein</h2>
 
-    <a href="#" class="green-button">
-      ₹101 — Slot Book Karein
-    </a>
+      <p class="center-text">
 
-    <div class="note">
-      Payment system aur automatic WhatsApp confirmation
-      ko next step mein connect kiya jayega.
+        Neeche apni details bharke preferred appointment slot choose karein.
+
+      </p>
+
+      <div class="booking-card">
+
+        <form>
+
+          <label for="name">
+
+            👤 Full Name
+
+          </label>
+
+          <input
+
+            type="text"
+
+            id="name"
+
+            name="name"
+
+            placeholder="Apna naam likhein"
+
+            required
+
+          >
+
+          <label for="whatsapp">
+
+            📱 WhatsApp Number
+
+          </label>
+
+          <input
+
+            type="tel"
+
+            id="whatsapp"
+
+            name="whatsapp"
+
+            placeholder="10 digit WhatsApp number"
+
+            inputmode="numeric"
+
+            required
+
+          >
+
+          <label for="date">
+
+            📅 Preferred Date
+
+          </label>
+
+          <input
+
+            type="date"
+
+            id="date"
+
+            name="date"
+
+            required
+
+          >
+
+          <label>
+
+            ⏰ Preferred Time Slot
+
+          </label>
+
+          <div class="slots">
+
+            <label class="slot">
+
+              <input type="radio" name="slot" value="Morning">
+
+              🌅 Morning
+
+            </label>
+
+            <label class="slot">
+
+              <input type="radio" name="slot" value="Afternoon">
+
+              ☀️ Afternoon
+
+            </label>
+
+            <label class="slot">
+
+              <input type="radio" name="slot" value="Evening">
+
+              🌆 Evening
+
+            </label>
+
+            <label class="slot">
+
+              <input type="radio" name="slot" value="Night">
+
+              🌙 Night
+
+            </label>
+
+          </div>
+
+          <label for="reason">
+
+            📝 Short Description
+
+          </label>
+
+          <textarea
+
+            id="reason"
+
+            name="reason"
+
+            placeholder="Apni pareshani ko short mein batayein..."
+
+            required
+
+          ></textarea>
+
+          <div class="privacy-check">
+
+            <input
+
+              type="checkbox"
+
+              id="privacy"
+
+              required
+
+            >
+
+            <label for="privacy">
+
+              Main confirm karta/karti hoon ki di gayi information
+
+              sahi hai aur main personal ruhani rehnumai ke liye
+
+              appointment request kar raha/rahi hoon.
+
+            </label>
+
+          </div>
+
+          <div class="fee-box">
+
+            <div>Personal Slot Service Fee</div>
+
+            <div class="fee">
+
+              ₹101
+
+            </div>
+
+            <div>
+
+              10–20 minutes • WhatsApp confirmation
+
+            </div>
+
+          </div>
+
+          <button
+
+            type="button"
+
+            class="submit-button"
+
+            onclick="alert('Booking system payment integration ke baad activate hoga.')"
+
+          >
+
+            ₹101 Pay & Book Slot
+
+          </button>
+
+          <div class="note">
+
+            Payment aur automatic WhatsApp confirmation
+
+            next integration step mein activate kiya jayega.
+
+          </div>
+
+        </form>
+
+      </div>
+
     </div>
 
   </section>
 
+  <!-- PRIVACY -->
 
-  <!-- FOOTER -->
-  <footer class="footer">
+  <section class="privacy">
+
+    <div class="container">
+
+      <h2>🔒 Privacy & Important Information</h2>
+
+      <div class="privacy-box">
+
+        Aapki personal baat ko privacy aur izzat ke saath
+
+        handle karne ki poori koshish ki jayegi.
+
+        <br><br>
+
+        Ruhani rehnumai medical, psychiatric, legal ya
+
+        financial professional advice ka replacement nahi hai.
+
+        <br><br>
+
+        Hum kisi bhi guaranteed result ka wada nahi karte.
+
+        Har shakhs ki situation alag hoti hai.
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
 
     <p>
+
       🌿 Ruhani Rehnumai • Dua • Rehnumai • Umeed
+
     </p>
 
     <br>
 
     <p>
+
       © 2026 Ruhani Rehnumai
+
     </p>
 
   </footer>
 
+  <script>
+
+    // Prevent selecting a date in the past
+
+    const dateInput = document.getElementById("date");
+
+    const today = new Date();
+
+    const year = today.getFullYear();
+
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+
+    const day = String(today.getDate()).padStart(2, "0");
+
+    dateInput.min = `${year}-${month}-${day}`;
+
+  </script>
+
 </body>
+
 </html>
