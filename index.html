@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>AAP Belagavi Premium Poster Maker</title>
 
@@ -121,14 +121,25 @@ canvas{
 </p>
 
 <label>Member 2 Name</label>
-<input id="m2name" type="text" value="ASLAM TASHILDAR">
+<input
+  id="m2name"
+  type="text"
+  value="ASLAM TASHILDAR"
+>
 
 <label>Member 2 Designation</label>
-<input id="m2desig" type="text" value="MINORITY PRESIDENT">
+<input
+  id="m2desig"
+  type="text"
+  value="MINORITY PRESIDENT"
+>
 
 <label>Member 2 Photo</label>
-<input id="m2photo" type="file"
-accept="image/jpeg,image/png,image/webp">
+<input
+  id="m2photo"
+  type="file"
+  accept="image/jpeg,image/png,image/webp"
+>
 
 <button id="generate">
 Generate Poster
@@ -143,7 +154,11 @@ Loading poster assets…
 </div>
 
 <div class="preview">
-<canvas id="poster" width="1080" height="1350"></canvas>
+<canvas
+  id="poster"
+  width="1080"
+  height="1350">
+</canvas>
 </div>
 
 <p class="note">
@@ -154,13 +169,17 @@ Only Member 2 name, designation and photo are editable.
 </div>
 </div>
 
+
 <script>
 
 const W = 1080;
 const H = 1350;
 
-const canvas = document.getElementById("poster");
-const ctx = canvas.getContext("2d");
+const canvas =
+document.getElementById("poster");
+
+const ctx =
+canvas.getContext("2d");
 
 let bgImage = null;
 let vijayImage = null;
@@ -168,7 +187,7 @@ let rizwanImage = null;
 let m2Image = null;
 
 
-/* ---------------- IMAGE LOADER ---------------- */
+/* IMAGE LOADER */
 
 function loadImage(src){
 
@@ -176,9 +195,13 @@ function loadImage(src){
 
     const im = new Image();
 
-    im.onload = () => resolve(im);
+    im.onload = ()=>{
+      resolve(im);
+    };
 
-    im.onerror = () => reject();
+    im.onerror = ()=>{
+      reject();
+    };
 
     im.src = src;
 
@@ -192,10 +215,10 @@ async function loadFirst(list){
   for(const src of list){
 
     try{
-      return await loadImage(src);
-    }
 
-    catch(e){}
+      return await loadImage(src);
+
+    }catch(e){}
 
   }
 
@@ -204,7 +227,7 @@ async function loadFirst(list){
 }
 
 
-/* ---------------- ROUNDED BOX ---------------- */
+/* ROUNDED RECTANGLE */
 
 function roundedPath(x,y,w,h,r){
 
@@ -216,40 +239,66 @@ function roundedPath(x,y,w,h,r){
 
   ctx.lineTo(x+w-r,y);
 
-  ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.quadraticCurveTo(
+    x+w,y,
+    x+w,y+r
+  );
 
-  ctx.lineTo(x+w,y+h-r);
+  ctx.lineTo(
+    x+w,
+    y+h-r
+  );
 
-  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.quadraticCurveTo(
+    x+w,y+h,
+    x+w-r,y+h
+  );
 
-  ctx.lineTo(x+r,y+h);
+  ctx.lineTo(
+    x+r,
+    y+h
+  );
 
-  ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.quadraticCurveTo(
+    x,y+h,
+    x,y+h-r
+  );
 
-  ctx.lineTo(x,y+r);
+  ctx.lineTo(
+    x,
+    y+r
+  );
 
-  ctx.quadraticCurveTo(x,y,x+r,y);
+  ctx.quadraticCurveTo(
+    x,y,
+    x+r,y
+  );
 
   ctx.closePath();
 
 }
 
 
-function box(x,y,w,h,r,fill,stroke=null,lw=1){
+function box(
+  x,y,w,h,r,
+  fill,
+  stroke=null,
+  lw=1
+){
 
   roundedPath(x,y,w,h,r);
 
   if(fill){
 
-    ctx.fillStyle=fill;
+    ctx.fillStyle = fill;
     ctx.fill();
 
   }
 
   if(stroke){
 
-    ctx.lineWidth=lw;
-    ctx.strokeStyle=stroke;
+    ctx.lineWidth = lw;
+    ctx.strokeStyle = stroke;
     ctx.stroke();
 
   }
@@ -257,7 +306,7 @@ function box(x,y,w,h,r,fill,stroke=null,lw=1){
 }
 
 
-/* ---------------- TEXT ---------------- */
+/* TEXT */
 
 function text(
   t,
@@ -268,7 +317,8 @@ function text(
   color="#fff"
 ){
 
-  ctx.font = `${weight} ${size}px Arial`;
+  ctx.font =
+  `${weight} ${size}px Arial`;
 
   ctx.fillStyle = color;
 
@@ -281,16 +331,26 @@ function text(
 }
 
 
-/* ---------------- IMAGE COVER ---------------- */
+/* IMAGE COVER */
 
-function cover(im,x,y,w,h){
+function cover(
+  im,
+  x,y,w,h
+){
 
   if(!im) return;
 
-  const iw = im.naturalWidth || im.width;
-  const ih = im.naturalHeight || im.height;
+  const iw =
+  im.naturalWidth || im.width;
 
-  const r = Math.max(w/iw,h/ih);
+  const ih =
+  im.naturalHeight || im.height;
+
+  const r =
+  Math.max(
+    w/iw,
+    h/ih
+  );
 
   const sw = iw*r;
   const sh = ih*r;
@@ -306,100 +366,166 @@ function cover(im,x,y,w,h){
 }
 
 
-/* ---------------- PERSON PHOTO ---------------- */
+/* MEMBER PHOTO FRAME */
 
-/*
-  IMPORTANT:
-  PNG photos with transparent background
-  will appear as clean cut-outs.
+function person(
+  im,
+  x,y,w,h
+){
 
-  JPG photos will keep their own background.
-*/
+  /* outer frame */
 
-function person(im,x,y,w,h){
+  box(
+    x,
+    y,
+    w,
+    h,
+    28,
+    "#ffffff",
+    "#ffffff",
+    5
+  );
 
-  if(!im) return;
+  if(!im){
+
+    box(
+      x+4,
+      y+4,
+      w-8,
+      h-8,
+      24,
+      "#edf4fb"
+    );
+
+    text(
+      "UPLOAD",
+      x+w/2,
+      y+h/2-15,
+      27,
+      "800",
+      "#8aa0bb"
+    );
+
+    text(
+      "MEMBER PHOTO",
+      x+w/2,
+      y+h/2+25,
+      19,
+      "700",
+      "#8aa0bb"
+    );
+
+    return;
+  }
+
 
   ctx.save();
 
-  /*
-    Slight rounded clipping.
-    No white card/frame.
-  */
-
-  roundedPath(x,y,w,h,30);
+  roundedPath(
+    x+4,
+    y+4,
+    w-8,
+    h-8,
+    24
+  );
 
   ctx.clip();
 
-  cover(im,x,y,w,h);
+  cover(
+    im,
+    x+4,
+    y+4,
+    w-8,
+    h-8
+  );
 
   ctx.restore();
 
 }
 
 
-/* ---------------- LOAD ASSETS ---------------- */
+/* INITIAL LOAD */
 
 async function init(){
 
-  bgImage = await loadFirst([
+  bgImage =
+  await loadFirst([
     "./vidhansoudha.jpg"
   ]);
 
-  vijayImage = await loadFirst([
+  vijayImage =
+  await loadFirst([
     "./vijay.png",
     "./vijay.jpg"
   ]);
 
-  rizwanImage = await loadFirst([
+  rizwanImage =
+  await loadFirst([
     "./rizwan.png",
     "./rizwan.jpg"
   ]);
 
   draw();
 
-  if(bgImage && vijayImage && rizwanImage){
+  if(
+    bgImage &&
+    vijayImage &&
+    rizwanImage
+  ){
 
-    document.getElementById("status").textContent =
-      "Poster ready ✓";
+    document.getElementById(
+      "status"
+    ).textContent =
+    "Poster ready ✓";
 
-  }
+  }else{
 
-  else{
-
-    document.getElementById("status").textContent =
-      "Please check the GitHub image files.";
+    document.getElementById(
+      "status"
+    ).textContent =
+    "Please check the GitHub image files.";
 
   }
 
 }
 
 
-/* ---------------- MAIN DRAW ---------------- */
+/* DRAW POSTER */
 
 function draw(){
 
-  ctx.clearRect(0,0,W,H);
+  ctx.clearRect(
+    0,
+    0,
+    W,
+    H
+  );
 
 
-  /* =========================================
-     BACKGROUND – VIDHANA SOUDHA
-  ========================================= */
+  /* =========================
+     BACKGROUND
+     ========================= */
 
   if(bgImage){
 
     ctx.save();
 
-    ctx.filter = "blur(1.5px)";
+    ctx.filter =
+    "blur(1.5px)";
 
     const iw =
-      bgImage.naturalWidth || bgImage.width;
+    bgImage.naturalWidth ||
+    bgImage.width;
 
     const ih =
-      bgImage.naturalHeight || bgImage.height;
+    bgImage.naturalHeight ||
+    bgImage.height;
 
     const r =
-      Math.max(W/iw,H/ih);
+    Math.max(
+      W/iw,
+      H/ih
+    );
 
     const sw = iw*r;
     const sh = ih*r;
@@ -407,57 +533,71 @@ function draw(){
     ctx.drawImage(
       bgImage,
       (W-sw)/2,
-      -35,
+      -20,
       sw,
       sh
     );
 
     ctx.restore();
 
+  }else{
+
+    ctx.fillStyle =
+    "#dceafb";
+
+    ctx.fillRect(
+      0,
+      0,
+      W,
+      H
+    );
+
   }
 
-  else{
 
-    ctx.fillStyle = "#dceafb";
-
-    ctx.fillRect(0,0,W,H);
-
-  }
-
-
-  /* LIGHT OVERLAY */
+  /* SOFT OVERLAY */
 
   const g =
-    ctx.createLinearGradient(0,0,0,H);
+  ctx.createLinearGradient(
+    0,
+    0,
+    0,
+    H
+  );
 
   g.addColorStop(
     0,
-    "rgba(240,248,255,.70)"
+    "rgba(240,248,255,.72)"
   );
 
   g.addColorStop(
-    .38,
-    "rgba(240,248,255,.20)"
+    .35,
+    "rgba(240,248,255,.18)"
   );
 
   g.addColorStop(
-    .70,
-    "rgba(240,248,255,.12)"
+    .72,
+    "rgba(240,248,255,.08)"
   );
 
   g.addColorStop(
     1,
-    "rgba(240,248,255,.55)"
+    "rgba(240,248,255,.65)"
   );
 
   ctx.fillStyle = g;
 
-  ctx.fillRect(0,0,W,H);
+  ctx.fillRect(
+    0,
+    0,
+    W,
+    H
+  );
 
 
-  /* =========================================
+  /* =========================
      HEADER
-  ========================================= */
+     ========================= */
 
   text(
     "aap",
@@ -481,16 +621,14 @@ function draw(){
     "AAM AADMI",
     122,
     118,
-    20,
-    "700"
+    20
   );
 
   text(
     "PARTY",
     122,
     142,
-    20,
-    "700"
+    20
   );
 
 
@@ -554,7 +692,12 @@ function draw(){
     3
   );
 
-  text("Let’s build",931,52,22);
+  text(
+    "Let’s build",
+    931,
+    52,
+    22
+  );
 
   text(
     "a clean,",
@@ -587,116 +730,59 @@ function draw(){
   );
 
 
-  /* =========================================
-     PHOTO SECTION
-  ========================================= */
+  /* =========================
+     MEMBERS
+     ========================= */
 
-  const px = [24,365,706];
+  const px = [
+    24,
+    365,
+    706
+  ];
 
   const pw = 341;
 
-  const photoY = 295;
+  /* PHOTO HEIGHT */
+  const py = 300;
+  const ph = 400;
 
-  const photoH = 395;
 
-
-  /*
-    NO WHITE PHOTO BOX HERE.
-    Photos directly appear over background.
-  */
+  /* PHOTO */
 
   person(
     vijayImage,
     px[0],
-    photoY,
+    py,
     pw,
-    photoH
+    ph
   );
 
 
-  if(m2Image){
-
-    person(
-      m2Image,
-      px[1],
-      photoY,
-      pw,
-      photoH
-    );
-
-  }
-
-  else{
-
-    /*
-      Only upload message if photo missing.
-    */
-
-    text(
-      "UPLOAD",
-      540,
-      485,
-      30,
-      "800",
-      "#8aa0bb"
-    );
-
-    text(
-      "MEMBER 2 PHOTO",
-      540,
-      525,
-      22,
-      "700",
-      "#8aa0bb"
-    );
-
-  }
+  person(
+    m2Image,
+    px[1],
+    py,
+    pw,
+    ph
+  );
 
 
   person(
     rizwanImage,
     px[2],
-    photoY,
+    py,
     pw,
-    photoH
+    ph
   );
 
 
-  /* =========================================
-     NAME + DESIGNATION SECTION
-     SEPARATE PANEL
-  ========================================= */
+  /* =========================
+     NAME / DESIGNATION
+     SEPARATE SECTION
+     ========================= */
 
-  const nameY = 690;
+  const nameY = 708;
   const nameH = 120;
-
-  ctx.fillStyle = "#173f78";
-
-  ctx.fillRect(
-    0,
-    nameY,
-    W,
-    nameH
-  );
-
-
-  /* small separators */
-
-  ctx.fillStyle = "#ffc400";
-
-  ctx.fillRect(
-    360,
-    nameY+15,
-    3,
-    90
-  );
-
-  ctx.fillRect(
-    717,
-    nameY+15,
-    3,
-    90
-  );
 
 
   const names = [
@@ -708,23 +794,17 @@ function draw(){
     ],
 
     [
+      document
+      .getElementById("m2name")
+      .value
+      .trim() || "MEMBER 2",
 
       document
-        .getElementById("m2name")
-        .value
-        .trim()
-        ||
-        "MEMBER 2",
-
-      document
-        .getElementById("m2desig")
-        .value
-        .trim()
-        ||
-        "DESIGNATION",
+      .getElementById("m2desig")
+      .value
+      .trim() || "DESIGNATION",
 
       "BELAGAVI"
-
     ],
 
     [
@@ -736,38 +816,65 @@ function draw(){
   ];
 
 
-  const centers = [
-    180,
-    540,
-    900
-  ];
+  for(
+    let i=0;
+    i<3;
+    i++
+  ){
+
+    const bx = px[i];
 
 
-  for(let i=0;i<3;i++){
+    /* separate name card */
+
+    box(
+      bx,
+      nameY,
+      pw,
+      nameH,
+      0,
+      "#173f78"
+    );
+
+
+    /* small yellow line */
+
+    ctx.fillStyle =
+    "#ffc400";
+
+    ctx.fillRect(
+      bx+70,
+      nameY+10,
+      pw-140,
+      3
+    );
+
 
     text(
       names[i][0],
-      centers[i],
-      720,
-      22,
+      bx+pw/2,
+      nameY+36,
+      20,
       "800",
       "#ffc400"
     );
 
+
     text(
       names[i][1],
-      centers[i],
-      752,
-      18,
+      bx+pw/2,
+      nameY+68,
+      17,
       "800",
       "#fff"
     );
 
+
     text(
       names[i][2],
-      centers[i],
-      782,
-      17,
+      bx+pw/2,
+      nameY+96,
+      16,
       "700",
       "#fff"
     );
@@ -775,31 +882,27 @@ function draw(){
   }
 
 
-  /* =========================================
-     BELIEFS – SEPARATE LIGHT PANEL
-  ========================================= */
+  /* =========================
+     WE BELIEVE IN
+     ========================= */
 
-  const beliefY = 810;
-  const beliefH = 265;
+  ctx.fillStyle =
+  "#173f78";
 
-
-  box(
+  ctx.fillRect(
     0,
-    beliefY,
+    828,
     W,
-    beliefH,
-    0,
-    "rgba(250,252,255,.96)"
+    265
   );
 
 
   text(
     "WE BELIEVE IN",
     540,
-    842,
+    862,
     40,
-    "800",
-    "#173f78"
+    "800"
   );
 
 
@@ -826,100 +929,81 @@ function draw(){
   ];
 
 
-  const centers2 = [
+  const centers = [
     180,
     540,
     900
   ];
 
 
-  for(let i=0;i<3;i++){
-
-    /*
-      Vertical separators
-    */
-
-    if(i>0){
-
-      ctx.fillStyle =
-        "#d3dbea";
-
-      ctx.fillRect(
-        centers2[i]-180,
-        885,
-        2,
-        150
-      );
-
-    }
-
-
-    /* Circle */
+  for(
+    let i=0;
+    i<3;
+    i++
+  ){
 
     ctx.beginPath();
 
     ctx.arc(
-      centers2[i],
-      915,
+      centers[i],
+      925,
       42,
       0,
       Math.PI*2
     );
 
-    ctx.fillStyle = "#173f78";
+    ctx.fillStyle =
+    "#fff";
 
     ctx.fill();
 
 
     text(
       "✓",
-      centers2[i],
-      916,
+      centers[i],
+      927,
       40,
-      "800",
-      "#fff"
-    );
-
-
-    text(
-      beliefs[i][0],
-      centers2[i],
-      972,
-      17,
       "800",
       "#173f78"
     );
 
 
     text(
+      beliefs[i][0],
+      centers[i],
+      985,
+      17,
+      "800"
+    );
+
+
+    text(
       beliefs[i][1],
-      centers2[i],
-      1003,
-      15,
-      "400",
-      "#333"
+      centers[i],
+      1014,
+      14,
+      "400"
     );
 
 
     text(
       beliefs[i][2],
-      centers2[i],
-      1027,
-      15,
-      "400",
-      "#333"
+      centers[i],
+      1037,
+      14,
+      "400"
     );
 
   }
 
 
-  /* =========================================
-     JOIN AAP SECTION
-  ========================================= */
+  /* =========================
+     INSTAGRAM
+     ========================= */
 
   box(
     54,
-    1095,
+    1110,
     972,
     94,
     26,
@@ -932,7 +1016,7 @@ function draw(){
   text(
     "Join AAP Belagavi –",
     385,
-    1125,
+    1140,
     31,
     "800"
   );
@@ -941,7 +1025,7 @@ function draw(){
   text(
     "be a part of the change!",
     385,
-    1160,
+    1175,
     28,
     "800",
     "#ffc400"
@@ -951,7 +1035,7 @@ function draw(){
   text(
     "Follow on Instagram",
     815,
-    1122,
+    1137,
     20
   );
 
@@ -959,16 +1043,16 @@ function draw(){
   text(
     "bit.ly/aaprizwanmakandar",
     815,
-    1156,
+    1171,
     18,
     "800",
     "#ffc400"
   );
 
 
-  /* =========================================
+  /* =========================
      FOOTER
-  ========================================= */
+     ========================= */
 
   const vals = [
 
@@ -1007,20 +1091,24 @@ function draw(){
   ];
 
 
-  for(let i=0;i<4;i++){
+  for(
+    let i=0;
+    i<4;
+    i++
+  ){
 
     ctx.beginPath();
 
     ctx.arc(
       vc[i],
-      1230,
+      1240,
       30,
       0,
       Math.PI*2
     );
 
     ctx.fillStyle =
-      "#173f78";
+    "#173f78";
 
     ctx.fill();
 
@@ -1028,7 +1116,7 @@ function draw(){
     text(
       vals[i][0],
       vc[i],
-      1231,
+      1241,
       25,
       "800"
     );
@@ -1037,7 +1125,7 @@ function draw(){
     text(
       vals[i][1],
       vc[i],
-      1270,
+      1280,
       17,
       "800",
       "#173f78"
@@ -1047,7 +1135,7 @@ function draw(){
     text(
       vals[i][2],
       vc[i],
-      1297,
+      1307,
       13,
       "400",
       "#173f78"
@@ -1058,39 +1146,39 @@ function draw(){
 }
 
 
-/* =========================================
-   MEMBER 2 PHOTO UPLOAD
-========================================= */
+/* =========================
+   MEMBER PHOTO UPLOAD
+   ========================= */
 
 document
 .getElementById("m2photo")
 .addEventListener(
   "change",
-  e => {
+  e=>{
 
     const f =
-      e.target.files[0];
+    e.target.files[0];
 
     if(!f) return;
 
 
     const reader =
-      new FileReader();
+    new FileReader();
 
 
     reader.onload =
-      ev => {
+    ev=>{
 
-        m2Image =
-          new Image();
+      m2Image =
+      new Image();
 
-        m2Image.onload =
-          draw;
+      m2Image.onload =
+      draw;
 
-        m2Image.src =
-          ev.target.result;
+      m2Image.src =
+      ev.target.result;
 
-      };
+    };
 
 
     reader.readAsDataURL(f);
@@ -1099,9 +1187,7 @@ document
 );
 
 
-/* =========================================
-   LIVE NAME UPDATE
-========================================= */
+/* NAME UPDATE */
 
 document
 .getElementById("m2name")
@@ -1111,6 +1197,8 @@ document
 );
 
 
+/* DESIGNATION UPDATE */
+
 document
 .getElementById("m2desig")
 .addEventListener(
@@ -1119,54 +1207,53 @@ document
 );
 
 
-/* =========================================
-   GENERATE BUTTON
-========================================= */
+/* GENERATE */
 
 document
 .getElementById("generate")
 .addEventListener(
   "click",
-  () => {
+  ()=>{
 
     draw();
 
     document
-      .getElementById("status")
-      .textContent =
-      "Poster ready ✓";
+    .getElementById("status")
+    .textContent =
+    "Poster ready ✓";
 
   }
 );
 
 
-/* =========================================
-   DOWNLOAD BUTTON
-========================================= */
+/* DOWNLOAD */
 
 document
 .getElementById("download")
 .addEventListener(
   "click",
-  () => {
+  ()=>{
 
     canvas.toBlob(
-      blob => {
+      blob=>{
 
         const a =
-          document.createElement("a");
+        document.createElement("a");
 
         a.href =
-          URL.createObjectURL(blob);
+        URL.createObjectURL(blob);
 
         a.download =
-          "AAP-Belagavi-Poster.png";
+        "AAP-Belagavi-Poster.png";
 
         a.click();
 
         setTimeout(
-          () =>
-            URL.revokeObjectURL(a.href),
+          ()=>{
+            URL.revokeObjectURL(
+              a.href
+            );
+          },
           1000
         );
 
