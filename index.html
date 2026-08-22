@@ -51,7 +51,7 @@ canvas{width:100%;max-width:540px;height:auto;border-radius:14px;box-shadow:0 8p
 <script>
 const W=1080,H=1350;
 const c=document.getElementById('poster'),x=c.getContext('2d');
-let m2Image=null, bgImage=null, vijayImage=null, rizwanImage=null;
+let m2Image=null,bgImage=null,vijayImage=null,rizwanImage=null;
 
 function load(src){
  return new Promise((resolve,reject)=>{
@@ -63,7 +63,7 @@ function load(src){
 }
 function fitImage(ctx,im,x0,y0,w,h){
  const r=Math.max(w/im.width,h/im.height);
- const sw=im.width*r, sh=im.height*r;
+ const sw=im.width*r,sh=im.height*r;
  ctx.drawImage(im,x0+(w-sw)/2,y0+(h-sh)/2,sw,sh);
 }
 function roundedRect(ctx,x,y,w,h,r,fill,stroke=null,lw=1){
@@ -78,11 +78,11 @@ function text(ctx,t,x,y,size,weight='700',color='#fff',align='center'){
  ctx.fillText(t,x,y);
 }
 function drawPerson(im,x0,y0,w,h){
- ctx.save();
- roundedRect(ctx,x0,y0,w,h,28,'#fff');
- ctx.clip();
- fitImage(ctx,im,x0,y0,w,h);
- ctx.restore();
+ x.save();
+ roundedRect(x,x0,y0,w,h,28,'#fff');
+ x.clip();
+ fitImage(x,im,x0,y0,w,h);
+ x.restore();
 }
 async function init(){
  try{
@@ -90,23 +90,25 @@ async function init(){
    load('vidhansoudha.jpg'),load('vijay.jpg'),load('rizwan.jpg')
   ]);
   await draw();
+  document.getElementById('status').textContent='Poster ready ✓';
  }catch(e){
-  document.getElementById('status').textContent='Please keep vidhansoudha.jpg, vijay.jpg and rizwan.jpg in the GitHub repository.';
+  console.error(e);
+  document.getElementById('status').textContent='Could not load poster assets. Please refresh once.';
  }
 }
 async function draw(){
  if(!bgImage||!vijayImage||!rizwanImage)return;
  x.clearRect(0,0,W,H);
 
- // Vidhana Soudha background with soft blur and blue-white overlay
+ // Light Vidhana Soudha blur — visible but not distracting.
  x.save();
- x.filter='blur(5px)';
+ x.filter='blur(2px)';
  fitImage(x,bgImage,0,0,W,H);
  x.restore();
  const g=x.createLinearGradient(0,0,0,H);
- g.addColorStop(0,'rgba(235,246,255,.72)');
- g.addColorStop(.48,'rgba(255,255,255,.28)');
- g.addColorStop(1,'rgba(235,244,253,.88)');
+ g.addColorStop(0,'rgba(235,246,255,.60)');
+ g.addColorStop(.48,'rgba(255,255,255,.12)');
+ g.addColorStop(1,'rgba(235,244,253,.70)');
  x.fillStyle=g;x.fillRect(0,0,W,H);
 
  // Header
@@ -122,6 +124,7 @@ async function draw(){
  roundedRect(x,285,205,510,58,8,'#ffc400');
  text(x,'Honest Politics • Real Change',540,234,27,'800','#111');
 
+ // Quote box
  roundedRect(x,824,22,215,188,28,'#173f78','#ffc400',3);
  text(x,'Let’s build',931,52,22,'700','#fff');
  text(x,'a clean,',931,88,24,'800','#ffc400');
@@ -129,8 +132,8 @@ async function draw(){
  text(x,'progressive',931,160,22,'800','#fff');
  text(x,'Belagavi!',931,194,24,'800','#fff');
 
- // People area
- const px=[24,365,706], pw=341, py=300, ph=470;
+ // People
+ const px=[24,365,706],pw=341,py=300,ph=470;
  drawPerson(vijayImage,px[0],py,pw,ph);
  if(m2Image) drawPerson(m2Image,px[1],py,pw,ph);
  else {
@@ -148,7 +151,7 @@ async function draw(){
   ['RIZWANAHMED K. MAKANDAR','CITY PRESIDENT','BELAGAVI']
  ];
  for(let i=0;i<3;i++){
-  const bx=px[i], by=704;
+  const bx=px[i],by=704;
   x.fillStyle='#173f78';x.fillRect(bx,by,pw,108);
   text(x,names[i][0],bx+pw/2,733,22,'800','#ffc400');
   text(x,names[i][1],bx+pw/2,764,19,'800','#fff');
@@ -190,6 +193,7 @@ async function draw(){
   text(x,vals[i][2],vc[i],1297,13,'400','#173f78');
  }
 }
+
 document.getElementById('m2photo').addEventListener('change',e=>{
  const f=e.target.files[0];
  if(!f)return;
@@ -203,7 +207,10 @@ document.getElementById('m2photo').addEventListener('change',e=>{
 });
 document.getElementById('m2name').addEventListener('input',draw);
 document.getElementById('m2desig').addEventListener('input',draw);
-document.getElementById('generate').addEventListener('click',async()=>{await draw();document.getElementById('status').textContent='Poster ready ✓';});
+document.getElementById('generate').addEventListener('click',async()=>{
+ await draw();
+ document.getElementById('status').textContent='Poster ready ✓';
+});
 document.getElementById('download').addEventListener('click',()=>{
  c.toBlob(blob=>{
   const a=document.createElement('a');
