@@ -1,52 +1,231 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AAP Belagavi Premium Poster Maker</title><style>*{box-sizing:border-box}body{margin:0;background:#edf3fa;font-family:Arial,sans-serif;color:#173f78}.wrap{max-width:980px;margin:auto;padding:18px}.panel{background:#fff;border-radius:18px;padding:18px;box-shadow:0 8px 28px #0002;margin-bottom:18px}h1{text-align:center;margin:4px 0;font-size:30px}.sub{text-align:center;color:#666}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}label{display:block;font-weight:700;font-size:14px;margin:8px 0 5px}input{width:100%;padding:10px;border:1px solid #ccd5e2;border-radius:9px}button{padding:13px 18px;border:0;border-radius:10px;font-weight:800;font-size:16px;margin:12px 5px 0;cursor:pointer}.go{background:#173f78;color:white}.dl{background:#f3c400}.actions{text-align:center}.box{background:#dfe7f0;padding:12px;border-radius:15px;overflow:auto}canvas{display:block;width:min(100%,540px);height:auto;margin:auto;box-shadow:0 8px 25px #0003}@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:24px}}</style></head><body><div class="wrap"><div class="panel"><h1>AAP Belagavi Premium Poster Maker</h1><div class="sub">1080 × 1350 • Together for a Better Belagavi</div><div class="grid"><div><label>Member 1 Name</label><input id="n1" value="VIJAY L. PATIL"><label>Designation</label><input id="d1" value="DISTRICT PRESIDENT"><label>Photo</label><input id="p1" type="file" accept="image/*"></div><div><label>Member 2 Name</label><input id="n2" value="ASLAM TASHILDAR"><label>Designation</label><input id="d2" value="MINORITY PRESIDENT"><label>Photo</label><input id="p2" type="file" accept="image/*"></div><div><label>Member 3 Name</label><input id="n3" value="RIZWANAHMED K. MAKANDAR"><label>Designation</label><input id="d3" value="CITY PRESIDENT"><label>Photo</label><input id="p3" type="file" accept="image/*"></div></div><div class="actions"><button class="go" onclick="draw()">Generate Poster</button><button class="dl" onclick="download()">Download Poster PNG</button></div></div><div class="box"><canvas id="c" width="1080" height="1350"></canvas></div></div><script>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AAP Belagavi Premium Poster Maker</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#edf3fa;font-family:Arial,Helvetica,sans-serif;color:#173f78}
+.wrap{max-width:1000px;margin:auto;padding:18px}
+.panel{background:#fff;border-radius:20px;padding:20px;box-shadow:0 8px 28px #0002;margin-bottom:18px}
+h1{text-align:center;margin:4px 0;font-size:30px}
+.sub{text-align:center;color:#666;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+label{display:block;font-weight:800;font-size:15px;margin:8px 0 6px}
+input{width:100%;padding:12px;border:2px solid #ccd8e6;border-radius:10px;font-size:15px}
+.actions{text-align:center}
+button{padding:14px 20px;border:0;border-radius:11px;font-weight:800;font-size:16px;margin:12px 5px 0;cursor:pointer}
+.go{background:#173f78;color:#fff}.dl{background:#f3c400;color:#173f78}
+.box{background:#dfe7f0;padding:12px;border-radius:16px;overflow:auto}
+canvas{display:block;width:min(100%,540px);height:auto;margin:auto;box-shadow:0 8px 25px #0003}
+@media(max-width:700px){.grid{grid-template-columns:1fr}h1{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="panel">
+<h1>AAP Belagavi Premium Poster Maker</h1>
+<div class="sub">1080 × 1350 • Together for a Better Belagavi</div>
+<div class="grid">
+<div>
+<label>Member 1 Name</label><input id="n1" value="VIJAY L. PATIL">
+<label>Designation</label><input id="d1" value="DISTRICT PRESIDENT">
+<label>Photo</label><input id="p1" type="file" accept="image/*">
+</div>
+<div>
+<label>Member 2 Name</label><input id="n2" value="ASLAM TASHILDAR">
+<label>Designation</label><input id="d2" value="MINORITY PRESIDENT">
+<label>Photo</label><input id="p2" type="file" accept="image/*">
+</div>
+<div>
+<label>Member 3 Name</label><input id="n3" value="RIZWANAHMED K. MAKANDAR">
+<label>Designation</label><input id="d3" value="CITY PRESIDENT">
+<label>Photo</label><input id="p3" type="file" accept="image/*">
+</div>
+</div>
+<div class="actions">
+<button class="go" onclick="draw()">Generate Poster</button>
+<button class="dl" onclick="download()">Download Poster PNG</button>
+</div>
+</div>
+<div class="box"><canvas id="c" width="1080" height="1350"></canvas></div>
+</div>
+
+<script>
 const c=document.getElementById('c'),x=c.getContext('2d'),imgs=[null,null,null];
-function fi(file){return new Promise((r,j)=>{if(!file)return j();let q=new FileReader();q.onload=()=>{let i=new Image();i.onload=()=>r(i);i.onerror=j;i.src=q.result};q.onerror=j;q.readAsDataURL(file)})}
-function li(src){return new Promise((r,j)=>{let i=new Image();i.onload=()=>r(i);i.onerror=j;i.src=src})}
-function rr(a,b,w,h,r){x.beginPath();x.roundRect(a,b,w,h,r);x.closePath()}
-function contain(im,a,b,w,h){let s=Math.min(w/im.width,h/im.height),nw=im.width*s,nh=im.height*s;x.drawImage(im,a+(w-nw)/2,b+(h-nh)/2,nw,nh)}
-async function get(i){if(imgs[i])return imgs[i];let f=document.getElementById('p'+(i+1)).files[0];if(f){try{return imgs[i]=await fi(f)}catch(e){}}try{if(i===0)return imgs[i]=await li('vijay.png');if(i===2)return imgs[i]=await li('rizwan.png')}catch(e){}return null}
-function fit(t,w,z){x.font='900 '+z+'px Arial';while(x.measureText(t).width>w&&z>18){z--;x.font='900 '+z+'px Arial'}return z}
-async function draw(){let g=x.createLinearGradient(0,0,0,1350);g.addColorStop(0,'#fff');g.addColorStop(.55,'#dce9f8');g.addColorStop(1,'#fff');x.fillStyle=g;x.fillRect(0,0,1080,1350);x.fillStyle='#173f78';x.font='900 82px Arial';x.fillText('aap',35,90);x.fillStyle='#173f78';x.fillRect(40,108,160,55);x.fillStyle='#fff';x.font='800 25px Arial';x.textAlign='center';x.fillText('AAM AADMI',120,132);x.fillText('PARTY',120,157);x.fillStyle='#173f78';x.font='800 40px Arial';x.fillText('TOGETHER FOR A',540,58);x.font='900 76px Arial';x.fillText('BETTER',540,125);x.fillText('BELAGAVI!',540,200);x.fillStyle='#f3c400';x.fillRect(300,215,480,58);x.fillStyle='#111';x.font='900 29px Arial';x.fillText('Honest Politics • Real Change',540,254);x.fillStyle='#173f78';rr(825,25,220,190,22);x.fill();x.fillStyle='#fff';x.font='800 25px Arial';x.fillText('Let’s build',935,70);x.fillStyle='#f3c400';x.fillText('a clean,',935,105);x.fillStyle='#fff';x.fillText('honest &',935,140);x.fillText('progressive',935,175);x.fillText('Belagavi!',935,210);x.textAlign='left';let xs=[30,370,710];for(let i=0;i<3;i++){let a=xs[i],im=await get(i);x.fillStyle='#fff';rr(a,310,340,515,24);x.fill();x.strokeStyle='#c2d0e0';x.lineWidth=4;x.stroke();if(im)contain(im,a+10,325,320,390);else{x.fillStyle='#dbe5ef';x.fillRect(a+10,325,320,390);x.fillStyle='#173f78';x.font='800 24px Arial';x.textAlign='center';x.fillText('UPLOAD PHOTO',a+170,530)}x.fillStyle='#173f78';x.fillRect(a,720,340,80);x.fillStyle='#f3c400';let n=document.getElementById('n'+(i+1)).value.toUpperCase();x.font='900 '+fit(n,315,27)+'px Arial';x.textAlign='center';x.fillText(n,a+170,753);x.fillStyle='#fff';x.font='800 21px Arial';x.fillText(document.getElementById('d'+(i+1)).value.toUpperCase(),a+170,786)}x.textAlign='center';x.fillStyle='#173f78';x.fillRect(0,850,1080,175);x.fillStyle='#fff';x.font='900 42px Arial';x.fillText('WE BELIEVE IN',540,895);let hs=['GOOD GOVERNANCE','CORRUPTION-FREE GOVERNANCE','PEOPLE-CENTRIC GOVERNANCE'];let ss=['Transparent, accountable and people-first governance.','Zero tolerance towards corruption. Clean politics for a stronger Belagavi.','Inclusive development with honesty, equality and justice for all.'];[180,540,900].forEach((a,i)=>{x.fillStyle='#fff';x.beginPath();x.arc(a,955,38,0,7);x.fill();x.fillStyle='#173f78';x.font='900 30px Arial';x.fillText('✓',a,966);x.fillStyle='#fff';x.font='800 19px Arial';x.fillText(hs[i],a,1000);x.font='15px Arial';x.fillText(ss[i],a,1022)});x.fillStyle='#173f78';rr(55,1050,970,105,25);x.fill();x.fillStyle='#fff';x.font='900 40px Arial';x.fillText('Join AAP Belagavi –',540,1095);x.fillStyle='#f3c400';x.font='900 34px Arial';x.fillText('be a part of the change!',540,1135);x.fillStyle='#f3c400';x.fillRect(0,1170,1080,6);let p=[['HONESTY','in every decision'],['SERVICE','to every citizen'],['UNITY','for a stronger Belagavi'],['PROGRESS','for a better tomorrow']];p.forEach((q,i)=>{let a=135+i*270;x.fillStyle='#173f78';x.beginPath();x.arc(a,1220,31,0,7);x.fill();x.fillStyle='#fff';x.font='900 24px Arial';x.fillText('•',a,1228);x.fillStyle='#173f78';x.font='900 20px Arial';x.fillText(q[0],a,1280);x.font='15px Arial';x.fillText(q[1],a,1304)})}
+
+function fi(file){
+  return new Promise((r,j)=>{
+    if(!file)return j();
+    const q=new FileReader();
+    q.onload=()=>{
+      const i=new Image();
+      i.onload=()=>r(i); i.onerror=j; i.src=q.result;
+    };
+    q.onerror=j; q.readAsDataURL(file);
+  });
+}
+function li(src){
+  return new Promise((r,j)=>{
+    const i=new Image(); i.onload=()=>r(i); i.onerror=j; i.src=src;
+  });
+}
+function rr(a,b,w,h,r){
+  x.beginPath();x.roundRect(a,b,w,h,r);x.closePath();
+}
+function contain(im,a,b,w,h){
+  const s=Math.min(w/im.width,h/im.height),nw=im.width*s,nh=im.height*s;
+  x.drawImage(im,a+(w-nw)/2,b+(h-nh)/2,nw,nh);
+}
+async function get(i){
+  if(imgs[i])return imgs[i];
+  const f=document.getElementById('p'+(i+1)).files[0];
+  if(f){try{return imgs[i]=await fi(f)}catch(e){}}
+  try{
+    if(i===0)return imgs[i]=await li('vijay.png');
+    if(i===2)return imgs[i]=await li('rizwan.png');
+  }catch(e){}
+  return null;
+}
+function fit(t,w,z){
+  x.font='900 '+z+'px Arial';
+  while(x.measureText(t).width>w&&z>16){z--;x.font='900 '+z+'px Arial'}
+  return z;
+}
+function broom(cx,cy,s){
+  x.save();x.translate(cx,cy);x.rotate(-0.35);
+  x.strokeStyle='#173f78';x.lineWidth=9;x.beginPath();x.moveTo(0,-18*s);x.lineTo(0,25*s);x.stroke();
+  x.fillStyle='#173f78';x.beginPath();
+  x.moveTo(-4*s,18*s);x.lineTo(-35*s,48*s);x.lineTo(35*s,48*s);x.lineTo(4*s,18*s);x.closePath();x.fill();
+  x.restore();
+}
+function iconCircle(cx,cy,type){
+  x.fillStyle='#fff';x.beginPath();x.arc(cx,cy,42,0,Math.PI*2);x.fill();
+  x.strokeStyle='#173f78';x.lineWidth=4;
+  if(type==='people'){
+    x.beginPath();x.arc(cx,cy-9,10,0,Math.PI*2);x.stroke();
+    x.beginPath();x.arc(cx-19,cy-5,7,0,Math.PI*2);x.stroke();
+    x.beginPath();x.arc(cx+19,cy-5,7,0,Math.PI*2);x.stroke();
+    x.beginPath();x.arc(cx,cy+20,20,Math.PI,0);x.stroke();
+  }else if(type==='hand'){
+    x.beginPath();x.moveTo(cx-24,cy);x.lineTo(cx-5,cy+15);x.lineTo(cx+25,cy-16);x.stroke();
+    x.beginPath();x.arc(cx-12,cy-5,10,0,Math.PI*2);x.stroke();
+  }else{
+    x.beginPath();x.moveTo(cx-18,cy+20);x.lineTo(cx-18,cy-10);x.lineTo(cx,cy-10);x.lineTo(cx,cy+20);x.stroke();
+    x.beginPath();x.moveTo(cx+18,cy+20);x.lineTo(cx+18,cy-25);x.lineTo(cx+28,cy-25);x.stroke();
+  }
+}
+async function draw(){
+  x.clearRect(0,0,1080,1350);
+
+  const g=x.createLinearGradient(0,0,0,1350);
+  g.addColorStop(0,'#ffffff');g.addColorStop(.58,'#e2edf8');g.addColorStop(1,'#ffffff');
+  x.fillStyle=g;x.fillRect(0,0,1080,1350);
+
+  /* Header */
+  x.fillStyle='#173f78';
+  x.font='900 78px Arial';x.textAlign='left';x.fillText('aap',38,86);
+  broom(176,74,.8);
+  x.fillStyle='#173f78';x.fillRect(42,105,158,54);
+  x.fillStyle='#fff';x.font='800 23px Arial';x.textAlign='center';
+  x.fillText('AAM AADMI',121,128);x.fillText('PARTY',121,151);
+
+  x.fillStyle='#173f78';x.font='800 38px Arial';x.fillText('TOGETHER FOR A',540,58);
+  x.font='900 72px Arial';x.fillText('BETTER',540,122);x.fillText('BELAGAVI!',540,192);
+  x.fillStyle='#f3c400';x.fillRect(300,208,480,55);
+  x.fillStyle='#111';x.font='900 28px Arial';x.fillText('Honest Politics • Real Change',540,245);
+
+  x.fillStyle='#173f78';rr(820,24,225,190,22);x.fill();
+  x.fillStyle='#fff';x.font='800 24px Arial';
+  x.fillText("Let’s build",932,67);
+  x.fillStyle='#f3c400';x.fillText('a clean,',932,101);
+  x.fillStyle='#fff';x.fillText('honest &',932,135);x.fillText('progressive',932,169);x.fillText('Belagavi!',932,203);
+
+  /* Member cards */
+  const xs=[25,370,715];
+  for(let i=0;i<3;i++){
+    const a=xs[i],im=await get(i);
+    x.fillStyle='#fff';rr(a,305,340,510,24);x.fill();
+    x.strokeStyle='#c3d1e1';x.lineWidth=4;x.stroke();
+
+    if(im)contain(im,a+10,320,320,385);
+    else{
+      x.fillStyle='#dbe5ef';x.fillRect(a+10,320,320,385);
+      x.fillStyle='#173f78';x.font='800 24px Arial';x.textAlign='center';
+      x.fillText('UPLOAD PHOTO',a+170,525);
+    }
+
+    x.fillStyle='#173f78';x.fillRect(a,705,340,90);
+    x.fillStyle='#f3c400';
+    const n=document.getElementById('n'+(i+1)).value.toUpperCase();
+    x.font='900 '+fit(n,315,27)+'px Arial';x.textAlign='center';x.fillText(n,a+170,742);
+    x.fillStyle='#fff';x.font='800 21px Arial';
+    x.fillText(document.getElementById('d'+(i+1)).value.toUpperCase(),a+170,776);
+  }
+
+  /* Beliefs section */
+  x.fillStyle='#173f78';x.fillRect(0,835,1080,205);
+  x.fillStyle='#fff';x.font='900 42px Arial';x.textAlign='center';x.fillText('WE BELIEVE IN',540,884);
+
+  const hs=['GOOD GOVERNANCE','CORRUPTION-FREE GOVERNANCE','PEOPLE-CENTRIC GOVERNANCE'];
+  const ss=['Transparent, accountable and people-first governance.',
+            'Zero tolerance towards corruption. Clean politics for a stronger Belagavi.',
+            'Inclusive development with honesty, equality and justice for all.'];
+  const types=['chart','hand','people'];
+  [180,540,900].forEach((a,i)=>{
+    iconCircle(a,938,types[i]);
+    x.fillStyle='#fff';x.font='900 18px Arial';x.fillText(hs[i],a,993);
+    x.font='14px Arial';
+    const words=ss[i].split(' ');let line='',yy=1015;
+    for(const w of words){
+      const test=line?line+' '+w:w;
+      if(x.measureText(test).width>295){
+        x.fillText(line,a,yy);yy+=18;line=w;
+      }else line=test;
+    }
+    if(line)x.fillText(line,a,yy);
+  });
+
+  /* Join banner */
+  x.fillStyle='#173f78';rr(55,1060,970,92,24);x.fill();
+  x.fillStyle='#fff';x.font='900 39px Arial';x.fillText('Join AAP Belagavi –',540,1100);
+  x.fillStyle='#f3c400';x.font='900 31px Arial';x.fillText('be a part of the change!',540,1135);
+
+  /* Bottom values */
+  x.fillStyle='#f3c400';x.fillRect(0,1170,1080,6);
+  const p=[['HONESTY','in every decision'],['SERVICE','to every citizen'],['UNITY','for a stronger Belagavi'],['PROGRESS','for a better tomorrow']];
+  const pts=[135,405,675,945];
+  p.forEach((q,i)=>{
+    const a=pts[i];
+    x.fillStyle='#173f78';x.beginPath();x.arc(a,1215,31,0,Math.PI*2);x.fill();
+    x.fillStyle='#fff';x.font='900 22px Arial';x.fillText('✓',a,1223);
+    x.fillStyle='#173f78';x.font='900 20px Arial';x.fillText(q[0],a,1265);
+    x.font='14px Arial';x.fillText(q[1],a,1289);
+  });
+}
 async function download(){
   await draw();
-
   c.toBlob(async function(blob){
-    if(!blob){
-      alert("Poster PNG create nahi ho paaya.");
-      return;
-    }
-
-    const file = new File(
-      [blob],
-      "AAP-Belagavi-Premium-Poster.png",
-      {type:"image/png"}
-    );
-
-    if(navigator.share && navigator.canShare &&
-       navigator.canShare({files:[file]})){
+    if(!blob){alert('Poster PNG create nahi ho paaya.');return;}
+    const file=new File([blob],'AAP-Belagavi-Premium-Poster.png',{type:'image/png'});
+    if(navigator.share && navigator.canShare && navigator.canShare({files:[file]})){
       try{
-        await navigator.share({
-          files:[file],
-          title:"AAP Belagavi Premium Poster"
-        });
+        await navigator.share({files:[file],title:'AAP Belagavi Premium Poster'});
         return;
-      }catch(e){
-        if(e.name === "AbortError") return;
-      }
+      }catch(e){if(e.name==='AbortError')return;}
     }
-
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "AAP-Belagavi-Premium-Poster.png";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-
-    setTimeout(function(){
-      URL.revokeObjectURL(url);
-    },30000);
-  },"image/png");
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;a.download='AAP-Belagavi-Premium-Poster.png';
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),30000);
+  },'image/png');
 }
-['n1','n2','n3','d1','d2','d3','p1','p2','p3'].forEach(id=>document.getElementById(id).addEventListener('change',draw));draw();
-</script></body></html>
+['n1','n2','n3','d1','d2','d3','p1','p2','p3'].forEach(id=>{
+  document.getElementById(id).addEventListener('change',draw);
+});
+draw();
+</script>
+</body>
+</html>
