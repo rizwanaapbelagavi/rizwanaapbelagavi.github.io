@@ -1553,46 +1553,220 @@ footer{
 <!-- =========================
      HERO
 ========================= -->
+<style>
+/* ===== PREMIUM RUHANI REHNUMAI SHOWCASE ===== */
 
+.hero-showcase {
+  width: 92%;
+  max-width: 900px;
+  margin: 25px auto 35px;
+  padding: 32px 20px 38px;
+  text-align: center;
+  border-radius: 32px;
+  background:
+    linear-gradient(145deg, rgba(0,70,45,.96), rgba(8,92,55,.92));
+  border: 2px solid rgba(242,140,40,.65);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.28),
+    inset 0 0 25px rgba(255,255,255,.06);
+}
+
+.showcase-label {
+  display: inline-block;
+  padding: 7px 18px;
+  border-radius: 30px;
+  color: #f2c66d;
+  border: 1px solid rgba(242,198,109,.45);
+  background: rgba(255,255,255,.06);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+}
+
+.hero-showcase h1 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.1;
+  color: #fff;
+  font-weight: 800;
+}
+
+.hero-showcase h1 span {
+  color: #f2a23a;
+}
+
+.showcase-tagline {
+  margin: 12px 0 25px;
+  color: #f7e5c0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+.showcase-image-wrap {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 28px;
+  padding: 8px;
+  border-radius: 25px;
+  background: linear-gradient(
+    135deg,
+    #f2a23a,
+    #fff1c7,
+    #f2a23a
+  );
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.35);
+}
+
+.showcase-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 19px;
+}
+
+.showcase-text {
+  max-width: 720px;
+  margin: auto;
+}
+
+.showcase-text h2 {
+  margin: 8px 0 12px;
+  color: #fff;
+  font-size: 25px;
+}
+
+.showcase-text p {
+  margin: 0 auto 22px;
+  color: rgba(255,255,255,.88);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.showcase-points {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 25px;
+}
+
+.showcase-points div {
+  padding: 10px 14px;
+  border-radius: 20px;
+  color: #fff;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  font-size: 14px;
+}
+
+.hero-showcase .button {
+  display: inline-block;
+  padding: 14px 25px;
+  border-radius: 30px;
+  background: linear-gradient(90deg,#087443,#f2a23a);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,.25);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .hero-showcase {
+    width: 90%;
+    padding: 25px 14px 30px;
+    border-radius: 26px;
+  }
+
+  .hero-showcase h1 {
+    font-size: 34px;
+  }
+
+  .showcase-tagline {
+    font-size: 15px;
+  }
+
+  .showcase-image-wrap {
+    padding: 6px;
+    border-radius: 20px;
+  }
+
+  .showcase-image {
+    border-radius: 15px;
+  }
+
+  .showcase-text h2 {
+    font-size: 21px;
+  }
+
+  .showcase-text p {
+    font-size: 15px;
+  }
+
+  .showcase-points {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .showcase-points div {
+    font-size: 14px;
+  }
+
+  .hero-showcase .button {
+    width: 90%;
+  }
+}
+</style>
+<!-- PREMIUM RUHANI REHNUMAI SHOWCASE -->
 <section class="hero">
 
-<div class="hero-content">
+  <div class="hero-showcase">
 
-<img
-src="ruhani-hero.png"
-alt="Ruhani Rehnumai"
-class="hero-image"
->
+    <div class="showcase-label">
+      ✦ RUHANI REHNUMAI ✦
+    </div>
 
+    <h1>
+      Ruhani <span>Rehnumai</span>
+    </h1>
 
-<!-- END PREMIUM HERO CARDS -->
+    <p class="showcase-tagline">
+      Quran • Dua • Rehnumai • Umeed
+    </p>
 
-<div class="symbol">
-🌿
-</div>
+    <div class="showcase-image-wrap">
+      <img
+        src="ruhani-hero.png"
+        alt="Ruhani Rehnumai"
+        class="showcase-image"
+      >
+    </div>
 
-<h1>
-Ruhani <span>Rehnumai</span>
-</h1>
+    <div class="showcase-text">
+      <h2>Ek jagah jahan dil ki baat kahi ja sakti hai</h2>
 
-<div class="tagline">
-Dua • Rehnumai • Umeed
-</div>
+      <p>
+        Pareshani ke waqt kisi ko sunna, samajhna, dua karna
+        aur Qurani rehnumai dena — Allah ke fazl se hamari
+        chhoti si koshish.
+      </p>
 
-<p class="intro">
-Pareshani ke waqt kisi ko sunna, samajhna,
-dua karna aur ruhani rehnumai dena —
-Allah ke fazl se hamari koshish.
-</p>
+      <div class="showcase-points">
+        <div>📖 Quran & Sunnah</div>
+        <div>🤲 Dua & Spiritual Support</div>
+        <div>🔒 Privacy & Respect</div>
+      </div>
 
-<a
-href="#booking"
-class="button"
->
-Apna Slot Book Karein
-</a>
+      <a href="#booking" class="button">
+        ₹101 — Apna Slot Book Karein
+      </a>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
