@@ -14,9 +14,9 @@ content="Ruhani Rehnumai - Dua, personal guidance and appointment booking.">
 
 <style>
 
-/* =========================
+/* =====================================================
    RESET
-========================= */
+===================================================== */
 
 *{
 margin:0;
@@ -31,6 +31,8 @@ box-sizing:border-box;
 --orange:#f28c28;
 --dark-orange:#d96f0b;
 --cream:#fff4e6;
+--text:#17351f;
+--muted:#536359;
 }
 
 html{
@@ -40,44 +42,25 @@ scroll-behavior:smooth;
 body{
 font-family:Arial,sans-serif;
 background:#f6faf7;
-color:#17351f;
+color:var(--text);
 line-height:1.6;
 }
 
-
-/* =========================
-   TOP IMAGE
-========================= */
-
-.ruhani-image-section{
-width:100%;
-margin:0;
-padding:0;
-background:#fff;
-}
-
-.ruhani-image-section img{
-display:block;
-width:100%;
+img{
 max-width:100%;
-height:auto;
-margin:0;
-padding:0;
-border:0;
-border-radius:0;
-box-shadow:none;
 }
 
 
-/* =========================
+/* =====================================================
    COMMON
-========================= */
+===================================================== */
 
 section{
 padding:60px 20px;
 }
 
 .container{
+width:100%;
 max-width:720px;
 margin:auto;
 }
@@ -91,18 +74,43 @@ margin-bottom:18px;
 
 .center{
 text-align:center;
-color:#536359;
+color:var(--muted);
 }
 
 
-/* =========================
+/* =====================================================
+   TOP RUHANI IMAGE
+===================================================== */
+
+.ruhani-image-section{
+width:100%;
+margin:0;
+padding:0;
+background:#fff;
+overflow:hidden;
+}
+
+.ruhani-image-section img{
+display:block;
+width:100%;
+height:auto;
+margin:0;
+padding:0;
+border:0;
+border-radius:0;
+box-shadow:none;
+}
+
+
+/* =====================================================
    FLOATING BOOKING BUTTON
-========================= */
+===================================================== */
 
 .floating-booking{
 position:fixed;
 left:50%;
 bottom:18px;
+
 transform:translateX(-50%) translateY(120px);
 
 width:calc(100% - 32px);
@@ -122,7 +130,6 @@ var(--orange)
 );
 
 color:white;
-text-align:center;
 text-decoration:none;
 
 font-size:17px;
@@ -155,9 +162,9 @@ transform:translateX(-50%) scale(.97);
 }
 
 
-/* =========================
-   ABOUT
-========================= */
+/* =====================================================
+   ABOUT US
+===================================================== */
 
 .about-section{
 padding:70px 20px;
@@ -181,9 +188,7 @@ linear-gradient(
 }
 
 .about-section .container{
-width:100%;
 max-width:850px;
-margin:auto;
 }
 
 .about-heading{
@@ -194,6 +199,7 @@ margin-bottom:35px;
 .about-icon{
 width:64px;
 height:64px;
+
 margin:0 auto 15px;
 
 display:flex;
@@ -231,8 +237,10 @@ color:#666;
 
 .about-intro{
 background:white;
+
 border:1px solid rgba(18,107,58,.12);
 border-radius:24px;
+
 padding:30px;
 margin-bottom:25px;
 
@@ -258,8 +266,10 @@ font-size:15px;
 
 .about-intro p{
 margin:12px 0;
+
 font-size:17px;
 line-height:1.85;
+
 color:#333;
 }
 
@@ -269,6 +279,7 @@ color:var(--green);
 
 .about-purpose{
 margin-top:28px;
+
 padding:25px;
 
 border-radius:22px;
@@ -300,6 +311,7 @@ font-size:16px;
 
 .about-final{
 margin-top:25px;
+
 padding:28px 25px;
 
 text-align:center;
@@ -320,22 +332,28 @@ box-shadow:
 
 .about-final strong{
 display:block;
+
 font-size:22px;
+
 color:var(--green);
+
 margin-bottom:10px;
 }
 
 .about-final p{
 max-width:620px;
+
 margin:auto;
+
 font-size:16px;
+
 color:#555;
 }
 
 
-/* =========================
+/* =====================================================
    PROBLEMS
-========================= */
+===================================================== */
 
 .problem-section{
 background:
@@ -348,13 +366,18 @@ linear-gradient(
 
 .problems{
 display:grid;
-grid-template-columns:1fr 1fr;
+
+grid-template-columns:
+1fr 1fr;
+
 gap:12px;
+
 margin-top:28px;
 }
 
 .problem{
 background:white;
+
 padding:17px;
 
 border-radius:15px;
@@ -383,17 +406,72 @@ margin-top:25px;
 }
 
 
-/* =========================
-   PRICE
-========================= */
+/* =====================================================
+   MIDDLE RUHANI IMAGE
+===================================================== */
+
+.middle-image-section{
+width:100%;
+
+margin:0;
+
+padding:0;
+
+background:#fff;
+
+overflow:hidden;
+}
+
+.middle-image-section img{
+display:block;
+
+width:100%;
+
+height:auto;
+
+margin:0;
+
+padding:0;
+
+border:0;
+
+border-radius:0;
+
+box-shadow:none;
+}
+
+
+/* =====================================================
+   PERSONAL RUHANI REHNUMAI
+===================================================== */
 
 .price-section{
 background:white;
+
 text-align:center;
+
+padding-top:55px;
+}
+
+.price-section h2{
+font-size:32px;
+
+margin-bottom:10px;
+}
+
+.price-subtitle{
+max-width:650px;
+
+margin:0 auto 25px;
+
+color:var(--muted);
+
+font-size:16px;
 }
 
 .price-card{
 max-width:600px;
+
 margin:25px auto 0;
 
 padding:30px 22px;
@@ -415,31 +493,46 @@ box-shadow:
 
 .price{
 font-size:50px;
+
 font-weight:bold;
+
 color:var(--green);
 }
 
 .duration{
-color:#536359;
+color:var(--muted);
+
 margin-bottom:20px;
 }
 
 .benefits{
 text-align:left;
+
 max-width:450px;
+
 margin:auto;
+
 list-style:none;
 }
 
 .benefits li{
 padding:9px 0;
+
 border-bottom:1px solid #e6eee8;
 }
 
+.price-note{
+margin-top:18px;
 
-/* =========================
+font-size:14px;
+
+color:#68746b;
+}
+
+
+/* =====================================================
    PROCESS
-========================= */
+===================================================== */
 
 .process{
 background:
@@ -452,6 +545,7 @@ linear-gradient(
 
 .step{
 background:white;
+
 padding:18px;
 
 border-radius:15px;
@@ -469,9 +563,9 @@ color:var(--dark-orange);
 }
 
 
-/* =========================
+/* =====================================================
    BOOKING
-========================= */
+===================================================== */
 
 .booking{
 background:
@@ -484,6 +578,7 @@ linear-gradient(
 
 .booking-card{
 max-width:650px;
+
 margin:25px auto 0;
 
 background:white;
@@ -500,8 +595,11 @@ box-shadow:
 
 label{
 display:block;
+
 font-weight:bold;
+
 color:var(--green);
+
 margin:16px 0 7px;
 }
 
@@ -536,13 +634,14 @@ box-shadow:
 
 textarea{
 min-height:110px;
+
 resize:vertical;
 }
 
 
-/* =========================
+/* =====================================================
    SLOT INFO
-========================= */
+===================================================== */
 
 .slot-info{
 margin-top:18px;
@@ -565,20 +664,24 @@ text-align:center;
 
 .slot-title{
 font-size:18px;
+
 font-weight:bold;
+
 color:var(--green);
+
 margin-bottom:8px;
 }
 
 .capacity{
 font-size:14px;
-color:#536359;
+
+color:var(--muted);
 }
 
 
-/* =========================
+/* =====================================================
    FEE
-========================= */
+===================================================== */
 
 .fee-box{
 margin-top:22px;
@@ -601,14 +704,16 @@ text-align:center;
 
 .fee{
 font-size:34px;
+
 font-weight:bold;
+
 color:var(--green);
 }
 
 
-/* =========================
-   SUBMIT BUTTON
-========================= */
+/* =====================================================
+   SUBMIT
+===================================================== */
 
 .submit-button{
 width:100%;
@@ -631,6 +736,7 @@ var(--orange)
 color:white;
 
 font-size:18px;
+
 font-weight:bold;
 
 cursor:pointer;
@@ -650,34 +756,39 @@ var(--dark-orange)
 
 .submit-button:disabled{
 opacity:.7;
+
 cursor:not-allowed;
 }
 
 
-/* =========================
+/* =====================================================
    PRIVACY CHECK
-========================= */
+===================================================== */
 
 .privacy-check{
 display:flex;
+
 gap:10px;
+
 align-items:flex-start;
 
 margin-top:18px;
 
 font-size:13px;
-color:#536359;
+
+color:var(--muted);
 }
 
 .privacy-check input{
 width:auto;
+
 margin-top:5px;
 }
 
 
-/* =========================
+/* =====================================================
    NOTE
-========================= */
+===================================================== */
 
 .note{
 margin-top:18px;
@@ -690,17 +801,19 @@ text-align:center;
 }
 
 
-/* =========================
+/* =====================================================
    PRIVACY
-========================= */
+===================================================== */
 
 .privacy{
 background:white;
+
 text-align:center;
 }
 
 .privacy-box{
 max-width:680px;
+
 margin:auto;
 
 background:
@@ -716,15 +829,15 @@ border-radius:16px;
 
 border-top:4px solid var(--green);
 
-color:#536359;
+color:var(--muted);
 
 font-size:14px;
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
 background:
@@ -746,9 +859,9 @@ border-top:5px solid var(--orange);
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:700px){
 
@@ -780,12 +893,11 @@ font-size:16px;
 font-size:46px;
 }
 
+.price-section h2{
+font-size:28px;
 }
 
-
-/* =========================
-   SMALL MOBILE
-========================= */
+}
 
 @media(max-width:400px){
 
@@ -796,6 +908,7 @@ font-size:26px;
 .about-icon{
 width:56px;
 height:56px;
+
 font-size:26px;
 }
 
@@ -805,11 +918,18 @@ font-size:15px;
 
 .floating-booking{
 width:calc(100% - 24px);
+
 font-size:15px;
+
 padding:14px 16px;
 }
 
 }
+
+
+/* =====================================================
+   END CSS
+===================================================== */
 
 </style>
 
@@ -819,9 +939,9 @@ padding:14px 16px;
 <body>
 
 
-<!-- =================================
-     ONLY ONE TOP IMAGE
-================================= -->
+<!-- ==================================================
+     TOP IMAGE
+================================================== -->
 
 <section class="ruhani-image-section">
 
@@ -833,9 +953,9 @@ alt="Ruhani Rehnumai - Quran, Dua and Spiritual Guidance"
 </section>
 
 
-<!-- =================================
-     FLOATING BOOKING BUTTON
-================================= -->
+<!-- ==================================================
+     FLOATING BOOKING
+================================================== -->
 
 <a
 href="#booking"
@@ -845,9 +965,9 @@ class="floating-booking"
 </a>
 
 
-<!-- =================================
+<!-- ==================================================
      ABOUT US
-================================= -->
+================================================== -->
 
 <section
 class="about-section"
@@ -880,14 +1000,12 @@ Ek jagah jahan pareshani ke waqt koi aapki baat sune.
 🌿 <strong>Ruhani Rehnumai</strong>
 </div>
 
-
 <p>
 Zindagi mein kabhi-kabhi aise lamhe aate hain jab dil
 pareshan hota hai, soch ulajh jaati hai aur insaan ko
 sirf ek aise shakhs ki zarurat hoti hai jo uski baat
 <strong>samjhe aur bina judge kiye sune.</strong>
 </p>
-
 
 <p>
 <strong>Ruhani Rehnumai</strong> isi ehsaas se judi ek
@@ -932,9 +1050,9 @@ Agar aap pareshan hain, hum aapki baat sunne ke liye yahan hain.
 </section>
 
 
-<!-- =================================
+<!-- ==================================================
      PROBLEMS
-================================= -->
+================================================== -->
 
 <section class="problem-section">
 
@@ -1058,9 +1176,23 @@ Bachchon ke future aur problems ko lekar fikr
 </section>
 
 
-<!-- =================================
-     PRICE
-================================= -->
+<!-- ==================================================
+     MIDDLE IMAGE
+================================================== -->
+
+<section class="middle-image-section">
+
+<img
+src="ruhani-middle-hd.jpg"
+alt="Personal Ruhani Rehnumai - Dua, Quran and Guidance"
+>
+
+</section>
+
+
+<!-- ==================================================
+     PERSONAL RUHANI REHNUMAI
+================================================== -->
 
 <section class="price-section">
 
@@ -1069,6 +1201,12 @@ Bachchon ke future aur problems ko lekar fikr
 <h2>
 🌿 Personal Ruhani Rehnumai
 </h2>
+
+<p class="price-subtitle">
+Aapki situation ko samajhne, aapki baat sunne aur
+Quran aur Dua ki roshni mein ruhani rehnumai ke liye
+ek personal 20-minute session.
+</p>
 
 
 <div class="price-card">
@@ -1113,7 +1251,7 @@ Personal appointment • 20 minutes
 </div>
 
 
-<p class="note">
+<p class="price-note">
 ₹101 personal appointment/service slot ke liye
 nominal service charge hai.
 </p>
@@ -1123,9 +1261,9 @@ nominal service charge hai.
 </section>
 
 
-<!-- =================================
+<!-- ==================================================
      PROCESS
-================================= -->
+================================================== -->
 
 <section class="process">
 
@@ -1208,9 +1346,9 @@ WhatsApp par bheji jayengi.
 </section>
 
 
-<!-- =================================
+<!-- ==================================================
      BOOKING
-================================= -->
+================================================== -->
 
 <section
 class="booking"
@@ -1411,9 +1549,9 @@ ki jayegi. Abhi button testing mode mein hai.
 </section>
 
 
-<!-- =================================
+<!-- ==================================================
      PRIVACY
-================================= -->
+================================================== -->
 
 <section class="privacy">
 
@@ -1447,9 +1585,9 @@ Har shakhs ki situation alag hoti hai.
 </section>
 
 
-<!-- =================================
+<!-- ==================================================
      FOOTER
-================================= -->
+================================================== -->
 
 <footer>
 
@@ -1466,9 +1604,9 @@ Har shakhs ki situation alag hoti hai.
 </footer>
 
 
-<!-- =================================
+<!-- ==================================================
      BOOKING JAVASCRIPT
-================================= -->
+================================================== -->
 
 <script>
 
@@ -1476,9 +1614,9 @@ const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbxfWqS6a30IBepSkdKDhgPRMqhGy-Uc3MeHS_1_hSU84kKQF24g0iIA25TF-OnEhK0J7g/exec";
 
 
-/* =========================
+/* ==================================================
    MINIMUM DATE
-========================= */
+================================================== */
 
 const dateInput =
 document.getElementById("date");
@@ -1509,9 +1647,9 @@ dateInput.min =
 setMinimumDate();
 
 
-/* =========================
+/* ==================================================
    BOOKING FORM
-========================= */
+================================================== */
 
 const bookingForm =
 document.getElementById("bookingForm");
@@ -1766,9 +1904,9 @@ button.innerText = oldText;
 });
 
 
-/* =========================
-   FLOATING BUTTON
-========================= */
+/* ==================================================
+   FLOATING BOOKING BUTTON
+================================================== */
 
 const floatingBooking =
 document.querySelector(
