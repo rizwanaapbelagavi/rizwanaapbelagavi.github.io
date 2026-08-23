@@ -5,12 +5,13 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Ruhani Rehnumai | Personal Guidance</title>
 
 <meta name="description"
-content="Ruhani Rehnumai - Dua, personal guidance and appointment booking.">
+content="Ruhani Rehnumai - Quran, Sunnah, Dua, personal spiritual guidance and appointment booking.">
 
 <style>
 
@@ -79,7 +80,7 @@ color:var(--muted);
 
 
 /* =====================================================
-   TOP RUHANI IMAGE
+   TOP IMAGE
 ===================================================== */
 
 .ruhani-image-section{
@@ -103,17 +104,144 @@ box-shadow:none;
 
 
 /* =====================================================
+   THREE FEATURE BOXES
+   Quran & Sunnah
+   Dua & Support
+   Privacy & Respect
+===================================================== */
+
+.feature-section{
+width:100%;
+padding:25px 20px 35px;
+
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#f7fbf8
+);
+}
+
+.feature-container{
+width:100%;
+max-width:1100px;
+margin:auto;
+
+display:grid;
+grid-template-columns:
+repeat(3,1fr);
+
+gap:25px;
+}
+
+.feature-box{
+display:flex;
+align-items:center;
+
+gap:18px;
+
+min-height:135px;
+
+padding:22px 20px;
+
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#fcfffd
+);
+
+border-radius:18px;
+
+border-left:5px solid var(--orange);
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.07),
+0 3px 10px rgba(18,107,58,.06);
+
+transition:
+transform .3s ease,
+box-shadow .3s ease;
+}
+
+.feature-box:hover{
+transform:translateY(-5px);
+
+box-shadow:
+0 16px 32px rgba(0,0,0,.11),
+0 5px 15px rgba(18,107,58,.08);
+}
+
+
+/* ICON */
+
+.feature-icon{
+width:58px;
+height:58px;
+
+min-width:58px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+var(--green),
+#16834a
+);
+
+color:white;
+
+font-size:27px;
+
+box-shadow:
+0 6px 15px rgba(18,107,58,.18);
+}
+
+
+/* TEXT */
+
+.feature-content h3{
+margin:0 0 6px;
+
+font-size:19px;
+
+font-weight:800;
+
+color:var(--green);
+}
+
+.feature-content p{
+margin:0;
+
+font-size:15px;
+
+line-height:1.55;
+
+color:#55605a;
+}
+
+
+/* =====================================================
    FLOATING BOOKING BUTTON
 ===================================================== */
 
 .floating-booking{
 position:fixed;
+
 left:50%;
 bottom:18px;
 
-transform:translateX(-50%) translateY(120px);
+transform:
+translateX(-50%)
+translateY(120px);
 
 width:calc(100% - 32px);
+
 max-width:620px;
 
 padding:16px 22px;
@@ -122,7 +250,8 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-background:linear-gradient(
+background:
+linear-gradient(
 90deg,
 var(--green),
 var(--dark-green),
@@ -130,12 +259,19 @@ var(--orange)
 );
 
 color:white;
+
+text-align:center;
+
 text-decoration:none;
 
 font-size:17px;
+
 font-weight:800;
 
-border:2px solid rgba(255,255,255,.35);
+border:
+2px solid
+rgba(255,255,255,.35);
+
 border-radius:50px;
 
 box-shadow:
@@ -152,13 +288,18 @@ opacity .35s ease;
 }
 
 .floating-booking.show{
-transform:translateX(-50%) translateY(0);
+transform:
+translateX(-50%)
+translateY(0);
+
 opacity:1;
 visibility:visible;
 }
 
 .floating-booking:active{
-transform:translateX(-50%) scale(.97);
+transform:
+translateX(-50%)
+scale(.97);
 }
 
 
@@ -216,49 +357,65 @@ var(--green),
 );
 
 color:white;
+
 font-size:30px;
 
 box-shadow:
-0 10px 30px rgba(18,107,58,.22);
+0 10px 30px
+rgba(18,107,58,.22);
 }
 
 .about-heading h2{
 margin:0;
+
 font-size:34px;
+
 font-weight:800;
 }
 
 .about-subtitle{
 margin:10px auto 0;
+
 max-width:600px;
+
 font-size:16px;
+
 color:#666;
 }
 
 .about-intro{
 background:white;
 
-border:1px solid rgba(18,107,58,.12);
+border:
+1px solid
+rgba(18,107,58,.12);
+
 border-radius:24px;
 
 padding:30px;
+
 margin-bottom:25px;
 
 box-shadow:
-0 12px 35px rgba(0,0,0,.07);
+0 12px 35px
+rgba(0,0,0,.07);
 }
 
 .about-highlight{
 display:inline-flex;
+
 align-items:center;
+
 gap:8px;
 
 margin-bottom:15px;
+
 padding:8px 15px;
 
 border-radius:30px;
 
 background:#eaf8ef;
+
 color:var(--green);
 
 font-size:15px;
@@ -268,6 +425,7 @@ font-size:15px;
 margin:12px 0;
 
 font-size:17px;
+
 line-height:1.85;
 
 color:#333;
@@ -292,20 +450,25 @@ var(--green),
 );
 
 color:white;
+
 text-align:center;
 
 box-shadow:
-0 14px 35px rgba(18,107,58,.20);
+0 14px 35px
+rgba(18,107,58,.20);
 }
 
 .purpose-title{
 font-size:20px;
+
 font-weight:800;
+
 margin-bottom:10px;
 }
 
 .about-purpose p{
 margin:0;
+
 font-size:16px;
 }
 
@@ -323,11 +486,15 @@ linear-gradient(
 #f6fbf7
 );
 
-border:1px solid rgba(18,107,58,.14);
+border:
+1px solid
+rgba(18,107,58,.14);
+
 border-radius:24px;
 
 box-shadow:
-0 10px 30px rgba(0,0,0,.06);
+0 10px 30px
+rgba(0,0,0,.06);
 }
 
 .about-final strong{
@@ -370,142 +537,51 @@ display:grid;
 grid-template-columns:
 1fr 1fr;
 
-gap:12px;
+gap:16px;
 
 margin-top:28px;
 }
 
-
-/* =====================================================
-   PREMIUM MIRROR / GLASS PROBLEM BOXES
-===================================================== */
-
 .problem{
-position:relative;
-
-overflow:hidden;
-
 background:
 linear-gradient(
 135deg,
-rgba(255,255,255,.94),
-rgba(255,255,255,.64)
+#ffffff,
+#fcfffd
 );
 
-padding:22px 20px;
+padding:20px;
 
-border-radius:22px;
+border-radius:20px;
 
-border:1px solid rgba(255,255,255,.90);
-
-border-left:5px solid var(--orange);
+border-left:
+5px solid
+var(--orange);
 
 box-shadow:
-0 12px 30px rgba(18,107,58,.10),
-inset 0 1px 0 rgba(255,255,255,.98),
-inset 0 -1px 0 rgba(255,255,255,.45);
-
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
+0 10px 25px
+rgba(0,0,0,.07),
+0 3px 10px
+rgba(18,107,58,.06);
 
 transition:
 transform .3s ease,
 box-shadow .3s ease;
 }
 
-
-/* TOP GLASS REFLECTION */
-
-.problem::before{
-content:"";
-
-position:absolute;
-
-top:0;
-left:0;
-
-width:100%;
-height:48%;
-
-background:
-linear-gradient(
-180deg,
-rgba(255,255,255,.78),
-rgba(255,255,255,0)
-);
-
-pointer-events:none;
-
-border-radius:22px 22px 0 0;
-}
-
-
-/* MOVING MIRROR SHINE */
-
-.problem::after{
-content:"";
-
-position:absolute;
-
-top:-80%;
-left:-35%;
-
-width:42%;
-height:250%;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.55),
-transparent
-);
-
-transform:rotate(25deg);
-
-pointer-events:none;
-
-transition:
-left .65s ease;
-}
-
-
-/* HOVER */
-
 .problem:hover{
-transform:
-translateY(-5px);
+transform:translateY(-5px);
 
 box-shadow:
-0 18px 40px rgba(18,107,58,.16),
-inset 0 1px 0 rgba(255,255,255,1);
+0 16px 32px
+rgba(0,0,0,.11);
 }
-
-.problem:hover::after{
-left:125%;
-}
-
-
-/* CONTENT ABOVE GLASS */
 
 .problem strong{
-position:relative;
-
-z-index:2;
-
 color:var(--green);
 
 font-size:18px;
 }
-
-.problem{
-color:#17351f;
-}
-
-
-/* =====================================================
-   PROBLEM BOTTOM NOTE
-===================================================== */
 
 .problem-section .about-highlight{
 margin-top:25px;
@@ -513,7 +589,7 @@ margin-top:25px;
 
 
 /* =====================================================
-   MIDDLE RUHANI IMAGE
+   MIDDLE IMAGE
 ===================================================== */
 
 .middle-image-section{
@@ -568,58 +644,12 @@ margin-bottom:10px;
 .price-subtitle{
 max-width:650px;
 
-margin:0 auto 18px;
+margin:0 auto 25px;
 
 color:var(--muted);
 
 font-size:16px;
 }
-
-
-/* =====================================================
-   PHONE CALL INFORMATION
-===================================================== */
-
-.call-note{
-max-width:600px;
-
-margin:18px auto 0;
-
-padding:15px 18px;
-
-background:
-linear-gradient(
-135deg,
-#eef8f1,
-#fff4e6
-);
-
-border:1px solid rgba(18,107,58,.15);
-
-border-left:4px solid var(--orange);
-
-border-radius:16px;
-
-color:var(--muted);
-
-font-size:15px;
-
-text-align:center;
-
-box-shadow:
-0 8px 22px rgba(18,107,58,.08);
-}
-
-.call-note strong{
-color:var(--green);
-
-font-size:17px;
-}
-
-
-/* =====================================================
-   PRICE CARD
-===================================================== */
 
 .price-card{
 max-width:600px;
@@ -637,10 +667,13 @@ linear-gradient(
 #fff4e6
 );
 
-border:2px solid var(--orange);
+border:
+2px solid
+var(--orange);
 
 box-shadow:
-0 8px 28px rgba(0,0,0,.08);
+0 8px 28px
+rgba(0,0,0,.08);
 }
 
 .price{
@@ -657,6 +690,26 @@ color:var(--muted);
 margin-bottom:20px;
 }
 
+.call-note{
+margin:18px auto;
+
+padding:16px;
+
+max-width:520px;
+
+border-radius:15px;
+
+background:#eaf8ef;
+
+border-left:
+5px solid
+var(--green);
+
+color:var(--green);
+
+font-weight:700;
+}
+
 .benefits{
 text-align:left;
 
@@ -670,7 +723,9 @@ list-style:none;
 .benefits li{
 padding:9px 0;
 
-border-bottom:1px solid #e6eee8;
+border-bottom:
+1px solid
+#e6eee8;
 }
 
 .price-note{
@@ -696,18 +751,36 @@ linear-gradient(
 }
 
 .step{
-background:white;
+background:
+linear-gradient(
+135deg,
+#ffffff,
+#fcfffd
+);
 
 padding:18px;
 
-border-radius:15px;
+border-radius:18px;
 
 margin-bottom:13px;
 
-border-left:5px solid var(--green);
+border-left:
+5px solid
+var(--green);
 
 box-shadow:
-0 3px 12px rgba(0,0,0,.05);
+0 8px 22px
+rgba(0,0,0,.07);
+
+transition:.3s ease;
+}
+
+.step:hover{
+transform:translateY(-3px);
+
+box-shadow:
+0 14px 28px
+rgba(0,0,0,.10);
 }
 
 .step strong{
@@ -739,10 +812,13 @@ padding:28px 20px;
 
 border-radius:22px;
 
-border-top:5px solid var(--orange);
+border-top:
+5px solid
+var(--orange);
 
 box-shadow:
-0 8px 28px rgba(0,0,0,.08);
+0 8px 28px
+rgba(0,0,0,.08);
 }
 
 label{
@@ -762,7 +838,9 @@ width:100%;
 
 padding:15px;
 
-border:1px solid #cbdccf;
+border:
+1px solid
+#cbdccf;
 
 border-radius:12px;
 
@@ -778,10 +856,12 @@ select:focus,
 textarea:focus{
 outline:none;
 
-border-color:var(--orange);
+border-color:
+var(--orange);
 
 box-shadow:
-0 0 0 3px rgba(242,140,40,.12);
+0 0 0 3px
+rgba(242,140,40,.12);
 }
 
 textarea{
@@ -809,7 +889,9 @@ linear-gradient(
 #fff4e6
 );
 
-border-left:5px solid var(--green);
+border-left:
+5px solid
+var(--green);
 
 text-align:center;
 }
@@ -849,7 +931,9 @@ linear-gradient(
 #eef8f1
 );
 
-border:2px solid var(--orange);
+border:
+2px solid
+var(--orange);
 
 text-align:center;
 }
@@ -894,7 +978,8 @@ font-weight:bold;
 cursor:pointer;
 
 box-shadow:
-0 8px 20px rgba(18,107,58,.20);
+0 8px 20px
+rgba(18,107,58,.20);
 }
 
 .submit-button:hover{
@@ -979,7 +1064,9 @@ padding:22px;
 
 border-radius:16px;
 
-border-top:4px solid var(--green);
+border-top:
+4px solid
+var(--green);
 
 color:var(--muted);
 
@@ -1007,7 +1094,9 @@ padding:32px 20px;
 
 font-size:13px;
 
-border-top:5px solid var(--orange);
+border-top:
+5px solid
+var(--orange);
 }
 
 
@@ -1020,6 +1109,49 @@ border-top:5px solid var(--orange);
 section{
 padding:50px 18px;
 }
+
+
+/* FEATURE BOXES */
+
+.feature-section{
+padding:
+22px 16px
+32px;
+}
+
+.feature-container{
+grid-template-columns:1fr;
+
+gap:14px;
+}
+
+.feature-box{
+min-height:110px;
+
+padding:18px;
+
+border-radius:18px;
+}
+
+.feature-icon{
+width:54px;
+height:54px;
+
+min-width:54px;
+
+font-size:25px;
+}
+
+.feature-content h3{
+font-size:18px;
+}
+
+.feature-content p{
+font-size:15px;
+}
+
+
+/* PROBLEMS */
 
 .problems{
 grid-template-columns:1fr;
@@ -1049,31 +1181,12 @@ font-size:46px;
 font-size:28px;
 }
 
-
-/* MOBILE MIRROR BOX */
-
-.problem{
-padding:20px 18px;
-
-border-radius:21px;
-
-box-shadow:
-0 10px 26px rgba(18,107,58,.10),
-inset 0 1px 0 rgba(255,255,255,.95);
 }
 
-.call-note{
-font-size:14px;
 
-padding:14px 15px;
-}
-
-.call-note strong{
-font-size:16px;
-}
-
-}
-
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 
 @media(max-width:400px){
 
@@ -1092,16 +1205,34 @@ font-size:26px;
 font-size:15px;
 }
 
+.feature-box{
+padding:16px;
+}
+
+.feature-icon{
+width:50px;
+height:50px;
+
+min-width:50px;
+
+font-size:23px;
+}
+
+.feature-content h3{
+font-size:17px;
+}
+
+.feature-content p{
+font-size:14px;
+}
+
 .floating-booking{
-width:calc(100% - 24px);
+width:
+calc(100% - 24px);
 
 font-size:15px;
 
 padding:14px 16px;
-}
-
-.problem{
-padding:19px 16px;
 }
 
 }
@@ -1129,6 +1260,89 @@ padding:19px 16px;
 src="ruhani-top-hd.jpg"
 alt="Ruhani Rehnumai - Quran, Dua and Spiritual Guidance"
 >
+
+</section>
+
+
+<!-- ==================================================
+     THREE FEATURE BOXES
+================================================== -->
+
+<section class="feature-section">
+
+<div class="feature-container">
+
+
+<!-- BOX 1 -->
+
+<div class="feature-box">
+
+<div class="feature-icon">
+📖
+</div>
+
+<div class="feature-content">
+
+<h3>
+Quran & Sunnah
+</h3>
+
+<p>
+Rehnumai Quran aur Sunnah ki roshni mein.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- BOX 2 -->
+
+<div class="feature-box">
+
+<div class="feature-icon">
+🤲
+</div>
+
+<div class="feature-content">
+
+<h3>
+Dua & Support
+</h3>
+
+<p>
+Mushkil waqt mein dua aur positive support.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- BOX 3 -->
+
+<div class="feature-box">
+
+<div class="feature-icon">
+🛡️
+</div>
+
+<div class="feature-content">
+
+<h3>
+Privacy & Respect
+</h3>
+
+<p>
+Aapki baat izzat aur confidentiality ke saath.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
 
 </section>
 
@@ -1382,25 +1596,23 @@ alt="Personal Ruhani Rehnumai - Dua, Quran and Guidance"
 🌿 Personal Ruhani Rehnumai
 </h2>
 
-
 <p class="price-subtitle">
 Aapki situation ko samajhne, aapki baat sunne aur
 Quran aur Dua ki roshni mein ruhani rehnumai ke liye
-ek personal 10–20 minute session.
+ek personal 20-minute session.
 </p>
 
 
-<!-- ==================================================
-     PHONE CALL NOTE
-================================================== -->
+<!-- IMPORTANT CALL INFORMATION -->
 
 <div class="call-note">
 
-📞 <strong>Personal Call Session</strong>
+📞 <strong>10–20 minute ki personal baat phone call par hogi.</strong>
+
 <br>
 
-Aapki 10–20 minute ki personal baat
-<strong>phone call par hogi.</strong>
+Booking confirm hone ke baad call ke liye
+zaroori details WhatsApp par share ki jayengi.
 
 </div>
 
@@ -1411,49 +1623,40 @@ Aapki 10–20 minute ki personal baat
 ₹101
 </div>
 
-
 <div class="duration">
-Personal appointment • 10–20 minutes
+Personal appointment • 20 minutes • Phone Call
 </div>
 
 
 <ul class="benefits">
 
-
 <li>
-⏱️ 10–20 minutes personal conversation
+⏱️ 20 minutes personal conversation
 </li>
 
-
 <li>
-📞 Personal conversation phone call par
+📞 Personal baat phone call par
 </li>
-
 
 <li>
 📅 Apni preferred date choose karein
 </li>
 
-
 <li>
 ⏰ Exact time slot choose karein
 </li>
-
 
 <li>
 📲 Confirmation WhatsApp par
 </li>
 
-
 <li>
 🔒 Privacy aur izzat ke saath baat
 </li>
 
-
 <li>
 🤲 Dua aur ruhani rehnumai
 </li>
-
 
 </ul>
 
@@ -1461,10 +1664,8 @@ Personal appointment • 10–20 minutes
 
 
 <p class="price-note">
-
 ₹101 personal appointment/service slot ke liye
 nominal service charge hai.
-
 </p>
 
 </div>
@@ -1542,13 +1743,14 @@ confirmation process hoga.
 <div class="step">
 
 <strong>
-5️⃣ Phone Call & WhatsApp confirmation
+5️⃣ Phone Call + WhatsApp Confirmation
 </strong>
 
 <br>
 
 Confirmed date aur time ke mutabiq
-personal 10–20 minute phone call hogi.
+10–20 minute ki personal baat
+phone call par hogi.
 Zaroori confirmation details WhatsApp par bheji jayengi.
 
 </div>
@@ -1686,7 +1888,7 @@ required
 </div>
 
 <div class="capacity">
-⏱️ Appointment slot: 20 minutes
+⏱️ Appointment duration: 20 minutes
 </div>
 
 <div class="capacity">
@@ -1738,7 +1940,7 @@ Personal Slot Service Fee
 </div>
 
 <div>
-10–20 minutes • Phone Call • WhatsApp confirmation
+20 minutes • Phone Call • WhatsApp confirmation
 </div>
 
 </div>
@@ -2065,7 +2267,7 @@ result.time +
 
 "\n\n" +
 
-"📞 Personal phone call: 10–20 minutes\n\n" +
+"📞 Personal 20-minute baat phone call par hogi.\n\n" +
 
 "WhatsApp par confirmation diya jayega."
 
