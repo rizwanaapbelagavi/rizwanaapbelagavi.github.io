@@ -2322,6 +2322,115 @@ footer{
     width: 90% !important;
   }
 }
+   /* ===== FINAL CLEAN HERO LOOK ===== */
+
+/* Remove dark green/golden outer background */
+.hero-showcase {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    width: 94% !important;
+    max-width: 980px !important;
+    margin: 35px auto 45px !important;
+    padding: 20px 10px 35px !important;
+    text-align: center !important;
+}
+
+/* Remove decorative circle / lines */
+.hero-showcase::before,
+.hero-showcase::after,
+.showcase-image-wrap::before,
+.showcase-image-wrap::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Clean small heading */
+.hero-showcase .showcase-label {
+    background: #f8f5ed !important;
+    color: #174d3a !important;
+    border: 1px solid #d6b46a !important;
+    box-shadow: none !important;
+    border-radius: 30px !important;
+}
+
+/* Main heading */
+.hero-showcase h1 {
+    color: #174d3a !important;
+    text-shadow: none !important;
+}
+
+/* Highlighted word */
+.hero-showcase h1 span {
+    color: #c58b2b !important;
+}
+
+/* Tagline */
+.hero-showcase .showcase-tagline {
+    color: #555555 !important;
+    text-shadow: none !important;
+}
+
+/* ===== CLEAN WEBSITE MOCKUP ===== */
+
+.hero-showcase .showcase-image-wrap {
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 12px 35px rgba(0,0,0,.12) !important;
+    border-radius: 22px !important;
+    padding: 12px !important;
+    overflow: hidden !important;
+}
+
+/* Website screenshot */
+.hero-showcase .showcase-image {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Text below image */
+.hero-showcase .showcase-text h2 {
+    color: #174d3a !important;
+    text-shadow: none !important;
+}
+
+.hero-showcase .showcase-text p {
+    color: #555555 !important;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    .hero-showcase {
+        width: 94% !important;
+        padding: 15px 5px 30px !important;
+        margin: 25px auto 35px !important;
+    }
+
+    .hero-showcase h1 {
+        font-size: 36px !important;
+    }
+
+    .hero-showcase .showcase-tagline {
+        font-size: 15px !important;
+    }
+
+    .hero-showcase .showcase-image-wrap {
+        padding: 8px !important;
+        border-radius: 18px !important;
+        box-shadow: 0 8px 25px rgba(0,0,0,.12) !important;
+    }
+
+    .hero-showcase .showcase-image {
+        border-radius: 10px !important;
+    }
+}
 </style>
 <!-- PREMIUM RUHANI REHNUMAI SHOWCASE -->
 <section class="hero">
