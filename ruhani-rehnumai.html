@@ -1720,6 +1720,91 @@ footer{
     width: 90%;
   }
 }
+   /* PREMIUM WEBSITE MOCKUP */
+
+.premium-mockup{
+    width:92%;
+    max-width:760px;
+    margin:30px auto;
+    padding:10px;
+    border-radius:26px;
+    background:linear-gradient(
+        145deg,
+        #102f22,
+        #06452d,
+        #123d2b
+    );
+    border:2px solid rgba(242,140,40,.65);
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35),
+        0 0 30px rgba(242,140,40,.12);
+    overflow:hidden;
+}
+
+.mockup-topbar{
+    height:42px;
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:0 15px;
+    background:#10271d;
+    border-radius:18px 18px 0 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.mockup-dot{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#f2c66d;
+    opacity:.9;
+}
+
+.mockup-title{
+    margin-left:8px;
+    color:#f2c66d;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.mockup-screen{
+    background:#fff;
+    border-radius:0 0 18px 18px;
+    overflow:hidden;
+    box-shadow:inset 0 0 20px rgba(0,0,0,.15);
+}
+
+.mockup-screen img{
+    display:block;
+    width:100%;
+    height:auto;
+    margin:0;
+    border:0;
+}
+
+@media(max-width:600px){
+
+    .premium-mockup{
+        width:94%;
+        padding:7px;
+        border-radius:20px;
+    }
+
+    .mockup-topbar{
+        height:34px;
+        padding:0 10px;
+    }
+
+    .mockup-dot{
+        width:7px;
+        height:7px;
+    }
+
+    .mockup-title{
+        font-size:10px;
+    }
+}
 </style>
 <!-- PREMIUM RUHANI REHNUMAI SHOWCASE -->
 <section class="hero">
@@ -1738,14 +1823,23 @@ footer{
       Quran • Dua • Rehnumai • Umeed
     </p>
 
-    <div class="showcase-image-wrap">
-      <img
-        src="ruhani-hero.png"
-        alt="Ruhani Rehnumai"
-        class="showcase-image"
-      >
+<div class="showcase-image-wrap premium-mockup">
+
+    <div class="mockup-topbar">
+        <span class="mockup-dot"></span>
+        <span class="mockup-dot"></span>
+        <span class="mockup-dot"></span>
+        <span class="mockup-title">Ruhani Rehnumai</span>
     </div>
 
+    <div class="mockup-screen">
+        <img
+            src="ruhani-hero.png"
+            alt="Ruhani Rehnumai Website"
+        >
+    </div>
+
+</div>
     <div class="showcase-text">
       <h2>Ek jagah jahan dil ki baat kahi ja sakti hai</h2>
 
