@@ -583,7 +583,293 @@ font-size:16px;
 /* =========================
    END CSS
 ========================= */
+/* =========================================
+   GREEN + ORANGE PREMIUM THEME
+========================================= */
 
+/* Main Green */
+:root{
+    --green:#126b3a;
+    --dark-green:#083d24;
+    --light-green:#eef8f1;
+    --orange:#f28c28;
+    --dark-orange:#d96f0b;
+    --light-orange:#fff4e6;
+}
+
+/* Body */
+body{
+    background:#f6faf7;
+    color:#17351f;
+}
+
+/* HERO */
+.hero{
+    background:
+    linear-gradient(
+        135deg,
+        rgba(8,61,36,.97),
+        rgba(18,107,58,.94),
+        rgba(242,140,40,.88)
+    );
+}
+
+.hero h1 span{
+    color:#ffb45a;
+}
+
+.symbol{
+    color:#ff9b32;
+}
+
+.button{
+    background:#f28c28;
+    color:white;
+    box-shadow:0 8px 20px rgba(242,140,40,.30);
+}
+
+.button:hover{
+    background:#d96f0b;
+}
+
+/* SECTION HEADINGS */
+h2{
+    color:#126b3a;
+}
+
+.about-icon{
+    color:#f28c28;
+}
+
+/* ABOUT SECTION */
+.about-section{
+    background:
+    linear-gradient(
+        135deg,
+        #eef8f1,
+        #fff8ef
+    );
+}
+
+.about-content,
+.about-card{
+    border-top:4px solid #f28c28;
+}
+
+.about-highlight,
+.about-note{
+    background:
+    linear-gradient(
+        135deg,
+        #eef8f1,
+        #fff4e6
+    );
+    border-left:5px solid #f28c28;
+    color:#126b3a;
+}
+
+/* PROBLEM SECTION */
+.problem-section{
+    background:
+    linear-gradient(
+        135deg,
+        #f0f8f3,
+        #fff7ed
+    );
+}
+
+.problem{
+    border-left:4px solid #f28c28;
+    transition:.25s ease;
+}
+
+.problem:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(18,107,58,.12);
+}
+
+/* PRICE */
+.price-section{
+    background:white;
+}
+
+.price-card{
+    background:
+    linear-gradient(
+        135deg,
+        #eef8f1,
+        #fff4e6
+    );
+    border:2px solid #f28c28;
+}
+
+.price{
+    color:#126b3a;
+}
+
+.duration{
+    color:#536359;
+}
+
+/* BENEFITS */
+.benefits li{
+    border-bottom:1px solid #e6eee8;
+}
+
+.benefits li::first-letter{
+    color:#f28c28;
+}
+
+/* PROCESS */
+.process{
+    background:
+    linear-gradient(
+        135deg,
+        #f1f8f3,
+        #fff7ed
+    );
+}
+
+.step{
+    border-left:5px solid #126b3a;
+}
+
+.step strong{
+    color:#d96f0b;
+}
+
+/* BOOKING */
+.booking{
+    background:
+    linear-gradient(
+        135deg,
+        #eaf7ef,
+        #fff3e5
+    );
+}
+
+.booking-card{
+    border-top:5px solid #f28c28;
+}
+
+/* FORM LABELS */
+label{
+    color:#126b3a;
+}
+
+/* FORM INPUTS */
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#f28c28;
+    box-shadow:0 0 0 3px rgba(242,140,40,.12);
+}
+
+/* SLOT INFO */
+.slot-info{
+    background:
+    linear-gradient(
+        135deg,
+        #eef8f1,
+        #fff4e6
+    );
+    border-left:5px solid #126b3a;
+}
+
+.slot-title{
+    color:#126b3a;
+}
+
+/* FEE BOX */
+.fee-box{
+    background:
+    linear-gradient(
+        135deg,
+        #fff4e6,
+        #eef8f1
+    );
+    border:2px solid #f28c28;
+}
+
+.fee{
+    color:#126b3a;
+}
+
+/* BOOKING BUTTON */
+.submit-button{
+    background:
+    linear-gradient(
+        90deg,
+        #126b3a,
+        #f28c28
+    );
+    box-shadow:0 8px 20px rgba(18,107,58,.20);
+}
+
+.submit-button:hover{
+    background:
+    linear-gradient(
+        90deg,
+        #0b512b,
+        #d96f0b
+    );
+}
+
+/* PRIVACY */
+.privacy{
+    background:white;
+}
+
+.privacy-box{
+    border-top:4px solid #126b3a;
+    background:
+    linear-gradient(
+        135deg,
+        #f7faf7,
+        #fff8ef
+    );
+}
+
+/* FOOTER */
+footer{
+    background:
+    linear-gradient(
+        135deg,
+        #083d24,
+        #126b3a
+    );
+    border-top:5px solid #f28c28;
+}
+
+/* ORANGE ACCENT */
+.about-heading p{
+    color:#d96f0b;
+    font-weight:bold;
+}
+
+.note{
+    color:#68746b;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .hero{
+        background:
+        linear-gradient(
+            145deg,
+            rgba(8,61,36,.97),
+            rgba(18,107,58,.94),
+            rgba(242,140,40,.88)
+        );
+    }
+
+    .price{
+        font-size:46px;
+    }
+
+}
 </style>
 
 </head>
