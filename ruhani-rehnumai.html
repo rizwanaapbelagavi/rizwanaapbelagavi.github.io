@@ -15,6 +15,10 @@ content="Ruhani Rehnumai - Dua, personal guidance and appointment booking.">
 
 <style>
 
+/* =========================
+   BASIC RESET
+========================= */
+
 *{
 margin:0;
 padding:0;
@@ -28,6 +32,11 @@ color:#17351f;
 line-height:1.6;
 }
 
+
+/* =========================
+   HERO
+========================= */
+
 .hero{
 min-height:88vh;
 display:flex;
@@ -35,7 +44,8 @@ align-items:center;
 justify-content:center;
 text-align:center;
 padding:35px 20px;
-background:linear-gradient(
+background:
+linear-gradient(
 rgba(3,54,28,.92),
 rgba(3,54,28,.92)
 );
@@ -44,6 +54,18 @@ color:white;
 
 .hero-content{
 max-width:700px;
+width:100%;
+}
+
+.hero-image{
+width:100%;
+max-width:680px;
+height:auto;
+display:block;
+margin:0 auto 25px;
+border-radius:22px;
+box-shadow:
+0 12px 35px rgba(0,0,0,.25);
 }
 
 .symbol{
@@ -83,6 +105,11 @@ font-weight:bold;
 font-size:17px;
 }
 
+
+/* =========================
+   COMMON
+========================= */
+
 section{
 padding:60px 20px;
 }
@@ -90,11 +117,6 @@ padding:60px 20px;
 .container{
 max-width:720px;
 margin:auto;
-}
-
-.white{
-background:white;
-text-align:center;
 }
 
 h2{
@@ -108,6 +130,113 @@ margin-bottom:18px;
 text-align:center;
 color:#536359;
 }
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section{
+background:
+linear-gradient(
+135deg,
+#f1f8f3,
+#ffffff
+);
+text-align:center;
+}
+
+.about-heading{
+margin-bottom:25px;
+}
+
+.about-icon{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.about-heading h2{
+margin-bottom:5px;
+}
+
+.about-card{
+background:white;
+padding:28px 22px;
+border-radius:22px;
+box-shadow:
+0 8px 28px rgba(0,0,0,.07);
+margin-bottom:20px;
+}
+
+.about-card h3{
+color:#145b2d;
+margin-bottom:14px;
+font-size:22px;
+}
+
+.about-card p{
+color:#536359;
+font-size:16px;
+margin-bottom:15px;
+}
+
+.about-card p:last-child{
+margin-bottom:0;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:12px;
+margin-top:20px;
+}
+
+.about-box{
+background:white;
+padding:20px 15px;
+border-radius:18px;
+box-shadow:
+0 4px 15px rgba(0,0,0,.06);
+}
+
+.about-box-icon{
+font-size:32px;
+margin-bottom:8px;
+}
+
+.about-box h3{
+font-size:17px;
+color:#145b2d;
+margin-bottom:7px;
+}
+
+.about-box p{
+font-size:14px;
+color:#536359;
+}
+
+.about-note{
+margin-top:22px;
+padding:18px;
+border-radius:15px;
+background:#eef8f0;
+color:#145b2d;
+}
+
+.about-note strong{
+display:block;
+font-size:18px;
+margin-bottom:8px;
+}
+
+.about-note p{
+margin:0;
+}
+
+
+/* =========================
+   PROBLEMS
+========================= */
 
 .problem-section{
 background:#f1f7f3;
@@ -124,8 +253,22 @@ margin-top:28px;
 background:white;
 padding:17px;
 border-radius:15px;
-box-shadow:0 3px 12px rgba(0,0,0,.06);
+box-shadow:
+0 3px 12px rgba(0,0,0,.06);
 }
+
+.problem strong{
+color:#145b2d;
+}
+
+.problem-section .about-highlight{
+margin-top:25px;
+}
+
+
+/* =========================
+   PRICE
+========================= */
 
 .price-section{
 background:white;
@@ -138,7 +281,8 @@ margin:25px auto 0;
 padding:30px 22px;
 border-radius:22px;
 background:#eef8f0;
-box-shadow:0 8px 28px rgba(0,0,0,.08);
+box-shadow:
+0 8px 28px rgba(0,0,0,.08);
 }
 
 .price{
@@ -163,6 +307,11 @@ list-style:none;
 padding:9px 0;
 }
 
+
+/* =========================
+   PROCESS
+========================= */
+
 .process{
 background:#f1f7f3;
 }
@@ -172,12 +321,18 @@ background:white;
 padding:18px;
 border-radius:15px;
 margin-bottom:13px;
-box-shadow:0 3px 12px rgba(0,0,0,.05);
+box-shadow:
+0 3px 12px rgba(0,0,0,.05);
 }
 
 .step strong{
 color:#145b2d;
 }
+
+
+/* =========================
+   BOOKING
+========================= */
 
 .booking{
 background:#eaf6ed;
@@ -189,7 +344,8 @@ margin:25px auto 0;
 background:white;
 padding:28px 20px;
 border-radius:22px;
-box-shadow:0 8px 28px rgba(0,0,0,.08);
+box-shadow:
+0 8px 28px rgba(0,0,0,.08);
 }
 
 label{
@@ -208,12 +364,27 @@ border:1px solid #cbdccf;
 border-radius:12px;
 font-size:16px;
 background:#fbfdfb;
+font-family:Arial,sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+outline:none;
+border-color:#146b35;
+box-shadow:
+0 0 0 3px rgba(20,107,53,.08);
 }
 
 textarea{
 min-height:110px;
 resize:vertical;
 }
+
+
+/* =========================
+   SLOT INFO
+========================= */
 
 .slot-info{
 margin-top:18px;
@@ -235,6 +406,11 @@ font-size:14px;
 color:#536359;
 }
 
+
+/* =========================
+   FEE
+========================= */
+
 .fee-box{
 margin-top:22px;
 padding:20px;
@@ -249,6 +425,11 @@ font-weight:bold;
 color:#145b2d;
 }
 
+
+/* =========================
+   BUTTON
+========================= */
+
 .submit-button{
 width:100%;
 margin-top:22px;
@@ -262,10 +443,19 @@ font-weight:bold;
 cursor:pointer;
 }
 
+.submit-button:hover{
+background:#0f572b;
+}
+
 .submit-button:disabled{
 opacity:.7;
 cursor:not-allowed;
 }
+
+
+/* =========================
+   PRIVACY CHECK
+========================= */
 
 .privacy-check{
 display:flex;
@@ -281,12 +471,22 @@ width:auto;
 margin-top:5px;
 }
 
+
+/* =========================
+   NOTE
+========================= */
+
 .note{
 margin-top:18px;
 font-size:13px;
 color:#68746b;
 text-align:center;
 }
+
+
+/* =========================
+   PRIVACY
+========================= */
 
 .privacy{
 background:white;
@@ -303,6 +503,11 @@ color:#536359;
 font-size:14px;
 }
 
+
+/* =========================
+   FOOTER
+========================= */
+
 footer{
 background:#103b20;
 color:#dcefe1;
@@ -311,75 +516,74 @@ padding:32px 20px;
 font-size:13px;
 }
 
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+}
+
 @media(max-width:600px){
+
+.hero{
+min-height:auto;
+padding:45px 18px;
+}
 
 .hero h1{
 font-size:43px;
+}
+
+.hero-image{
+border-radius:18px;
 }
 
 .problems{
 grid-template-columns:1fr;
 }
 
+.about-content{
+padding:22px 18px;
 }
-.hero-image{
-width:100%;
-max-width:680px;
-height:auto;
-display:block;
-margin:0 auto 25px;
-border-radius:22px;
-box-shadow:0 12px 35px rgba(0,0,0,.25);
+
+section{
+padding:50px 18px;
 }
-   /* =========================
-   ABOUT US SECTION
+
+}
+
+
+/* =========================
+   SMALL MOBILE
 ========================= */
 
-.about-section{
-    background:linear-gradient(135deg,#f1f8f3,#ffffff);
-    text-align:center;
+@media(max-width:380px){
+
+.hero h1{
+font-size:37px;
 }
 
-.about-heading{
-    margin-bottom:25px;
+.tagline{
+font-size:18px;
 }
 
-.about-icon{
-    font-size:48px;
-    margin-bottom:10px;
+.intro{
+font-size:16px;
 }
 
-.about-heading h2{
-    margin-bottom:0;
 }
 
-.about-content{
-    max-width:680px;
-    margin:auto;
-    background:white;
-    padding:28px 22px;
-    border-radius:22px;
-    box-shadow:0 8px 28px rgba(0,0,0,.07);
-}
 
-.about-content p{
-    color:#536359;
-    font-size:17px;
-    margin-bottom:20px;
-}
+/* =========================
+   END CSS
+========================= */
 
-.about-content p:last-child{
-    margin-bottom:0;
-}
-
-.about-highlight{
-    margin-top:22px;
-    padding:18px;
-    border-radius:15px;
-    background:#eef8f0;
-    color:#145b2d;
-    font-weight:bold;
-}
 </style>
 
 </head>
@@ -388,13 +592,23 @@ box-shadow:0 12px 35px rgba(0,0,0,.25);
 <body>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
 <div class="hero-content">
-<img src="ruhani-hero.png" alt="Ruhani Rehnumai" class="hero-image">
-<div class="symbol">🌿</div>
+
+<img
+src="ruhani-hero.png"
+alt="Ruhani Rehnumai"
+class="hero-image"
+>
+
+<div class="symbol">
+🌿
+</div>
 
 <h1>
 Ruhani <span>Rehnumai</span>
@@ -410,7 +624,10 @@ dua karna aur ruhani rehnumai dena —
 Allah ke fazl se hamari koshish.
 </p>
 
-<a href="#booking" class="button">
+<a
+href="#booking"
+class="button"
+>
 Apna Slot Book Karein
 </a>
 
@@ -419,17 +636,26 @@ Apna Slot Book Karein
 </section>
 
 
-<!-- ABOUT US -->
+<!-- =========================
+     ABOUT US
+========================= -->
 
-<section class="about-section" id="about">
+<section
+class="about-section"
+id="about"
+>
 
 <div class="container">
 
 <div class="about-heading">
 
-<div class="about-icon">🤲</div>
+<div class="about-icon">
+🤲
+</div>
 
-<h2>About Ruhani Rehnumai</h2>
+<h2>
+About Ruhani Rehnumai
+</h2>
 
 <p>
 Sukoon • Dua • Sahi Rehnumai
@@ -437,9 +663,12 @@ Sukoon • Dua • Sahi Rehnumai
 
 </div>
 
+
 <div class="about-card">
 
-<h3>🌿 Hum Kaun Hain?</h3>
+<h3>
+🌿 Hum Kaun Hain?
+</h3>
 
 <p>
 Ruhani Rehnumai ek aisi koshish hai jahan
@@ -454,13 +683,19 @@ dua, ruhani rehnumai aur positive support dena hai.
 
 </div>
 
+
 <div class="about-grid">
+
 
 <div class="about-box">
 
-<div class="about-box-icon">📖</div>
+<div class="about-box-icon">
+📖
+</div>
 
-<h3>Quran & Sunnah</h3>
+<h3>
+Quran & Sunnah
+</h3>
 
 <p>
 Quran aur Sunnah ki roshni mein
@@ -469,11 +704,16 @@ rehnumai aur dua.
 
 </div>
 
+
 <div class="about-box">
 
-<div class="about-box-icon">🤲</div>
+<div class="about-box-icon">
+🤲
+</div>
 
-<h3>Dua & Support</h3>
+<h3>
+Dua & Support
+</h3>
 
 <p>
 Aapki situation ko samajhkar
@@ -482,11 +722,16 @@ dua aur ruhani support.
 
 </div>
 
+
 <div class="about-box">
 
-<div class="about-box-icon">🔒</div>
+<div class="about-box-icon">
+🔒
+</div>
 
-<h3>Complete Privacy</h3>
+<h3>
+Complete Privacy
+</h3>
 
 <p>
 Aapki personal baat ko izzat aur
@@ -495,11 +740,15 @@ privacy ke saath handle karna.
 
 </div>
 
+
 </div>
+
 
 <div class="about-note">
 
-<strong>🌙 Hamara Maqsad</strong>
+<strong>
+🌙 Hamara Maqsad
+</strong>
 
 <p>
 Har pareshan insaan ko umeed, sukoon aur
@@ -514,7 +763,9 @@ karna — Allah ke fazl se.
 </section>
 
 
-<!-- PROBLEMS -->
+<!-- =========================
+     PROBLEMS
+========================= -->
 
 <section class="problem-section">
 
@@ -524,47 +775,112 @@ karna — Allah ke fazl se.
 Aap Kis Pareshani Se Guzar Rahe Hain?
 </h2>
 
+<p class="center">
+Har pareshani ka solution ek jaisa nahi hota.
+Aap apni situation share karke dua aur ruhani
+rehnumai hasil kar sakte hain.
+</p>
+
+
 <div class="problems">
 
-<div class="problem">
-🏠 Ghar mein tanav ya jhagde
-</div>
 
 <div class="problem">
-💼 Business ya naukri ki rukawat
+🏠
+<br>
+<strong>Ghar & Family</strong>
+<br>
+Ghar mein tanav, jhagde ya family problems
 </div>
 
-<div class="problem">
-💰 Maali pareshani ya karz ka stress
-</div>
 
 <div class="problem">
-💑 Family ya relationship problems
+💼
+<br>
+<strong>Business & Naukri</strong>
+<br>
+Business ya naukri mein rukawat
 </div>
 
-<div class="problem">
-😟 Tension, stress, dar ya bechaini
-</div>
 
 <div class="problem">
-🌙 Neend ya bure khwab
+💰
+<br>
+<strong>Maali Pareshani</strong>
+<br>
+Karz, financial stress ya paison ki fikr
 </div>
 
-<div class="problem">
-💔 Rishton se judi pareshani
-</div>
 
 <div class="problem">
-🤲 Kaam rukne ka ehsaas
+💑
+<br>
+<strong>Rishte & Relationship</strong>
+<br>
+Rishton se judi pareshani ya misunderstanding
 </div>
 
-<div class="problem">
-😞 Udaasi aur bechaini
-</div>
 
 <div class="problem">
-👨‍👩‍👧 Bachchon ko lekar fikr
+😟
+<br>
+<strong>Tension & Bechaini</strong>
+<br>
+Stress, dar, tension ya dil ki bechaini
 </div>
+
+
+<div class="problem">
+🌙
+<br>
+<strong>Neend & Bure Khwab</strong>
+<br>
+Neend ki pareshani ya baar-baar bure khwab
+</div>
+
+
+<div class="problem">
+💔
+<br>
+<strong>Rishton Ki Pareshani</strong>
+<br>
+Emotional ya personal relationship concerns
+</div>
+
+
+<div class="problem">
+🤲
+<br>
+<strong>Kaam Mein Rukawat</strong>
+<br>
+Kaam rukne ya progress na hone ka ehsaas
+</div>
+
+
+<div class="problem">
+😞
+<br>
+<strong>Udaasi & Bechaini</strong>
+<br>
+Dil ki udaasi, fikr ya emotional pressure
+</div>
+
+
+<div class="problem">
+👨‍👩‍👧
+<br>
+<strong>Bachchon Ki Fikr</strong>
+<br>
+Bachchon ke future aur problems ko lekar fikr
+</div>
+
+
+</div>
+
+
+<div class="about-highlight">
+
+🤲 Aapki baat privacy aur izzat ke saath suni jayegi.
 
 </div>
 
@@ -573,7 +889,9 @@ Aap Kis Pareshani Se Guzar Rahe Hain?
 </section>
 
 
-<!-- PRICE -->
+<!-- =========================
+     PRICE
+========================= -->
 
 <section class="price-section">
 
@@ -582,6 +900,7 @@ Aap Kis Pareshani Se Guzar Rahe Hain?
 <h2>
 🌿 Personal Ruhani Rehnumai
 </h2>
+
 
 <div class="price-card">
 
@@ -592,6 +911,7 @@ Aap Kis Pareshani Se Guzar Rahe Hain?
 <div class="duration">
 Personal appointment • 20 minutes
 </div>
+
 
 <ul class="benefits">
 
@@ -623,6 +943,7 @@ Personal appointment • 20 minutes
 
 </div>
 
+
 <p class="note">
 ₹101 personal appointment/service slot ke liye
 nominal service charge hai.
@@ -633,7 +954,9 @@ nominal service charge hai.
 </section>
 
 
-<!-- PROCESS -->
+<!-- =========================
+     PROCESS
+========================= -->
 
 <section class="process">
 
@@ -643,27 +966,39 @@ nominal service charge hai.
 📋 Slot Booking Kaise Hoga?
 </h2>
 
+
 <div class="step">
 
-<strong>1️⃣ Details bharein</strong>
+<strong>
+1️⃣ Details bharein
+</strong>
+
 <br>
 
 Apna naam aur WhatsApp number enter karein.
 
 </div>
 
+
 <div class="step">
 
-<strong>2️⃣ Date choose karein</strong>
+<strong>
+2️⃣ Date choose karein
+</strong>
+
 <br>
 
 Apni convenient appointment date select karein.
 
 </div>
 
+
 <div class="step">
 
-<strong>3️⃣ Exact time choose karein</strong>
+<strong>
+3️⃣ Exact time choose karein
+</strong>
+
 <br>
 
 10:00 AM se 7:00 PM ke available
@@ -671,9 +1006,13 @@ Apni convenient appointment date select karein.
 
 </div>
 
+
 <div class="step">
 
-<strong>4️⃣ ₹101 service fee pay karein</strong>
+<strong>
+4️⃣ ₹101 service fee pay karein
+</strong>
+
 <br>
 
 Payment successful hone ke baad booking
@@ -681,9 +1020,13 @@ confirmation process hoga.
 
 </div>
 
+
 <div class="step">
 
-<strong>5️⃣ WhatsApp confirmation</strong>
+<strong>
+5️⃣ WhatsApp confirmation
+</strong>
+
 <br>
 
 Confirmed date, time aur zaroori details
@@ -696,9 +1039,14 @@ WhatsApp par bheji jayengi.
 </section>
 
 
-<!-- BOOKING -->
+<!-- =========================
+     BOOKING
+========================= -->
 
-<section class="booking" id="booking">
+<section
+class="booking"
+id="booking"
+>
 
 <div class="container">
 
@@ -710,6 +1058,7 @@ WhatsApp par bheji jayengi.
 Neeche apni details bharke preferred appointment
 date aur exact time select karein.
 </p>
+
 
 <div class="booking-card">
 
@@ -757,7 +1106,11 @@ required
 ⏰ Exact Appointment Time
 </label>
 
-<select id="time" required>
+
+<select
+id="time"
+required
+>
 
 <option value="">
 -- Time Slot Select Karein --
@@ -890,7 +1243,9 @@ ki jayegi. Abhi button testing mode mein hai.
 </section>
 
 
-<!-- PRIVACY -->
+<!-- =========================
+     PRIVACY
+========================= -->
 
 <section class="privacy">
 
@@ -899,6 +1254,7 @@ ki jayegi. Abhi button testing mode mein hai.
 <h2>
 🔒 Privacy & Important Information
 </h2>
+
 
 <div class="privacy-box">
 
@@ -923,7 +1279,9 @@ Har shakhs ki situation alag hoti hai.
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -940,7 +1298,9 @@ Har shakhs ki situation alag hoti hai.
 </footer>
 
 
-<!-- BOOKING JAVASCRIPT -->
+<!-- =========================
+     BOOKING JAVASCRIPT
+========================= -->
 
 <script>
 
@@ -955,23 +1315,30 @@ const SCRIPT_URL =
 const dateInput =
 document.getElementById("date");
 
+
 function setMinimumDate(){
 
-const today = new Date();
+const today =
+new Date();
 
 const year =
 today.getFullYear();
 
 const month =
-String(today.getMonth() + 1).padStart(2,"0");
+String(
+today.getMonth() + 1
+).padStart(2,"0");
 
 const day =
-String(today.getDate()).padStart(2,"0");
+String(
+today.getDate()
+).padStart(2,"0");
 
 dateInput.min =
 `${year}-${month}-${day}`;
 
 }
+
 
 setMinimumDate();
 
@@ -981,7 +1348,9 @@ setMinimumDate();
 ========================= */
 
 const bookingForm =
-document.getElementById("bookingForm");
+document.getElementById(
+"bookingForm"
+);
 
 
 bookingForm.addEventListener(
@@ -991,7 +1360,9 @@ async function(event){
 event.preventDefault();
 
 
-/* GET FORM VALUES */
+/* =========================
+   GET FORM VALUES
+========================= */
 
 const name =
 document.getElementById("name")
@@ -1026,7 +1397,9 @@ document.getElementById("privacy")
 .checked;
 
 
-/* REQUIRED FIELDS */
+/* =========================
+   REQUIRED FIELDS
+========================= */
 
 if(
 !name ||
@@ -1045,7 +1418,9 @@ return;
 }
 
 
-/* PRIVACY */
+/* =========================
+   PRIVACY
+========================= */
 
 if(!privacy){
 
@@ -1058,7 +1433,9 @@ return;
 }
 
 
-/* WHATSAPP VALIDATION */
+/* =========================
+   WHATSAPP VALIDATION
+========================= */
 
 if(
 !/^[0-9]{10}$/.test(whatsapp)
@@ -1073,9 +1450,13 @@ return;
 }
 
 
-/* DATE VALIDATION */
+/* =========================
+   DATE VALIDATION
+========================= */
 
-if(date < dateInput.min){
+if(
+date < dateInput.min
+){
 
 alert(
 "Please aaj ya future ki date select karein."
@@ -1086,22 +1467,29 @@ return;
 }
 
 
-/* BUTTON */
+/* =========================
+   BUTTON
+========================= */
 
 const button =
-document.querySelector(".submit-button");
+document.querySelector(
+".submit-button"
+);
 
 const oldText =
 button.innerText;
 
 
-button.disabled = true;
+button.disabled =
+true;
 
 button.innerText =
 "Booking Submit Ho Rahi Hai...";
 
 
-/* BOOKING DATA */
+/* =========================
+   BOOKING DATA
+========================= */
 
 const bookingData = {
 
@@ -1120,7 +1508,9 @@ paymentStatus:"Pending"
 };
 
 
-/* SEND TO GOOGLE APPS SCRIPT */
+/* =========================
+   SEND TO GOOGLE APPS SCRIPT
+========================= */
 
 try{
 
@@ -1141,20 +1531,26 @@ headers:{
 },
 
 body:
-JSON.stringify(bookingData)
+JSON.stringify(
+bookingData
+)
 
 }
 
 );
 
 
-/* RESPONSE */
+/* =========================
+   RESPONSE
+========================= */
 
 const result =
 await response.json();
 
 
-/* SUCCESS */
+/* =========================
+   SUCCESS
+========================= */
 
 if(result.success){
 
@@ -1197,7 +1593,9 @@ setMinimumDate();
 }else{
 
 
-/* SERVER ERROR */
+/* =========================
+   SERVER ERROR
+========================= */
 
 alert(
 
@@ -1216,7 +1614,9 @@ result.message ||
 }catch(error){
 
 
-/* CONNECTION ERROR */
+/* =========================
+   CONNECTION ERROR
+========================= */
 
 console.error(
 "Booking Error:",
@@ -1235,11 +1635,14 @@ alert(
 }
 
 
-/* RESTORE BUTTON */
+/* =========================
+   RESTORE BUTTON
+========================= */
 
 finally{
 
-button.disabled = false;
+button.disabled =
+false;
 
 button.innerText =
 oldText;
