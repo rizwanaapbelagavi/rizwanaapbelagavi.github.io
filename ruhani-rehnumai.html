@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Ruhani Rehnumai | Personal Guidance</title>
 
@@ -16,7 +15,7 @@ content="Ruhani Rehnumai - Dua, personal guidance and appointment booking.">
 <style>
 
 /* =========================
-   BASIC RESET
+   RESET
 ========================= */
 
 *{
@@ -25,84 +24,48 @@ padding:0;
 box-sizing:border-box;
 }
 
+:root{
+--green:#126b3a;
+--dark-green:#083d24;
+--light-green:#eef8f1;
+--orange:#f28c28;
+--dark-orange:#d96f0b;
+--cream:#fff4e6;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:Arial,sans-serif;
-background:#f3f8f4;
+background:#f6faf7;
 color:#17351f;
 line-height:1.6;
 }
 
 
 /* =========================
-   HERO
+   TOP IMAGE
 ========================= */
 
-.hero{
-min-height:88vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:35px 20px;
-background:
-linear-gradient(
-rgba(3,54,28,.92),
-rgba(3,54,28,.92)
-);
-color:white;
+.ruhani-image-section{
+width:100%;
+margin:0;
+padding:0;
+background:#fff;
 }
 
-.hero-content{
-max-width:700px;
-width:100%;
-}
-
-.hero-image{
-width:100%;
-max-width:680px;
-height:auto;
+.ruhani-image-section img{
 display:block;
-margin:0 auto 25px;
-border-radius:22px;
-box-shadow:
-0 12px 35px rgba(0,0,0,.25);
-}
-
-.symbol{
-font-size:58px;
-margin-bottom:12px;
-}
-
-.hero h1{
-font-size:48px;
-line-height:1.15;
-margin-bottom:14px;
-}
-
-.hero h1 span{
-color:#bcebc7;
-}
-
-.tagline{
-font-size:21px;
-margin-bottom:22px;
-}
-
-.intro{
-font-size:17px;
-color:#e0f0e4;
-margin-bottom:30px;
-}
-
-.button{
-display:inline-block;
-padding:16px 30px;
-border-radius:50px;
-background:white;
-color:#126331;
-text-decoration:none;
-font-weight:bold;
-font-size:17px;
+width:100%;
+max-width:100%;
+height:auto;
+margin:0;
+padding:0;
+border:0;
+border-radius:0;
+box-shadow:none;
 }
 
 
@@ -121,7 +84,7 @@ margin:auto;
 
 h2{
 font-size:30px;
-color:#145b2d;
+color:var(--green);
 text-align:center;
 margin-bottom:18px;
 }
@@ -133,104 +96,240 @@ color:#536359;
 
 
 /* =========================
+   FLOATING BOOKING BUTTON
+========================= */
+
+.floating-booking{
+position:fixed;
+left:50%;
+bottom:18px;
+transform:translateX(-50%) translateY(120px);
+
+width:calc(100% - 32px);
+max-width:620px;
+
+padding:16px 22px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:linear-gradient(
+90deg,
+var(--green),
+var(--dark-green),
+var(--orange)
+);
+
+color:white;
+text-align:center;
+text-decoration:none;
+
+font-size:17px;
+font-weight:800;
+
+border:2px solid rgba(255,255,255,.35);
+border-radius:50px;
+
+box-shadow:
+0 12px 35px rgba(0,0,0,.28);
+
+z-index:9999;
+
+opacity:0;
+visibility:hidden;
+
+transition:
+transform .4s ease,
+opacity .35s ease;
+}
+
+.floating-booking.show{
+transform:translateX(-50%) translateY(0);
+opacity:1;
+visibility:visible;
+}
+
+.floating-booking:active{
+transform:translateX(-50%) scale(.97);
+}
+
+
+/* =========================
    ABOUT
 ========================= */
 
 .about-section{
+padding:70px 20px;
+
 background:
+radial-gradient(
+circle at top left,
+rgba(22,163,74,.10),
+transparent 35%
+),
+radial-gradient(
+circle at bottom right,
+rgba(242,140,40,.08),
+transparent 35%
+),
 linear-gradient(
-135deg,
-#f1f8f3,
+180deg,
+#f8fff9,
 #ffffff
 );
-text-align:center;
+}
+
+.about-section .container{
+width:100%;
+max-width:850px;
+margin:auto;
 }
 
 .about-heading{
-margin-bottom:25px;
+text-align:center;
+margin-bottom:35px;
 }
 
 .about-icon{
-font-size:48px;
-margin-bottom:10px;
+width:64px;
+height:64px;
+margin:0 auto 15px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:50%;
+
+background:
+linear-gradient(
+135deg,
+var(--green),
+#16834a
+);
+
+color:white;
+font-size:30px;
+
+box-shadow:
+0 10px 30px rgba(18,107,58,.22);
 }
 
 .about-heading h2{
-margin-bottom:5px;
-}
-
-.about-card{
-background:white;
-padding:28px 22px;
-border-radius:22px;
-box-shadow:
-0 8px 28px rgba(0,0,0,.07);
-margin-bottom:20px;
-}
-
-.about-card h3{
-color:#145b2d;
-margin-bottom:14px;
-font-size:22px;
-}
-
-.about-card p{
-color:#536359;
-font-size:16px;
-margin-bottom:15px;
-}
-
-.about-card p:last-child{
-margin-bottom:0;
-}
-
-.about-grid{
-display:grid;
-grid-template-columns:1fr 1fr 1fr;
-gap:12px;
-margin-top:20px;
-}
-
-.about-box{
-background:white;
-padding:20px 15px;
-border-radius:18px;
-box-shadow:
-0 4px 15px rgba(0,0,0,.06);
-}
-
-.about-box-icon{
-font-size:32px;
-margin-bottom:8px;
-}
-
-.about-box h3{
-font-size:17px;
-color:#145b2d;
-margin-bottom:7px;
-}
-
-.about-box p{
-font-size:14px;
-color:#536359;
-}
-
-.about-note{
-margin-top:22px;
-padding:18px;
-border-radius:15px;
-background:#eef8f0;
-color:#145b2d;
-}
-
-.about-note strong{
-display:block;
-font-size:18px;
-margin-bottom:8px;
-}
-
-.about-note p{
 margin:0;
+font-size:34px;
+font-weight:800;
+}
+
+.about-subtitle{
+margin:10px auto 0;
+max-width:600px;
+font-size:16px;
+color:#666;
+}
+
+.about-intro{
+background:white;
+border:1px solid rgba(18,107,58,.12);
+border-radius:24px;
+padding:30px;
+margin-bottom:25px;
+
+box-shadow:
+0 12px 35px rgba(0,0,0,.07);
+}
+
+.about-highlight{
+display:inline-flex;
+align-items:center;
+gap:8px;
+
+margin-bottom:15px;
+padding:8px 15px;
+
+border-radius:30px;
+
+background:#eaf8ef;
+color:var(--green);
+
+font-size:15px;
+}
+
+.about-intro p{
+margin:12px 0;
+font-size:17px;
+line-height:1.85;
+color:#333;
+}
+
+.about-intro strong{
+color:var(--green);
+}
+
+.about-purpose{
+margin-top:28px;
+padding:25px;
+
+border-radius:22px;
+
+background:
+linear-gradient(
+135deg,
+var(--green),
+#16834a
+);
+
+color:white;
+text-align:center;
+
+box-shadow:
+0 14px 35px rgba(18,107,58,.20);
+}
+
+.purpose-title{
+font-size:20px;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.about-purpose p{
+margin:0;
+font-size:16px;
+}
+
+.about-final{
+margin-top:25px;
+padding:28px 25px;
+
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#fff,
+#f6fbf7
+);
+
+border:1px solid rgba(18,107,58,.14);
+border-radius:24px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.06);
+}
+
+.about-final strong{
+display:block;
+font-size:22px;
+color:var(--green);
+margin-bottom:10px;
+}
+
+.about-final p{
+max-width:620px;
+margin:auto;
+font-size:16px;
+color:#555;
 }
 
 
@@ -239,7 +338,12 @@ margin:0;
 ========================= */
 
 .problem-section{
-background:#f1f7f3;
+background:
+linear-gradient(
+135deg,
+#f0f8f3,
+#fff7ed
+);
 }
 
 .problems{
@@ -252,13 +356,26 @@ margin-top:28px;
 .problem{
 background:white;
 padding:17px;
+
 border-radius:15px;
+
+border-left:4px solid var(--orange);
+
 box-shadow:
 0 3px 12px rgba(0,0,0,.06);
+
+transition:.25s ease;
+}
+
+.problem:hover{
+transform:translateY(-3px);
+
+box-shadow:
+0 8px 20px rgba(18,107,58,.12);
 }
 
 .problem strong{
-color:#145b2d;
+color:var(--green);
 }
 
 .problem-section .about-highlight{
@@ -278,9 +395,20 @@ text-align:center;
 .price-card{
 max-width:600px;
 margin:25px auto 0;
+
 padding:30px 22px;
+
 border-radius:22px;
-background:#eef8f0;
+
+background:
+linear-gradient(
+135deg,
+#eef8f1,
+#fff4e6
+);
+
+border:2px solid var(--orange);
+
 box-shadow:
 0 8px 28px rgba(0,0,0,.08);
 }
@@ -288,7 +416,7 @@ box-shadow:
 .price{
 font-size:50px;
 font-weight:bold;
-color:#145b2d;
+color:var(--green);
 }
 
 .duration{
@@ -305,6 +433,7 @@ list-style:none;
 
 .benefits li{
 padding:9px 0;
+border-bottom:1px solid #e6eee8;
 }
 
 
@@ -313,20 +442,30 @@ padding:9px 0;
 ========================= */
 
 .process{
-background:#f1f7f3;
+background:
+linear-gradient(
+135deg,
+#f1f8f3,
+#fff7ed
+);
 }
 
 .step{
 background:white;
 padding:18px;
+
 border-radius:15px;
+
 margin-bottom:13px;
+
+border-left:5px solid var(--green);
+
 box-shadow:
 0 3px 12px rgba(0,0,0,.05);
 }
 
 .step strong{
-color:#145b2d;
+color:var(--dark-orange);
 }
 
 
@@ -335,15 +474,26 @@ color:#145b2d;
 ========================= */
 
 .booking{
-background:#eaf6ed;
+background:
+linear-gradient(
+135deg,
+#eaf7ef,
+#fff3e5
+);
 }
 
 .booking-card{
 max-width:650px;
 margin:25px auto 0;
+
 background:white;
+
 padding:28px 20px;
+
 border-radius:22px;
+
+border-top:5px solid var(--orange);
+
 box-shadow:
 0 8px 28px rgba(0,0,0,.08);
 }
@@ -351,7 +501,7 @@ box-shadow:
 label{
 display:block;
 font-weight:bold;
-color:#245536;
+color:var(--green);
 margin:16px 0 7px;
 }
 
@@ -359,11 +509,17 @@ input,
 select,
 textarea{
 width:100%;
+
 padding:15px;
+
 border:1px solid #cbdccf;
+
 border-radius:12px;
+
 font-size:16px;
+
 background:#fbfdfb;
+
 font-family:Arial,sans-serif;
 }
 
@@ -371,9 +527,11 @@ input:focus,
 select:focus,
 textarea:focus{
 outline:none;
-border-color:#146b35;
+
+border-color:var(--orange);
+
 box-shadow:
-0 0 0 3px rgba(20,107,53,.08);
+0 0 0 3px rgba(242,140,40,.12);
 }
 
 textarea{
@@ -388,16 +546,27 @@ resize:vertical;
 
 .slot-info{
 margin-top:18px;
+
 padding:18px;
+
 border-radius:15px;
-background:#eef8f0;
+
+background:
+linear-gradient(
+135deg,
+#eef8f1,
+#fff4e6
+);
+
+border-left:5px solid var(--green);
+
 text-align:center;
 }
 
 .slot-title{
 font-size:18px;
 font-weight:bold;
-color:#145b2d;
+color:var(--green);
 margin-bottom:8px;
 }
 
@@ -413,38 +582,70 @@ color:#536359;
 
 .fee-box{
 margin-top:22px;
+
 padding:20px;
+
 border-radius:15px;
-background:#f0f7f1;
+
+background:
+linear-gradient(
+135deg,
+#fff4e6,
+#eef8f1
+);
+
+border:2px solid var(--orange);
+
 text-align:center;
 }
 
 .fee{
 font-size:34px;
 font-weight:bold;
-color:#145b2d;
+color:var(--green);
 }
 
 
 /* =========================
-   BUTTON
+   SUBMIT BUTTON
 ========================= */
 
 .submit-button{
 width:100%;
+
 margin-top:22px;
+
 padding:17px;
+
 border:none;
+
 border-radius:50px;
-background:#146b35;
+
+background:
+linear-gradient(
+90deg,
+var(--green),
+var(--orange)
+);
+
 color:white;
+
 font-size:18px;
 font-weight:bold;
+
 cursor:pointer;
+
+box-shadow:
+0 8px 20px rgba(18,107,58,.20);
 }
 
 .submit-button:hover{
-background:#0f572b;
+background:
+linear-gradient(
+90deg,
+#0b512b,
+var(--dark-orange)
+);
 }
 
 .submit-button:disabled{
@@ -461,7 +662,9 @@ cursor:not-allowed;
 display:flex;
 gap:10px;
 align-items:flex-start;
+
 margin-top:18px;
+
 font-size:13px;
 color:#536359;
 }
@@ -478,8 +681,11 @@ margin-top:5px;
 
 .note{
 margin-top:18px;
+
 font-size:13px;
+
 color:#68746b;
+
 text-align:center;
 }
 
@@ -496,10 +702,22 @@ text-align:center;
 .privacy-box{
 max-width:680px;
 margin:auto;
-background:#f7faf7;
+
+background:
+linear-gradient(
+135deg,
+#f7faf7,
+#fff8ef
+);
+
 padding:22px;
+
 border-radius:16px;
+
+border-top:4px solid var(--green);
+
 color:#536359;
+
 font-size:14px;
 }
 
@@ -509,11 +727,22 @@ font-size:14px;
 ========================= */
 
 footer{
-background:#103b20;
+background:
+linear-gradient(
+135deg,
+#083d24,
+#126b3a
+);
+
 color:#dcefe1;
+
 text-align:center;
+
 padding:32px 20px;
+
 font-size:13px;
+
+border-top:5px solid var(--orange);
 }
 
 
@@ -523,37 +752,32 @@ font-size:13px;
 
 @media(max-width:700px){
 
-.about-grid{
-grid-template-columns:1fr;
-}
-
-}
-
-@media(max-width:600px){
-
-.hero{
-min-height:auto;
-padding:45px 18px;
-}
-
-.hero h1{
-font-size:43px;
-}
-
-.hero-image{
-border-radius:18px;
+section{
+padding:50px 18px;
 }
 
 .problems{
 grid-template-columns:1fr;
 }
 
-.about-content{
-padding:22px 18px;
+.about-section{
+padding:50px 15px;
 }
 
-section{
-padding:50px 18px;
+.about-heading h2{
+font-size:29px;
+}
+
+.about-intro{
+padding:23px 20px;
+}
+
+.about-intro p{
+font-size:16px;
+}
+
+.price{
+font-size:46px;
 }
 
 }
@@ -563,2173 +787,154 @@ padding:50px 18px;
    SMALL MOBILE
 ========================= */
 
-@media(max-width:380px){
+@media(max-width:400px){
 
-.hero h1{
-font-size:37px;
-}
-
-.tagline{
-font-size:18px;
-}
-
-.intro{
-font-size:16px;
-}
-
-}
-
-
-/* =========================
-   END CSS
-========================= */
-/* =========================================
-   GREEN + ORANGE PREMIUM THEME
-========================================= */
-
-/* Main Green */
-:root{
-    --green:#126b3a;
-    --dark-green:#083d24;
-    --light-green:#eef8f1;
-    --orange:#f28c28;
-    --dark-orange:#d96f0b;
-    --light-orange:#fff4e6;
-}
-
-/* Body */
-body{
-    background:#f6faf7;
-    color:#17351f;
-}
-
-/* HERO */
-.hero{
-    background:
-    linear-gradient(
-        135deg,
-        rgba(8,61,36,.97),
-        rgba(18,107,58,.94),
-        rgba(242,140,40,.88)
-    );
-}
-
-.hero h1 span{
-    color:#ffb45a;
-}
-
-.symbol{
-    color:#ff9b32;
-}
-
-.button{
-    background:#f28c28;
-    color:white;
-    box-shadow:0 8px 20px rgba(242,140,40,.30);
-}
-
-.button:hover{
-    background:#d96f0b;
-}
-
-/* SECTION HEADINGS */
-h2{
-    color:#126b3a;
+.about-heading h2{
+font-size:26px;
 }
 
 .about-icon{
-    color:#f28c28;
+width:56px;
+height:56px;
+font-size:26px;
 }
 
-/* ABOUT SECTION */
-.about-section{
-    background:
-    linear-gradient(
-        135deg,
-        #eef8f1,
-        #fff8ef
-    );
+.about-intro p{
+font-size:15px;
 }
-
-.about-content,
-.about-card{
-    border-top:4px solid #f28c28;
-}
-
-.about-highlight,
-.about-note{
-    background:
-    linear-gradient(
-        135deg,
-        #eef8f1,
-        #fff4e6
-    );
-    border-left:5px solid #f28c28;
-    color:#126b3a;
-}
-
-/* PROBLEM SECTION */
-.problem-section{
-    background:
-    linear-gradient(
-        135deg,
-        #f0f8f3,
-        #fff7ed
-    );
-}
-
-.problem{
-    border-left:4px solid #f28c28;
-    transition:.25s ease;
-}
-
-.problem:hover{
-    transform:translateY(-3px);
-    box-shadow:0 8px 20px rgba(18,107,58,.12);
-}
-
-/* PRICE */
-.price-section{
-    background:white;
-}
-
-.price-card{
-    background:
-    linear-gradient(
-        135deg,
-        #eef8f1,
-        #fff4e6
-    );
-    border:2px solid #f28c28;
-}
-
-.price{
-    color:#126b3a;
-}
-
-.duration{
-    color:#536359;
-}
-
-/* BENEFITS */
-.benefits li{
-    border-bottom:1px solid #e6eee8;
-}
-
-.benefits li::first-letter{
-    color:#f28c28;
-}
-
-/* PROCESS */
-.process{
-    background:
-    linear-gradient(
-        135deg,
-        #f1f8f3,
-        #fff7ed
-    );
-}
-
-.step{
-    border-left:5px solid #126b3a;
-}
-
-.step strong{
-    color:#d96f0b;
-}
-
-/* BOOKING */
-.booking{
-    background:
-    linear-gradient(
-        135deg,
-        #eaf7ef,
-        #fff3e5
-    );
-}
-
-.booking-card{
-    border-top:5px solid #f28c28;
-}
-
-/* FORM LABELS */
-label{
-    color:#126b3a;
-}
-
-/* FORM INPUTS */
-input:focus,
-select:focus,
-textarea:focus{
-    outline:none;
-    border-color:#f28c28;
-    box-shadow:0 0 0 3px rgba(242,140,40,.12);
-}
-
-/* SLOT INFO */
-.slot-info{
-    background:
-    linear-gradient(
-        135deg,
-        #eef8f1,
-        #fff4e6
-    );
-    border-left:5px solid #126b3a;
-}
-
-.slot-title{
-    color:#126b3a;
-}
-
-/* FEE BOX */
-.fee-box{
-    background:
-    linear-gradient(
-        135deg,
-        #fff4e6,
-        #eef8f1
-    );
-    border:2px solid #f28c28;
-}
-
-.fee{
-    color:#126b3a;
-}
-
-/* BOOKING BUTTON */
-.submit-button{
-    background:
-    linear-gradient(
-        90deg,
-        #126b3a,
-        #f28c28
-    );
-    box-shadow:0 8px 20px rgba(18,107,58,.20);
-}
-
-.submit-button:hover{
-    background:
-    linear-gradient(
-        90deg,
-        #0b512b,
-        #d96f0b
-    );
-}
-
-/* PRIVACY */
-.privacy{
-    background:white;
-}
-
-.privacy-box{
-    border-top:4px solid #126b3a;
-    background:
-    linear-gradient(
-        135deg,
-        #f7faf7,
-        #fff8ef
-    );
-}
-
-/* FOOTER */
-footer{
-    background:
-    linear-gradient(
-        135deg,
-        #083d24,
-        #126b3a
-    );
-    border-top:5px solid #f28c28;
-}
-
-/* ORANGE ACCENT */
-.about-heading p{
-    color:#d96f0b;
-    font-weight:bold;
-}
-
-.note{
-    color:#68746b;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-
-    .hero{
-        background:
-        linear-gradient(
-            145deg,
-            rgba(8,61,36,.97),
-            rgba(18,107,58,.94),
-            rgba(242,140,40,.88)
-        );
-    }
-
-    .price{
-        font-size:46px;
-    }
-
-}
-   /* =========================================
-   FLOATING BOOKING BUTTON
-========================================= */
 
 .floating-booking{
-    position:fixed;
-    left:50%;
-    bottom:18px;
-    transform:translateX(-50%);
-    width:calc(100% - 32px);
-    max-width:520px;
-    padding:16px 22px;
-    border-radius:50px;
-    background:linear-gradient(
-        90deg,
-        #126b3a,
-        #f28c28
-    );
-    color:white;
-    text-align:center;
-    text-decoration:none;
-    font-size:17px;
-    font-weight:bold;
-    z-index:9999;
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.25);
-    animation:bookingPulse 2.2s infinite;
+width:calc(100% - 24px);
+font-size:15px;
+padding:14px 16px;
 }
-
-.floating-booking:hover{
-    background:linear-gradient(
-        90deg,
-        #0b512b,
-        #d96f0b
-    );
-}
-
-@keyframes bookingPulse{
-
-    0%{
-        transform:translateX(-50%) scale(1);
-    }
-
-    50%{
-        transform:translateX(-50%) scale(1.03);
-    }
-
-    100%{
-        transform:translateX(-50%) scale(1);
-    }
 
 }
 
-/* Mobile */
-@media(max-width:600px){
-
- /* =========================================
-   PREMIUM GREEN + ORANGE FLOATING BOOKING
-   ========================================= */
-
-.floating-booking{
-    position:fixed;
-    left:50%;
-    bottom:18px;
-    transform:translateX(-50%);
-    
-    width:calc(100% - 32px);
-    max-width:620px;
-    
-    padding:16px 22px;
-    border-radius:50px;
-    
-    background:linear-gradient(
-        100deg,
-        #126b3a 0%,
-        #16834a 45%,
-        #f28c28 100%
-    );
-    
-    color:#ffffff;
-    font-size:17px;
-    font-weight:800;
-    text-align:center;
-    text-decoration:none;
-    
-    border:2px solid rgba(255,255,255,.35);
-    
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.28),
-        0 0 0 4px rgba(242,140,40,.12);
-    
-    z-index:9999;
-    
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-    
-    transition:all .25s ease;
-    
-    animation:bookingPulse 2.5s infinite;
-}
-
-.floating-booking:hover{
-    transform:translateX(-50%) translateY(-3px);
-    box-shadow:
-        0 14px 35px rgba(0,0,0,.35),
-        0 0 0 5px rgba(242,140,40,.16);
-}
-
-.floating-booking:active{
-    transform:translateX(-50%) scale(.97);
-}
-
-/* Soft attention animation */
-@keyframes bookingPulse{
-    0%,100%{
-        box-shadow:
-        0 10px 30px rgba(0,0,0,.28),
-        0 0 0 4px rgba(242,140,40,.12);
-    }
-    50%{
-        box-shadow:
-        0 12px 34px rgba(0,0,0,.32),
-        0 0 0 8px rgba(242,140,40,.08);
-    }
-}
-
-
-
-}
-   /* =========================================
-   PREMIUM GREEN + ORANGE HERO STRUCTURE
-========================================= */
-
-.hero{
-    position:relative;
-    overflow:hidden;
-    min-height:88vh;
-    background:
-        radial-gradient(circle at 15% 20%,
-        rgba(242,140,40,.20),
-        transparent 32%),
-        radial-gradient(circle at 85% 80%,
-        rgba(255,180,60,.18),
-        transparent 30%),
-        linear-gradient(
-        135deg,
-        #063d24 0%,
-        #0b6b3b 48%,
-        #b96b18 100%
-        );
-}
-
-/* Soft Islamic geometric pattern */
-
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    opacity:.13;
-    background-image:
-        radial-gradient(
-        circle at center,
-        rgba(255,255,255,.8) 1px,
-        transparent 1.5px
-        );
-    background-size:22px 22px;
-    pointer-events:none;
-}
-
-/* Premium Arch Frame */
-
-.hero::after{
-    content:"";
-    position:absolute;
-    width:min(92vw,720px);
-    height:90%;
-    left:50%;
-    top:5%;
-    transform:translateX(-50%);
-    border:2px solid rgba(242,140,40,.65);
-    border-bottom:none;
-    border-radius:360px 360px 0 0;
-    box-shadow:
-        0 0 0 8px rgba(255,255,255,.05),
-        0 0 45px rgba(242,140,40,.18);
-    pointer-events:none;
-}
-
-/* Content stays above decoration */
-
-.hero-content{
-    position:relative;
-    z-index:3;
-    width:100%;
-    max-width:720px;
-    padding:32px 22px 42px;
-    border-radius:30px;
-    background:rgba(3,54,28,.28);
-    border:1px solid rgba(255,255,255,.18);
-    box-shadow:
-        0 20px 55px rgba(0,0,0,.20),
-        inset 0 1px 0 rgba(255,255,255,.12);
-    backdrop-filter:blur(4px);
-}
-
-/* Hero image premium frame */
-
-.hero-image{
-    width:92%;
-    max-width:620px;
-    margin:0 auto 24px;
-    border-radius:22px;
-    border:3px solid rgba(242,140,40,.75);
-    box-shadow:
-        0 10px 35px rgba(0,0,0,.30),
-        0 0 0 5px rgba(255,255,255,.06);
-}
-
-/* Leaf / symbol */
-
-.symbol{
-    width:82px;
-    height:82px;
-    margin:8px auto 18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    font-size:46px;
-    background:
-        linear-gradient(
-        145deg,
-        rgba(255,255,255,.18),
-        rgba(242,140,40,.18)
-        );
-    border:2px solid rgba(242,140,40,.65);
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.20),
-        0 0 25px rgba(242,140,40,.15);
-}
-
-/* Ruhani Rehnumai orange highlight */
-
-.hero h1 span{
-    color:#ffad45;
-    text-shadow:0 2px 12px rgba(242,140,40,.25);
-}
-
-/* Tagline */
-
-.tagline{
-    display:inline-block;
-    padding:8px 18px;
-    border-radius:30px;
-    background:rgba(242,140,40,.14);
-    border:1px solid rgba(242,140,40,.38);
-}
-
-/* Main booking button */
-
-.hero .button{
-    margin-top:8px;
-    background:
-        linear-gradient(
-        90deg,
-        #f28c28,
-        #ffad45
-        );
-    color:white;
-    border:2px solid rgba(255,255,255,.20);
-    box-shadow:
-        0 10px 25px rgba(242,140,40,.35);
-    transition:.25s ease;
-}
-
-.hero .button:hover{
-    transform:translateY(-3px);
-    box-shadow:
-        0 14px 30px rgba(242,140,40,.45);
-}
-
-/* Mobile */
-
-@media(max-width:600px){
-
-    .hero{
-        min-height:92vh;
-        padding:28px 14px 38px;
-    }
-
-    .hero::after{
-        width:94vw;
-        height:88%;
-        top:6%;
-        border-radius:220px 220px 0 0;
-    }
-
-    .hero-content{
-        padding:24px 14px 34px;
-        border-radius:26px;
-    }
-
-    .hero-image{
-        width:96%;
-        margin-bottom:20px;
-        border-radius:18px;
-    }
-
-    .symbol{
-        width:72px;
-        height:72px;
-        font-size:40px;
-    }
-
-    .hero h1{
-        font-size:42px;
-    }
-
-}
-   /* =========================================
-   PREMIUM FLOATING BOOKING BUTTON
-   ========================================= */
-
-.floating-booking{
-    position:fixed;
-    left:50%;
-    bottom:22px;
-    transform:translateX(-50%) translateY(120px);
-    z-index:9999;
-
-    width:min(620px, calc(100% - 32px));
-    padding:16px 24px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:linear-gradient(
-        100deg,
-        #126b3a 0%,
-        #083d24 48%,
-        #f28c28 100%
-    );
-
-    color:#fff;
-    text-decoration:none;
-
-    border:2px solid rgba(255,255,255,.35);
-    border-radius:55px;
-
-    font-size:18px;
-    font-weight:800;
-    letter-spacing:.2px;
-
-    box-shadow:
-        0 12px 35px rgba(0,0,0,.30),
-        0 0 0 1px rgba(255,255,255,.15) inset;
-
-    opacity:0;
-    visibility:hidden;
-
-    transition:
-        transform .45s ease,
-        opacity .35s ease,
-        box-shadow .3s ease;
-}
-
-/* Scroll ke baad show */
-.floating-booking.show{
-    transform:translateX(-50%) translateY(0);
-    opacity:1;
-    visibility:visible;
-}
-
-/* Touch / hover effect */
-.floating-booking:active{
-    transform:translateX(-50%) scale(.97);
-}
-
-.floating-booking:hover{
-    box-shadow:
-        0 16px 42px rgba(0,0,0,.38),
-        0 0 25px rgba(242,140,40,.30);
-}
-
-/* Mobile */
-@media(max-width:600px){
-
-    .floating-booking{
-        bottom:14px;
-        width:calc(100% - 28px);
-        padding:15px 18px;
-        font-size:16px;
-        border-radius:45px;
-    }
-
-}
-   /* =========================================
-   PREMIUM ABOUT US DESIGN
-========================================= */
-
-.about-section {
-  padding: 70px 20px;
-  background:
-    radial-gradient(circle at top left, rgba(22, 163, 74, 0.12), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(242, 140, 40, 0.10), transparent 35%),
-    linear-gradient(180deg, #f8fff9 0%, #ffffff 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.about-section .container {
-  width: 100%;
-  max-width: 850px;
-  margin: 0 auto;
-}
-
-
-/* ---------- HEADING ---------- */
-
-.about-section .about-heading {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.about-section .about-icon {
-  width: 64px;
-  height: 64px;
-  margin: 0 auto 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #126b3a, #16834a);
-  color: white;
-  font-size: 30px;
-  box-shadow: 0 10px 30px rgba(18, 107, 58, 0.22);
-}
-
-.about-section .about-heading h2 {
-  margin: 0;
-  font-size: 34px;
-  font-weight: 800;
-  color: #126b3a;
-  letter-spacing: -0.5px;
-}
-
-.about-section .about-subtitle {
-  margin: 10px auto 0;
-  max-width: 600px;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #666;
-}
-
-
-/* ---------- INTRO ---------- */
-
-.about-section .about-intro {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(18, 107, 58, 0.12);
-  border-radius: 24px;
-  padding: 30px;
-  margin-bottom: 25px;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
-  backdrop-filter: blur(12px);
-}
-
-.about-section .about-highlight {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 15px;
-  padding: 8px 15px;
-  border-radius: 30px;
-  background: #eaf8ef;
-  color: #126b3a;
-  font-size: 15px;
-}
-
-.about-section .about-intro p {
-  margin: 12px 0;
-  font-size: 17px;
-  line-height: 1.85;
-  color: #333;
-}
-
-.about-section .about-intro strong {
-  color: #126b3a;
-}
-
-
-/* ---------- THREE CARDS ---------- */
-
-.about-section .about-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin: 25px 0;
-}
-
-.about-section .about-card {
-  padding: 25px 18px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(18, 107, 58, 0.12);
-  border-radius: 22px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
-}
-
-.about-section .about-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 35px rgba(18, 107, 58, 0.14);
-}
-
-.about-section .about-card-icon {
-  font-size: 30px;
-  margin-bottom: 12px;
-}
-
-.about-section .about-card strong {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 17px;
-  color: #126b3a;
-}
-
-.about-section .about-card span {
-  display: block;
-  font-size: 14px;
-  line-height: 1.6;
-  color: #666;
-}
-
-
-/* ---------- PURPOSE ---------- */
-
-.about-section .about-purpose {
-  margin-top: 28px;
-  padding: 25px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #126b3a, #16834a);
-  color: white;
-  text-align: center;
-  box-shadow: 0 14px 35px rgba(18, 107, 58, 0.20);
-}
-
-.about-section .purpose-title {
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.about-section .about-purpose p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 1.7;
-  opacity: 0.96;
-}
-
-
-/* ---------- FINAL MESSAGE ---------- */
-
-.about-section .about-final {
-  margin-top: 25px;
-  padding: 28px 25px;
-  text-align: center;
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.95),
-    rgba(246,251,247,0.95)
-  );
-  border: 1px solid rgba(18, 107, 58, 0.14);
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-}
-
-.about-section .about-final strong {
-  display: block;
-  font-size: 22px;
-  color: #126b3a;
-  margin-bottom: 10px;
-}
-
-.about-section .about-final p {
-  max-width: 620px;
-  margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.75;
-  color: #555;
-}
-
-
-/* ---------- MOBILE ---------- */
-
-@media (max-width: 700px) {
-
-  .about-section {
-    padding: 50px 15px;
-  }
-
-  .about-section .about-heading h2 {
-    font-size: 29px;
-  }
-
-  .about-section .about-subtitle {
-    font-size: 15px;
-  }
-
-  .about-section .about-intro {
-    padding: 23px 20px;
-    border-radius: 20px;
-  }
-
-  .about-section .about-intro p {
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
-  .about-section .about-cards {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .about-section .about-card {
-    padding: 22px 18px;
-  }
-
-  .about-section .about-purpose {
-    padding: 23px 18px;
-  }
-
-  .about-section .about-final {
-    padding: 24px 18px;
-  }
-
-}
-
-
-/* ---------- SMALL PHONES ---------- */
-
-@media (max-width: 400px) {
-
-  .about-section .about-heading h2 {
-    font-size: 26px;
-  }
-
-  .about-section .about-icon {
-    width: 56px;
-    height: 56px;
-    font-size: 26px;
-  }
-
-  .about-section .about-intro p {
-    font-size: 15px;
-  }
-
-  .about-section .about-final strong {
-    font-size: 20px;
-  }
-
-}
 </style>
 
 </head>
 
 
 <body>
-   <!-- TOP RUHANI REHNUMAI IMAGE -->
-<section class="ruhani-image-section">
-  <img
-    src="ruhani-top-hd.jpg"
-    alt="Ruhani Rehnumai - Quran, Dua and Spiritual Guidance"
-  >
-</section>
-<!-- FLOATING BOOKING BUTTON -->
 
-<a href="#booking" class="floating-booking">
+
+<!-- =================================
+     ONLY ONE TOP IMAGE
+================================= -->
+
+<section class="ruhani-image-section">
+
+<img
+src="ruhani-top-hd.jpg"
+alt="Ruhani Rehnumai - Quran, Dua and Spiritual Guidance"
+>
+
+</section>
+
+
+<!-- =================================
+     FLOATING BOOKING BUTTON
+================================= -->
+
+<a
+href="#booking"
+class="floating-booking"
+>
 📅 ₹101 — Apna Slot Book Karein
 </a>
 
-<!-- =========================
-     HERO
-========================= -->
-<style>
-/* ===== PREMIUM RUHANI REHNUMAI SHOWCASE ===== */
 
-.hero-showcase {
-  width: 92%;
-  max-width: 900px;
-  margin: 25px auto 35px;
-  padding: 32px 20px 38px;
-  text-align: center;
-  border-radius: 32px;
-  background:
-    linear-gradient(145deg, rgba(0,70,45,.96), rgba(8,92,55,.92));
-  border: 2px solid rgba(242,140,40,.65);
-  box-shadow:
-    0 20px 50px rgba(0,0,0,.28),
-    inset 0 0 25px rgba(255,255,255,.06);
-}
+<!-- =================================
+     ABOUT US
+================================= -->
 
-.showcase-label {
-  display: inline-block;
-  padding: 7px 18px;
-  border-radius: 30px;
-  color: #f2c66d;
-  border: 1px solid rgba(242,198,109,.45);
-  background: rgba(255,255,255,.06);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  margin-bottom: 15px;
-}
+<section
+class="about-section"
+id="about"
+>
 
-.hero-showcase h1 {
-  margin: 0;
-  font-size: 42px;
-  line-height: 1.1;
-  color: #fff;
-  font-weight: 800;
-}
+<div class="container">
 
-.hero-showcase h1 span {
-  color: #f2a23a;
-}
 
-.showcase-tagline {
-  margin: 12px 0 25px;
-  color: #f7e5c0;
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: .5px;
-}
+<div class="about-heading">
 
-.showcase-image-wrap {
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto 28px;
-  padding: 8px;
-  border-radius: 25px;
-  background: linear-gradient(
-    135deg,
-    #f2a23a,
-    #fff1c7,
-    #f2a23a
-  );
-  box-shadow:
-    0 15px 40px rgba(0,0,0,.35);
-}
+<div class="about-icon">
+🤲
+</div>
 
-.showcase-image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 19px;
-}
+<h2>
+Hum Kaun Hain?
+</h2>
 
-.showcase-text {
-  max-width: 720px;
-  margin: auto;
-}
-
-.showcase-text h2 {
-  margin: 8px 0 12px;
-  color: #fff;
-  font-size: 25px;
-}
-
-.showcase-text p {
-  margin: 0 auto 22px;
-  color: rgba(255,255,255,.88);
-  font-size: 16px;
-  line-height: 1.7;
-}
-
-.showcase-points {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0 25px;
-}
-
-.showcase-points div {
-  padding: 10px 14px;
-  border-radius: 20px;
-  color: #fff;
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
-  font-size: 14px;
-}
-
-.hero-showcase .button {
-  display: inline-block;
-  padding: 14px 25px;
-  border-radius: 30px;
-  background: linear-gradient(90deg,#087443,#f2a23a);
-  color: #fff;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 8px 25px rgba(0,0,0,.25);
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-
-  .hero-showcase {
-    width: 90%;
-    padding: 25px 14px 30px;
-    border-radius: 26px;
-  }
-
-  .hero-showcase h1 {
-    font-size: 34px;
-  }
-
-  .showcase-tagline {
-    font-size: 15px;
-  }
-
-  .showcase-image-wrap {
-    padding: 6px;
-    border-radius: 20px;
-  }
-
-  .showcase-image {
-    border-radius: 15px;
-  }
-
-  .showcase-text h2 {
-    font-size: 21px;
-  }
-
-  .showcase-text p {
-    font-size: 15px;
-  }
-
-  .showcase-points {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .showcase-points div {
-    font-size: 14px;
-  }
-
-  .hero-showcase .button {
-    width: 90%;
-  }
-}
-   /* PREMIUM WEBSITE MOCKUP */
-
-.premium-mockup{
-    width:92%;
-    max-width:760px;
-    margin:30px auto;
-    padding:10px;
-    border-radius:26px;
-    background:linear-gradient(
-        145deg,
-        #102f22,
-        #06452d,
-        #123d2b
-    );
-    border:2px solid rgba(242,140,40,.65);
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.35),
-        0 0 30px rgba(242,140,40,.12);
-    overflow:hidden;
-}
-
-.mockup-topbar{
-    height:42px;
-    display:flex;
-    align-items:center;
-    gap:7px;
-    padding:0 15px;
-    background:#10271d;
-    border-radius:18px 18px 0 0;
-    border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.mockup-dot{
-    width:9px;
-    height:9px;
-    border-radius:50%;
-    background:#f2c66d;
-    opacity:.9;
-}
-
-.mockup-title{
-    margin-left:8px;
-    color:#f2c66d;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:1px;
-}
-
-.mockup-screen{
-    background:#fff;
-    border-radius:0 0 18px 18px;
-    overflow:hidden;
-    box-shadow:inset 0 0 20px rgba(0,0,0,.15);
-}
-
-.mockup-screen img{
-    display:block;
-    width:100%;
-    height:auto;
-    margin:0;
-    border:0;
-}
-
-@media(max-width:600px){
-
-    .premium-mockup{
-        width:94%;
-        padding:7px;
-        border-radius:20px;
-    }
-
-    .mockup-topbar{
-        height:34px;
-        padding:0 10px;
-    }
-
-    .mockup-dot{
-        width:7px;
-        height:7px;
-    }
-
-    .mockup-title{
-        font-size:10px;
-    }
-}
-   /* =========================================
-   CLEAN PREMIUM WEBSITE MOCKUP
-   ========================================= */
-
-.hero-showcase {
-    width: 94%;
-    max-width: 980px;
-    margin: 35px auto 45px;
-    padding: 28px 20px 35px;
-    text-align: center;
-
-    background: rgba(255,255,255,0.04);
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-
-    position: relative;
-    overflow: hidden;
-}
-
-/* Remove decorative heavy feeling */
-.hero-showcase::before,
-.hero-showcase::after {
-    display: none !important;
-}
-
-/* Heading */
-.hero-showcase h1 {
-    margin: 8px 0 10px;
-    font-size: 38px;
-    line-height: 1.15;
-    font-weight: 800;
-    color: #ffffff;
-    text-shadow: none;
-}
-
-.hero-showcase h1 span {
-    color: #f2a640;
-}
-
-/* Tagline */
-.showcase-tagline {
-    margin: 0 0 24px;
-    font-size: 16px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.88);
-}
-
-/* =========================================
-   BROWSER / WEBSITE MOCKUP
-   ========================================= */
-
-.showcase-image-wrap {
-    width: 94%;
-    max-width: 850px;
-    margin: 25px auto 28px;
-
-    padding: 0;
-
-    background: #f8f5ed;
-    border: 1px solid rgba(255,255,255,0.7);
-    border-radius: 18px;
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,0.22),
-        0 4px 12px rgba(0,0,0,0.12);
-
-    overflow: hidden;
-
-    position: relative;
-}
-
-/* Browser top bar */
-.showcase-image-wrap::before {
-    content: "●  ●  ●";
-    display: block;
-
-    height: 34px;
-    line-height: 34px;
-
-    padding-left: 15px;
-
-    text-align: left;
-
-    font-size: 11px;
-    letter-spacing: 4px;
-
-    color: #8b8b8b;
-
-    background: linear-gradient(
-        to bottom,
-        #ffffff,
-        #f1eee7
-    );
-
-    border-bottom: 1px solid #ddd8ce;
-}
-
-/* Website screenshot */
-.showcase-image {
-    display: block;
-
-    width: 100%;
-    height: auto;
-
-    margin: 0;
-
-    border: none;
-    border-radius: 0;
-
-    box-shadow: none;
-
-    object-fit: contain;
-}
-
-/* Text below mockup */
-.showcase-text {
-    max-width: 720px;
-    margin: 20px auto 0;
-}
-
-.showcase-text h2 {
-    color: #ffffff;
-    font-size: 25px;
-    margin-bottom: 10px;
-}
-
-.showcase-text p {
-    color: rgba(255,255,255,0.86);
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-/* Points */
-.showcase-points {
-    margin-top: 22px;
-}
-
-/* Booking button */
-.hero-showcase .button {
-    margin-top: 22px;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-
-    .hero-showcase {
-        width: 94%;
-        margin: 25px auto 35px;
-        padding: 20px 8px 28px;
-    }
-
-    .hero-showcase h1 {
-        font-size: 31px;
-    }
-
-    .showcase-tagline {
-        font-size: 14px;
-        margin-bottom: 18px;
-    }
-
-    .showcase-image-wrap {
-        width: 96%;
-        border-radius: 15px;
-        margin-top: 18px;
-    }
-
-    .showcase-image-wrap::before {
-        height: 27px;
-        line-height: 27px;
-        font-size: 9px;
-        letter-spacing: 3px;
-        padding-left: 10px;
-    }
-
-    .showcase-text h2 {
-        font-size: 22px;
-    }
-}
-   /* =========================================
-   CLEAN PREMIUM RUHANI REHNUMAI MOCKUP
-   ========================================= */
-
-/* Outer showcase — clean and natural */
-.hero-showcase {
-  width: 94% !important;
-  max-width: 980px !important;
-  margin: 35px auto 45px !important;
-  padding: 10px 0 25px !important;
-
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-
-  text-align: center !important;
-}
-
-/* Small heading label */
-.hero-showcase .showcase-label {
-  display: inline-block !important;
-  padding: 8px 18px !important;
-  margin-bottom: 15px !important;
-
-  background: rgba(255,255,255,.75) !important;
-  color: #0b5d3b !important;
-
-  border: 1px solid rgba(11,93,59,.18) !important;
-  border-radius: 30px !important;
-
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: 1.5px !important;
-}
-
-/* Main heading */
-.hero-showcase h1 {
-  margin: 0 0 8px !important;
-  color: #173f31 !important;
-  font-size: 42px !important;
-  font-weight: 800 !important;
-}
-
-/* Orange highlight */
-.hero-showcase h1 span {
-  color: #d99a28 !important;
-}
-
-/* Tagline */
-.hero-showcase .showcase-tagline {
-  color: #52645c !important;
-  font-size: 17px !important;
-  font-weight: 600 !important;
-  margin-bottom: 22px !important;
-}
-
-/* =========================================
-   WEBSITE BROWSER MOCKUP
-   ========================================= */
-
-.hero-showcase .showcase-image-wrap {
-  position: relative !important;
-
-  width: 100% !important;
-  max-width: 900px !important;
-  margin: 0 auto 28px !important;
-
-  padding: 42px 8px 8px !important;
-
-  background: #ffffff !important;
-
-  border: 1px solid rgba(0,0,0,.10) !important;
-  border-radius: 22px !important;
-
-  box-shadow:
-    0 20px 50px rgba(0,0,0,.16),
-    0 5px 15px rgba(0,0,0,.08) !important;
-
-  overflow: hidden !important;
-}
-
-/* Browser top bar */
-.hero-showcase .showcase-image-wrap::before {
-  content: "●  ●  ●     Ruhani Rehnumai";
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-
-  height: 42px !important;
-
-  display: flex !important;
-  align-items: center !important;
-
-  padding-left: 18px !important;
-
-  background: #f7f7f7 !important;
-  color: #777 !important;
-
-  border-bottom: 1px solid #e5e5e5 !important;
-
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: 1px !important;
-
-  box-sizing: border-box !important;
-}
-
-/* Website screenshot */
-.hero-showcase .showcase-image {
-  display: block !important;
-
-  width: 100% !important;
-  height: auto !important;
-
-  margin: 0 !important;
-
-  border-radius: 14px !important;
-
-  box-shadow: none !important;
-
-  object-fit: contain !important;
-}
-
-/* Description area */
-.hero-showcase .showcase-text {
-  max-width: 760px !important;
-  margin: 0 auto !important;
-
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Section heading below image */
-.hero-showcase .showcase-text h2 {
-  color: #173f31 !important;
-  font-size: 28px !important;
-  margin: 12px 0 10px !important;
-}
-
-/* Paragraph */
-.hero-showcase .showcase-text p {
-  color: #5d6863 !important;
-  font-size: 16px !important;
-  line-height: 1.7 !important;
-}
-
-/* Points */
-.hero-showcase .showcase-points {
-  max-width: 700px !important;
-  margin: 20px auto !important;
-}
-
-/* Booking button */
-.hero-showcase .button {
-  display: inline-block !important;
-
-  background: linear-gradient(
-    135deg,
-    #087443,
-    #0b9a58
-  ) !important;
-
-  color: #ffffff !important;
-
-  border: none !important;
-  border-radius: 50px !important;
-
-  padding: 14px 28px !important;
-
-  font-size: 16px !important;
-  font-weight: 700 !important;
-
-  box-shadow: 0 8px 22px rgba(8,116,67,.22) !important;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-
-  .hero-showcase {
-    width: 92% !important;
-    margin: 25px auto 35px !important;
-    padding: 5px 0 20px !important;
-  }
-
-  .hero-showcase h1 {
-    font-size: 31px !important;
-  }
-
-  .hero-showcase .showcase-tagline {
-    font-size: 14px !important;
-  }
-
-  .hero-showcase .showcase-image-wrap {
-    width: 100% !important;
-    padding: 36px 5px 5px !important;
-    border-radius: 18px !important;
-  }
-
-  .hero-showcase .showcase-image {
-    border-radius: 12px !important;
-  }
-
-  .hero-showcase .showcase-text h2 {
-    font-size: 23px !important;
-  }
-
-  .hero-showcase .showcase-text p {
-    font-size: 15px !important;
-  }
-
-  .hero-showcase .button {
-    width: 90% !important;
-  }
-}
-   /* =========================================
-   FINAL CLEAN MOCKUP CORRECTION
-   ========================================= */
-
-/* Remove heavy background and decorative frame */
-.hero-showcase {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-/* Remove old golden/green decorative elements */
-.hero-showcase::before,
-.hero-showcase::after,
-.hero-showcase .showcase-image-wrap::after {
-  display: none !important;
-  content: none !important;
-}
-
-/* Clean website mockup */
-.hero-showcase .showcase-image-wrap {
-  position: relative !important;
-  background: #ffffff !important;
-  border: 1px solid rgba(0,0,0,0.10) !important;
-  border-radius: 20px !important;
-
-  padding: 42px 7px 7px !important;
-
-  box-shadow:
-    0 18px 45px rgba(0,0,0,0.14) !important;
-
-  overflow: hidden !important;
-}
-
-/* Browser top bar */
-.hero-showcase .showcase-image-wrap::before {
-  content: "●  ●  ●     Ruhani Rehnumai" !important;
-
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-
-  height: 42px !important;
-
-  display: flex !important;
-  align-items: center !important;
-
-  padding-left: 18px !important;
-
-  background: #f8f8f8 !important;
-  color: #777 !important;
-
-  border-bottom: 1px solid #e5e5e5 !important;
-
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.8px !important;
-}
-
-/* Website image */
-.hero-showcase .showcase-image {
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-
-  border-radius: 13px !important;
-  margin: 0 !important;
-
-  box-shadow: none !important;
-}
-
-/* Keep text clean */
-.hero-showcase .showcase-text {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Remove any extra floating booking button INSIDE showcase */
-.hero-showcase .floating-booking,
-.hero-showcase .floating-booking-btn {
-  display: none !important;
-}
-
-/* Keep main booking button clean */
-.hero-showcase .button {
-  position: static !important;
-
-  display: inline-block !important;
-
-  width: auto !important;
-  max-width: 90% !important;
-
-  margin: 20px auto 0 !important;
-
-  border-radius: 50px !important;
-}
-
-/* Mobile adjustment */
-@media (max-width: 600px) {
-
-  .hero-showcase {
-    width: 94% !important;
-    padding: 5px 0 25px !important;
-  }
-
-  .hero-showcase .showcase-image-wrap {
-    padding: 38px 5px 5px !important;
-    border-radius: 17px !important;
-  }
-
-  .hero-showcase .showcase-image {
-    border-radius: 11px !important;
-  }
-
-  .hero-showcase .button {
-    width: 90% !important;
-  }
-}
-   /* ===== FINAL CLEAN HERO LOOK ===== */
-
-/* Remove dark green/golden outer background */
-.hero-showcase {
-    background: #ffffff !important;
-    border: none !important;
-    box-shadow: none !important;
-    outline: none !important;
-    border-radius: 0 !important;
-    width: 94% !important;
-    max-width: 980px !important;
-    margin: 35px auto 45px !important;
-    padding: 20px 10px 35px !important;
-    text-align: center !important;
-}
-
-/* Remove decorative circle / lines */
-.hero-showcase::before,
-.hero-showcase::after,
-.showcase-image-wrap::before,
-.showcase-image-wrap::after {
-    display: none !important;
-    content: none !important;
-}
-
-/* Clean small heading */
-.hero-showcase .showcase-label {
-    background: #f8f5ed !important;
-    color: #174d3a !important;
-    border: 1px solid #d6b46a !important;
-    box-shadow: none !important;
-    border-radius: 30px !important;
-}
-
-/* Main heading */
-.hero-showcase h1 {
-    color: #174d3a !important;
-    text-shadow: none !important;
-}
-
-/* Highlighted word */
-.hero-showcase h1 span {
-    color: #c58b2b !important;
-}
-
-/* Tagline */
-.hero-showcase .showcase-tagline {
-    color: #555555 !important;
-    text-shadow: none !important;
-}
-
-/* ===== CLEAN WEBSITE MOCKUP ===== */
-
-.hero-showcase .showcase-image-wrap {
-    background: #ffffff !important;
-    border: none !important;
-    box-shadow: 0 12px 35px rgba(0,0,0,.12) !important;
-    border-radius: 22px !important;
-    padding: 12px !important;
-    overflow: hidden !important;
-}
-
-/* Website screenshot */
-.hero-showcase .showcase-image {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 12px !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-/* Text below image */
-.hero-showcase .showcase-text h2 {
-    color: #174d3a !important;
-    text-shadow: none !important;
-}
-
-.hero-showcase .showcase-text p {
-    color: #555555 !important;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-
-    .hero-showcase {
-        width: 94% !important;
-        padding: 15px 5px 30px !important;
-        margin: 25px auto 35px !important;
-    }
-
-    .hero-showcase h1 {
-        font-size: 36px !important;
-    }
-
-    .hero-showcase .showcase-tagline {
-        font-size: 15px !important;
-    }
-
-    .hero-showcase .showcase-image-wrap {
-        padding: 8px !important;
-        border-radius: 18px !important;
-        box-shadow: 0 8px 25px rgba(0,0,0,.12) !important;
-    }
-
-    .hero-showcase .showcase-image {
-        border-radius: 10px !important;
-    }
-}
-   /* ===== FINAL CLEAN WHITE FULL-FRAME LOOK ===== */
-
-/* Remove outer green/golden background */
-.hero-showcase {
-  width: 94% !important;
-  max-width: 980px !important;
-  margin: 25px auto 45px !important;
-  padding: 0 !important;
-
-  background: #ffffff !important;
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-
-  overflow: hidden !important;
-  text-align: center !important;
-}
-
-/* Full website mockup image */
-.hero-showcase .showcase-image-wrap {
-  width: 100% !important;
-  margin: 0 auto !important;
-  padding: 0 !important;
-
-  background: #ffffff !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-}
-
-/* Remove decorative frame around image */
-.hero-showcase .showcase-image-wrap::before,
-.hero-showcase .showcase-image-wrap::after {
-  display: none !important;
-  content: none !important;
-}
-
-/* Make image fill the frame */
-.hero-showcase .showcase-image-wrap img,
-.hero-showcase .showcase-image {
-  display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
-
-  margin: 0 auto !important;
-  padding: 0 !important;
-
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-
-  object-fit: contain !important;
-}
-
-/* Clean heading area */
-.hero-showcase .showcase-label {
-  background: #ffffff !important;
-  border: 1px solid #d8d8d8 !important;
-  color: #075b3d !important;
-}
-
-/* Remove old golden/green decorative lines */
-.hero-showcase * {
-  --gold: transparent;
-}
-
-.hero-showcase .showcase-image-wrap {
-  border-color: transparent !important;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .hero-showcase {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 15px auto 30px !important;
-  }
-
-  .hero-showcase .showcase-image-wrap,
-  .hero-showcase .showcase-image-wrap img,
-  .hero-showcase .showcase-image {
-    width: 100% !important;
-    max-width: 100% !important;
-    border-radius: 0 !important;
-  }
-}
-   /* ===== NEW RUHANI REHNUMAI IMAGE SECTIONS ===== */
-
-.ruhani-image-section {
-  width: 100%;
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0;
-  background: #ffffff;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  overflow: hidden;
-}
-
-.ruhani-image-section img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  margin: 0 auto;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .ruhani-image-section {
-    width: 100%;
-    margin: 15px auto;
-  }
-
-  .ruhani-image-section img {
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-  }
-}
-   /* TOP RUHANI IMAGE - FULL FRAME */
-.ruhani-image-section {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #ffffff !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.ruhani-image-section img {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-}
-   /* REMOVE DUPLICATE SECOND HERO IMAGE */
-.hero {
-    display: none !important;
-}
-</style>
-<!-- PREMIUM RUHANI REHNUMAI SHOWCASE -->
-<section class="hero">
-
-  <div class="hero-showcase">
-
-    <div class="showcase-label">
-      ✦ RUHANI REHNUMAI ✦
-    </div>
-
-    <h1>
-      Ruhani <span>Rehnumai</span>
-    </h1>
-
-    <p class="showcase-tagline">
-      Quran • Dua • Rehnumai • Umeed
-    </p>
-
-<div class="showcase-image-wrap premium-mockup">
-
-    <div class="mockup-topbar">
-        <span class="mockup-dot"></span>
-        <span class="mockup-dot"></span>
-        <span class="mockup-dot"></span>
-        <span class="mockup-title">Ruhani Rehnumai</span>
-    </div>
-
-    <div class="mockup-screen">
-        <img
-            src="ruhani-hero.png"
-            alt="Ruhani Rehnumai Website"
-        >
-    </div>
+<p class="about-subtitle">
+Ek jagah jahan pareshani ke waqt koi aapki baat sune.
+</p>
 
 </div>
-    <div class="showcase-text">
-      <h2>Ek jagah jahan dil ki baat kahi ja sakti hai</h2>
-
-      <p>
-        Pareshani ke waqt kisi ko sunna, samajhna, dua karna
-        aur Qurani rehnumai dena — Allah ke fazl se hamari
-        chhoti si koshish.
-      </p>
-
-      <div class="showcase-points">
-        <div>📖 Quran & Sunnah</div>
-        <div>🤲 Dua & Spiritual Support</div>
-        <div>🔒 Privacy & Respect</div>
-      </div>
-
-      <a href="#booking" class="button">
-        ₹101 — Apna Slot Book Karein
-      </a>
-    </div>
-
-  </div>
-
-</section>
 
 
-<!-- ==============================
-     PREMIUM ABOUT US
-============================== -->
+<div class="about-intro">
 
-<section class="about-section" id="about">
-
-  <div class="container">
-
-    <div class="about-heading">
-      <div class="about-icon">🤲</div>
-
-      <h2>Hum Kaun Hain?</h2>
-
-      <p class="about-subtitle">
-        Ek jagah jahan pareshani ke waqt koi aapki baat sune.
-      </p>
-    </div>
+<div class="about-highlight">
+🌿 <strong>Ruhani Rehnumai</strong>
+</div>
 
 
-    <div class="about-intro">
-
-      <div class="about-highlight">
-        🌿 <strong>Ruhani Rehnumai</strong>
-      </div>
-
-      <p>
-        Zindagi mein kabhi-kabhi aise lamhe aate hain jab dil
-        pareshan hota hai, soch ulajh jaati hai aur insaan ko
-        sirf ek aise shakhs ki zarurat hoti hai jo uski baat
-        <strong>samjhe aur bina judge kiye sune.</strong>
-      </p>
-
-      <p>
-        <strong>Ruhani Rehnumai</strong> isi ehsaas se judi ek
-        koshish hai — jahan aap apni pareshani, fikr aur uljhan
-        ko <strong>privacy, izzat aur bharose</strong> ke saath
-        share kar sakte hain.
-      </p>
-
-    </div>
+<p>
+Zindagi mein kabhi-kabhi aise lamhe aate hain jab dil
+pareshan hota hai, soch ulajh jaati hai aur insaan ko
+sirf ek aise shakhs ki zarurat hoti hai jo uski baat
+<strong>samjhe aur bina judge kiye sune.</strong>
+</p>
 
 
+<p>
+<strong>Ruhani Rehnumai</strong> isi ehsaas se judi ek
+koshish hai — jahan aap apni pareshani, fikr aur uljhan
+ko <strong>privacy, izzat aur bharose</strong> ke saath
+share kar sakte hain.
+</p>
 
-    <div class="about-purpose">
-
-      <div class="purpose-title">
-        🌙 Hamara Maqsad
-      </div>
-
-      <p>
-        Har pareshan insaan tak umeed, sukoon aur behtar raasta
-        pahunchana — Allah ke fazl se.
-      </p>
-
-    </div>
+</div>
 
 
-    <div class="about-final">
+<div class="about-purpose">
 
-      <strong>
-        ❤️ Aap Akelay Nahi Hain
-      </strong>
+<div class="purpose-title">
+🌙 Hamara Maqsad
+</div>
 
-      <p>
-        Kabhi dil ki baat keh dena bhi sukoon ki shuruaat hoti hai.
-        Agar aap pareshan hain, hum aapki baat sunne ke liye yahan hain.
-      </p>
+<p>
+Har pareshan insaan tak umeed, sukoon aur behtar raasta
+pahunchana — Allah ke fazl se.
+</p>
 
-    </div>
+</div>
 
-  </div>
+
+<div class="about-final">
+
+<strong>
+❤️ Aap Akelay Nahi Hain
+</strong>
+
+<p>
+Kabhi dil ki baat keh dena bhi sukoon ki shuruaat hoti hai.
+Agar aap pareshan hain, hum aapki baat sunne ke liye yahan hain.
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
-<!-- END PREMIUM ABOUT US -->
 
-<!-- =========================
+<!-- =================================
      PROBLEMS
-========================= -->
+================================= -->
 
 <section class="problem-section">
 
@@ -2853,9 +1058,9 @@ Bachchon ke future aur problems ko lekar fikr
 </section>
 
 
-<!-- =========================
+<!-- =================================
      PRICE
-========================= -->
+================================= -->
 
 <section class="price-section">
 
@@ -2918,9 +1123,9 @@ nominal service charge hai.
 </section>
 
 
-<!-- =========================
+<!-- =================================
      PROCESS
-========================= -->
+================================= -->
 
 <section class="process">
 
@@ -3003,9 +1208,9 @@ WhatsApp par bheji jayengi.
 </section>
 
 
-<!-- =========================
+<!-- =================================
      BOOKING
-========================= -->
+================================= -->
 
 <section
 class="booking"
@@ -3025,6 +1230,7 @@ date aur exact time select karein.
 
 
 <div class="booking-card">
+
 
 <form id="bookingForm">
 
@@ -3156,12 +1362,10 @@ required
 >
 
 <div>
-
 Main confirm karta/karti hoon ki di gayi
 information sahi hai aur main personal
 ruhani rehnumai ke liye appointment request
 kar raha/rahi hoon.
-
 </div>
 
 </div>
@@ -3207,9 +1411,9 @@ ki jayegi. Abhi button testing mode mein hai.
 </section>
 
 
-<!-- =========================
+<!-- =================================
      PRIVACY
-========================= -->
+================================= -->
 
 <section class="privacy">
 
@@ -3243,9 +1447,9 @@ Har shakhs ki situation alag hoti hai.
 </section>
 
 
-<!-- =========================
+<!-- =================================
      FOOTER
-========================= -->
+================================= -->
 
 <footer>
 
@@ -3262,9 +1466,9 @@ Har shakhs ki situation alag hoti hai.
 </footer>
 
 
-<!-- =========================
+<!-- =================================
      BOOKING JAVASCRIPT
-========================= -->
+================================= -->
 
 <script>
 
@@ -3273,7 +1477,7 @@ const SCRIPT_URL =
 
 
 /* =========================
-   MINIMUM BOOKING DATE
+   MINIMUM DATE
 ========================= */
 
 const dateInput =
@@ -3282,8 +1486,7 @@ document.getElementById("date");
 
 function setMinimumDate(){
 
-const today =
-new Date();
+const today = new Date();
 
 const year =
 today.getFullYear();
@@ -3303,7 +1506,6 @@ dateInput.min =
 
 }
 
-
 setMinimumDate();
 
 
@@ -3312,9 +1514,7 @@ setMinimumDate();
 ========================= */
 
 const bookingForm =
-document.getElementById(
-"bookingForm"
-);
+document.getElementById("bookingForm");
 
 
 bookingForm.addEventListener(
@@ -3324,20 +1524,14 @@ async function(event){
 event.preventDefault();
 
 
-/* =========================
-   GET FORM VALUES
-========================= */
-
 const name =
 document.getElementById("name")
-.value
-.trim();
+.value.trim();
 
 
 const whatsapp =
 document.getElementById("whatsapp")
-.value
-.trim();
+.value.trim();
 
 
 const date =
@@ -3352,8 +1546,7 @@ document.getElementById("time")
 
 const description =
 document.getElementById("reason")
-.value
-.trim();
+.value.trim();
 
 
 const privacy =
@@ -3361,9 +1554,7 @@ document.getElementById("privacy")
 .checked;
 
 
-/* =========================
-   REQUIRED FIELDS
-========================= */
+/* REQUIRED */
 
 if(
 !name ||
@@ -3382,9 +1573,7 @@ return;
 }
 
 
-/* =========================
-   PRIVACY
-========================= */
+/* PRIVACY */
 
 if(!privacy){
 
@@ -3397,9 +1586,7 @@ return;
 }
 
 
-/* =========================
-   WHATSAPP VALIDATION
-========================= */
+/* WHATSAPP */
 
 if(
 !/^[0-9]{10}$/.test(whatsapp)
@@ -3414,9 +1601,7 @@ return;
 }
 
 
-/* =========================
-   DATE VALIDATION
-========================= */
+/* DATE */
 
 if(
 date < dateInput.min
@@ -3431,29 +1616,21 @@ return;
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 
 const button =
-document.querySelector(
-".submit-button"
-);
+document.querySelector(".submit-button");
 
 const oldText =
 button.innerText;
 
-
-button.disabled =
-true;
+button.disabled = true;
 
 button.innerText =
 "Booking Submit Ho Rahi Hai...";
 
 
-/* =========================
-   BOOKING DATA
-========================= */
+/* DATA */
 
 const bookingData = {
 
@@ -3472,9 +1649,7 @@ paymentStatus:"Pending"
 };
 
 
-/* =========================
-   SEND TO GOOGLE APPS SCRIPT
-========================= */
+/* SEND DATA */
 
 try{
 
@@ -3488,10 +1663,8 @@ SCRIPT_URL,
 method:"POST",
 
 headers:{
-
 "Content-Type":
 "text/plain;charset=utf-8"
-
 },
 
 body:
@@ -3504,17 +1677,11 @@ bookingData
 );
 
 
-/* =========================
-   RESPONSE
-========================= */
-
 const result =
 await response.json();
 
 
-/* =========================
-   SUCCESS
-========================= */
+/* SUCCESS */
 
 if(result.success){
 
@@ -3547,19 +1714,12 @@ result.time +
 );
 
 
-/* RESET */
-
 bookingForm.reset();
 
 setMinimumDate();
 
 
 }else{
-
-
-/* =========================
-   SERVER ERROR
-========================= */
 
 alert(
 
@@ -3577,16 +1737,10 @@ result.message ||
 
 }catch(error){
 
-
-/* =========================
-   CONNECTION ERROR
-========================= */
-
 console.error(
 "Booking Error:",
 error
 );
-
 
 alert(
 
@@ -3599,38 +1753,51 @@ alert(
 }
 
 
-/* =========================
-   RESTORE BUTTON
-========================= */
+/* RESTORE */
 
 finally{
 
-button.disabled =
-false;
+button.disabled = false;
 
-button.innerText =
-oldText;
+button.innerText = oldText;
 
 }
 
 });
 
 
-</script>
+/* =========================
+   FLOATING BUTTON
+========================= */
 
-<script>
-const floatingBooking = document.querySelector('.floating-booking');
+const floatingBooking =
+document.querySelector(
+".floating-booking"
+);
 
-if (floatingBooking) {
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 120) {
-            floatingBooking.classList.add('show');
-        } else {
-            floatingBooking.classList.remove('show');
-        }
-    });
+window.addEventListener(
+"scroll",
+function(){
+
+if(window.scrollY > 120){
+
+floatingBooking.classList.add(
+"show"
+);
+
+}else{
+
+floatingBooking.classList.remove(
+"show"
+);
+
 }
+
+});
+
 </script>
+
+
 </body>
 
 </html>
