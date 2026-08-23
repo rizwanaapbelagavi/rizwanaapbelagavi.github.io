@@ -934,6 +934,196 @@ footer{
     }
 
 }
+   /* =========================================
+   PREMIUM GREEN + ORANGE HERO STRUCTURE
+========================================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    min-height:88vh;
+    background:
+        radial-gradient(circle at 15% 20%,
+        rgba(242,140,40,.20),
+        transparent 32%),
+        radial-gradient(circle at 85% 80%,
+        rgba(255,180,60,.18),
+        transparent 30%),
+        linear-gradient(
+        135deg,
+        #063d24 0%,
+        #0b6b3b 48%,
+        #b96b18 100%
+        );
+}
+
+/* Soft Islamic geometric pattern */
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.13;
+    background-image:
+        radial-gradient(
+        circle at center,
+        rgba(255,255,255,.8) 1px,
+        transparent 1.5px
+        );
+    background-size:22px 22px;
+    pointer-events:none;
+}
+
+/* Premium Arch Frame */
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:min(92vw,720px);
+    height:90%;
+    left:50%;
+    top:5%;
+    transform:translateX(-50%);
+    border:2px solid rgba(242,140,40,.65);
+    border-bottom:none;
+    border-radius:360px 360px 0 0;
+    box-shadow:
+        0 0 0 8px rgba(255,255,255,.05),
+        0 0 45px rgba(242,140,40,.18);
+    pointer-events:none;
+}
+
+/* Content stays above decoration */
+
+.hero-content{
+    position:relative;
+    z-index:3;
+    width:100%;
+    max-width:720px;
+    padding:32px 22px 42px;
+    border-radius:30px;
+    background:rgba(3,54,28,.28);
+    border:1px solid rgba(255,255,255,.18);
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.20),
+        inset 0 1px 0 rgba(255,255,255,.12);
+    backdrop-filter:blur(4px);
+}
+
+/* Hero image premium frame */
+
+.hero-image{
+    width:92%;
+    max-width:620px;
+    margin:0 auto 24px;
+    border-radius:22px;
+    border:3px solid rgba(242,140,40,.75);
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.30),
+        0 0 0 5px rgba(255,255,255,.06);
+}
+
+/* Leaf / symbol */
+
+.symbol{
+    width:82px;
+    height:82px;
+    margin:8px auto 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:46px;
+    background:
+        linear-gradient(
+        145deg,
+        rgba(255,255,255,.18),
+        rgba(242,140,40,.18)
+        );
+    border:2px solid rgba(242,140,40,.65);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.20),
+        0 0 25px rgba(242,140,40,.15);
+}
+
+/* Ruhani Rehnumai orange highlight */
+
+.hero h1 span{
+    color:#ffad45;
+    text-shadow:0 2px 12px rgba(242,140,40,.25);
+}
+
+/* Tagline */
+
+.tagline{
+    display:inline-block;
+    padding:8px 18px;
+    border-radius:30px;
+    background:rgba(242,140,40,.14);
+    border:1px solid rgba(242,140,40,.38);
+}
+
+/* Main booking button */
+
+.hero .button{
+    margin-top:8px;
+    background:
+        linear-gradient(
+        90deg,
+        #f28c28,
+        #ffad45
+        );
+    color:white;
+    border:2px solid rgba(255,255,255,.20);
+    box-shadow:
+        0 10px 25px rgba(242,140,40,.35);
+    transition:.25s ease;
+}
+
+.hero .button:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 14px 30px rgba(242,140,40,.45);
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+    .hero{
+        min-height:92vh;
+        padding:28px 14px 38px;
+    }
+
+    .hero::after{
+        width:94vw;
+        height:88%;
+        top:6%;
+        border-radius:220px 220px 0 0;
+    }
+
+    .hero-content{
+        padding:24px 14px 34px;
+        border-radius:26px;
+    }
+
+    .hero-image{
+        width:96%;
+        margin-bottom:20px;
+        border-radius:18px;
+    }
+
+    .symbol{
+        width:72px;
+        height:72px;
+        font-size:40px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+}
 </style>
 
 </head>
