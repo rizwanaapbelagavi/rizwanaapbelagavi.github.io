@@ -2431,6 +2431,95 @@ footer{
         border-radius: 10px !important;
     }
 }
+   /* ===== FINAL CLEAN WHITE FULL-FRAME LOOK ===== */
+
+/* Remove outer green/golden background */
+.hero-showcase {
+  width: 94% !important;
+  max-width: 980px !important;
+  margin: 25px auto 45px !important;
+  padding: 0 !important;
+
+  background: #ffffff !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+
+  overflow: hidden !important;
+  text-align: center !important;
+}
+
+/* Full website mockup image */
+.hero-showcase .showcase-image-wrap {
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  background: #ffffff !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* Remove decorative frame around image */
+.hero-showcase .showcase-image-wrap::before,
+.hero-showcase .showcase-image-wrap::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Make image fill the frame */
+.hero-showcase .showcase-image-wrap img,
+.hero-showcase .showcase-image {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+
+  margin: 0 auto !important;
+  padding: 0 !important;
+
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+
+  object-fit: contain !important;
+}
+
+/* Clean heading area */
+.hero-showcase .showcase-label {
+  background: #ffffff !important;
+  border: 1px solid #d8d8d8 !important;
+  color: #075b3d !important;
+}
+
+/* Remove old golden/green decorative lines */
+.hero-showcase * {
+  --gold: transparent;
+}
+
+.hero-showcase .showcase-image-wrap {
+  border-color: transparent !important;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero-showcase {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 15px auto 30px !important;
+  }
+
+  .hero-showcase .showcase-image-wrap,
+  .hero-showcase .showcase-image-wrap img,
+  .hero-showcase .showcase-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+  }
+}
 </style>
 <!-- PREMIUM RUHANI REHNUMAI SHOWCASE -->
 <section class="hero">
