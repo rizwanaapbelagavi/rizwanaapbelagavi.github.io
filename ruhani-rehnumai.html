@@ -1272,6 +1272,272 @@ footer{
     }
 
 }
+   /* =========================================
+   PREMIUM ABOUT US DESIGN
+========================================= */
+
+.about-section {
+  padding: 70px 20px;
+  background:
+    radial-gradient(circle at top left, rgba(22, 163, 74, 0.12), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(242, 140, 40, 0.10), transparent 35%),
+    linear-gradient(180deg, #f8fff9 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section .container {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+
+/* ---------- HEADING ---------- */
+
+.about-section .about-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.about-section .about-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #126b3a, #16834a);
+  color: white;
+  font-size: 30px;
+  box-shadow: 0 10px 30px rgba(18, 107, 58, 0.22);
+}
+
+.about-section .about-heading h2 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+  color: #126b3a;
+  letter-spacing: -0.5px;
+}
+
+.about-section .about-subtitle {
+  margin: 10px auto 0;
+  max-width: 600px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666;
+}
+
+
+/* ---------- INTRO ---------- */
+
+.about-section .about-intro {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(18, 107, 58, 0.12);
+  border-radius: 24px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(12px);
+}
+
+.about-section .about-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  background: #eaf8ef;
+  color: #126b3a;
+  font-size: 15px;
+}
+
+.about-section .about-intro p {
+  margin: 12px 0;
+  font-size: 17px;
+  line-height: 1.85;
+  color: #333;
+}
+
+.about-section .about-intro strong {
+  color: #126b3a;
+}
+
+
+/* ---------- THREE CARDS ---------- */
+
+.about-section .about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 25px 0;
+}
+
+.about-section .about-card {
+  padding: 25px 18px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(18, 107, 58, 0.12);
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.about-section .about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(18, 107, 58, 0.14);
+}
+
+.about-section .about-card-icon {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.about-section .about-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 17px;
+  color: #126b3a;
+}
+
+.about-section .about-card span {
+  display: block;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+
+/* ---------- PURPOSE ---------- */
+
+.about-section .about-purpose {
+  margin-top: 28px;
+  padding: 25px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #126b3a, #16834a);
+  color: white;
+  text-align: center;
+  box-shadow: 0 14px 35px rgba(18, 107, 58, 0.20);
+}
+
+.about-section .purpose-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.about-section .about-purpose p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.96;
+}
+
+
+/* ---------- FINAL MESSAGE ---------- */
+
+.about-section .about-final {
+  margin-top: 25px;
+  padding: 28px 25px;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.95),
+    rgba(246,251,247,0.95)
+  );
+  border: 1px solid rgba(18, 107, 58, 0.14);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.about-section .about-final strong {
+  display: block;
+  font-size: 22px;
+  color: #126b3a;
+  margin-bottom: 10px;
+}
+
+.about-section .about-final p {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #555;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+
+  .about-section {
+    padding: 50px 15px;
+  }
+
+  .about-section .about-heading h2 {
+    font-size: 29px;
+  }
+
+  .about-section .about-subtitle {
+    font-size: 15px;
+  }
+
+  .about-section .about-intro {
+    padding: 23px 20px;
+    border-radius: 20px;
+  }
+
+  .about-section .about-intro p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .about-section .about-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .about-section .about-card {
+    padding: 22px 18px;
+  }
+
+  .about-section .about-purpose {
+    padding: 23px 18px;
+  }
+
+  .about-section .about-final {
+    padding: 24px 18px;
+  }
+
+}
+
+
+/* ---------- SMALL PHONES ---------- */
+
+@media (max-width: 400px) {
+
+  .about-section .about-heading h2 {
+    font-size: 26px;
+  }
+
+  .about-section .about-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 26px;
+  }
+
+  .about-section .about-intro p {
+    font-size: 15px;
+  }
+
+  .about-section .about-final strong {
+    font-size: 20px;
+  }
+
+}
 </style>
 
 </head>
@@ -1353,132 +1619,111 @@ Apna Slot Book Karein
 </section>
 
 
-<!-- =========================
-     ABOUT US
-========================= -->
+<!-- ==============================
+     PREMIUM ABOUT US
+============================== -->
 
-<section
-class="about-section"
-id="about"
->
+<section class="about-section" id="about">
 
-<div class="container">
+  <div class="container">
 
-<div class="about-heading">
+    <div class="about-heading">
+      <div class="about-icon">🤲</div>
 
-<div class="about-icon">
-🤲
-</div>
+      <h2>Hum Kaun Hain?</h2>
 
-<h2>
-About Ruhani Rehnumai
-</h2>
-
-<p>
-Sukoon • Dua • Sahi Rehnumai
-</p>
-
-</div>
+      <p class="about-subtitle">
+        Ek jagah jahan pareshani ke waqt koi aapki baat sune.
+      </p>
+    </div>
 
 
-<div class="about-card">
+    <div class="about-intro">
 
-<h3>
-🌿 Hum Kaun Hain?
-</h3>
+      <div class="about-highlight">
+        🌿 <strong>Ruhani Rehnumai</strong>
+      </div>
 
-<p>
-Ruhani Rehnumai ek aisi koshish hai jahan
-insaan apni pareshani, fikr aur uljhan ko
-privacy aur izzat ke saath share kar sakta hai.
-</p>
+      <p>
+        Zindagi mein kabhi-kabhi aise lamhe aate hain jab dil
+        pareshan hota hai, soch ulajh jaati hai aur insaan ko
+        sirf ek aise shakhs ki zarurat hoti hai jo uski baat
+        <strong>samjhe aur bina judge kiye sune.</strong>
+      </p>
 
-<p>
-Hamari koshish Quran aur Sunnah ki roshni mein
-dua, ruhani rehnumai aur positive support dena hai.
-</p>
+      <p>
+        <strong>Ruhani Rehnumai</strong> isi ehsaas se judi ek
+        koshish hai — jahan aap apni pareshani, fikr aur uljhan
+        ko <strong>privacy, izzat aur bharose</strong> ke saath
+        share kar sakte hain.
+      </p>
 
-</div>
-
-
-<div class="about-grid">
-
-
-<div class="about-box">
-
-<div class="about-box-icon">
-📖
-</div>
-
-<h3>
-Quran & Sunnah
-</h3>
-
-<p>
-Quran aur Sunnah ki roshni mein
-rehnumai aur dua.
-</p>
-
-</div>
+    </div>
 
 
-<div class="about-box">
+    <div class="about-cards">
 
-<div class="about-box-icon">
-🤲
-</div>
-
-<h3>
-Dua & Support
-</h3>
-
-<p>
-Aapki situation ko samajhkar
-dua aur ruhani support.
-</p>
-
-</div>
+      <div class="about-card">
+        <div class="about-card-icon">📖</div>
+        <strong>Quran & Sunnah</strong>
+        <span>
+          Rehnumai Quran aur Sunnah ki roshni mein.
+        </span>
+      </div>
 
 
-<div class="about-box">
-
-<div class="about-box-icon">
-🔒
-</div>
-
-<h3>
-Complete Privacy
-</h3>
-
-<p>
-Aapki personal baat ko izzat aur
-privacy ke saath handle karna.
-</p>
-
-</div>
+      <div class="about-card">
+        <div class="about-card-icon">🤲</div>
+        <strong>Dua & Support</strong>
+        <span>
+          Mushkil waqt mein dua aur positive support.
+        </span>
+      </div>
 
 
-</div>
+      <div class="about-card">
+        <div class="about-card-icon">🔒</div>
+        <strong>Privacy & Respect</strong>
+        <span>
+          Aapki baat izzat aur confidentiality ke saath.
+        </span>
+      </div>
+
+    </div>
 
 
-<div class="about-note">
+    <div class="about-purpose">
 
-<strong>
-🌙 Hamara Maqsad
-</strong>
+      <div class="purpose-title">
+        🌙 Hamara Maqsad
+      </div>
 
-<p>
-Har pareshan insaan ko umeed, sukoon aur
-behtar faisle ki taraf badhne mein madad
-karna — Allah ke fazl se.
-</p>
+      <p>
+        Har pareshan insaan tak umeed, sukoon aur behtar raasta
+        pahunchana — Allah ke fazl se.
+      </p>
 
-</div>
+    </div>
 
-</div>
+
+    <div class="about-final">
+
+      <strong>
+        ❤️ Aap Akelay Nahi Hain
+      </strong>
+
+      <p>
+        Kabhi dil ki baat keh dena bhi sukoon ki shuruaat hoti hai.
+        Agar aap pareshan hain, hum aapki baat sunne ke liye yahan hain.
+      </p>
+
+    </div>
+
+  </div>
 
 </section>
 
+<!-- END PREMIUM ABOUT US -->
 
 <!-- =========================
      PROBLEMS
