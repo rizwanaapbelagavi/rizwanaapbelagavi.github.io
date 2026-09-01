@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quran Sharif | Ruhani Rehnumai</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:
+        radial-gradient(circle at top,#164d3a,#06261d 55%,#031812);
+    color:#fff;
+    min-height:100vh;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:18px;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:30px 18px;
+    border-radius:0 0 35px 35px;
+    background:linear-gradient(145deg,#0b6b4d,#063526);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    border:1px solid #b9953d;
+}
+
+.arabic-title{
+    font-size:42px;
+    color:#f5d77a;
+    font-family:serif;
+    margin-bottom:5px;
+}
+
+.header h1{
+    margin:5px 0;
+    font-size:32px;
+    letter-spacing:2px;
+}
+
+.header p{
+    margin:8px 0 0;
+    color:#f3df9a;
+    font-size:15px;
+}
+
+/* 3D QURAN */
+.quran-stage{
+    display:flex;
+    justify-content:center;
+    perspective:1000px;
+    margin:28px 0;
+}
+
+.quran{
+    width:220px;
+    height:270px;
+    background:linear-gradient(145deg,#164d35,#06281d);
+    border:5px solid #c6a34b;
+    border-radius:8px 18px 18px 8px;
+    transform:rotateY(-12deg) rotateX(4deg);
+    box-shadow:
+        18px 20px 0 #092218,
+        25px 30px 35px rgba(0,0,0,.55);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.quran:before{
+    content:"";
+    position:absolute;
+    inset:15px;
+    border:2px solid #d8b75a;
+    border-radius:5px;
+}
+
+.quran-cover{
+    text-align:center;
+    color:#f5d77a;
+    font-family:serif;
+    z-index:1;
+}
+
+.quran-cover .big{
+    font-size:58px;
+}
+
+.quran-cover div{
+    font-size:20px;
+    margin-top:12px;
+}
+
+/* INFO */
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin-bottom:22px;
+}
+
+.info-card{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(220,190,100,.55);
+    border-radius:18px;
+    padding:18px;
+    text-align:center;
+}
+
+.info-card strong{
+    display:block;
+    font-size:27px;
+    color:#f5d77a;
+}
+
+.info-card span{
+    font-size:14px;
+}
+
+/* LANGUAGE */
+.language-box{
+    background:#f8f0d7;
+    color:#17372b;
+    padding:18px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+.language-box label{
+    font-weight:bold;
+    display:block;
+    margin-bottom:8px;
+}
+
+select,
+input{
+    width:100%;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid #b79543;
+    font-size:16px;
+    background:white;
+}
+
+/* SEARCH */
+.search-box{
+    margin-bottom:20px;
+}
+
+.search-box input{
+    background:#fffdf5;
+}
+
+/* SURAH */
+.surah-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.surah-card{
+    background:linear-gradient(145deg,#104936,#082c21);
+    border:1px solid #9f8238;
+    border-radius:18px;
+    padding:16px;
+    display:flex;
+    align-items:center;
+    gap:13px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.surah-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+
+.number{
+    width:43px;
+    height:43px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#d4b45c;
+    color:#153629;
+    font-weight:bold;
+}
+
+.surah-info{
+    flex:1;
+}
+
+.surah-info strong{
+    display:block;
+    font-size:17px;
+}
+
+.surah-info small{
+    color:#cfc7a9;
+}
+
+.surah-arabic{
+    font-family:serif;
+    font-size:23px;
+    color:#f4d879;
+}
+
+/* READING AREA */
+.reader{
+    display:none;
+    background:#faf4df;
+    color:#17372b;
+    border-radius:25px;
+    padding:20px;
+    margin-top:25px;
+}
+
+.reader-header{
+    text-align:center;
+    border-bottom:1px solid #d4c38f;
+    padding-bottom:15px;
+    margin-bottom:15px;
+}
+
+.reader-header h2{
+    margin:5px;
+}
+
+.ayah{
+    padding:18px 5px;
+    border-bottom:1px solid #ded3ae;
+}
+
+.ayah-number{
+    display:inline-flex;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    align-items:center;
+    justify-content:center;
+    background:#d4b45c;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.arabic{
+    direction:rtl;
+    text-align:right;
+    font-family:serif;
+    font-size:29px;
+    line-height:2;
+    margin-bottom:10px;
+}
+
+.translation{
+    font-size:17px;
+    line-height:1.7;
+}
+
+/* BUTTON */
+.back-btn{
+    display:block;
+    width:100%;
+    border:0;
+    padding:14px;
+    border-radius:13px;
+    background:#b9943f;
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    margin-top:35px;
+    padding:25px 10px;
+    border-top:1px solid #927936;
+    color:#d7c99e;
+}
+
+.footer strong{
+    display:block;
+    color:#f2d46f;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .container{
+        padding:12px;
+    }
+
+    .arabic-title{
+        font-size:34px;
+    }
+
+    .header h1{
+        font-size:25px;
+    }
+
+    .quran{
+        width:185px;
+        height:230px;
+    }
+
+    .surah-list{
+        grid-template-columns:1fr;
+    }
+
+    .arabic{
+        font-size:26px;
+    }
+
+    .translation{
+        font-size:16px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+
+    <div class="arabic-title">القرآن الكريم</div>
+
+    <h1>QURAN SHARIF</h1>
+
+    <p>Arabic Original • Multi-Language Translation</p>
+
+</header>
+
+
+<!-- 3D QURAN -->
+
+<div class="quran-stage">
+
+    <div class="quran">
+
+        <div class="quran-cover">
+
+            <div class="big">۞</div>
+
+            <div>القرآن<br>الكريم</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- INFO -->
+
+<div class="info-grid">
+
+    <div class="info-card">
+        <strong>114</strong>
+        <span>Surahs</span>
+    </div>
+
+    <div class="info-card">
+        <strong>6</strong>
+        <span>Translation Languages</span>
+    </div>
+
+</div>
+
+
+<!-- LANGUAGE -->
+
+<div class="language-box">
+
+    <label>🌐 Translation Language</label>
+
+    <select id="language">
+
+        <option value="en">🇬🇧 English</option>
+
+        <option value="hi">🇮🇳 Hindi</option>
+
+        <option value="ur">🇵🇰 Urdu</option>
+
+        <option value="kn">🇮🇳 Kannada</option>
+
+        <option value="mr">🇮🇳 Marathi</option>
+
+        <option value="bn">🇧🇩 Bengali</option>
+
+    </select>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="🔎 Search Surah..."
+        onkeyup="searchSurah()"
+    >
+
+</div>
+
+
+<!-- SURAH LIST -->
+
+<div id="surahList" class="surah-list">
+
+    <div class="surah-card" onclick="openSurah(1)">
+        <div class="number">1</div>
+        <div class="surah-info">
+            <strong>Al-Fatihah</strong>
+            <small>7 Ayahs</small>
+        </div>
+        <div class="surah-arabic">الفاتحة</div>
+    </div>
+
+    <div class="surah-card" onclick="openSurah(2)">
+        <div class="number">2</div>
+        <div class="surah-info">
+            <strong>Al-Baqarah</strong>
+            <small>286 Ayahs</small>
+        </div>
+        <div class="surah-arabic">البقرة</div>
+    </div>
+
+    <div class="surah-card" onclick="openSurah(3)">
+        <div class="number">3</div>
+        <div class="surah-info">
+            <strong>Aal-E-Imran</strong>
+            <small>200 Ayahs</small>
+        </div>
+        <div class="surah-arabic">آل عمران</div>
+    </div>
+
+    <div class="surah-card" onclick="openSurah(4)">
+        <div class="number">4</div>
+        <div class="surah-info">
+            <strong>An-Nisa</strong>
+            <small>176 Ayahs</small>
+        </div>
+        <div class="surah-arabic">النساء</div>
+    </div>
+
+</div>
+
+
+<!-- READER -->
+
+<div id="reader" class="reader">
+
+    <div class="reader-header">
+
+        <h2 id="readerTitle">Quran Sharif</h2>
+
+        <p>Arabic Original + Translation</p>
+
+    </div>
+
+    <div id="ayahContent"></div>
+
+    <button class="back-btn" onclick="closeReader()">
+        ← Back to Surah List
+    </button>
+
+</div>
+
+
+<footer class="footer">
+
+    <strong>Ruhani Rehnumai</strong>
+
+    Umeed • Sukoon • Behtar Raasta
+
+    <br><br>
+
+    📖 Read • Understand • Implement
+
+</footer>
+
+</div>
+
+
+<script>
+
+const surahs = [
+
+[1,"Al-Fatihah","الفاتحة",7],
+[2,"Al-Baqarah","البقرة",286],
+[3,"Aal-E-Imran","آل عمران",200],
+[4,"An-Nisa","النساء",176],
+[5,"Al-Maidah","المائدة",120],
+[6,"Al-Anam","الأنعام",165],
+[7,"Al-Araf","الأعراف",206],
+[8,"Al-Anfal","الأنفال",75],
+[9,"At-Tawbah","التوبة",129],
+[10,"Yunus","يونس",109],
+[11,"Hud","هود",123],
+[12,"Yusuf","يوسف",111],
+[13,"Ar-Rad","الرعد",43],
+[14,"Ibrahim","إبراهيم",52],
+[15,"Al-Hijr","الحجر",99],
+[16,"An-Nahl","النحل",128],
+[17,"Al-Isra","الإسراء",111],
+[18,"Al-Kahf","الكهف",110],
+[19,"Maryam","مريم",98],
+[20,"Ta-Ha","طه",135],
+[21,"Al-Anbiya","الأنبياء",112],
+[22,"Al-Hajj","الحج",78],
+[23,"Al-Muminun","المؤمنون",118],
+[24,"An-Nur","النور",64],
+[25,"Al-Furqan","الفرقان",77],
+[26,"Ash-Shuara","الشعراء",227],
+[27,"An-Naml","النمل",93],
+[28,"Al-Qasas","القصص",88],
+[29,"Al-Ankabut","العنكبوت",69],
+[30,"Ar-Rum","الروم",60],
+[31,"Luqman","لقمان",34],
+[32,"As-Sajdah","السجدة",30],
+[33,"Al-Ahzab","الأحزاب",73],
+[34,"Saba","سبأ",54],
+[35,"Fatir","فاطر",45],
+[36,"Ya-Sin","يس",83],
+[37,"As-Saffat","الصافات",182],
+[38,"Sad","ص",88],
+[39,"Az-Zumar","الزمر",75],
+[40,"Ghafir","غافر",85],
+[41,"Fussilat","فصلت",54],
+[42,"Ash-Shura","الشورى",53],
+[43,"Az-Zukhruf","الزخرف",89],
+[44,"Ad-Dukhan","الدخان",59],
+[45,"Al-Jathiyah","الجاثية",37],
+[46,"Al-Ahqaf","الأحقاف",35],
+[47,"Muhammad","محمد",38],
+[48,"Al-Fath","الفتح",29],
+[49,"Al-Hujurat","الحجرات",18],
+[50,"Qaf","ق",45],
+[51,"Adh-Dhariyat","الذاريات",60],
+[52,"At-Tur","الطور",49],
+[53,"An-Najm","النجم",62],
+[54,"Al-Qamar","القمر",55],
+[55,"Ar-Rahman","الرحمن",78],
+[56,"Al-Waqiah","الواقعة",96],
+[57,"Al-Hadid","الحديد",29],
+[58,"Al-Mujadilah","المجادلة",22],
+[59,"Al-Hashr","الحشر",24],
+[60,"Al-Mumtahanah","الممتحنة",13],
+[61,"As-Saff","الصف",14],
+[62,"Al-Jumah","الجمعة",11],
+[63,"Al-Munafiqun","المنافقون",11],
+[64,"At-Taghabun","التغابن",18],
+[65,"At-Talaq","الطلاق",12],
+[66,"At-Tahrim","التحريم",12],
+[67,"Al-Mulk","الملك",30],
+[68,"Al-Qalam","القلم",52],
+[69,"Al-Haqqah","الحاقة",52],
+[70,"Al-Maarij","المعارج",44],
+[71,"Nuh","نوح",28],
+[72,"Al-Jinn","الجن",28],
+[73,"Al-Muzzammil","المزمل",20],
+[74,"Al-Muddaththir","المدثر",56],
+[75,"Al-Qiyamah","القيامة",40],
+[76,"Al-Insan","الإنسان",31],
+[77,"Al-Mursalat","المرسلات",50],
+[78,"An-Naba","النبأ",40],
+[79,"An-Naziat","النازعات",46],
+[80,"Abasa","عبس",42],
+[81,"At-Takwir","التكوير",29],
+[82,"Al-Infitar","الإنفطار",19],
+[83,"Al-Mutaffifin","المطففين",36],
+[84,"Al-Inshiqaq","الإنشقاق",25],
+[85,"Al-Buruj","البروج",22],
+[86,"At-Tariq","الطارق",17],
+[87,"Al-Ala","الأعلى",19],
+[88,"Al-Ghashiyah","الغاشية",26],
+[89,"Al-Fajr","الفجر",30],
+[90,"Al-Balad","البلد",20],
+[91,"Ash-Shams","الشمس",15],
+[92,"Al-Layl","الليل",21],
+[93,"Ad-Duha","الضحى",11],
+[94,"Ash-Sharh","الشرح",8],
+[95,"At-Tin","التين",8],
+[96,"Al-Alaq","العلق",19],
+[97,"Al-Qadr","القدر",5],
+[98,"Al-Bayyinah","البينة",8],
+[99,"Az-Zalzalah","الزلزلة",8],
+[100,"Al-Adiyat","العاديات",11],
+[101,"Al-Qariah","القارعة",11],
+[102,"At-Takathur","التكاثر",8],
+[103,"Al-Asr","العصر",3],
+[104,"Al-Humazah","الهمزة",9],
+[105,"Al-Fil","الفيل",5],
+[106,"Quraysh","قريش",4],
+[107,"Al-Maun","الماعون",7],
+[108,"Al-Kawthar","الكوثر",3],
+[109,"Al-Kafirun","الكافرون",6],
+[110,"An-Nasr","النصر",3],
+[111,"Al-Masad","المسد",5],
+[112,"Al-Ikhlas","الإخلاص",4],
+[113,"Al-Falaq","الفلق",5],
+[114,"An-Nas","الناس",6]
+
+];
+
+
+function renderSurahs(){
+
+    const list=document.getElementById("surahList");
+
+    list.innerHTML="";
+
+    surahs.forEach(s=>{
+
+        const card=document.createElement("div");
+
+        card.className="surah-card";
+
+        card.innerHTML=`
+            <div class="number">${s[0]}</div>
+
+            <div class="surah-info">
+                <strong>${s[1]}</strong>
+                <small>${s[3]} Ayahs</small>
+            </div>
+
+            <div class="surah-arabic">${s[2]}</div>
+        `;
+
+        card.onclick=()=>openSurah(s[0]);
+
+        list.appendChild(card);
+
+    });
+
+}
+
+
+function searchSurah(){
+
+    const q=document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    document
+        .querySelectorAll(".surah-card")
+        .forEach(card=>{
+
+            card.style.display =
+                card.innerText.toLowerCase().includes(q)
+                ? "flex"
+                : "none";
+
+        });
+
+}
+
+
+async function openSurah(number){
+
+    const reader=document.getElementById("reader");
+
+    const content=document.getElementById("ayahContent");
+
+    const title=document.getElementById("readerTitle");
+
+    const language=document.getElementById("language").value;
+
+    const surah=surahs[number-1];
+
+    title.innerText =
+        number + ". " + surah[1] +
+        " — " + surah[2];
+
+    content.innerHTML=
+        "<p style='text-align:center'>Loading Quran...</p>";
+
+    reader.style.display="block";
+
+    reader.scrollIntoView({
+        behavior:"smooth"
+    });
+
+    /*
+      Quran data is loaded from AlQuran.cloud.
+      Arabic = quran-uthmani.
+    */
+
+    let edition="en.asad";
+
+    if(language==="hi") edition="hi.hindi";
+    if(language==="ur") edition="ur.jalandhry";
+    if(language==="kn") edition="kn.kannada";
+    if(language==="mr") edition="mr.marathi";
+    if(language==="bn") edition="bn.bengali";
+
+    try{
+
+        const arabicResponse=
+            await fetch(
+                "https://api.alquran.cloud/v1/surah/"
+                +number+
+                "/quran-uthmani"
+            );
+
+        const translationResponse=
+            await fetch(
+                "https://api.alquran.cloud/v1/surah/"
+                +number+
+                "/"+edition
+            );
+
+        const arabicData=
+            await arabicResponse.json();
+
+        const translationData=
+            await translationResponse.json();
+
+        const arabicAyahs=
+            arabicData.data.ayahs;
+
+        const translatedAyahs=
+            translationData.data.ayahs;
+
+        content.innerHTML="";
+
+        arabicAyahs.forEach((ayah,i)=>{
+
+            const div=document.createElement("div");
+
+            div.className="ayah";
+
+            div.innerHTML=`
+
+                <div class="ayah-number">
+                    ${ayah.numberInSurah}
+                </div>
+
+                <div class="arabic">
+                    ${ayah.text}
+                </div>
+
+                <div class="translation">
+                    ${translatedAyahs[i]
+                        ? translatedAyahs[i].text
+                        : "Translation unavailable"}
+                </div>
+
+            `;
+
+            content.appendChild(div);
+
+        });
+
+    }catch(error){
+
+        content.innerHTML=`
+            <div style="text-align:center;padding:20px">
+
+                <h3>Quran data could not be loaded.</h3>
+
+                <p>Please check your internet connection
+                and try again.</p>
+
+            </div>
+        `;
+
+    }
+
+}
+
+
+function closeReader(){
+
+    document.getElementById("reader")
+        .style.display="none";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+renderSurahs();
+
+</script>
+
+</body>
+</html>
