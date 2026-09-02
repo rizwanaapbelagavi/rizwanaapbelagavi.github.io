@@ -14,21 +14,23 @@ content="width=device-width, initial-scale=1.0">
 content="Ruhani Rehnumai - Quran, Sunnah, Dua, personal spiritual guidance and appointment booking.">
 
 <script>
+
 /* =========================================
-   OPEN WEBSITE FROM TOP
+   ALWAYS OPEN WEBSITE FROM TOP
 ========================================= */
 
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
 }
 
-window.addEventListener("load", function () {
-  window.scrollTo(0, 0);
+window.addEventListener("load", function(){
+  window.scrollTo(0,0);
 });
 
-window.addEventListener("pageshow", function () {
-  window.scrollTo(0, 0);
+window.addEventListener("pageshow", function(){
+  window.scrollTo(0,0);
 });
+
 </script>
 
 
@@ -39,37 +41,201 @@ window.addEventListener("pageshow", function () {
 ===================================================== */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 :root{
---green:#126b3a;
---dark-green:#083d24;
---light-green:#eef8f1;
---orange:#f28c28;
---dark-orange:#d96f0b;
---gold:#d6b45a;
---gold-light:#f3df9a;
---cream:#fff4e6;
---text:#17351f;
---muted:#536359;
+  --green:#126b3a;
+  --dark-green:#083d24;
+  --light-green:#eef8f1;
+  --orange:#f28c28;
+  --dark-orange:#d96f0b;
+  --gold:#d6b45a;
+  --gold-light:#f3df9a;
+  --cream:#fff4e6;
+  --text:#17351f;
+  --muted:#536359;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial,sans-serif;
-background:#f6faf7;
-color:var(--text);
-line-height:1.6;
+  font-family:Arial,sans-serif;
+  background:#f6faf7;
+  color:var(--text);
+  line-height:1.6;
 }
 
 img{
-max-width:100%;
+  max-width:100%;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.site-header{
+
+  position:sticky;
+  top:0;
+  z-index:5000;
+
+  background:
+  rgba(255,255,255,.97);
+
+  border-bottom:
+  1px solid
+  rgba(18,107,58,.15);
+
+  box-shadow:
+  0 4px 18px
+  rgba(0,0,0,.08);
+
+  backdrop-filter:blur(10px);
+}
+
+.navbar{
+
+  width:100%;
+  max-width:1200px;
+
+  margin:auto;
+
+  padding:
+  10px 18px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:15px;
+}
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:9px;
+
+  color:var(--dark-green);
+
+  text-decoration:none;
+
+  font-weight:800;
+
+  white-space:nowrap;
+}
+
+.brand-icon{
+
+  width:40px;
+  height:40px;
+
+  border-radius:50%;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--green),
+  var(--gold)
+  );
+
+  color:white;
+
+  font-size:20px;
+
+  box-shadow:
+  0 4px 12px
+  rgba(18,107,58,.22);
+}
+
+.brand-text{
+
+  font-size:18px;
+
+  line-height:1.1;
+}
+
+.brand-sub{
+
+  display:block;
+
+  font-size:9px;
+
+  color:#68746b;
+
+  font-weight:600;
+
+  margin-top:2px;
+}
+
+.nav-links{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:7px;
+
+  flex-wrap:wrap;
+
+  justify-content:flex-end;
+}
+
+.nav-links a{
+
+  color:#24392c;
+
+  text-decoration:none;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  padding:
+  9px 12px;
+
+  border-radius:22px;
+
+  transition:.25s ease;
+}
+
+.nav-links a:hover{
+
+  background:#eaf8ef;
+
+  color:var(--green);
+}
+
+.nav-whatsapp{
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--green),
+  #16834a
+  ) !important;
+
+  color:white !important;
+
+  box-shadow:
+  0 4px 12px
+  rgba(18,107,58,.18);
 }
 
 
@@ -78,368 +244,389 @@ max-width:100%;
 ===================================================== */
 
 section{
-padding:60px 20px;
+  padding:60px 20px;
 }
 
 .container{
-width:100%;
-max-width:720px;
-margin:auto;
+  width:100%;
+  max-width:850px;
+  margin:auto;
 }
 
 h2{
-font-size:30px;
-color:var(--green);
-text-align:center;
-margin-bottom:18px;
+  font-size:30px;
+  color:var(--green);
+  text-align:center;
+  margin-bottom:18px;
 }
 
 .center{
-text-align:center;
-color:var(--muted);
+  text-align:center;
+  color:var(--muted);
 }
 
 
 /* =====================================================
-   TOP IMAGE
+   HERO IMAGE
 ===================================================== */
 
 .ruhani-image-section{
-width:100%;
-margin:0;
-padding:0;
-background:#fff;
-overflow:hidden;
+
+  width:100%;
+
+  margin:0;
+
+  padding:0;
+
+  background:#fff;
+
+  overflow:hidden;
 }
 
 .ruhani-image-section img{
-display:block;
-width:100%;
-height:auto;
-margin:0;
-padding:0;
-border:0;
-border-radius:0;
-box-shadow:none;
+
+  display:block;
+
+  width:100%;
+
+  height:auto;
+
+  margin:0;
+
+  padding:0;
+
+  border:0;
+
+  border-radius:0;
+
+  box-shadow:none;
 }
 
 
 /* =====================================================
-   HIGHLIGHTED 3-PART RESOURCE CARD
+   THREE RESOURCE CARDS
 ===================================================== */
 
 .feature-section{
-width:100%;
 
-padding:
-18px 16px 32px;
+  width:100%;
 
-background:
-linear-gradient(
-180deg,
-#ffffff 0%,
-#f7fbf8 100%
-);
+  padding:
+  18px 16px 32px;
+
+  background:
+  linear-gradient(
+  180deg,
+  #ffffff 0%,
+  #f7fbf8 100%
+  );
 }
 
 .feature-container{
 
-width:100%;
+  width:100%;
 
-max-width:1100px;
+  max-width:1100px;
 
-margin:auto;
+  margin:auto;
 
-display:grid;
+  display:grid;
 
-grid-template-columns:
-repeat(3,1fr);
+  grid-template-columns:
+  repeat(3,1fr);
 
-background:
-linear-gradient(
-135deg,
-#083d24,
-#126b3a
-);
+  background:
+  linear-gradient(
+  135deg,
+  #083d24,
+  #126b3a
+  );
 
-border:
-2px solid
-var(--gold);
+  border:
+  2px solid
+  var(--gold);
 
-border-radius:24px;
+  border-radius:24px;
 
-overflow:hidden;
+  overflow:hidden;
 
-box-shadow:
-0 12px 30px rgba(8,61,36,.22),
-0 0 0 4px rgba(214,180,90,.10);
+  box-shadow:
+  0 12px 30px
+  rgba(8,61,36,.22),
+  0 0 0 4px
+  rgba(214,180,90,.10);
 }
-
-
-/* RESOURCE CARD */
 
 .feature-box{
 
-position:relative;
+  display:flex;
 
-display:flex;
+  flex-direction:column;
 
-flex-direction:column;
+  align-items:center;
 
-align-items:center;
+  justify-content:center;
 
-justify-content:center;
+  text-align:center;
 
-text-align:center;
+  min-height:150px;
 
-min-height:150px;
+  padding:
+  20px 14px;
 
-padding:
-20px 14px;
+  background:
+  linear-gradient(
+  180deg,
+  rgba(18,107,58,.98),
+  rgba(8,61,36,.98)
+  );
 
-background:
-linear-gradient(
-180deg,
-rgba(18,107,58,.98),
-rgba(8,61,36,.98)
-);
+  color:white;
 
-color:white;
+  text-decoration:none;
 
-text-decoration:none;
+  border-right:
+  1px solid
+  rgba(243,223,154,.35);
 
-border-right:
-1px solid
-rgba(243,223,154,.35);
-
-transition:
-transform .25s ease,
-background .25s ease,
-box-shadow .25s ease;
+  transition:.25s ease;
 }
-
-
-/* REMOVE LAST DIVIDER */
 
 .feature-box:last-child{
-border-right:none;
+  border-right:none;
 }
 
+.feature-box:hover{
 
-/* TOP RESOURCE LABEL */
+  background:
+  linear-gradient(
+  180deg,
+  #16834a,
+  #0a4c2c
+  );
 
-.feature-container::before{
-
-content:
-"EXPLORE OUR ISLAMIC RESOURCES";
-
-position:absolute;
-
+  transform:translateY(-2px);
 }
-
-
-/* ICON */
 
 .feature-icon{
 
-width:62px;
-height:62px;
+  width:62px;
+  height:62px;
 
-min-width:62px;
+  display:flex;
 
-display:flex;
+  align-items:center;
 
-align-items:center;
+  justify-content:center;
 
-justify-content:center;
+  border-radius:50%;
 
-border-radius:50%;
+  background:
+  linear-gradient(
+  135deg,
+  #e7c96d,
+  #b98d2e
+  );
 
-background:
-linear-gradient(
-135deg,
-#e7c96d,
-#b98d2e
-);
+  color:#083d24;
 
-color:
-#083d24;
+  font-size:29px;
 
-font-size:29px;
+  box-shadow:
+  0 7px 18px
+  rgba(0,0,0,.22);
 
-box-shadow:
-0 7px 18px
-rgba(0,0,0,.22);
+  margin-bottom:10px;
 
-margin-bottom:10px;
-
-border:
-2px solid
-rgba(255,255,255,.65);
-}
-
-
-/* CONTENT */
-
-.feature-content{
-width:100%;
+  border:
+  2px solid
+  rgba(255,255,255,.65);
 }
 
 .feature-content h3{
 
-margin:
-0 0 4px;
+  margin:
+  0 0 4px;
 
-font-size:18px;
+  font-size:18px;
 
-font-weight:800;
+  font-weight:800;
 
-color:#fff;
+  color:#fff;
 
-line-height:1.25;
+  line-height:1.25;
 }
 
 .feature-content p{
 
-margin:0;
+  margin:0;
 
-font-size:12.5px;
+  font-size:12.5px;
 
-line-height:1.4;
+  line-height:1.4;
 
-color:
-#e9f4ed;
+  color:#e9f4ed;
 }
-
-
-/* CLICK LABEL */
 
 .feature-content::after{
 
-content:
-"Tap to Open  ›";
+  content:
+  "Open ›";
 
-display:block;
+  display:block;
 
-margin-top:8px;
+  margin-top:8px;
 
-font-size:11px;
+  font-size:11px;
 
-font-weight:700;
+  font-weight:700;
 
-letter-spacing:.3px;
-
-color:
-var(--gold-light);
-}
-
-
-/* HOVER */
-
-.feature-box:hover{
-
-background:
-linear-gradient(
-180deg,
-#16834a,
-#0a4c2c
-);
-
-box-shadow:
-inset 0 0 30px
-rgba(243,223,154,.10);
-
-transform:
-translateY(-2px);
-}
-
-
-/* ACTIVE */
-
-.feature-box:active{
-
-transform:
-scale(.97);
-
-background:
-#0b512b;
+  color:var(--gold-light);
 }
 
 
 /* =====================================================
-   FLOATING BOOKING BUTTON
+   ABOUT + HUM KAUN HAIN COMPACT BOXES
 ===================================================== */
 
-.floating-booking{
-position:fixed;
+.intro-boxes-section{
 
-left:50%;
-bottom:18px;
+  padding:
+  30px 16px 38px;
 
-transform:
-translateX(-50%)
-translateY(120px);
-
-width:calc(100% - 32px);
-
-max-width:620px;
-
-padding:16px 22px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:
-linear-gradient(
-90deg,
-var(--green),
-var(--dark-green),
-var(--orange)
-);
-
-color:white;
-
-text-align:center;
-
-text-decoration:none;
-
-font-size:17px;
-
-font-weight:800;
-
-border:
-2px solid
-rgba(255,255,255,.35);
-
-border-radius:50px;
-
-box-shadow:
-0 12px 35px rgba(0,0,0,.28);
-
-z-index:9999;
-
-opacity:0;
-visibility:hidden;
-
-transition:
-transform .4s ease,
-opacity .35s ease;
+  background:
+  linear-gradient(
+  180deg,
+  #f7fbf8,
+  #eef8f1
+  );
 }
 
-.floating-booking.show{
-transform:
-translateX(-50%)
-translateY(0);
+.intro-boxes{
 
-opacity:1;
-visibility:visible;
+  max-width:900px;
+
+  margin:auto;
+
+  display:grid;
+
+  grid-template-columns:
+  1fr 1fr;
+
+  gap:18px;
 }
 
-.floating-booking:active{
-transform:
-translateX(-50%)
-scale(.97);
+.intro-box{
+
+  position:relative;
+
+  display:block;
+
+  text-decoration:none;
+
+  background:white;
+
+  border:
+  1px solid
+  rgba(18,107,58,.14);
+
+  border-radius:20px;
+
+  padding:22px 20px;
+
+  box-shadow:
+  0 10px 28px
+  rgba(0,0,0,.07);
+
+  transition:.25s ease;
+
+  overflow:hidden;
+}
+
+.intro-box::before{
+
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+  bottom:0;
+
+  width:5px;
+
+  background:
+  linear-gradient(
+  180deg,
+  var(--green),
+  var(--orange)
+  );
+}
+
+.intro-box:hover{
+
+  transform:
+  translateY(-3px);
+
+  box-shadow:
+  0 15px 35px
+  rgba(0,0,0,.11);
+}
+
+.intro-box-icon{
+
+  width:48px;
+  height:48px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:
+  linear-gradient(
+  135deg,
+  var(--green),
+  #16834a
+  );
+
+  color:white;
+
+  font-size:23px;
+
+  margin-bottom:11px;
+}
+
+.intro-box h3{
+
+  color:var(--green);
+
+  font-size:20px;
+
+  margin-bottom:5px;
+}
+
+.intro-box p{
+
+  color:#5d6961;
+
+  font-size:13.5px;
+
+  line-height:1.5;
+
+  margin-bottom:8px;
+}
+
+.intro-open{
+
+  color:var(--dark-orange);
+
+  font-size:12px;
+
+  font-weight:800;
 }
 
 
@@ -448,213 +635,233 @@ scale(.97);
 ===================================================== */
 
 .about-section{
-padding:70px 20px;
 
-background:
-radial-gradient(
-circle at top left,
-rgba(22,163,74,.10),
-transparent 35%
-),
-radial-gradient(
-circle at bottom right,
-rgba(242,140,40,.08),
-transparent 35%
-),
-linear-gradient(
-180deg,
-#f8fff9,
-#ffffff
-);
-}
+  padding:
+  58px 18px;
 
-.about-section .container{
-max-width:850px;
+  background:
+  radial-gradient(
+  circle at top left,
+  rgba(22,163,74,.10),
+  transparent 35%
+  ),
+  radial-gradient(
+  circle at bottom right,
+  rgba(242,140,40,.08),
+  transparent 35%
+  ),
+  linear-gradient(
+  180deg,
+  #f8fff9,
+  #ffffff
+  );
 }
 
 .about-heading{
-text-align:center;
-margin-bottom:35px;
+
+  text-align:center;
+
+  margin-bottom:30px;
 }
 
 .about-icon{
-width:64px;
-height:64px;
 
-margin:0 auto 15px;
+  width:58px;
+  height:58px;
 
-display:flex;
-align-items:center;
-justify-content:center;
+  margin:
+  0 auto 12px;
 
-border-radius:50%;
+  display:flex;
 
-background:
-linear-gradient(
-135deg,
-var(--green),
-#16834a
-);
+  align-items:center;
 
-color:white;
+  justify-content:center;
 
-font-size:30px;
+  border-radius:50%;
 
-box-shadow:
-0 10px 30px
-rgba(18,107,58,.22);
+  background:
+  linear-gradient(
+  135deg,
+  var(--green),
+  #16834a
+  );
+
+  color:white;
+
+  font-size:27px;
+
+  box-shadow:
+  0 10px 25px
+  rgba(18,107,58,.20);
 }
 
 .about-heading h2{
-margin:0;
 
-font-size:34px;
+  margin:0;
 
-font-weight:800;
+  font-size:31px;
+
+  font-weight:800;
 }
 
 .about-subtitle{
-margin:10px auto 0;
 
-max-width:600px;
+  margin:
+  8px auto 0;
 
-font-size:16px;
+  max-width:600px;
 
-color:#666;
+  font-size:15px;
+
+  color:#666;
 }
 
 .about-intro{
-background:white;
 
-border:
-1px solid
-rgba(18,107,58,.12);
+  background:white;
 
-border-radius:24px;
+  border:
+  1px solid
+  rgba(18,107,58,.12);
 
-padding:30px;
+  border-radius:22px;
 
-margin-bottom:25px;
+  padding:25px;
 
-box-shadow:
-0 12px 35px
-rgba(0,0,0,.07);
+  margin-bottom:20px;
+
+  box-shadow:
+  0 10px 30px
+  rgba(0,0,0,.06);
 }
 
 .about-highlight{
-display:inline-flex;
 
-align-items:center;
+  display:inline-flex;
 
-gap:8px;
+  align-items:center;
 
-margin-bottom:15px;
+  gap:8px;
 
-padding:8px 15px;
+  margin-bottom:12px;
 
-border-radius:30px;
+  padding:
+  7px 14px;
 
-background:#eaf8ef;
+  border-radius:30px;
 
-color:var(--green);
+  background:#eaf8ef;
 
-font-size:15px;
+  color:var(--green);
+
+  font-size:14px;
+
+  font-weight:700;
 }
 
 .about-intro p{
-margin:12px 0;
 
-font-size:17px;
+  margin:
+  11px 0;
 
-line-height:1.85;
+  font-size:16px;
 
-color:#333;
+  line-height:1.8;
+
+  color:#333;
 }
 
 .about-intro strong{
-color:var(--green);
+  color:var(--green);
 }
 
 .about-purpose{
-margin-top:28px;
 
-padding:25px;
+  margin-top:20px;
 
-border-radius:22px;
+  padding:22px;
 
-background:
-linear-gradient(
-135deg,
-var(--green),
-#16834a
-);
+  border-radius:20px;
 
-color:white;
+  background:
+  linear-gradient(
+  135deg,
+  var(--green),
+  #16834a
+  );
 
-text-align:center;
+  color:white;
 
-box-shadow:
-0 14px 35px
-rgba(18,107,58,.20);
+  text-align:center;
+
+  box-shadow:
+  0 12px 28px
+  rgba(18,107,58,.18);
 }
 
 .purpose-title{
-font-size:20px;
 
-font-weight:800;
+  font-size:19px;
 
-margin-bottom:10px;
+  font-weight:800;
+
+  margin-bottom:7px;
 }
 
 .about-purpose p{
-margin:0;
 
-font-size:16px;
+  margin:0;
+
+  font-size:15px;
 }
 
 .about-final{
-margin-top:25px;
 
-padding:28px 25px;
+  margin-top:20px;
 
-text-align:center;
+  padding:23px;
 
-background:
-linear-gradient(
-135deg,
-#fff,
-#f6fbf7
-);
+  text-align:center;
 
-border:
-1px solid
-rgba(18,107,58,.14);
+  background:
+  linear-gradient(
+  135deg,
+  #fff,
+  #f6fbf7
+  );
 
-border-radius:24px;
+  border:
+  1px solid
+  rgba(18,107,58,.14);
 
-box-shadow:
-0 10px 30px
-rgba(0,0,0,.06);
+  border-radius:20px;
+
+  box-shadow:
+  0 8px 25px
+  rgba(0,0,0,.05);
 }
 
 .about-final strong{
-display:block;
 
-font-size:22px;
+  display:block;
 
-color:var(--green);
+  font-size:20px;
 
-margin-bottom:10px;
+  color:var(--green);
+
+  margin-bottom:7px;
 }
 
 .about-final p{
-max-width:620px;
 
-margin:auto;
+  max-width:620px;
 
-font-size:16px;
+  margin:auto;
 
-color:#555;
+  font-size:15px;
+
+  color:#555;
 }
 
 
@@ -663,128 +870,132 @@ color:#555;
 ===================================================== */
 
 .problem-section{
-background:
-linear-gradient(
-135deg,
-#f0f8f3,
-#fff7ed
-);
+
+  background:
+  linear-gradient(
+  135deg,
+  #f0f8f3,
+  #fff7ed
+  );
 }
 
 .problem-section .container{
-max-width:920px;
+  max-width:920px;
 }
 
 .problems{
-display:grid;
 
-grid-template-columns:
-1fr 1fr;
+  display:grid;
 
-gap:14px;
+  grid-template-columns:
+  1fr 1fr;
 
-margin-top:28px;
+  gap:14px;
+
+  margin-top:28px;
 }
 
 .problem{
-display:flex;
 
-align-items:center;
+  display:flex;
 
-gap:15px;
+  align-items:center;
 
-min-height:92px;
+  gap:15px;
 
-padding:13px 16px;
+  min-height:92px;
 
-background:
-linear-gradient(
-135deg,
-#ffffff,
-#fcfffd
-);
+  padding:
+  13px 16px;
 
-border-radius:18px;
+  background:
+  linear-gradient(
+  135deg,
+  #ffffff,
+  #fcfffd
+  );
 
-border-left:
-5px solid
-var(--orange);
+  border-radius:18px;
 
-box-shadow:
-0 8px 20px
-rgba(0,0,0,.06),
-0 2px 8px
-rgba(18,107,58,.05);
+  border-left:
+  5px solid
+  var(--orange);
 
-transition:
-transform .3s ease,
-box-shadow .3s ease;
+  box-shadow:
+  0 8px 20px
+  rgba(0,0,0,.06);
 
-overflow:hidden;
+  transition:.3s ease;
 }
 
 .problem:hover{
-transform:translateY(-3px);
 
-box-shadow:
-0 14px 28px
-rgba(0,0,0,.10);
+  transform:
+  translateY(-3px);
+
+  box-shadow:
+  0 14px 28px
+  rgba(0,0,0,.10);
 }
 
 .problem-icon{
-width:58px;
 
-min-width:58px;
+  width:58px;
 
-height:58px;
+  min-width:58px;
 
-display:flex;
+  height:58px;
 
-align-items:center;
+  display:flex;
 
-justify-content:center;
+  align-items:center;
 
-font-size:31px;
+  justify-content:center;
 
-border-right:
-1px solid
-#dfe8e1;
+  font-size:31px;
 
-padding-right:14px;
+  border-right:
+  1px solid
+  #dfe8e1;
+
+  padding-right:14px;
 }
 
 .problem-content{
-flex:1;
 
-min-width:0;
+  flex:1;
+
+  min-width:0;
 }
 
 .problem-content strong{
-display:block;
 
-color:var(--green);
+  display:block;
 
-font-size:18px;
+  color:var(--green);
 
-font-weight:800;
+  font-size:18px;
 
-line-height:1.25;
+  font-weight:800;
 
-margin-bottom:3px;
+  line-height:1.25;
+
+  margin-bottom:3px;
 }
 
 .problem-content span{
-display:block;
 
-font-size:14px;
+  display:block;
 
-line-height:1.45;
+  font-size:14px;
 
-color:#55605a;
+  line-height:1.45;
+
+  color:#55605a;
 }
 
 .problem-section .about-highlight{
-margin-top:25px;
+  margin-top:25px;
 }
 
 
@@ -793,33 +1004,35 @@ margin-top:25px;
 ===================================================== */
 
 .middle-image-section{
-width:100%;
 
-margin:0;
+  width:100%;
 
-padding:0;
+  margin:0;
 
-background:#fff;
+  padding:0;
 
-overflow:hidden;
+  background:#fff;
+
+  overflow:hidden;
 }
 
 .middle-image-section img{
-display:block;
 
-width:100%;
+  display:block;
 
-height:auto;
+  width:100%;
 
-margin:0;
+  height:auto;
 
-padding:0;
+  margin:0;
 
-border:0;
+  padding:0;
 
-border-radius:0;
+  border:0;
 
-box-shadow:none;
+  border-radius:0;
+
+  box-shadow:none;
 }
 
 
@@ -828,112 +1041,127 @@ box-shadow:none;
 ===================================================== */
 
 .price-section{
-background:white;
 
-text-align:center;
+  background:white;
 
-padding-top:55px;
+  text-align:center;
+
+  padding-top:55px;
 }
 
 .price-section h2{
-font-size:32px;
 
-margin-bottom:10px;
+  font-size:32px;
+
+  margin-bottom:10px;
 }
 
 .price-subtitle{
-max-width:650px;
 
-margin:0 auto 25px;
+  max-width:650px;
 
-color:var(--muted);
+  margin:
+  0 auto 25px;
 
-font-size:16px;
+  color:var(--muted);
+
+  font-size:16px;
 }
 
 .price-card{
-max-width:600px;
 
-margin:25px auto 0;
+  max-width:600px;
 
-padding:30px 22px;
+  margin:
+  25px auto 0;
 
-border-radius:22px;
+  padding:
+  30px 22px;
 
-background:
-linear-gradient(
-135deg,
-#eef8f1,
-#fff4e6
-);
+  border-radius:22px;
 
-border:
-2px solid
-var(--orange);
+  background:
+  linear-gradient(
+  135deg,
+  #eef8f1,
+  #fff4e6
+  );
 
-box-shadow:
-0 8px 28px
-rgba(0,0,0,.08);
+  border:
+  2px solid
+  var(--orange);
+
+  box-shadow:
+  0 8px 28px
+  rgba(0,0,0,.08);
 }
 
 .price{
-font-size:50px;
 
-font-weight:bold;
+  font-size:50px;
 
-color:var(--green);
+  font-weight:bold;
+
+  color:var(--green);
 }
 
 .duration{
-color:var(--muted);
 
-margin-bottom:20px;
+  color:var(--muted);
+
+  margin-bottom:20px;
 }
 
 .call-note{
-margin:18px auto;
 
-padding:16px;
+  margin:
+  18px auto;
 
-max-width:520px;
+  padding:16px;
 
-border-radius:15px;
+  max-width:520px;
 
-background:#eaf8ef;
+  border-radius:15px;
 
-border-left:
-5px solid
-var(--green);
+  background:#eaf8ef;
 
-color:var(--green);
+  border-left:
+  5px solid
+  var(--green);
 
-font-weight:700;
+  color:var(--green);
+
+  font-weight:700;
 }
 
 .benefits{
-text-align:left;
 
-max-width:450px;
+  text-align:left;
 
-margin:auto;
+  max-width:450px;
 
-list-style:none;
+  margin:auto;
+
+  list-style:none;
 }
 
 .benefits li{
-padding:9px 0;
 
-border-bottom:
-1px solid
-#e6eee8;
+  padding:
+  9px 0;
+
+  border-bottom:
+  1px solid
+  #e6eee8;
 }
 
 .price-note{
-margin-top:18px;
 
-font-size:14px;
+  margin-top:18px;
 
-color:#68746b;
+  font-size:14px;
+
+  color:#68746b;
 }
 
 
@@ -942,49 +1170,53 @@ color:#68746b;
 ===================================================== */
 
 .process{
-background:
-linear-gradient(
-135deg,
-#f1f8f3,
-#fff7ed
-);
+
+  background:
+  linear-gradient(
+  135deg,
+  #f1f8f3,
+  #fff7ed
+  );
 }
 
 .step{
-background:
-linear-gradient(
-135deg,
-#ffffff,
-#fcfffd
-);
 
-padding:18px;
+  background:
+  linear-gradient(
+  135deg,
+  #ffffff,
+  #fcfffd
+  );
 
-border-radius:18px;
+  padding:18px;
 
-margin-bottom:13px;
+  border-radius:18px;
 
-border-left:
-5px solid
-var(--green);
+  margin-bottom:13px;
 
-box-shadow:
-0 8px 22px
-rgba(0,0,0,.07);
+  border-left:
+  5px solid
+  var(--green);
 
-transition:.3s ease;
+  box-shadow:
+  0 8px 22px
+  rgba(0,0,0,.07);
+
+  transition:.3s ease;
 }
 
 .step:hover{
-transform:translateY(-3px);
 
-box-shadow:
-0 14px 28px
-rgba(0,0,0,.10);
+  transform:
+  translateY(-3px);
+
+  box-shadow:
+  0 14px 28px
+  rgba(0,0,0,.10);
 }
 
 .step strong{
-color:var(--dark-orange);
+  color:var(--dark-orange);
 }
 
 
@@ -993,81 +1225,90 @@ color:var(--dark-orange);
 ===================================================== */
 
 .booking{
-background:
-linear-gradient(
-135deg,
-#eaf7ef,
-#fff3e5
-);
+
+  background:
+  linear-gradient(
+  135deg,
+  #eaf7ef,
+  #fff3e5
+  );
 }
 
 .booking-card{
-max-width:650px;
 
-margin:25px auto 0;
+  max-width:650px;
 
-background:white;
+  margin:
+  25px auto 0;
 
-padding:28px 20px;
+  background:white;
 
-border-radius:22px;
+  padding:
+  28px 20px;
 
-border-top:
-5px solid
-var(--orange);
+  border-radius:22px;
 
-box-shadow:
-0 8px 28px
-rgba(0,0,0,.08);
+  border-top:
+  5px solid
+  var(--orange);
+
+  box-shadow:
+  0 8px 28px
+  rgba(0,0,0,.08);
 }
 
 label{
-display:block;
 
-font-weight:bold;
+  display:block;
 
-color:var(--green);
+  font-weight:bold;
 
-margin:16px 0 7px;
+  color:var(--green);
+
+  margin:
+  16px 0 7px;
 }
 
 input,
 select,
 textarea{
-width:100%;
 
-padding:15px;
+  width:100%;
 
-border:
-1px solid
-#cbdccf;
+  padding:15px;
 
-border-radius:12px;
+  border:
+  1px solid
+  #cbdccf;
 
-font-size:16px;
+  border-radius:12px;
 
-background:#fbfdfb;
+  font-size:16px;
 
-font-family:Arial,sans-serif;
+  background:#fbfdfb;
+
+  font-family:Arial,sans-serif;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
-outline:none;
 
-border-color:
-var(--orange);
+  outline:none;
 
-box-shadow:
-0 0 0 3px
-rgba(242,140,40,.12);
+  border-color:
+  var(--orange);
+
+  box-shadow:
+  0 0 0 3px
+  rgba(242,140,40,.12);
 }
 
 textarea{
-min-height:110px;
 
-resize:vertical;
+  min-height:110px;
+
+  resize:vertical;
 }
 
 
@@ -1076,40 +1317,43 @@ resize:vertical;
 ===================================================== */
 
 .slot-info{
-margin-top:18px;
 
-padding:18px;
+  margin-top:18px;
 
-border-radius:15px;
+  padding:18px;
 
-background:
-linear-gradient(
-135deg,
-#eef8f1,
-#fff4e6
-);
+  border-radius:15px;
 
-border-left:
-5px solid
-var(--green);
+  background:
+  linear-gradient(
+  135deg,
+  #eef8f1,
+  #fff4e6
+  );
 
-text-align:center;
+  border-left:
+  5px solid
+  var(--green);
+
+  text-align:center;
 }
 
 .slot-title{
-font-size:18px;
 
-font-weight:bold;
+  font-size:18px;
 
-color:var(--green);
+  font-weight:bold;
 
-margin-bottom:8px;
+  color:var(--green);
+
+  margin-bottom:8px;
 }
 
 .capacity{
-font-size:14px;
 
-color:var(--muted);
+  font-size:14px;
+
+  color:var(--muted);
 }
 
 
@@ -1118,32 +1362,34 @@ color:var(--muted);
 ===================================================== */
 
 .fee-box{
-margin-top:22px;
 
-padding:20px;
+  margin-top:22px;
 
-border-radius:15px;
+  padding:20px;
 
-background:
-linear-gradient(
-135deg,
-#fff4e6,
-#eef8f1
-);
+  border-radius:15px;
 
-border:
-2px solid
-var(--orange);
+  background:
+  linear-gradient(
+  135deg,
+  #fff4e6,
+  #eef8f1
+  );
 
-text-align:center;
+  border:
+  2px solid
+  var(--orange);
+
+  text-align:center;
 }
 
 .fee{
-font-size:34px;
 
-font-weight:bold;
+  font-size:34px;
 
-color:var(--green);
+  font-weight:bold;
+
+  color:var(--green);
 }
 
 
@@ -1152,49 +1398,52 @@ color:var(--green);
 ===================================================== */
 
 .submit-button{
-width:100%;
 
-margin-top:22px;
+  width:100%;
 
-padding:17px;
+  margin-top:22px;
 
-border:none;
+  padding:17px;
 
-border-radius:50px;
+  border:none;
 
-background:
-linear-gradient(
-90deg,
-var(--green),
-var(--orange)
-);
+  border-radius:50px;
 
-color:white;
+  background:
+  linear-gradient(
+  90deg,
+  var(--green),
+  var(--orange)
+  );
 
-font-size:18px;
+  color:white;
 
-font-weight:bold;
+  font-size:18px;
 
-cursor:pointer;
+  font-weight:bold;
 
-box-shadow:
-0 8px 20px
-rgba(18,107,58,.20);
+  cursor:pointer;
+
+  box-shadow:
+  0 8px 20px
+  rgba(18,107,58,.20);
 }
 
 .submit-button:hover{
-background:
-linear-gradient(
-90deg,
-#0b512b,
-var(--dark-orange)
-);
+
+  background:
+  linear-gradient(
+  90deg,
+  #0b512b,
+  var(--dark-orange)
+  );
 }
 
 .submit-button:disabled{
-opacity:.7;
 
-cursor:not-allowed;
+  opacity:.7;
+
+  cursor:not-allowed;
 }
 
 
@@ -1203,23 +1452,25 @@ cursor:not-allowed;
 ===================================================== */
 
 .privacy-check{
-display:flex;
 
-gap:10px;
+  display:flex;
 
-align-items:flex-start;
+  gap:10px;
 
-margin-top:18px;
+  align-items:flex-start;
 
-font-size:13px;
+  margin-top:18px;
 
-color:var(--muted);
+  font-size:13px;
+
+  color:var(--muted);
 }
 
 .privacy-check input{
-width:auto;
 
-margin-top:5px;
+  width:auto;
+
+  margin-top:5px;
 }
 
 
@@ -1228,13 +1479,14 @@ margin-top:5px;
 ===================================================== */
 
 .note{
-margin-top:18px;
 
-font-size:13px;
+  margin-top:18px;
 
-color:#68746b;
+  font-size:13px;
 
-text-align:center;
+  color:#68746b;
+
+  text-align:center;
 }
 
 
@@ -1243,34 +1495,36 @@ text-align:center;
 ===================================================== */
 
 .privacy{
-background:white;
 
-text-align:center;
+  background:white;
+
+  text-align:center;
 }
 
 .privacy-box{
-max-width:680px;
 
-margin:auto;
+  max-width:680px;
 
-background:
-linear-gradient(
-135deg,
-#f7faf7,
-#fff8ef
-);
+  margin:auto;
 
-padding:22px;
+  background:
+  linear-gradient(
+  135deg,
+  #f7faf7,
+  #fff8ef
+  );
 
-border-radius:16px;
+  padding:22px;
 
-border-top:
-4px solid
-var(--green);
+  border-radius:16px;
 
-color:var(--muted);
+  border-top:
+  4px solid
+  var(--green);
 
-font-size:14px;
+  color:var(--muted);
+
+  font-size:14px;
 }
 
 
@@ -1279,24 +1533,106 @@ font-size:14px;
 ===================================================== */
 
 footer{
-background:
-linear-gradient(
-135deg,
-#083d24,
-#126b3a
-);
 
-color:#dcefe1;
+  background:
+  linear-gradient(
+  135deg,
+  #083d24,
+  #126b3a
+  );
 
-text-align:center;
+  color:#dcefe1;
 
-padding:32px 20px;
+  text-align:center;
 
-font-size:13px;
+  padding:32px 20px;
 
-border-top:
-5px solid
-var(--orange);
+  font-size:13px;
+
+  border-top:
+  5px solid
+  var(--orange);
+}
+
+
+/* =====================================================
+   FLOATING BOOKING BUTTON
+===================================================== */
+
+.floating-booking{
+
+  position:fixed;
+
+  left:50%;
+
+  bottom:18px;
+
+  transform:
+  translateX(-50%)
+  translateY(120px);
+
+  width:
+  calc(100% - 32px);
+
+  max-width:620px;
+
+  padding:
+  16px 22px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:
+  linear-gradient(
+  90deg,
+  var(--green),
+  var(--dark-green),
+  var(--orange)
+  );
+
+  color:white;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  font-size:17px;
+
+  font-weight:800;
+
+  border:
+  2px solid
+  rgba(255,255,255,.35);
+
+  border-radius:50px;
+
+  box-shadow:
+  0 12px 35px
+  rgba(0,0,0,.28);
+
+  z-index:9999;
+
+  opacity:0;
+
+  visibility:hidden;
+
+  transition:
+  transform .4s ease,
+  opacity .35s ease;
+}
+
+.floating-booking.show{
+
+  transform:
+  translateX(-50%)
+  translateY(0);
+
+  opacity:1;
+
+  visibility:visible;
 }
 
 
@@ -1306,311 +1642,358 @@ var(--orange);
 
 @media(max-width:700px){
 
-section{
-padding:50px 18px;
+  section{
+    padding:50px 18px;
+  }
+
+
+  /* NAVIGATION */
+
+  .site-header{
+    position:relative;
+  }
+
+  .navbar{
+
+    padding:
+    9px 10px;
+
+    align-items:flex-start;
+  }
+
+  .brand-text{
+    font-size:15px;
+  }
+
+  .brand-sub{
+    font-size:8px;
+  }
+
+  .brand-icon{
+
+    width:36px;
+    height:36px;
+
+    font-size:18px;
+  }
+
+  .nav-links{
+
+    gap:4px;
+  }
+
+  .nav-links a{
+
+    padding:
+    7px 8px;
+
+    font-size:10px;
+  }
+
+
+  /* RESOURCE CARDS */
+
+  .feature-section{
+
+    padding:
+    15px 10px 28px;
+  }
+
+  .feature-container{
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    border-radius:20px;
+  }
+
+  .feature-box{
+
+    min-height:145px;
+
+    padding:
+    16px 5px;
+  }
+
+  .feature-icon{
+
+    width:50px;
+    height:50px;
+
+    min-width:50px;
+
+    font-size:24px;
+
+    margin-bottom:8px;
+  }
+
+  .feature-content h3{
+
+    font-size:13px;
+
+    line-height:1.2;
+
+    min-height:32px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+  }
+
+  .feature-content p{
+
+    font-size:9.5px;
+
+    line-height:1.3;
+  }
+
+  .feature-content::after{
+
+    font-size:9px;
+
+    margin-top:6px;
+  }
+
+
+  /* COMPACT INTRO BOXES */
+
+  .intro-boxes-section{
+
+    padding:
+    25px 12px 30px;
+  }
+
+  .intro-boxes{
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:10px;
+  }
+
+  .intro-box{
+
+    padding:
+    17px 12px;
+
+    border-radius:17px;
+  }
+
+  .intro-box-icon{
+
+    width:42px;
+    height:42px;
+
+    font-size:20px;
+
+    margin-bottom:8px;
+  }
+
+  .intro-box h3{
+
+    font-size:16px;
+
+    line-height:1.2;
+  }
+
+  .intro-box p{
+
+    font-size:11px;
+
+    line-height:1.4;
+  }
+
+  .intro-open{
+
+    font-size:10px;
+  }
+
+
+  /* ABOUT */
+
+  .about-section{
+
+    padding:
+    45px 14px;
+  }
+
+  .about-heading h2{
+
+    font-size:28px;
+  }
+
+  .about-subtitle{
+
+    font-size:14px;
+  }
+
+  .about-intro{
+
+    padding:
+    22px 18px;
+  }
+
+  .about-intro p{
+
+    font-size:15px;
+
+    line-height:1.7;
+  }
+
+
+  /* PROBLEMS */
+
+  .problem-section{
+
+    padding:
+    42px 14px;
+  }
+
+  .problem-section h2{
+
+    font-size:27px;
+
+    line-height:1.25;
+  }
+
+  .problems{
+
+    grid-template-columns:1fr;
+
+    gap:11px;
+
+    margin-top:22px;
+  }
+
+  .problem{
+
+    min-height:78px;
+
+    padding:
+    10px 12px;
+
+    gap:12px;
+
+    border-radius:15px;
+  }
+
+  .problem-icon{
+
+    width:52px;
+
+    min-width:52px;
+
+    height:50px;
+
+    font-size:27px;
+
+    padding-right:11px;
+  }
+
+  .problem-content strong{
+
+    font-size:16px;
+  }
+
+  .problem-content span{
+
+    font-size:13px;
+
+    line-height:1.35;
+  }
+
+
+  /* PRICE */
+
+  .price-section{
+
+    padding-top:45px;
+  }
+
+  .price-section h2{
+
+    font-size:27px;
+  }
+
+  .price{
+
+    font-size:46px;
+  }
+
+
+  /* FLOATING */
+
+  .floating-booking{
+
+    width:
+    calc(100% - 24px);
+
+    font-size:15px;
+
+    padding:
+    14px 16px;
+  }
+
 }
 
-
-/* HIGHLIGHTED RESOURCE CARD */
-
-.feature-section{
-padding:
-18px 12px
-28px;
-}
-
-.feature-container{
-
-grid-template-columns:
-repeat(3,1fr);
-
-border-radius:20px;
-
-border-width:2px;
-
-box-shadow:
-0 10px 25px
-rgba(8,61,36,.20),
-0 0 0 3px
-rgba(214,180,90,.10);
-}
-
-.feature-box{
-
-min-height:145px;
-
-padding:
-18px 6px;
-
-border-right:
-1px solid
-rgba(243,223,154,.32);
-}
-
-.feature-icon{
-
-width:50px;
-height:50px;
-
-min-width:50px;
-
-font-size:24px;
-
-margin-bottom:8px;
-}
-
-.feature-content h3{
-
-font-size:14px;
-
-line-height:1.2;
-
-min-height:34px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-}
-
-.feature-content p{
-
-font-size:10px;
-
-line-height:1.3;
-
-padding:
-0 2px;
-}
-
-.feature-content::after{
-
-content:
-"Open ›";
-
-font-size:10px;
-
-margin-top:7px;
-}
-
-
-/* =================================================
-   COMPACT PROBLEM BOXES
-================================================= */
-
-.problem-section{
-padding:
-42px 14px;
-}
-
-.problem-section h2{
-font-size:28px;
-
-line-height:1.25;
-
-margin-bottom:12px;
-}
-
-.problem-section .center{
-font-size:15px;
-
-line-height:1.55;
-}
-
-.problems{
-grid-template-columns:1fr;
-
-gap:11px;
-
-margin-top:22px;
-}
-
-.problem{
-min-height:78px;
-
-padding:10px 12px;
-
-gap:12px;
-
-border-radius:15px;
-
-border-left-width:4px;
-}
-
-.problem-icon{
-width:52px;
-
-min-width:52px;
-
-height:50px;
-
-font-size:27px;
-
-padding-right:11px;
-}
-
-.problem-content strong{
-font-size:17px;
-
-margin-bottom:2px;
-}
-
-.problem-content span{
-font-size:13.5px;
-
-line-height:1.35;
-}
-
-.problem-section .about-highlight{
-margin-top:20px;
-
-font-size:13px;
-
-line-height:1.4;
-}
-
-
-/* ABOUT */
-
-.about-section{
-padding:50px 15px;
-}
-
-.about-heading h2{
-font-size:29px;
-}
-
-.about-intro{
-padding:23px 20px;
-}
-
-.about-intro p{
-font-size:16px;
-}
-
-.price{
-font-size:46px;
-}
-
-.price-section h2{
-font-size:28px;
-}
-
-}
-
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
 
 @media(max-width:400px){
 
-.about-heading h2{
-font-size:26px;
-}
+  .brand-text{
+    font-size:13px;
+  }
 
-.about-icon{
-width:56px;
-height:56px;
+  .nav-links a{
 
-font-size:26px;
-}
+    font-size:9px;
 
-.about-intro p{
-font-size:15px;
-}
+    padding:
+    6px 6px;
+  }
 
+  .feature-box{
 
-/* RESOURCE CARD SMALL PHONE */
+    min-height:138px;
 
-.feature-section{
-padding:
-15px 8px
-25px;
-}
+    padding:
+    14px 3px;
+  }
 
-.feature-container{
-border-radius:18px;
-}
+  .feature-icon{
 
-.feature-box{
+    width:46px;
+    height:46px;
 
-min-height:138px;
+    font-size:22px;
+  }
 
-padding:
-15px 4px;
-}
+  .feature-content h3{
 
-.feature-icon{
+    font-size:11.5px;
+  }
 
-width:46px;
-height:46px;
+  .feature-content p{
 
-min-width:46px;
+    font-size:8.5px;
+  }
 
-font-size:22px;
-}
+  .intro-box{
 
-.feature-content h3{
-font-size:12.5px;
+    padding:
+    15px 10px;
+  }
 
-min-height:30px;
-}
+  .intro-box h3{
 
-.feature-content p{
-font-size:9px;
+    font-size:14px;
+  }
 
-line-height:1.25;
-}
+  .intro-box p{
 
-.feature-content::after{
-font-size:9px;
-
-margin-top:6px;
-}
-
-
-/* PROBLEMS */
-
-.problem{
-min-height:74px;
-
-padding:9px 10px;
-
-gap:10px;
-}
-
-.problem-icon{
-width:47px;
-
-min-width:47px;
-
-height:47px;
-
-font-size:25px;
-
-padding-right:9px;
-}
-
-.problem-content strong{
-font-size:16px;
-}
-
-.problem-content span{
-font-size:13px;
-
-line-height:1.3;
-}
-
-.floating-booking{
-width:
-calc(100% - 24px);
-
-font-size:15px;
-
-padding:14px 16px;
-}
+    font-size:10px;
+  }
 
 }
 
@@ -1628,7 +2011,76 @@ padding:14px 16px;
 
 
 <!-- ==================================================
-     TOP IMAGE
+     NAVIGATION
+================================================== -->
+
+<header class="site-header">
+
+<nav class="navbar">
+
+
+<a
+href="ruhani-rehnumai.html"
+class="brand"
+>
+
+<div class="brand-icon">
+🌙
+</div>
+
+<div class="brand-text">
+
+Ruhani Rehnumai
+
+<span class="brand-sub">
+Spiritual Guidance • Peace • Solutions
+</span>
+
+</div>
+
+</a>
+
+
+<div class="nav-links">
+
+<a href="ruhani-rehnumai.html">
+🏠 Home
+</a>
+
+<a href="#about">
+ℹ️ About Us
+</a>
+
+<a href="#hum-kaun-hain">
+🤲 Hum Kaun Hain?
+</a>
+
+<a href="#problems">
+📋 Problems
+</a>
+
+<a href="#booking">
+📅 Book
+</a>
+
+<a
+href="https://wa.me/919999999999"
+class="nav-whatsapp"
+target="_blank"
+rel="noopener"
+>
+💬 WhatsApp
+</a>
+
+</div>
+
+</nav>
+
+</header>
+
+
+<!-- ==================================================
+     HERO IMAGE
 ================================================== -->
 
 <section class="ruhani-image-section">
@@ -1642,17 +2094,13 @@ alt="Ruhani Rehnumai - Quran, Dua and Spiritual Guidance"
 
 
 <!-- ==================================================
-     HIGHLIGHTED 3-PART RESOURCE CARD
+     THREE RESOURCE CARDS
 ================================================== -->
 
 <section class="feature-section">
 
 <div class="feature-container">
 
-
-<!-- ==================================================
-     QURAN SHARIF
-================================================== -->
 
 <a
 href="quran-sharif.html"
@@ -1679,10 +2127,6 @@ Arabic + 6 Languages
 </a>
 
 
-<!-- ==================================================
-     DAILY AMAL & WAZAIF
-================================================== -->
-
 <a
 href="daily-amal-wazaif.html"
 class="feature-box"
@@ -1707,10 +2151,6 @@ Daily Deeni Rehnumai
 
 </a>
 
-
-<!-- ==================================================
-     ISLAMIC BOOKS & VIDEOS
-================================================== -->
 
 <a
 href="islamic-books-videos.html"
@@ -1743,6 +2183,68 @@ Books + Videos
 
 
 <!-- ==================================================
+     COMPACT ABOUT / HUM KAUN HAIN BOXES
+================================================== -->
+
+<section class="intro-boxes-section">
+
+<div class="intro-boxes">
+
+
+<a
+href="#about"
+class="intro-box"
+>
+
+<div class="intro-box-icon">
+ℹ️
+</div>
+
+<h3>
+About Us
+</h3>
+
+<p>
+Ruhani Rehnumai kya hai aur hamara maqsad kya hai?
+</p>
+
+<div class="intro-open">
+Read More →
+</div>
+
+</a>
+
+
+<a
+href="#hum-kaun-hain"
+class="intro-box"
+>
+
+<div class="intro-box-icon">
+🤲
+</div>
+
+<h3>
+Hum Kaun Hain?
+</h3>
+
+<p>
+Ek jagah jahan aapki baat privacy ke saath suni jaye.
+</p>
+
+<div class="intro-open">
+Read More →
+</div>
+
+</a>
+
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
      FLOATING BOOKING
 ================================================== -->
 
@@ -1755,7 +2257,7 @@ class="floating-booking"
 
 
 <!-- ==================================================
-     ABOUT US
+     ABOUT US / HUM KAUN HAIN
 ================================================== -->
 
 <section
@@ -1763,7 +2265,10 @@ class="about-section"
 id="about"
 >
 
-<div class="container">
+<div
+class="container"
+id="hum-kaun-hain"
+>
 
 
 <div class="about-heading">
@@ -1843,7 +2348,10 @@ Agar aap pareshan hain, hum aapki baat sunne ke liye yahan hain.
      PROBLEMS
 ================================================== -->
 
-<section class="problem-section">
+<section
+class="problem-section"
+id="problems"
+>
 
 <div class="container">
 
@@ -1860,8 +2368,6 @@ rehnumai hasil kar sakte hain.
 
 <div class="problems">
 
-
-<!-- 1 -->
 
 <div class="problem">
 
@@ -1884,8 +2390,6 @@ Ghar mein tanav, jhagde ya family problems
 </div>
 
 
-<!-- 2 -->
-
 <div class="problem">
 
 <div class="problem-icon">
@@ -1906,8 +2410,6 @@ Business ya naukri mein rukawat
 
 </div>
 
-
-<!-- 3 -->
 
 <div class="problem">
 
@@ -1930,8 +2432,6 @@ Karz, financial stress ya paison ki fikr
 </div>
 
 
-<!-- 4 -->
-
 <div class="problem">
 
 <div class="problem-icon">
@@ -1952,8 +2452,6 @@ Rishton se judi pareshani ya misunderstanding
 
 </div>
 
-
-<!-- 5 -->
 
 <div class="problem">
 
@@ -1976,8 +2474,6 @@ Stress, dar, tension ya dil ki bechaini
 </div>
 
 
-<!-- 6 -->
-
 <div class="problem">
 
 <div class="problem-icon">
@@ -1998,8 +2494,6 @@ Neend ki pareshani ya baar-baar bure khwab
 
 </div>
 
-
-<!-- 7 -->
 
 <div class="problem">
 
@@ -2022,8 +2516,6 @@ Emotional ya personal relationship concerns
 </div>
 
 
-<!-- 8 -->
-
 <div class="problem">
 
 <div class="problem-icon">
@@ -2045,8 +2537,6 @@ Kaam rukne ya progress na hone ka ehsaas
 </div>
 
 
-<!-- 9 -->
-
 <div class="problem">
 
 <div class="problem-icon">
@@ -2067,8 +2557,6 @@ Dil ki udaasi, fikr ya emotional pressure
 
 </div>
 
-
-<!-- 10 -->
 
 <div class="problem">
 
@@ -2140,7 +2628,9 @@ ek personal 20-minute session.
 
 <div class="call-note">
 
-📞 <strong>10–20 minute ki personal baat phone call par hogi.</strong>
+📞 <strong>
+10–20 minute ki personal baat phone call par hogi.
+</strong>
 
 <br>
 
@@ -2315,7 +2805,6 @@ date aur exact time select karein.
 
 
 <div class="booking-card">
-
 
 <form id="bookingForm">
 
@@ -2577,23 +3066,23 @@ document.getElementById("date");
 
 function setMinimumDate(){
 
-const today = new Date();
+  const today = new Date();
 
-const year =
-today.getFullYear();
+  const year =
+  today.getFullYear();
 
-const month =
-String(
-today.getMonth() + 1
-).padStart(2,"0");
+  const month =
+  String(
+    today.getMonth() + 1
+  ).padStart(2,"0");
 
-const day =
-String(
-today.getDate()
-).padStart(2,"0");
+  const day =
+  String(
+    today.getDate()
+  ).padStart(2,"0");
 
-dateInput.min =
-`${year}-${month}-${day}`;
+  dateInput.min =
+  `${year}-${month}-${day}`;
 
 }
 
@@ -2612,249 +3101,249 @@ bookingForm.addEventListener(
 "submit",
 async function(event){
 
-event.preventDefault();
+  event.preventDefault();
 
 
-const name =
-document.getElementById("name")
-.value.trim();
+  const name =
+  document.getElementById("name")
+  .value.trim();
 
 
-const whatsapp =
-document.getElementById("whatsapp")
-.value.trim();
+  const whatsapp =
+  document.getElementById("whatsapp")
+  .value.trim();
 
 
-const date =
-document.getElementById("date")
-.value;
+  const date =
+  document.getElementById("date")
+  .value;
 
 
-const time =
-document.getElementById("time")
-.value;
+  const time =
+  document.getElementById("time")
+  .value;
 
 
-const description =
-document.getElementById("reason")
-.value.trim();
+  const description =
+  document.getElementById("reason")
+  .value.trim();
 
 
-const privacy =
-document.getElementById("privacy")
-.checked;
+  const privacy =
+  document.getElementById("privacy")
+  .checked;
 
 
-/* REQUIRED */
+  /* REQUIRED */
 
-if(
-!name ||
-!whatsapp ||
-!date ||
-!time ||
-!description
-){
+  if(
+    !name ||
+    !whatsapp ||
+    !date ||
+    !time ||
+    !description
+  ){
 
-alert(
-"Please sabhi required details bharein."
-);
+    alert(
+      "Please sabhi required details bharein."
+    );
 
-return;
+    return;
 
-}
+  }
 
 
-/* PRIVACY */
+  /* PRIVACY */
 
-if(!privacy){
+  if(!privacy){
 
-alert(
-"Please privacy confirmation select karein."
-);
+    alert(
+      "Please privacy confirmation select karein."
+    );
 
-return;
+    return;
 
-}
+  }
 
 
-/* WHATSAPP */
+  /* WHATSAPP */
 
-if(
-!/^[0-9]{10}$/.test(whatsapp)
-){
+  if(
+    !/^[0-9]{10}$/.test(whatsapp)
+  ){
 
-alert(
-"Please valid 10 digit WhatsApp number enter karein."
-);
+    alert(
+      "Please valid 10 digit WhatsApp number enter karein."
+    );
 
-return;
+    return;
 
-}
+  }
 
 
-/* DATE */
+  /* DATE */
 
-if(
-date < dateInput.min
-){
+  if(
+    date < dateInput.min
+  ){
 
-alert(
-"Please aaj ya future ki date select karein."
-);
+    alert(
+      "Please aaj ya future ki date select karein."
+    );
 
-return;
+    return;
 
-}
+  }
 
 
-/* BUTTON */
+  /* BUTTON */
 
-const button =
-document.querySelector(".submit-button");
+  const button =
+  document.querySelector(".submit-button");
 
-const oldText =
-button.innerText;
+  const oldText =
+  button.innerText;
 
-button.disabled = true;
+  button.disabled = true;
 
-button.innerText =
-"Booking Submit Ho Rahi Hai...";
+  button.innerText =
+  "Booking Submit Ho Rahi Hai...";
 
 
-/* DATA */
+  /* DATA */
 
-const bookingData = {
+  const bookingData = {
 
-name:name,
+    name:name,
 
-whatsapp:whatsapp,
+    whatsapp:whatsapp,
 
-date:date,
+    date:date,
 
-time:time,
+    time:time,
 
-description:description,
+    description:description,
 
-paymentStatus:"Pending"
+    paymentStatus:"Pending"
 
-};
+  };
 
 
-/* SEND DATA */
+  /* SEND DATA */
 
-try{
+  try{
 
-const response =
-await fetch(
+    const response =
+    await fetch(
 
-SCRIPT_URL,
+      SCRIPT_URL,
 
-{
+      {
 
-method:"POST",
+        method:"POST",
 
-headers:{
-"Content-Type":
-"text/plain;charset=utf-8"
-},
+        headers:{
+          "Content-Type":
+          "text/plain;charset=utf-8"
+        },
 
-body:
-JSON.stringify(
-bookingData
-)
+        body:
+        JSON.stringify(
+          bookingData
+        )
 
-}
+      }
 
-);
+    );
 
 
-const result =
-await response.json();
+    const result =
+    await response.json();
 
 
-/* SUCCESS */
+    /* SUCCESS */
 
-if(result.success){
+    if(result.success){
 
-alert(
+      alert(
 
-"✅ Booking Successfully Submitted!\n\n" +
+        "✅ Booking Successfully Submitted!\n\n" +
 
-"Booking ID: " +
-result.bookingId +
+        "Booking ID: " +
+        result.bookingId +
 
-"\n\n" +
+        "\n\n" +
 
-"Name: " +
-name +
+        "Name: " +
+        name +
 
-"\n" +
+        "\n" +
 
-"Date: " +
-result.date +
+        "Date: " +
+        result.date +
 
-"\n" +
+        "\n" +
 
-"Time: " +
-result.time +
+        "Time: " +
+        result.time +
 
-"\n\n" +
+        "\n\n" +
 
-"📞 Personal 20-minute baat phone call par hogi.\n\n" +
+        "📞 Personal 20-minute baat phone call par hogi.\n\n" +
 
-"WhatsApp par confirmation diya jayega."
+        "WhatsApp par confirmation diya jayega."
 
-);
+      );
 
 
-bookingForm.reset();
+      bookingForm.reset();
 
-setMinimumDate();
+      setMinimumDate();
 
 
-}else{
+    }else{
 
-alert(
+      alert(
 
-"❌ Booking nahi ho saki.\n\n" +
+        "❌ Booking nahi ho saki.\n\n" +
 
-(
-result.message ||
-"Please thodi der baad dobara try karein."
-)
+        (
+          result.message ||
+          "Please thodi der baad dobara try karein."
+        )
 
-);
+      );
 
-}
+    }
 
 
-}catch(error){
+  }catch(error){
 
-console.error(
-"Booking Error:",
-error
-);
+    console.error(
+      "Booking Error:",
+      error
+    );
 
-alert(
+    alert(
 
-"❌ Booking system se connection nahi ho saka.\n\n" +
+      "❌ Booking system se connection nahi ho saka.\n\n" +
 
-"Please internet check karke dobara try karein."
+      "Please internet check karke dobara try karein."
 
-);
+    );
 
-}
+  }
 
 
-/* RESTORE */
+  /* RESTORE */
 
-finally{
+  finally{
 
-button.disabled = false;
+    button.disabled = false;
 
-button.innerText = oldText;
+    button.innerText = oldText;
 
-}
+  }
 
 });
 
@@ -2865,26 +3354,26 @@ button.innerText = oldText;
 
 const floatingBooking =
 document.querySelector(
-".floating-booking"
+  ".floating-booking"
 );
 
 window.addEventListener(
 "scroll",
 function(){
 
-if(window.scrollY > 120){
+  if(window.scrollY > 120){
 
-floatingBooking.classList.add(
-"show"
-);
+    floatingBooking.classList.add(
+      "show"
+    );
 
-}else{
+  }else{
 
-floatingBooking.classList.remove(
-"show"
-);
+    floatingBooking.classList.remove(
+      "show"
+    );
 
-}
+  }
 
 });
 
