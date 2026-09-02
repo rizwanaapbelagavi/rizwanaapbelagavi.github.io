@@ -29,6 +29,7 @@ body{
         );
 }
 
+
 /* =====================================================
    TOP NAV
 ===================================================== */
@@ -48,15 +49,25 @@ body{
     letter-spacing:.5px;
 }
 
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
 .nav a{
     color:#fff;
     text-decoration:none;
-    margin-left:8px;
     padding:8px 12px;
     border:1px solid rgba(238,207,110,.5);
     border-radius:20px;
     font-size:13px;
 }
+
+.nav a:hover{
+    background:rgba(243,211,109,.12);
+}
+
 
 /* =====================================================
    TOP POSTER
@@ -79,8 +90,9 @@ body{
     box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
+
 /* =====================================================
-   MAIN
+   MAIN CONTAINER
 ===================================================== */
 
 .container{
@@ -89,122 +101,57 @@ body{
     padding:10px 16px 40px;
 }
 
+
 /* =====================================================
-   3D QURAN
+   HERO
 ===================================================== */
 
-.quran-stage{
-    display:flex;
-    justify-content:center;
-    padding:40px 0 35px;
-    perspective:1100px;
-}
-
-.quran{
-    width:230px;
-    height:285px;
-    position:relative;
-
-    transform:
-        rotateY(-12deg)
-        rotateX(3deg)
-        rotateZ(-1deg);
-
-    transform-style:preserve-3d;
-
-    border:5px solid #d0ad4c;
-    border-radius:9px 22px 22px 9px;
-
+.hero{
+    text-align:center;
+    padding:28px 20px 25px;
+    border:1px solid #c8a84d;
+    border-radius:0 0 45px 45px;
     background:
         linear-gradient(
             145deg,
-            #14583e,
-            #063224
+            rgba(17,101,73,.98),
+            rgba(4,45,34,.98)
         );
-
-    box-shadow:
-        18px 20px 0 #06261c,
-        28px 34px 45px rgba(0,0,0,.55);
+    box-shadow:0 20px 45px rgba(0,0,0,.35);
 }
 
-.quran:before{
-    content:"";
-    position:absolute;
-    inset:15px;
-    border:2px solid #d9b95b;
-    border-radius:7px;
-}
-
-.quran:after{
-    content:"";
-    position:absolute;
-    top:25px;
-    bottom:25px;
-    left:13px;
-    width:4px;
-    background:#d9b95b;
-    opacity:.8;
-}
-
-.quran-inner{
-    position:absolute;
-    inset:0;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    z-index:2;
-
-    color:#f5d56e;
-    text-align:center;
+.hero-arabic{
     font-family:serif;
+    font-size:46px;
+    color:#f6d875;
+    margin-bottom:5px;
 }
 
-.quran-symbol{
-    font-size:55px;
+.hero h1{
+    margin:0;
+    font-size:34px;
+    letter-spacing:2px;
 }
 
-.quran-inner .arabic{
-    font-size:27px;
-    line-height:1.7;
+.hero-sub{
+    color:#f5dfa0;
+    margin:10px 0 0;
+    font-size:15px;
 }
+
+.hero-tag{
+    display:inline-block;
+    margin-top:15px;
+    padding:9px 18px;
+    border:1px solid #c6a54e;
+    border-radius:30px;
+    color:#f6d875;
+    font-weight:bold;
+}
+
 
 /* =====================================================
-   STATS
-===================================================== */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
-    margin-bottom:22px;
-}
-
-.stat{
-    text-align:center;
-    padding:20px 10px;
-
-    border:1px solid #a98b3c;
-    border-radius:20px;
-
-    background:rgba(255,255,255,.07);
-}
-
-.stat strong{
-    display:block;
-    color:#f5d66f;
-    font-size:29px;
-}
-
-.stat span{
-    color:#eee;
-    font-size:14px;
-}
-
-/* =====================================================
-   LANGUAGES
+   LANGUAGE PANEL
 ===================================================== */
 
 .language-panel{
@@ -212,7 +159,7 @@ body{
     color:#18372c;
     border-radius:25px;
     padding:20px;
-    margin-bottom:18px;
+    margin:22px 0 18px;
     box-shadow:0 12px 30px rgba(0,0,0,.2);
 }
 
@@ -236,12 +183,18 @@ body{
     padding:12px 5px;
     font-weight:bold;
     cursor:pointer;
+    transition:.2s;
+}
+
+.language-btn:hover{
+    transform:translateY(-1px);
 }
 
 .language-btn.active{
     background:#d1b25b;
     color:#102b21;
 }
+
 
 /* =====================================================
    SEARCH
@@ -254,13 +207,19 @@ body{
 .search input{
     width:100%;
     padding:16px 18px;
-
     border-radius:18px;
     border:1px solid #c3a34c;
-
     font-size:16px;
     outline:none;
+    background:#fff;
+    color:#17382c;
 }
+
+.search input:focus{
+    border-color:#e0c15d;
+    box-shadow:0 0 0 3px rgba(224,193,93,.15);
+}
+
 
 /* =====================================================
    SECTION TITLE
@@ -270,7 +229,6 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     margin:22px 0 12px;
 }
 
@@ -283,6 +241,7 @@ body{
     color:#f0d36e;
     font-size:13px;
 }
+
 
 /* =====================================================
    SURAH LIST
@@ -298,19 +257,15 @@ body{
     display:flex;
     align-items:center;
     gap:12px;
-
     padding:15px;
-
     border-radius:18px;
     border:1px solid #8d7536;
-
     background:
         linear-gradient(
             145deg,
             #104c38,
             #062b21
         );
-
     cursor:pointer;
     transition:.2s;
 }
@@ -318,21 +273,18 @@ body{
 .surah-card:hover{
     transform:translateY(-2px);
     border-color:#e1c467;
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
 .surah-number{
     min-width:42px;
     height:42px;
-
     border-radius:50%;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     background:#d3b25b;
     color:#17372b;
-
     font-weight:bold;
 }
 
@@ -357,29 +309,24 @@ body{
     color:#f3d36c;
 }
 
+
 /* =====================================================
    READER
 ===================================================== */
 
 .reader{
     display:none;
-
     margin-top:28px;
-
     background:#fbf3dc;
     color:#17382c;
-
     border-radius:25px;
     padding:20px;
-
     box-shadow:0 18px 45px rgba(0,0,0,.35);
 }
 
 .reader-top{
     text-align:center;
-
     border-bottom:1px solid #d5c79e;
-
     padding-bottom:15px;
     margin-bottom:16px;
 }
@@ -398,10 +345,8 @@ body{
 .reader-tools{
     display:flex;
     gap:8px;
-
     justify-content:center;
     flex-wrap:wrap;
-
     margin-top:12px;
 }
 
@@ -409,11 +354,13 @@ body{
     border:1px solid #b89643;
     background:#fff;
     color:#17382c;
-
     padding:9px 13px;
-
     border-radius:20px;
     cursor:pointer;
+}
+
+.tool-btn:hover{
+    background:#f7edcf;
 }
 
 .ayah{
@@ -425,15 +372,11 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-
     width:34px;
     height:34px;
-
     border-radius:50%;
-
     background:#d2b258;
     color:#17382c;
-
     font-weight:bold;
     margin-bottom:10px;
 }
@@ -441,11 +384,9 @@ body{
 .ayah-arabic{
     direction:rtl;
     text-align:right;
-
     font-family:serif;
     font-size:30px;
     line-height:2.1;
-
     margin-bottom:12px;
 }
 
@@ -462,19 +403,20 @@ body{
 
 .back-reader{
     width:100%;
-
     margin-top:18px;
     padding:14px;
-
     border:0;
     border-radius:14px;
-
     background:#123f30;
     color:#f4d36d;
-
     font-weight:bold;
     cursor:pointer;
 }
+
+.back-reader:hover{
+    background:#0b3326;
+}
+
 
 /* =====================================================
    LOADING
@@ -486,29 +428,26 @@ body{
     color:#806f40;
 }
 
+
 /* =====================================================
    FOOTER
 ===================================================== */
 
 .footer{
     text-align:center;
-
     margin-top:40px;
     padding:28px 10px;
-
     border-top:1px solid #806a34;
-
     color:#cfc5a5;
 }
 
 .footer strong{
     display:block;
-
     color:#f3d36d;
-
     font-size:21px;
     margin-bottom:8px;
 }
+
 
 /* =====================================================
    MOBILE
@@ -521,15 +460,17 @@ body{
     }
 
     .brand{
-        font-size:14px;
+        font-size:13px;
+    }
+
+    .nav-links{
+        gap:5px;
     }
 
     .nav a{
         font-size:11px;
         padding:7px 9px;
     }
-
-    /* TOP POSTER */
 
     .top-poster{
         padding:8px 6px 14px;
@@ -539,34 +480,48 @@ body{
         border-radius:12px;
     }
 
-    /* QURAN */
-
-    .quran{
-        width:190px;
-        height:240px;
+    .container{
+        padding:8px 12px 30px;
     }
 
-    .quran-stage{
-        padding:35px 0 30px;
+    .hero{
+        padding:25px 14px 22px;
     }
 
-    /* STATS */
-
-    .stats{
-        grid-template-columns:repeat(2,1fr);
+    .hero-arabic{
+        font-size:38px;
     }
 
-    .stats .stat:last-child{
-        grid-column:1 / -1;
+    .hero h1{
+        font-size:27px;
     }
 
-    /* LANGUAGES */
+    .hero-sub{
+        font-size:14px;
+    }
+
+    .hero-tag{
+        font-size:13px;
+        padding:8px 14px;
+    }
+
+    .language-panel{
+        padding:16px;
+        border-radius:20px;
+    }
 
     .language-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    /* SURAH */
+    .language-btn{
+        padding:11px 4px;
+        font-size:13px;
+    }
+
+    .section-title h2{
+        font-size:21px;
+    }
 
     .surah-list{
         grid-template-columns:1fr;
@@ -576,10 +531,14 @@ body{
         font-size:20px;
     }
 
-    /* READER */
+    .reader{
+        padding:16px;
+        border-radius:20px;
+    }
 
     .ayah-arabic{
         font-size:27px;
+        line-height:2;
     }
 
     .ayah-translation{
@@ -591,10 +550,12 @@ body{
 </style>
 </head>
 
+
 <body>
 
+
 <!-- ==================================================
-     TOP NAV
+     NAVIGATION
 ================================================== -->
 
 <nav class="nav">
@@ -603,7 +564,7 @@ body{
         ☾ Ruhani Rehnumai
     </div>
 
-    <div>
+    <div class="nav-links">
 
         <a href="ruhani-rehnumai.html">
             🏠 Home
@@ -640,73 +601,25 @@ body{
 
 
 <!-- ==================================================
-     3D QURAN
+     HERO
 ================================================== -->
 
-<div class="quran-stage">
+<section class="hero">
 
-    <div class="quran">
-
-        <div class="quran-inner">
-
-            <div class="quran-symbol">
-                ۞
-            </div>
-
-            <div class="arabic">
-                القرآن<br>
-                الكريم
-            </div>
-
-        </div>
-
+    <div class="hero-arabic">
+        القرآن الكريم
     </div>
 
-</div>
+    <h1>
+        QURAN SHARIF
+    </h1>
 
-
-<!-- ==================================================
-     STATS
-================================================== -->
-
-<section class="stats">
-
-    <div class="stat">
-
-        <strong>
-            114
-        </strong>
-
-        <span>
-            Surahs
-        </span>
-
+    <div class="hero-sub">
+        Arabic Original • Multi-Language Translation
     </div>
 
-
-    <div class="stat">
-
-        <strong>
-            6
-        </strong>
-
-        <span>
-            Translation Languages
-        </span>
-
-    </div>
-
-
-    <div class="stat">
-
-        <strong>
-            6236
-        </strong>
-
-        <span>
-            Ayahs
-        </span>
-
+    <div class="hero-tag">
+        PADHO • SAMJHO • AMAL KARO
     </div>
 
 </section>
@@ -732,7 +645,6 @@ body{
             🇬🇧 English
         </button>
 
-
         <button
             class="language-btn"
             data-lang="hi"
@@ -740,7 +652,6 @@ body{
         >
             🇮🇳 Hindi
         </button>
-
 
         <button
             class="language-btn"
@@ -750,7 +661,6 @@ body{
             🇵🇰 Urdu
         </button>
 
-
         <button
             class="language-btn"
             data-lang="kn"
@@ -759,7 +669,6 @@ body{
             🇮🇳 Kannada
         </button>
 
-
         <button
             class="language-btn"
             data-lang="mr"
@@ -767,7 +676,6 @@ body{
         >
             🇮🇳 Marathi
         </button>
-
 
         <button
             class="language-btn"
@@ -850,7 +758,6 @@ body{
             Arabic Original + Translation
         </p>
 
-
         <div class="reader-tools">
 
             <button
@@ -860,14 +767,12 @@ body{
                 ▶️ Play Tilawat
             </button>
 
-
             <button
                 class="tool-btn"
                 onclick="bookmarkCurrent()"
             >
                 🔖 Bookmark
             </button>
-
 
             <button
                 class="tool-btn"
@@ -918,9 +823,10 @@ body{
 
 <script>
 
-/* =========================
+
+/* =====================================================
    SETTINGS
-========================= */
+===================================================== */
 
 const API =
     "https://api.alquran.cloud/v1";
@@ -929,30 +835,38 @@ const AUDIO_CDN =
     "https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/";
 
 let selectedLanguage = "en";
+
 let currentSurah = null;
+
 let currentAudio = null;
+
 let surahData = [];
 
 
-/* =========================
+/* =====================================================
    LANGUAGE NAMES
-========================= */
+===================================================== */
 
 const languageNames = {
 
     en:"English",
+
     hi:"Hindi",
+
     ur:"Urdu",
+
     kn:"Kannada",
+
     mr:"Marathi",
+
     bn:"Bengali"
 
 };
 
 
-/* =========================
+/* =====================================================
    LOAD SURAH LIST
-========================= */
+===================================================== */
 
 async function loadSurahs(){
 
@@ -962,7 +876,9 @@ async function loadSurahs(){
     try{
 
         const response =
-            await fetch(API + "/surah");
+            await fetch(
+                API + "/surah"
+            );
 
         const result =
             await response.json();
@@ -974,12 +890,15 @@ async function loadSurahs(){
             surahData
         );
 
-        document.getElementById("surahCount")
+        document
+            .getElementById("surahCount")
             .innerText =
             surahData.length +
             " Surahs";
 
-    }catch(error){
+    }
+
+    catch(error){
 
         list.innerHTML = `
 
@@ -987,7 +906,7 @@ async function loadSurahs(){
 
                 ❌ Surah list could not be loaded.
 
-                <br>
+                <br><br>
 
                 Please check your internet connection.
 
@@ -1000,9 +919,9 @@ async function loadSurahs(){
 }
 
 
-/* =========================
+/* =====================================================
    RENDER SURAH LIST
-========================= */
+===================================================== */
 
 function renderSurahs(data){
 
@@ -1021,7 +940,7 @@ function renderSurahs(data){
     list.innerHTML = "";
 
     data.forEach(
-        surah=>{
+        surah => {
 
             const card =
                 document.createElement("div");
@@ -1055,13 +974,12 @@ function renderSurahs(data){
             `;
 
             card.onclick =
-                ()=>openSurah(
-                    surah.number
-                );
+                () =>
+                    openSurah(
+                        surah.number
+                    );
 
-            list.appendChild(
-                card
-            );
+            list.appendChild(card);
 
         }
     );
@@ -1069,9 +987,9 @@ function renderSurahs(data){
 }
 
 
-/* =========================
+/* =====================================================
    SEARCH
-========================= */
+===================================================== */
 
 function filterSurahs(){
 
@@ -1084,7 +1002,7 @@ function filterSurahs(){
 
     const filtered =
         surahData.filter(
-            surah=>
+            surah =>
 
                 String(surah.number)
                     .includes(query)
@@ -1109,9 +1027,9 @@ function filterSurahs(){
 }
 
 
-/* =========================
+/* =====================================================
    LANGUAGE
-========================= */
+===================================================== */
 
 function selectLanguage(
     lang,
@@ -1122,20 +1040,15 @@ function selectLanguage(
         lang;
 
     document
-        .querySelectorAll(
-            ".language-btn"
-        )
+        .querySelectorAll(".language-btn")
         .forEach(
-            btn=>
-                btn.classList.remove(
-                    "active"
-                )
+            btn =>
+                btn.classList.remove("active")
         );
 
     button.classList.add(
         "active"
     );
-
 
     if(currentSurah){
 
@@ -1148,9 +1061,9 @@ function selectLanguage(
 }
 
 
-/* =========================
+/* =====================================================
    FIND TRANSLATION EDITION
-========================= */
+===================================================== */
 
 async function findTranslationEdition(
     lang
@@ -1169,10 +1082,9 @@ async function findTranslationEdition(
     const editions =
         result.data || [];
 
-
     const translations =
         editions.filter(
-            edition=>
+            edition =>
 
                 edition.format === "text"
 
@@ -1182,7 +1094,6 @@ async function findTranslationEdition(
 
         );
 
-
     if(!translations.length){
 
         throw new Error(
@@ -1191,15 +1102,14 @@ async function findTranslationEdition(
 
     }
 
-
     return translations[0];
 
 }
 
 
-/* =========================
+/* =====================================================
    OPEN SURAH
-========================= */
+===================================================== */
 
 async function openSurah(
     number
@@ -1207,7 +1117,6 @@ async function openSurah(
 
     currentSurah =
         number;
-
 
     const reader =
         document.getElementById(
@@ -1229,20 +1138,17 @@ async function openSurah(
             "readerSubtitle"
         );
 
-
     const surah =
         surahData.find(
-            s=>
+            s =>
                 s.number === number
         );
-
 
     if(!surah){
 
         return;
 
     }
-
 
     title.innerText =
         number +
@@ -1251,14 +1157,12 @@ async function openSurah(
         " — " +
         surah.name;
 
-
     subtitle.innerText =
         "Arabic Original • " +
         languageNames[
             selectedLanguage
         ] +
         " Translation";
-
 
     content.innerHTML = `
 
@@ -1274,10 +1178,8 @@ async function openSurah(
 
     `;
 
-
     reader.style.display =
         "block";
-
 
     reader.scrollIntoView({
         behavior:"smooth"
@@ -1286,7 +1188,7 @@ async function openSurah(
 
     try{
 
-        /* Arabic Uthmani */
+        /* Arabic Quran */
 
         const arabicResponse =
             await fetch(
@@ -1318,14 +1220,12 @@ async function openSurah(
         const arabicResult =
             await arabicResponse.json();
 
-
         const translationResult =
             await translationResponse.json();
 
 
         const arabicAyahs =
             arabicResult.data.ayahs;
-
 
         const translatedAyahs =
             translationResult.data.ayahs;
@@ -1345,7 +1245,7 @@ async function openSurah(
 
 
         arabicAyahs.forEach(
-            (ayah,index)=>{
+            (ayah,index) => {
 
                 const translated =
                     translatedAyahs[index];
@@ -1355,7 +1255,6 @@ async function openSurah(
                     document.createElement(
                         "div"
                     );
-
 
                 item.className =
                     "ayah";
@@ -1372,22 +1271,18 @@ async function openSurah(
                     </div>
 
                     <div class="ayah-translation">
-
                         ${
                             translated
                             ? translated.text
                             : "Translation unavailable"
                         }
-
                     </div>
 
                     <div class="translation-source">
-
                         Translation:
                         ${
                             translationEdition.englishName
                         }
-
                     </div>
 
                 `;
@@ -1400,8 +1295,9 @@ async function openSurah(
             }
         );
 
+    }
 
-    }catch(error){
+    catch(error){
 
         content.innerHTML = `
 
@@ -1423,9 +1319,9 @@ async function openSurah(
 }
 
 
-/* =========================
+/* =====================================================
    AUDIO
-========================= */
+===================================================== */
 
 function playSurah(){
 
@@ -1435,13 +1331,11 @@ function playSurah(){
 
     }
 
-
     if(currentAudio){
 
         currentAudio.pause();
 
     }
-
 
     currentAudio =
         new Audio(
@@ -1450,11 +1344,10 @@ function playSurah(){
             ".mp3"
         );
 
-
     currentAudio
         .play()
         .catch(
-            ()=>{
+            () => {
 
                 alert(
                     "Audio could not start. Please tap Play again."
@@ -1466,9 +1359,9 @@ function playSurah(){
 }
 
 
-/* =========================
+/* =====================================================
    BOOKMARK
-========================= */
+===================================================== */
 
 function bookmarkCurrent(){
 
@@ -1477,7 +1370,6 @@ function bookmarkCurrent(){
         return;
 
     }
-
 
     let bookmarks =
         JSON.parse(
@@ -1497,7 +1389,6 @@ function bookmarkCurrent(){
             currentSurah
         );
 
-
         localStorage.setItem(
             "ruhani_quran_bookmarks",
             JSON.stringify(
@@ -1505,12 +1396,13 @@ function bookmarkCurrent(){
             )
         );
 
-
         alert(
             "🔖 Surah bookmarked successfully."
         );
 
-    }else{
+    }
+
+    else{
 
         alert(
             "🔖 This Surah is already bookmarked."
@@ -1521,17 +1413,16 @@ function bookmarkCurrent(){
 }
 
 
-/* =========================
+/* =====================================================
    CLOSE READER
-========================= */
+===================================================== */
 
 function closeReader(){
 
-    document.getElementById(
-        "reader"
-    ).style.display =
+    document
+        .getElementById("reader")
+        .style.display =
         "none";
-
 
     window.scrollTo({
         top:0,
@@ -1541,9 +1432,9 @@ function closeReader(){
 }
 
 
-/* =========================
+/* =====================================================
    START
-========================= */
+===================================================== */
 
 loadSurahs();
 
