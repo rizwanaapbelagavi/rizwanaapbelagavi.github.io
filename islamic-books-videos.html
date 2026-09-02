@@ -19,13 +19,40 @@ body{
   color:#173f2b;
 }
 
+/* =====================================================
+   TOP POSTER
+===================================================== */
+
+.top-poster{
+  width:100%;
+  padding:10px 10px 18px;
+  text-align:center;
+  background:#075b35;
+}
+
+.top-poster img{
+  display:block;
+  width:100%;
+  max-width:1100px;
+  height:auto;
+  margin:0 auto;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
 .container{
   max-width:900px;
   margin:auto;
   padding:18px;
 }
 
-/* HEADER */
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header{
   background:linear-gradient(135deg,#075b35,#0b7a47);
@@ -53,7 +80,9 @@ body{
   line-height:1.6;
 }
 
-/* INTRO */
+/* =====================================================
+   INTRO
+===================================================== */
 
 .intro{
   background:white;
@@ -81,7 +110,9 @@ body{
   color:#b38313;
 }
 
-/* SECTION */
+/* =====================================================
+   SECTION
+===================================================== */
 
 .section-title{
   margin:30px 5px 15px;
@@ -90,7 +121,9 @@ body{
   text-align:center;
 }
 
-/* CARD */
+/* =====================================================
+   CARD
+===================================================== */
 
 .card{
   background:white;
@@ -112,7 +145,9 @@ body{
   font-size:16px;
 }
 
-/* BOOK / VIDEO */
+/* =====================================================
+   BOOK / VIDEO ITEM
+===================================================== */
 
 .item{
   background:#f7fcf9;
@@ -148,7 +183,9 @@ body{
   font-weight:bold;
 }
 
-/* NOTE */
+/* =====================================================
+   NOTE
+===================================================== */
 
 .note{
   margin-top:25px;
@@ -163,7 +200,9 @@ body{
   color:#9b7412;
 }
 
-/* FOOTER */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 .footer{
   margin-top:30px;
@@ -184,16 +223,91 @@ body{
   font-weight:bold;
 }
 
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+  .top-poster{
+    padding:8px 6px 14px;
+  }
+
+  .top-poster img{
+    border-radius:12px;
+  }
+
+  .container{
+    padding:14px;
+  }
+
+  .header{
+    padding:28px 16px;
+  }
+
+  .logo{
+    font-size:36px;
+  }
+
+  .header h1{
+    font-size:26px;
+  }
+
+  .header p{
+    font-size:14px;
+  }
+
+  .intro{
+    padding:20px 16px;
+  }
+
+  .section-title{
+    font-size:22px;
+  }
+
+  .card{
+    padding:18px 16px;
+  }
+
+  .card h2{
+    font-size:20px;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
+
+<!-- ==================================================
+     ISLAMIC BOOKS & VIDEOS TOP POSTER
+================================================== -->
+
+<section class="top-poster">
+
+  <img
+    src="Islamic_Books_Videos_Poster.jpg"
+    alt="Islamic Books & Videos"
+  >
+
+</section>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
 <div class="header">
 
-  <div class="logo">📚</div>
+  <div class="logo">
+    📚
+  </div>
 
-  <h1>Islamic Books & Videos</h1>
+  <h1>
+    Islamic Books & Videos
+  </h1>
 
   <p>
     Ruhani Rehnumai ke zariye<br>
@@ -202,250 +316,318 @@ body{
 
 </div>
 
+
 <div class="container">
 
-  <div class="intro">
 
-    <div class="bismillah">
-      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
-    </div>
+<!-- ==================================================
+     INTRO
+================================================== -->
 
-    <p>
-      <strong>Ilm hasil karna har Musalman ke liye ek azeem amal hai.</strong>
-    </p>
+<div class="intro">
 
-    <p>
-      Is page par hum Islamic books, educational material,
-      useful videos aur deen se judi maloomat ek aasaan
-      andaaz mein share karenge.
-    </p>
-
-    <p>
-      🤲 Maqsad sirf ilm, samajh aur Allah ki taraf
-      behtar rujoo ko badhava dena hai.
-    </p>
-
+  <div class="bismillah">
+    بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
   </div>
 
+  <p>
+    <strong>
+      Ilm hasil karna har Musalman ke liye ek azeem amal hai.
+    </strong>
+  </p>
 
-  <!-- ISLAMIC BOOKS -->
+  <p>
+    Is page par hum Islamic books, educational material,
+    useful videos aur deen se judi maloomat ek aasaan
+    andaaz mein share karenge.
+  </p>
 
-  <h2 class="section-title">
-    📖 Islamic Books
+  <p>
+    🤲 Maqsad sirf ilm, samajh aur Allah ki taraf
+    behtar rujoo ko badhava dena hai.
+  </p>
+
+</div>
+
+
+<!-- ==================================================
+     ISLAMIC BOOKS
+================================================== -->
+
+<h2 class="section-title">
+  📖 Islamic Books
+</h2>
+
+<div class="card">
+
+  <h2>
+    📚 Islamic Reading
   </h2>
 
-  <div class="card">
+  <p>
+    Yahan Islamic books aur educational reading material
+    ko categories ke saath organize kiya jayega.
+  </p>
 
-    <h2>📚 Islamic Reading</h2>
+
+  <div class="item">
+
+    <div class="item-icon">
+      📕
+    </div>
+
+    <h3>
+      Islamic Knowledge
+    </h3>
 
     <p>
-      Yahan Islamic books aur educational reading material
-      ko categories ke saath organize kiya jayega.
+      Aqeedah, Akhlaaq, Seerat, Dua, Ibadat aur
+      Islamic life se judi useful reading.
     </p>
 
-    <div class="item">
-
-      <div class="item-icon">📕</div>
-
-      <h3>Islamic Knowledge</h3>
-
-      <p>
-        Aqeedah, Akhlaaq, Seerat, Dua, Ibadat aur
-        Islamic life se judi useful reading.
-      </p>
-
-      <a href="#" class="button">
-        Read Book
-      </a>
-
-    </div>
-
-
-    <div class="item">
-
-      <div class="item-icon">📗</div>
-
-      <h3>Seerat-un-Nabi ﷺ</h3>
-
-      <p>
-        Nabi ﷺ ki zindagi, akhlaaq aur sunnat se
-        seekhne ke liye educational material.
-      </p>
-
-      <a href="#" class="button">
-        Read More
-      </a>
-
-    </div>
-
-
-    <div class="item">
-
-      <div class="item-icon">📘</div>
-
-      <h3>Islamic Guidance</h3>
-
-      <p>
-        Rozmarra zindagi mein Islamic values,
-        sabr, shukr, akhlaaq aur behtar soch.
-      </p>
-
-      <a href="#" class="button">
-        Explore
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- ISLAMIC VIDEOS -->
-
-  <h2 class="section-title">
-    🎥 Islamic Videos
-  </h2>
-
-  <div class="card">
-
-    <h2>🕌 Islamic Learning Videos</h2>
-
-    <p>
-      Short aur useful Islamic videos ke zariye
-      deen ki basic maloomat aur reminders ko aasaan
-      andaaz mein samjha jayega.
-    </p>
-
-
-    <div class="item">
-
-      <div class="item-icon">🤲</div>
-
-      <h3>Daily Islamic Reminder</h3>
-
-      <p>
-        Rozana ek chhota reminder jo Allah ki yaad,
-        achhe akhlaaq aur behtar zindagi ki taraf
-        motivate kare.
-      </p>
-
-      <a href="#" class="button">
-        Watch Video
-      </a>
-
-    </div>
-
-
-    <div class="item">
-
-      <div class="item-icon">🌙</div>
-
-      <h3>Dua & Sunnah</h3>
-
-      <p>
-        Masnoon duayein aur Sunnah se related
-        educational videos.
-      </p>
-
-      <a href="#" class="button">
-        Watch Video
-      </a>
-
-    </div>
-
-
-    <div class="item">
-
-      <div class="item-icon">❤️</div>
-
-      <h3>Sabr & Sukoon</h3>
-
-      <p>
-        Sabr, shukr, tawakkul aur Allah par bharosa
-        jaise topics par Islamic reminders.
-      </p>
-
-      <a href="#" class="button">
-        Watch Video
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <!-- ISLAMIC EDUCATION -->
-
-  <h2 class="section-title">
-    🕌 Islamic Education
-  </h2>
-
-  <div class="card">
-
-    <h2>🌿 Deen Ko Samajhne Ki Koshish</h2>
-
-    <p>
-      Islam ko Quran aur authentic Sunnah ki roshni mein
-      samajhna aur apni zindagi mein achhi Islamic values
-      ko apnane ki koshish karna hum sab ki zimmedari hai.
-    </p>
-
-    <div class="item">
-
-      <div class="item-icon">✨</div>
-
-      <h3>Knowledge • Reflection • Practice</h3>
-
-      <p>
-        Ilm hasil karein, us par gaur karein aur
-        jo sahih ho use apni zindagi mein amal ke
-        zariye behtar banane ki koshish karein.
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <!-- IMPORTANT NOTE -->
-
-  <div class="note">
-
-    <strong>⚠️ Zaroori Note</strong>
-
-    <p>
-      Is page ka maqsad Islamic education aur general
-      information provide karna hai.
-    </p>
-
-    <p>
-      Islamic references ko publish karte waqt authentic
-      sources aur qualified Islamic scholars ki guidance
-      ko priority di jayegi.
-    </p>
-
-    <p>
-      Kisi bhi medical, legal ya personal emergency ke liye
-      qualified professional se zaroor mashwara karein.
-    </p>
-
-  </div>
-
-
-  <div class="footer">
-
-    <strong>Ruhani Rehnumai</strong><br>
-
-    Umeed • Sukoon • Behtar Raasta<br>
-
-    Allah ke fazl se 🤲
-
-    <br>
-
-    <a href="ruhani-rehnumai.html" class="home">
-      🏠 Ruhani Rehnumai Home
+    <a href="#" class="button">
+      Read Book
     </a>
 
   </div>
+
+
+  <div class="item">
+
+    <div class="item-icon">
+      📗
+    </div>
+
+    <h3>
+      Seerat-un-Nabi ﷺ
+    </h3>
+
+    <p>
+      Nabi ﷺ ki zindagi, akhlaaq aur sunnat se
+      seekhne ke liye educational material.
+    </p>
+
+    <a href="#" class="button">
+      Read More
+    </a>
+
+  </div>
+
+
+  <div class="item">
+
+    <div class="item-icon">
+      📘
+    </div>
+
+    <h3>
+      Islamic Guidance
+    </h3>
+
+    <p>
+      Rozmarra zindagi mein Islamic values,
+      sabr, shukr, akhlaaq aur behtar soch.
+    </p>
+
+    <a href="#" class="button">
+      Explore
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- ==================================================
+     ISLAMIC VIDEOS
+================================================== -->
+
+<h2 class="section-title">
+  🎥 Islamic Videos
+</h2>
+
+<div class="card">
+
+  <h2>
+    🕌 Islamic Learning Videos
+  </h2>
+
+  <p>
+    Short aur useful Islamic videos ke zariye
+    deen ki basic maloomat aur reminders ko aasaan
+    andaaz mein samjha jayega.
+  </p>
+
+
+  <div class="item">
+
+    <div class="item-icon">
+      🤲
+    </div>
+
+    <h3>
+      Daily Islamic Reminder
+    </h3>
+
+    <p>
+      Rozana ek chhota reminder jo Allah ki yaad,
+      achhe akhlaaq aur behtar zindagi ki taraf
+      motivate kare.
+    </p>
+
+    <a href="#" class="button">
+      Watch Video
+    </a>
+
+  </div>
+
+
+  <div class="item">
+
+    <div class="item-icon">
+      🌙
+    </div>
+
+    <h3>
+      Dua & Sunnah
+    </h3>
+
+    <p>
+      Masnoon duayein aur Sunnah se related
+      educational videos.
+    </p>
+
+    <a href="#" class="button">
+      Watch Video
+    </a>
+
+  </div>
+
+
+  <div class="item">
+
+    <div class="item-icon">
+      ❤️
+    </div>
+
+    <h3>
+      Sabr & Sukoon
+    </h3>
+
+    <p>
+      Sabr, shukr, tawakkul aur Allah par bharosa
+      jaise topics par Islamic reminders.
+    </p>
+
+    <a href="#" class="button">
+      Watch Video
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- ==================================================
+     ISLAMIC EDUCATION
+================================================== -->
+
+<h2 class="section-title">
+  🕌 Islamic Education
+</h2>
+
+<div class="card">
+
+  <h2>
+    🌿 Deen Ko Samajhne Ki Koshish
+  </h2>
+
+  <p>
+    Islam ko Quran aur authentic Sunnah ki roshni mein
+    samajhna aur apni zindagi mein achhi Islamic values
+    ko apnane ki koshish karna hum sab ki zimmedari hai.
+  </p>
+
+
+  <div class="item">
+
+    <div class="item-icon">
+      ✨
+    </div>
+
+    <h3>
+      Knowledge • Reflection • Practice
+    </h3>
+
+    <p>
+      Ilm hasil karein, us par gaur karein aur
+      jo sahih ho use apni zindagi mein amal ke
+      zariye behtar banane ki koshish karein.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- ==================================================
+     IMPORTANT NOTE
+================================================== -->
+
+<div class="note">
+
+  <strong>
+    ⚠️ Zaroori Note
+  </strong>
+
+  <p>
+    Is page ka maqsad Islamic education aur general
+    information provide karna hai.
+  </p>
+
+  <p>
+    Islamic references ko publish karte waqt authentic
+    sources aur qualified Islamic scholars ki guidance
+    ko priority di jayegi.
+  </p>
+
+  <p>
+    Kisi bhi medical, legal ya personal emergency ke liye
+    qualified professional se zaroor mashwara karein.
+  </p>
+
+</div>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<div class="footer">
+
+  <strong>
+    Ruhani Rehnumai
+  </strong>
+
+  <br>
+
+  Umeed • Sukoon • Behtar Raasta
+
+  <br>
+
+  Allah ke fazl se 🤲
+
+  <br>
+
+  <a
+    href="ruhani-rehnumai.html"
+    class="home"
+  >
+    🏠 Ruhani Rehnumai Home
+  </a>
+
+</div>
+
 
 </div>
 
