@@ -12,6 +12,10 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
@@ -51,49 +55,36 @@ body{
 }
 
 /* =====================================================
-   HEADER
-===================================================== */
-
-.header{
-  background:linear-gradient(135deg,#075b3a,#16804f);
-  color:white;
-  padding:30px 20px;
-  border-radius:0 0 28px 28px;
-  text-align:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.15);
-}
-
-.logo{
-  font-size:16px;
-  letter-spacing:2px;
-  font-weight:bold;
-  color:#ffd76a;
-}
-
-h1{
-  margin:10px 0 8px;
-  font-size:32px;
-}
-
-.subtitle{
-  margin:0;
-  font-size:16px;
-  line-height:1.6;
-  opacity:.95;
-}
-
-/* =====================================================
    INTRO
 ===================================================== */
 
 .intro{
   background:#fff;
-  margin-top:20px;
-  padding:20px;
-  border-radius:20px;
+  margin-top:8px;
+  padding:24px 20px;
+  border-radius:22px;
   box-shadow:0 6px 22px rgba(0,80,40,.10);
   text-align:center;
   line-height:1.7;
+}
+
+.intro strong:first-child{
+  display:block;
+  font-size:28px;
+  color:#b18409;
+  margin-bottom:16px;
+  direction:rtl;
+}
+
+.intro p{
+  margin:10px 0;
+  font-size:17px;
+  line-height:1.8;
+}
+
+.gold{
+  color:#b18409;
+  font-weight:bold;
 }
 
 /* =====================================================
@@ -102,7 +93,7 @@ h1{
 
 .section-title{
   text-align:center;
-  margin:30px 0 15px;
+  margin:32px 0 16px;
   color:#075b3a;
   font-size:24px;
 }
@@ -178,9 +169,30 @@ h1{
   background:#eef9f2;
   padding:16px;
   border-radius:15px;
-  margin-top:20px;
+  margin-top:25px;
   line-height:1.7;
   color:#315c43;
+}
+
+.note strong{
+  color:#075b3a;
+}
+
+/* =====================================================
+   HOME BUTTON
+===================================================== */
+
+.home-btn{
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  background:#075b3a;
+  color:white;
+  padding:15px;
+  border-radius:14px;
+  font-weight:bold;
+  margin-top:22px;
+  box-shadow:0 5px 15px rgba(0,80,40,.15);
 }
 
 /* =====================================================
@@ -199,43 +211,10 @@ h1{
 }
 
 /* =====================================================
-   HOME BUTTON
-===================================================== */
-
-.home-btn{
-  display:block;
-  text-align:center;
-  text-decoration:none;
-  background:#075b3a;
-  color:white;
-  padding:15px;
-  border-radius:14px;
-  font-weight:bold;
-  margin-top:20px;
-}
-
-.gold{
-  color:#b18409;
-  font-weight:bold;
-}
-
-/* =====================================================
    MOBILE
 ===================================================== */
 
 @media(max-width:600px){
-
-  h1{
-    font-size:28px;
-  }
-
-  .arabic{
-    font-size:22px;
-  }
-
-  .card{
-    padding:16px;
-  }
 
   .top-poster{
     padding:8px 6px 14px;
@@ -243,6 +222,48 @@ h1{
 
   .top-poster img{
     border-radius:12px;
+  }
+
+  .container{
+    padding:14px;
+  }
+
+  .intro{
+    margin-top:6px;
+    padding:22px 16px;
+    border-radius:20px;
+  }
+
+  .intro strong:first-child{
+    font-size:24px;
+  }
+
+  .intro p{
+    font-size:16px;
+    line-height:1.8;
+  }
+
+  .section-title{
+    font-size:22px;
+    margin:28px 0 14px;
+  }
+
+  .card{
+    padding:17px 15px;
+  }
+
+  .card h2{
+    font-size:20px;
+  }
+
+  .arabic{
+    font-size:22px;
+    line-height:1.9;
+  }
+
+  .meaning,
+  .roman{
+    font-size:15px;
   }
 
 }
@@ -267,34 +288,15 @@ h1{
 
 
 <!-- ==================================================
-     HEADER
-================================================== -->
-
-<div class="header">
-
-  <div class="logo">
-    RUHANI REHNUMAI
-  </div>
-
-  <h1>
-    📿 Daily Amal & Wazaif
-  </h1>
-
-  <p class="subtitle">
-    Rozana ke Qurani Duayein, Azkaar aur Wazaif
-  </p>
-
-</div>
-
-
-<!-- ==================================================
      MAIN
 ================================================== -->
 
 <div class="container">
 
 
-  <!-- INTRO -->
+  <!-- ==================================================
+       INTRO
+  ================================================== -->
 
   <div class="intro">
 
