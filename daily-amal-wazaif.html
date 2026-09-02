@@ -7,6 +7,7 @@
 <title>Daily Amal & Wazaif | Ruhani Rehnumai</title>
 
 <style>
+
 *{
   box-sizing:border-box;
 }
@@ -18,11 +19,40 @@ body{
   color:#173f2b;
 }
 
+/* =====================================================
+   TOP POSTER
+===================================================== */
+
+.top-poster{
+  width:100%;
+  padding:10px 10px 18px;
+  text-align:center;
+  background:#075b3a;
+}
+
+.top-poster img{
+  display:block;
+  width:100%;
+  max-width:1100px;
+  height:auto;
+  margin:0 auto;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
 .container{
   max-width:900px;
   margin:auto;
   padding:18px;
 }
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 .header{
   background:linear-gradient(135deg,#075b3a,#16804f);
@@ -52,6 +82,10 @@ h1{
   opacity:.95;
 }
 
+/* =====================================================
+   INTRO
+===================================================== */
+
 .intro{
   background:#fff;
   margin-top:20px;
@@ -62,12 +96,20 @@ h1{
   line-height:1.7;
 }
 
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
 .section-title{
   text-align:center;
   margin:30px 0 15px;
   color:#075b3a;
   font-size:24px;
 }
+
+/* =====================================================
+   CARDS
+===================================================== */
 
 .card{
   background:white;
@@ -84,6 +126,10 @@ h1{
   font-size:21px;
 }
 
+/* =====================================================
+   ARABIC
+===================================================== */
+
 .arabic{
   direction:rtl;
   text-align:right;
@@ -96,6 +142,10 @@ h1{
   margin:10px 0;
 }
 
+/* =====================================================
+   TEXT
+===================================================== */
+
 .roman{
   font-weight:bold;
   line-height:1.7;
@@ -107,6 +157,10 @@ h1{
   color:#555;
 }
 
+/* =====================================================
+   INFO
+===================================================== */
+
 .info{
   background:#fff8df;
   padding:12px;
@@ -115,6 +169,10 @@ h1{
   line-height:1.6;
   font-size:14px;
 }
+
+/* =====================================================
+   NOTE
+===================================================== */
 
 .note{
   background:#eef9f2;
@@ -125,12 +183,24 @@ h1{
   color:#315c43;
 }
 
+/* =====================================================
+   FOOTER
+===================================================== */
+
 .footer{
   text-align:center;
   margin:35px 0 20px;
   color:#666;
   line-height:1.7;
 }
+
+.footer strong{
+  color:#075b3a;
+}
+
+/* =====================================================
+   HOME BUTTON
+===================================================== */
 
 .home-btn{
   display:block;
@@ -149,7 +219,12 @@ h1{
   font-weight:bold;
 }
 
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media(max-width:600px){
+
   h1{
     font-size:28px;
   }
@@ -161,26 +236,71 @@ h1{
   .card{
     padding:16px;
   }
+
+  .top-poster{
+    padding:8px 6px 14px;
+  }
+
+  .top-poster img{
+    border-radius:12px;
+  }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <div class="logo">RUHANI REHNUMAI</div>
+<!-- ==================================================
+     DAILY AMAL & WAZAIF TOP POSTER
+================================================== -->
 
-  <h1>📿 Daily Amal & Wazaif</h1>
+<section class="top-poster">
+
+  <img
+    src="daily-amal-wazaif-poster.jpg"
+    alt="Daily Amal & Wazaif"
+  >
+
+</section>
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<div class="header">
+
+  <div class="logo">
+    RUHANI REHNUMAI
+  </div>
+
+  <h1>
+    📿 Daily Amal & Wazaif
+  </h1>
 
   <p class="subtitle">
     Rozana ke Qurani Duayein, Azkaar aur Wazaif
   </p>
+
 </div>
+
+
+<!-- ==================================================
+     MAIN
+================================================== -->
 
 <div class="container">
 
+
+  <!-- INTRO -->
+
   <div class="intro">
-    <strong>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</strong>
+
+    <strong>
+      بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+    </strong>
 
     <p>
       Allah Ta'ala ke zikr se dilon ko sukoon milta hai.
@@ -192,17 +312,29 @@ h1{
     <p class="gold">
       Niyyat, yaqeen aur pabandi ke saath dua karein.
     </p>
+
   </div>
 
 
-  <h2 class="section-title">🌅 Subah ke Amal</h2>
+  <!-- ==================================================
+       SUBAH KE AMAL
+  ================================================== -->
 
+  <h2 class="section-title">
+    🌅 Subah ke Amal
+  </h2>
+
+
+  <!-- 1 -->
 
   <div class="card">
-    <h2>1. Ayat-ul-Kursi</h2>
+
+    <h2>
+      1. Ayat-ul-Kursi
+    </h2>
 
     <div class="arabic">
-اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ
+      اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ
     </div>
 
     <p class="meaning">
@@ -213,11 +345,18 @@ h1{
     <div class="info">
       📖 Reference: Qur'an 2:255<br>
       🌙 Sone se pehle Ayat-ul-Kursi padhna ek masnoon amal hai.
+    </div>
+
   </div>
 
 
+  <!-- 2 -->
+
   <div class="card">
-    <h2>2. Surah Al-Ikhlas, Al-Falaq & An-Naas</h2>
+
+    <h2>
+      2. Surah Al-Ikhlas, Al-Falaq & An-Naas
+    </h2>
 
     <p class="meaning">
       Subah aur shaam Surah Al-Ikhlas, Surah Al-Falaq aur
@@ -229,14 +368,26 @@ h1{
       In Surahs ki fazilat aur subah-shaam padhne ki riwayat
       ahadith mein milti hai.
     </div>
+
   </div>
 
 
-  <h2 class="section-title">🤲 Rozana Padhne Wali Duayein</h2>
+  <!-- ==================================================
+       ROZANA DUAYEIN
+  ================================================== -->
 
+  <h2 class="section-title">
+    🤲 Rozana Padhne Wali Duayein
+  </h2>
+
+
+  <!-- 3 -->
 
   <div class="card">
-    <h2>3. Istighfar</h2>
+
+    <h2>
+      3. Istighfar
+    </h2>
 
     <div class="arabic">
       أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ
@@ -254,11 +405,17 @@ h1{
     <div class="info">
       🤲 Rozana 100 martaba istighfar karna masnoon amal hai.
     </div>
+
   </div>
 
 
+  <!-- 4 -->
+
   <div class="card">
-    <h2>4. Pareshani ke Waqt ki Dua</h2>
+
+    <h2>
+      4. Pareshani ke Waqt ki Dua
+    </h2>
 
     <div class="arabic">
       لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ
@@ -276,11 +433,17 @@ h1{
     <div class="info">
       📖 Reference: Qur'an 21:87
     </div>
+
   </div>
 
 
+  <!-- 5 -->
+
   <div class="card">
-    <h2>5. Duniya aur Aakhirat ki Bhalai ki Dua</h2>
+
+    <h2>
+      5. Duniya aur Aakhirat ki Bhalai ki Dua
+    </h2>
 
     <div class="arabic">
       رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً
@@ -302,36 +465,63 @@ h1{
     <div class="info">
       📖 Reference: Qur'an 2:201
     </div>
+
   </div>
 
 
-  <h2 class="section-title">🕌 Namaz ke Baad</h2>
+  <!-- ==================================================
+       NAMAZ KE BAAD
+  ================================================== -->
 
+  <h2 class="section-title">
+    🕌 Namaz ke Baad
+  </h2>
+
+
+  <!-- 6 -->
 
   <div class="card">
-    <h2>6. Tasbeeh, Tahmeed & Takbeer</h2>
+
+    <h2>
+      6. Tasbeeh, Tahmeed & Takbeer
+    </h2>
 
     <p class="meaning">
       Namaz ke baad Allah ka zikr karein:
     </p>
-<p class="roman">
- SubhanAllah — 33 martaba.<br>
-Alhamdulillah — 33 martaba.<br>
-Allahu Akbar — 33 martaba.<br>
-Phir 100 mukammal karne ke liye:
-La ilaha illallahu wahdahu la sharika lah...
-</p>
+
+    <p class="roman">
+      SubhanAllah — 33 martaba.<br>
+      Alhamdulillah — 33 martaba.<br>
+      Allahu Akbar — 33 martaba.<br>
+      Phir 100 mukammal karne ke liye:<br>
+      La ilaha illallahu wahdahu la sharika lah...
+    </p>
+
     <div class="info">
-      🤲 Farz namaz ke baad ye masnoon zikr padhna Sahih Muslim mein riwayat hua hai.
+      🤲 Farz namaz ke baad ye masnoon zikr padhna
+      Sahih Muslim mein riwayat hua hai.
     </div>
+
   </div>
 
 
-  <h2 class="section-title">🌙 Shaam ke Amal</h2>
+  <!-- ==================================================
+       SHAAM
+  ================================================== -->
 
+  <h2 class="section-title">
+    🌙 Shaam ke Amal
+  </h2>
+
+
+  <!-- 7 -->
 
   <div class="card">
-    <h2>7. Allah ka Zikr</h2>
+
+    <h2>
+      7. Allah ka Zikr
+    </h2>
 
     <div class="arabic">
       لَا إِلَٰهَ إِلَّا اللَّهُ
@@ -348,14 +538,26 @@ La ilaha illallahu wahdahu la sharika lah...
     <div class="info">
       ❤️ Dil ko Allah ke zikr se jodne ki koshish karein.
     </div>
+
   </div>
 
 
-  <h2 class="section-title">🛡️ Hifazat ke Liye</h2>
+  <!-- ==================================================
+       HIFAZAT
+  ================================================== -->
 
+  <h2 class="section-title">
+    🛡️ Hifazat ke Liye
+  </h2>
+
+
+  <!-- 8 -->
 
   <div class="card">
-    <h2>8. Mu'awwidhat</h2>
+
+    <h2>
+      8. Mu'awwidhat
+    </h2>
 
     <p class="meaning">
       Surah Al-Ikhlas, Surah Al-Falaq aur Surah An-Naas
@@ -365,14 +567,26 @@ La ilaha illallahu wahdahu la sharika lah...
     <div class="info">
       📖 Reference: Qur'an 112, 113 & 114
     </div>
+
   </div>
 
 
-  <h2 class="section-title">💰 Rizq & Barkat</h2>
+  <!-- ==================================================
+       RIZQ
+  ================================================== -->
 
+  <h2 class="section-title">
+    💰 Rizq & Barkat
+  </h2>
+
+
+  <!-- 9 -->
 
   <div class="card">
- 9. Rizq & Barkat ki Dua
+
+    <h2>
+      9. Rizq & Barkat ki Dua
+    </h2>
 
     <div class="arabic">
       رَبِّ إِنِّي لِمَا أَنْزَلْتَ إِلَيَّ مِنْ خَيْرٍ فَقِيرٌ
@@ -390,14 +604,26 @@ La ilaha illallahu wahdahu la sharika lah...
     <div class="info">
       📖 Reference: Qur'an 28:24
     </div>
+
   </div>
 
 
-  <h2 class="section-title">😌 Sukoon-e-Dil</h2>
+  <!-- ==================================================
+       SUKOON
+  ================================================== -->
 
+  <h2 class="section-title">
+    😌 Sukoon-e-Dil
+  </h2>
+
+
+  <!-- 10 -->
 
   <div class="card">
-    10. Sukoon-e-Dil
+
+    <h2>
+      10. Sukoon-e-Dil
+    </h2>
 
     <div class="arabic">
       أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ
@@ -415,27 +641,48 @@ La ilaha illallahu wahdahu la sharika lah...
     <div class="info">
       📖 Reference: Qur'an 13:28
     </div>
+
   </div>
 
 
-  <h2 class="section-title">🌙 Sone se Pehle</h2>
+  <!-- ==================================================
+       SONE SE PEHLE
+  ================================================== -->
 
+  <h2 class="section-title">
+    🌙 Sone se Pehle
+  </h2>
+
+
+  <!-- 11 -->
 
   <div class="card">
-    <h2>11. Ayat-ul-Kursi & Qurani Tilawat</h2>
+
+    <h2>
+      11. Ayat-ul-Kursi & Qurani Tilawat
+    </h2>
 
     <p class="meaning">
-      Sone se pehle Ayat-ul-Kursi aur Mu'awwidhat ki tilawat karein. Allah se hifazat aur aman ki dua karein.
+      Sone se pehle Ayat-ul-Kursi aur Mu'awwidhat ki
+      tilawat karein. Allah se hifazat aur aman ki dua karein.
     </p>
 
     <div class="info">
       🤲 Apne ghar walon ke liye bhi dua karein.
     </div>
+
   </div>
 
 
+  <!-- ==================================================
+       NOTE
+  ================================================== -->
+
   <div class="note">
-    <strong>⚠️ Zaroori Note</strong>
+
+    <strong>
+      ⚠️ Zaroori Note
+    </strong>
 
     <p>
       Ye page general Islamic information aur Qurani/
@@ -449,18 +696,37 @@ La ilaha illallahu wahdahu la sharika lah...
       rehnumai chahiye ho to qualified aur trustworthy
       Islamic scholar se mashwara bhi kiya ja sakta hai.
     </p>
+
   </div>
 
 
-  <a class="home-btn" href="index.html">
+  <!-- ==================================================
+       HOME BUTTON
+  ================================================== -->
+
+  <a class="home-btn" href="ruhani-rehnumai.html">
     🏠 Ruhani Rehnumai Home
   </a>
 
 
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
   <div class="footer">
-    <strong>Ruhani Rehnumai</strong><br>
-    Umeed • Sukoon • Behtar Raasta<br><br>
+
+    <strong>
+      Ruhani Rehnumai
+    </strong>
+
+    <br>
+
+    Umeed • Sukoon • Behtar Raasta
+
+    <br><br>
+
     Allah ke fazl se 🤲
+
   </div>
 
 </div>
