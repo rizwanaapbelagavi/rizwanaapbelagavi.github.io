@@ -80,7 +80,6 @@ img{
 ===================================================== */
 
 .site-header{
-
   position:sticky;
   top:0;
   z-index:5000;
@@ -100,63 +99,48 @@ img{
 }
 
 .navbar{
-
   width:100%;
   max-width:1200px;
-
   margin:auto;
 
-  padding:
-  10px 18px;
+  padding:10px 18px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
 
   gap:15px;
 }
 
 .brand{
-
   display:flex;
-
   align-items:center;
-
   gap:9px;
 
   color:var(--dark-green);
-
   text-decoration:none;
-
   font-weight:800;
-
   white-space:nowrap;
 }
 
 .brand-icon{
-
   width:40px;
   height:40px;
 
   border-radius:50%;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   background:
   linear-gradient(
-  135deg,
-  var(--green),
-  var(--gold)
+    135deg,
+    var(--green),
+    var(--gold)
   );
 
   color:white;
-
   font-size:20px;
 
   box-shadow:
@@ -165,70 +149,61 @@ img{
 }
 
 .brand-text{
-
   font-size:18px;
-
   line-height:1.1;
 }
 
 .brand-sub{
-
   display:block;
-
   font-size:9px;
-
   color:#68746b;
-
   font-weight:600;
-
   margin-top:2px;
 }
 
+
+/* =====================================================
+   NAV LINKS
+===================================================== */
+
 .nav-links{
-
   display:flex;
-
   align-items:center;
-
-  gap:7px;
-
-  flex-wrap:wrap;
-
   justify-content:flex-end;
+
+  gap:5px;
+
+  flex-wrap:nowrap;
+  white-space:nowrap;
 }
 
 .nav-links a{
-
   color:#24392c;
-
   text-decoration:none;
 
-  font-size:13px;
-
+  font-size:12px;
   font-weight:700;
 
-  padding:
-  9px 12px;
+  padding:8px 9px;
 
   border-radius:22px;
+
+  white-space:nowrap;
 
   transition:.25s ease;
 }
 
 .nav-links a:hover{
-
   background:#eaf8ef;
-
   color:var(--green);
 }
 
 .nav-whatsapp{
-
   background:
   linear-gradient(
-  135deg,
-  var(--green),
-  #16834a
+    135deg,
+    var(--green),
+    #16834a
   ) !important;
 
   color:white !important;
@@ -271,34 +246,23 @@ h2{
 ===================================================== */
 
 .ruhani-image-section{
-
   width:100%;
-
   margin:0;
-
   padding:0;
-
   background:#fff;
-
   overflow:hidden;
 }
 
 .ruhani-image-section img{
-
   display:block;
-
   width:100%;
-
   height:auto;
 
   margin:0;
-
   padding:0;
 
   border:0;
-
   border-radius:0;
-
   box-shadow:none;
 }
 
@@ -308,7 +272,6 @@ h2{
 ===================================================== */
 
 .feature-section{
-
   width:100%;
 
   padding:
@@ -316,30 +279,26 @@ h2{
 
   background:
   linear-gradient(
-  180deg,
-  #ffffff 0%,
-  #f7fbf8 100%
+    180deg,
+    #ffffff 0%,
+    #f7fbf8 100%
   );
 }
 
 .feature-container{
-
   width:100%;
-
   max-width:1100px;
-
   margin:auto;
 
   display:grid;
-
   grid-template-columns:
   repeat(3,1fr);
 
   background:
   linear-gradient(
-  135deg,
-  #083d24,
-  #126b3a
+    135deg,
+    #083d24,
+    #126b3a
   );
 
   border:
@@ -347,7 +306,6 @@ h2{
   var(--gold);
 
   border-radius:24px;
-
   overflow:hidden;
 
   box-shadow:
@@ -358,13 +316,9 @@ h2{
 }
 
 .feature-box{
-
   display:flex;
-
   flex-direction:column;
-
   align-items:center;
-
   justify-content:center;
 
   text-align:center;
@@ -376,13 +330,12 @@ h2{
 
   background:
   linear-gradient(
-  180deg,
-  rgba(18,107,58,.98),
-  rgba(8,61,36,.98)
+    180deg,
+    rgba(18,107,58,.98),
+    rgba(8,61,36,.98)
   );
 
   color:white;
-
   text-decoration:none;
 
   border-right:
@@ -397,35 +350,31 @@ h2{
 }
 
 .feature-box:hover{
-
   background:
   linear-gradient(
-  180deg,
-  #16834a,
-  #0a4c2c
+    180deg,
+    #16834a,
+    #0a4c2c
   );
 
   transform:translateY(-2px);
 }
 
 .feature-icon{
-
   width:62px;
   height:62px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   border-radius:50%;
 
   background:
   linear-gradient(
-  135deg,
-  #e7c96d,
-  #b98d2e
+    135deg,
+    #e7c96d,
+    #b98d2e
   );
 
   color:#083d24;
@@ -444,12 +393,9 @@ h2{
 }
 
 .feature-content h3{
-
-  margin:
-  0 0 4px;
+  margin:0 0 4px;
 
   font-size:18px;
-
   font-weight:800;
 
   color:#fff;
@@ -458,27 +404,22 @@ h2{
 }
 
 .feature-content p{
-
   margin:0;
 
   font-size:12.5px;
-
   line-height:1.4;
 
   color:#e9f4ed;
 }
 
 .feature-content::after{
-
-  content:
-  "Open ›";
+  content:"Open ›";
 
   display:block;
 
   margin-top:8px;
 
   font-size:11px;
-
   font-weight:700;
 
   color:var(--gold-light);
@@ -490,26 +431,22 @@ h2{
 ===================================================== */
 
 .intro-boxes-section{
-
   padding:
   30px 16px 38px;
 
   background:
   linear-gradient(
-  180deg,
-  #f7fbf8,
-  #eef8f1
+    180deg,
+    #f7fbf8,
+    #eef8f1
   );
 }
 
 .intro-boxes{
-
   max-width:900px;
-
   margin:auto;
 
   display:grid;
-
   grid-template-columns:
   1fr 1fr;
 
@@ -517,7 +454,6 @@ h2{
 }
 
 .intro-box{
-
   position:relative;
 
   display:block;
@@ -532,7 +468,8 @@ h2{
 
   border-radius:20px;
 
-  padding:22px 20px;
+  padding:
+  22px 20px;
 
   box-shadow:
   0 10px 28px
@@ -544,7 +481,6 @@ h2{
 }
 
 .intro-box::before{
-
   content:"";
 
   position:absolute;
@@ -557,14 +493,13 @@ h2{
 
   background:
   linear-gradient(
-  180deg,
-  var(--green),
-  var(--orange)
+    180deg,
+    var(--green),
+    var(--orange)
   );
 }
 
 .intro-box:hover{
-
   transform:
   translateY(-3px);
 
@@ -574,23 +509,20 @@ h2{
 }
 
 .intro-box-icon{
-
   width:48px;
   height:48px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   border-radius:50%;
 
   background:
   linear-gradient(
-  135deg,
-  var(--green),
-  #16834a
+    135deg,
+    var(--green),
+    #16834a
   );
 
   color:white;
@@ -601,7 +533,6 @@ h2{
 }
 
 .intro-box h3{
-
   color:var(--green);
 
   font-size:20px;
@@ -610,7 +541,6 @@ h2{
 }
 
 .intro-box p{
-
   color:#5d6961;
 
   font-size:13.5px;
@@ -621,7 +551,6 @@ h2{
 }
 
 .intro-open{
-
   color:var(--dark-orange);
 
   font-size:12px;
@@ -635,37 +564,33 @@ h2{
 ===================================================== */
 
 .about-section{
-
   padding:
   58px 18px;
 
   background:
   radial-gradient(
-  circle at top left,
-  rgba(22,163,74,.10),
-  transparent 35%
+    circle at top left,
+    rgba(22,163,74,.10),
+    transparent 35%
   ),
   radial-gradient(
-  circle at bottom right,
-  rgba(242,140,40,.08),
-  transparent 35%
+    circle at bottom right,
+    rgba(242,140,40,.08),
+    transparent 35%
   ),
   linear-gradient(
-  180deg,
-  #f8fff9,
-  #ffffff
+    180deg,
+    #f8fff9,
+    #ffffff
   );
 }
 
 .about-heading{
-
   text-align:center;
-
   margin-bottom:30px;
 }
 
 .about-icon{
-
   width:58px;
   height:58px;
 
@@ -673,18 +598,16 @@ h2{
   0 auto 12px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   border-radius:50%;
 
   background:
   linear-gradient(
-  135deg,
-  var(--green),
-  #16834a
+    135deg,
+    var(--green),
+    #16834a
   );
 
   color:white;
@@ -697,7 +620,6 @@ h2{
 }
 
 .about-heading h2{
-
   margin:0;
 
   font-size:31px;
@@ -706,7 +628,6 @@ h2{
 }
 
 .about-subtitle{
-
   margin:
   8px auto 0;
 
@@ -718,7 +639,6 @@ h2{
 }
 
 .about-intro{
-
   background:white;
 
   border:
@@ -737,7 +657,6 @@ h2{
 }
 
 .about-highlight{
-
   display:inline-flex;
 
   align-items:center;
@@ -761,7 +680,6 @@ h2{
 }
 
 .about-intro p{
-
   margin:
   11px 0;
 
@@ -777,7 +695,6 @@ h2{
 }
 
 .about-purpose{
-
   margin-top:20px;
 
   padding:22px;
@@ -786,9 +703,9 @@ h2{
 
   background:
   linear-gradient(
-  135deg,
-  var(--green),
-  #16834a
+    135deg,
+    var(--green),
+    #16834a
   );
 
   color:white;
@@ -801,7 +718,6 @@ h2{
 }
 
 .purpose-title{
-
   font-size:19px;
 
   font-weight:800;
@@ -810,14 +726,12 @@ h2{
 }
 
 .about-purpose p{
-
   margin:0;
 
   font-size:15px;
 }
 
 .about-final{
-
   margin-top:20px;
 
   padding:23px;
@@ -826,9 +740,9 @@ h2{
 
   background:
   linear-gradient(
-  135deg,
-  #fff,
-  #f6fbf7
+    135deg,
+    #fff,
+    #f6fbf7
   );
 
   border:
@@ -843,7 +757,6 @@ h2{
 }
 
 .about-final strong{
-
   display:block;
 
   font-size:20px;
@@ -854,7 +767,6 @@ h2{
 }
 
 .about-final p{
-
   max-width:620px;
 
   margin:auto;
@@ -870,12 +782,11 @@ h2{
 ===================================================== */
 
 .problem-section{
-
   background:
   linear-gradient(
-  135deg,
-  #f0f8f3,
-  #fff7ed
+    135deg,
+    #f0f8f3,
+    #fff7ed
   );
 }
 
@@ -884,7 +795,6 @@ h2{
 }
 
 .problems{
-
   display:grid;
 
   grid-template-columns:
@@ -896,7 +806,6 @@ h2{
 }
 
 .problem{
-
   display:flex;
 
   align-items:center;
@@ -910,9 +819,9 @@ h2{
 
   background:
   linear-gradient(
-  135deg,
-  #ffffff,
-  #fcfffd
+    135deg,
+    #ffffff,
+    #fcfffd
   );
 
   border-radius:18px;
@@ -929,7 +838,6 @@ h2{
 }
 
 .problem:hover{
-
   transform:
   translateY(-3px);
 
@@ -939,9 +847,7 @@ h2{
 }
 
 .problem-icon{
-
   width:58px;
-
   min-width:58px;
 
   height:58px;
@@ -949,7 +855,6 @@ h2{
   display:flex;
 
   align-items:center;
-
   justify-content:center;
 
   font-size:31px;
@@ -962,14 +867,11 @@ h2{
 }
 
 .problem-content{
-
   flex:1;
-
   min-width:0;
 }
 
 .problem-content strong{
-
   display:block;
 
   color:var(--green);
@@ -984,7 +886,6 @@ h2{
 }
 
 .problem-content span{
-
   display:block;
 
   font-size:14px;
@@ -1004,7 +905,6 @@ h2{
 ===================================================== */
 
 .middle-image-section{
-
   width:100%;
 
   margin:0;
@@ -1017,7 +917,6 @@ h2{
 }
 
 .middle-image-section img{
-
   display:block;
 
   width:100%;
@@ -1025,11 +924,9 @@ h2{
   height:auto;
 
   margin:0;
-
   padding:0;
 
   border:0;
-
   border-radius:0;
 
   box-shadow:none;
@@ -1041,7 +938,6 @@ h2{
 ===================================================== */
 
 .price-section{
-
   background:white;
 
   text-align:center;
@@ -1050,14 +946,12 @@ h2{
 }
 
 .price-section h2{
-
   font-size:32px;
 
   margin-bottom:10px;
 }
 
 .price-subtitle{
-
   max-width:650px;
 
   margin:
@@ -1069,7 +963,6 @@ h2{
 }
 
 .price-card{
-
   max-width:600px;
 
   margin:
@@ -1082,9 +975,9 @@ h2{
 
   background:
   linear-gradient(
-  135deg,
-  #eef8f1,
-  #fff4e6
+    135deg,
+    #eef8f1,
+    #fff4e6
   );
 
   border:
@@ -1097,7 +990,6 @@ h2{
 }
 
 .price{
-
   font-size:50px;
 
   font-weight:bold;
@@ -1106,14 +998,12 @@ h2{
 }
 
 .duration{
-
   color:var(--muted);
 
   margin-bottom:20px;
 }
 
 .call-note{
-
   margin:
   18px auto;
 
@@ -1135,7 +1025,6 @@ h2{
 }
 
 .benefits{
-
   text-align:left;
 
   max-width:450px;
@@ -1146,7 +1035,6 @@ h2{
 }
 
 .benefits li{
-
   padding:
   9px 0;
 
@@ -1156,7 +1044,6 @@ h2{
 }
 
 .price-note{
-
   margin-top:18px;
 
   font-size:14px;
@@ -1170,22 +1057,20 @@ h2{
 ===================================================== */
 
 .process{
-
   background:
   linear-gradient(
-  135deg,
-  #f1f8f3,
-  #fff7ed
+    135deg,
+    #f1f8f3,
+    #fff7ed
   );
 }
 
 .step{
-
   background:
   linear-gradient(
-  135deg,
-  #ffffff,
-  #fcfffd
+    135deg,
+    #ffffff,
+    #fcfffd
   );
 
   padding:18px;
@@ -1206,7 +1091,6 @@ h2{
 }
 
 .step:hover{
-
   transform:
   translateY(-3px);
 
@@ -1225,17 +1109,15 @@ h2{
 ===================================================== */
 
 .booking{
-
   background:
   linear-gradient(
-  135deg,
-  #eaf7ef,
-  #fff3e5
+    135deg,
+    #eaf7ef,
+    #fff3e5
   );
 }
 
 .booking-card{
-
   max-width:650px;
 
   margin:
@@ -1258,7 +1140,6 @@ h2{
 }
 
 label{
-
   display:block;
 
   font-weight:bold;
@@ -1272,7 +1153,6 @@ label{
 input,
 select,
 textarea{
-
   width:100%;
 
   padding:15px;
@@ -1293,7 +1173,6 @@ textarea{
 input:focus,
 select:focus,
 textarea:focus{
-
   outline:none;
 
   border-color:
@@ -1305,7 +1184,6 @@ textarea:focus{
 }
 
 textarea{
-
   min-height:110px;
 
   resize:vertical;
@@ -1317,7 +1195,6 @@ textarea{
 ===================================================== */
 
 .slot-info{
-
   margin-top:18px;
 
   padding:18px;
@@ -1326,9 +1203,9 @@ textarea{
 
   background:
   linear-gradient(
-  135deg,
-  #eef8f1,
-  #fff4e6
+    135deg,
+    #eef8f1,
+    #fff4e6
   );
 
   border-left:
@@ -1339,7 +1216,6 @@ textarea{
 }
 
 .slot-title{
-
   font-size:18px;
 
   font-weight:bold;
@@ -1350,7 +1226,6 @@ textarea{
 }
 
 .capacity{
-
   font-size:14px;
 
   color:var(--muted);
@@ -1362,7 +1237,6 @@ textarea{
 ===================================================== */
 
 .fee-box{
-
   margin-top:22px;
 
   padding:20px;
@@ -1371,9 +1245,9 @@ textarea{
 
   background:
   linear-gradient(
-  135deg,
-  #fff4e6,
-  #eef8f1
+    135deg,
+    #fff4e6,
+    #eef8f1
   );
 
   border:
@@ -1384,7 +1258,6 @@ textarea{
 }
 
 .fee{
-
   font-size:34px;
 
   font-weight:bold;
@@ -1398,7 +1271,6 @@ textarea{
 ===================================================== */
 
 .submit-button{
-
   width:100%;
 
   margin-top:22px;
@@ -1411,9 +1283,9 @@ textarea{
 
   background:
   linear-gradient(
-  90deg,
-  var(--green),
-  var(--orange)
+    90deg,
+    var(--green),
+    var(--orange)
   );
 
   color:white;
@@ -1430,17 +1302,15 @@ textarea{
 }
 
 .submit-button:hover{
-
   background:
   linear-gradient(
-  90deg,
-  #0b512b,
-  var(--dark-orange)
+    90deg,
+    #0b512b,
+    var(--dark-orange)
   );
 }
 
 .submit-button:disabled{
-
   opacity:.7;
 
   cursor:not-allowed;
@@ -1452,7 +1322,6 @@ textarea{
 ===================================================== */
 
 .privacy-check{
-
   display:flex;
 
   gap:10px;
@@ -1467,7 +1336,6 @@ textarea{
 }
 
 .privacy-check input{
-
   width:auto;
 
   margin-top:5px;
@@ -1479,7 +1347,6 @@ textarea{
 ===================================================== */
 
 .note{
-
   margin-top:18px;
 
   font-size:13px;
@@ -1495,23 +1362,21 @@ textarea{
 ===================================================== */
 
 .privacy{
-
   background:white;
 
   text-align:center;
 }
 
 .privacy-box{
-
   max-width:680px;
 
   margin:auto;
 
   background:
   linear-gradient(
-  135deg,
-  #f7faf7,
-  #fff8ef
+    135deg,
+    #f7faf7,
+    #fff8ef
   );
 
   padding:22px;
@@ -1533,12 +1398,11 @@ textarea{
 ===================================================== */
 
 footer{
-
   background:
   linear-gradient(
-  135deg,
-  #083d24,
-  #126b3a
+    135deg,
+    #083d24,
+    #126b3a
   );
 
   color:#dcefe1;
@@ -1560,7 +1424,6 @@ footer{
 ===================================================== */
 
 .floating-booking{
-
   position:fixed;
 
   left:50%;
@@ -1587,10 +1450,10 @@ footer{
 
   background:
   linear-gradient(
-  90deg,
-  var(--green),
-  var(--dark-green),
-  var(--orange)
+    90deg,
+    var(--green),
+    var(--dark-green),
+    var(--orange)
   );
 
   color:white;
@@ -1625,7 +1488,6 @@ footer{
 }
 
 .floating-booking.show{
-
   transform:
   translateX(-50%)
   translateY(0);
@@ -1647,22 +1509,38 @@ footer{
   }
 
 
-  /* NAVIGATION */
+  /* =================================================
+     MOBILE NAVIGATION
+     SIX OPTIONS IN ONE LINE
+  ================================================= */
 
   .site-header{
     position:relative;
   }
 
   .navbar{
-
     padding:
-    9px 10px;
+    9px 7px 8px;
 
-    align-items:flex-start;
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+  }
+
+  .brand{
+    width:100%;
+
+    justify-content:center;
   }
 
   .brand-text{
-    font-size:15px;
+    font-size:16px;
   }
 
   .brand-sub{
@@ -1670,37 +1548,71 @@ footer{
   }
 
   .brand-icon{
-
-    width:36px;
-    height:36px;
+    width:37px;
+    height:37px;
 
     font-size:18px;
   }
 
-  .nav-links{
 
-    gap:4px;
+  /* SIX NAVIGATION BUTTONS */
+
+  .nav-links{
+    width:100%;
+
+    display:flex;
+
+    flex-direction:row;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:1px;
+
+    flex-wrap:nowrap;
+
+    white-space:nowrap;
+
+    overflow:visible;
   }
 
   .nav-links a{
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
     padding:
-    7px 8px;
+    7px 1px;
 
-    font-size:10px;
+    font-size:8.5px;
+
+    line-height:1.1;
+
+    border-radius:18px;
+
+    white-space:nowrap;
+  }
+
+  .nav-whatsapp{
+    flex:1.1 !important;
   }
 
 
-  /* RESOURCE CARDS */
+  /* =================================================
+     RESOURCE CARDS
+  ================================================= */
 
   .feature-section{
-
     padding:
     15px 10px 28px;
   }
 
   .feature-container{
-
     grid-template-columns:
     repeat(3,1fr);
 
@@ -1708,7 +1620,6 @@ footer{
   }
 
   .feature-box{
-
     min-height:145px;
 
     padding:
@@ -1716,7 +1627,6 @@ footer{
   }
 
   .feature-icon{
-
     width:50px;
     height:50px;
 
@@ -1728,7 +1638,6 @@ footer{
   }
 
   .feature-content h3{
-
     font-size:13px;
 
     line-height:1.2;
@@ -1743,30 +1652,28 @@ footer{
   }
 
   .feature-content p{
-
     font-size:9.5px;
 
     line-height:1.3;
   }
 
   .feature-content::after{
-
     font-size:9px;
 
     margin-top:6px;
   }
 
 
-  /* COMPACT INTRO BOXES */
+  /* =================================================
+     INTRO BOXES
+  ================================================= */
 
   .intro-boxes-section{
-
     padding:
     25px 12px 30px;
   }
 
   .intro-boxes{
-
     grid-template-columns:
     1fr 1fr;
 
@@ -1774,7 +1681,6 @@ footer{
   }
 
   .intro-box{
-
     padding:
     17px 12px;
 
@@ -1782,7 +1688,6 @@ footer{
   }
 
   .intro-box-icon{
-
     width:42px;
     height:42px;
 
@@ -1792,74 +1697,67 @@ footer{
   }
 
   .intro-box h3{
-
     font-size:16px;
 
     line-height:1.2;
   }
 
   .intro-box p{
-
     font-size:11px;
 
     line-height:1.4;
   }
 
   .intro-open{
-
     font-size:10px;
   }
 
 
-  /* ABOUT */
+  /* =================================================
+     ABOUT
+  ================================================= */
 
   .about-section{
-
     padding:
     45px 14px;
   }
 
   .about-heading h2{
-
     font-size:28px;
   }
 
   .about-subtitle{
-
     font-size:14px;
   }
 
   .about-intro{
-
     padding:
     22px 18px;
   }
 
   .about-intro p{
-
     font-size:15px;
 
     line-height:1.7;
   }
 
 
-  /* PROBLEMS */
+  /* =================================================
+     PROBLEMS
+  ================================================= */
 
   .problem-section{
-
     padding:
     42px 14px;
   }
 
   .problem-section h2{
-
     font-size:27px;
 
     line-height:1.25;
   }
 
   .problems{
-
     grid-template-columns:1fr;
 
     gap:11px;
@@ -1868,7 +1766,6 @@ footer{
   }
 
   .problem{
-
     min-height:78px;
 
     padding:
@@ -1880,9 +1777,7 @@ footer{
   }
 
   .problem-icon{
-
     width:52px;
-
     min-width:52px;
 
     height:50px;
@@ -1893,40 +1788,38 @@ footer{
   }
 
   .problem-content strong{
-
     font-size:16px;
   }
 
   .problem-content span{
-
     font-size:13px;
 
     line-height:1.35;
   }
 
 
-  /* PRICE */
+  /* =================================================
+     PRICE
+  ================================================= */
 
   .price-section{
-
     padding-top:45px;
   }
 
   .price-section h2{
-
     font-size:27px;
   }
 
   .price{
-
     font-size:46px;
   }
 
 
-  /* FLOATING */
+  /* =================================================
+     FLOATING BOOKING
+  ================================================= */
 
   .floating-booking{
-
     width:
     calc(100% - 24px);
 
@@ -1939,22 +1832,43 @@ footer{
 }
 
 
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
 @media(max-width:400px){
 
   .brand-text{
-    font-size:13px;
+    font-size:14px;
+  }
+
+  .brand-sub{
+    font-size:7px;
+  }
+
+  .brand-icon{
+    width:35px;
+    height:35px;
+
+    font-size:17px;
+  }
+
+  .nav-links{
+    gap:0;
   }
 
   .nav-links a{
-
-    font-size:9px;
+    font-size:7.5px;
 
     padding:
-    6px 6px;
+    6px 0;
+  }
+
+  .nav-whatsapp{
+    font-size:7.5px !important;
   }
 
   .feature-box{
-
     min-height:138px;
 
     padding:
@@ -1962,7 +1876,6 @@ footer{
   }
 
   .feature-icon{
-
     width:46px;
     height:46px;
 
@@ -1970,37 +1883,27 @@ footer{
   }
 
   .feature-content h3{
-
     font-size:11.5px;
   }
 
   .feature-content p{
-
     font-size:8.5px;
   }
 
   .intro-box{
-
     padding:
     15px 10px;
   }
 
   .intro-box h3{
-
     font-size:14px;
   }
 
   .intro-box p{
-
     font-size:10px;
   }
 
 }
-
-
-/* =====================================================
-   END CSS
-===================================================== */
 
 </style>
 
@@ -2040,6 +1943,8 @@ Spiritual Guidance • Peace • Solutions
 
 </a>
 
+
+<!-- SIX OPTIONS -->
 
 <div class="nav-links">
 
@@ -2183,7 +2088,7 @@ Books + Videos
 
 
 <!-- ==================================================
-     COMPACT ABOUT / HUM KAUN HAIN BOXES
+     ABOUT / HUM KAUN HAIN
 ================================================== -->
 
 <section class="intro-boxes-section">
@@ -3053,7 +2958,7 @@ Har shakhs ki situation alag hoti hai.
 <script>
 
 const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxfWqS6a30IBepSkdKDhgPRMqhGy-Uc3MeHS_1_hSU84kKQF24g0iIA25TF-OnEhK0J7g/exec";
+"https://script.google.com/macros/s/AKfycbxfWqS6a30IBepSkdKDhgPRMqhGy-Uc3MeHS_1_hSU84kQF24g0iIA25TF-OnEhK0J7g/exec";
 
 
 /* ==================================================
