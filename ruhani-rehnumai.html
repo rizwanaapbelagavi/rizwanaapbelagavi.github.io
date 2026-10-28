@@ -3194,40 +3194,12 @@ async function(event){
 
     if(result.success){
 
-      alert(
-
-        "✅ Booking Successfully Submitted!\n\n" +
-
-        "Booking ID: " +
-        result.bookingId +
-
-        "\n\n" +
-
-        "Name: " +
-        name +
-
-        "\n" +
-
-        "Date: " +
-        result.date +
-
-        "\n" +
-
-        "Time: " +
-        result.time +
-
-        "\n\n" +
-
-        "📞 Personal 20-minute baat phone call par hogi.\n\n" +
-
-        "WhatsApp par confirmation diya jayega."
-
-      );
+     bookingForm.reset();
+window.location.href = "ruhani-payment.html";
+return;
 
 
-      bookingForm.reset();
-
-      setMinimumDate();
+      
 
 
     }else{
